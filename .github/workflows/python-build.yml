@@ -60,11 +60,11 @@ jobs:
           nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py --macos-create-app-bundle --disable-console
       - name: Prepare Package for Upload
         run: |
-          mv main.bin ~/NUSD-Py
+          mv main.app ~/NUSD-Py.app
       - name: Upload Package
         uses: actions/upload-artifact@v4.3.0
         with:
-          path: ~/NUSD-Py
+          path: ~/NUSD-Py.app
           name: NUSD-Py-macos-bin
 
   build-windows:
