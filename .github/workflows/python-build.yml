@@ -57,7 +57,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build Package
         run: |
-          nuitka3 --onefile --plugin-enable=pyside6 main.py
+          nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py --disable-console
       - name: Prepare Package for Upload
         run: |
           mv main.bin ~/NUSD-Py
