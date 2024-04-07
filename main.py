@@ -1,7 +1,6 @@
 import sys
 import os
 import pathlib
-import traceback
 
 import libWiiPy
 
@@ -53,6 +52,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         scrollBar.setValue(scrollBar.maximum())
 
     def download_btn_pressed(self):
+        self.ui.download_btn.setEnabled(False)
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
 
@@ -74,6 +74,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
             msgBox.setDefaultButton(QMessageBox.StandardButton.Ok)
             msgBox.exec()
+        self.ui.download_btn.setEnabled(True)
 
     def run_nus_download(self, progress_callback):
         tid = self.ui.tid_entry.text()
