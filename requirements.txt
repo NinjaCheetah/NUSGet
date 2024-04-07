@@ -1,3 +1,4 @@
 pyside6
 nuitka
 libWiiPy
+zstandard
