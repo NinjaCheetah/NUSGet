@@ -164,6 +164,7 @@ cython_debug/
 # Allows me to keep TMD files in my repository folder for testing without accidentally publishing them
 *.tmd
 *.wad
+titles/
 out_prod/
 remakewad.pl
 

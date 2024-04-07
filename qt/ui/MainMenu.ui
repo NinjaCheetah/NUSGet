@@ -30,23 +30,16 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="show_titles_btn">
         <property name="text">
          <string>Titles</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="show_more_btn">
         <property name="text">
-         <string>Scripts</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="text">
-         <string>Extras</string>
+         <string>More</string>
         </property>
        </widget>
       </item>
@@ -94,7 +87,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QTextBrowser" name="textBrowser">
+     <widget class="QTextBrowser" name="log_text_browser">
       <property name="markdown">
        <string/>
       </property>
@@ -103,14 +96,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
-       <widget class="QCheckBox" name="checkBox">
+       <widget class="QCheckBox" name="pack_wad_chkbox">
         <property name="text">
          <string>Pack WAD</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_3">
+       <widget class="QLineEdit" name="wad_file_entry">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -122,21 +115,27 @@
      </layout>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox_2">
+     <widget class="QCheckBox" name="keep_enc_chkbox">
       <property name="text">
        <string>Keep Enc. Contents</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox_3">
+     <widget class="QCheckBox" name="create_dec_chkbox">
       <property name="text">
        <string>Create Decrypted Contents (*.app)</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox_4">
+     <widget class="QCheckBox" name="use_local_chkbox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="text">
        <string>Use Local Files If They Exist</string>
       </property>
