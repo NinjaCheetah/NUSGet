@@ -5,8 +5,8 @@ import pathlib
 
 import libWiiPy
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QTreeWidgetItem, QTreeWidget
-from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, Qt
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem
+from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
@@ -29,7 +29,7 @@ class Worker(QRunnable):
     def run(self):
         try:
             self.fn(**self.kwargs)
-        except ValueError as e:
+        except ValueError:
             self.signals.result.emit(1)
         else:
             self.signals.result.emit(0)
@@ -46,10 +46,34 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.pack_wad_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
 
         tree = self.ui.title_tree
+        self.tree_categories = []
 
-        for title in sys_titles:
-            new_title = QTreeWidgetItem(tree)
-            new_title.setText(0, title["Name"])
+        for key in wii_database:
+            new_category = QTreeWidgetItem()
+            new_category.setText(0, key)
+            for title in wii_database[key]:
+                new_title = QTreeWidgetItem()
+                new_title.setText(0, title["TID"] + " - " + title["Name"])
+                for version in title["Versions"]:
+                    new_version = QTreeWidgetItem()
+                    new_version.setText(0, str(version))
+
+                    new_title.addChild(new_version)
+                new_category.addChild(new_title)
+            self.tree_categories.append(new_category)
+
+        tree.insertTopLevelItems(0, self.tree_categories)
+        tree.itemDoubleClicked.connect(self.onItemClicked)
+
+    @Slot(QTreeWidgetItem, int)
+    def onItemClicked(self, item, col):
+        if item.parent() is not None and item.parent() not in self.tree_categories:
+            category = item.parent().parent().text(0)
+            for title in wii_database[category]:
+                if item.parent().text(0) == (title["TID"] + " - " + title["Name"]):
+                    selected_title = title
+                    selected_version = item.text(0)
+                    self.load_title_data(selected_title, selected_version)
 
     def update_log_text(self, new_text):
         self.log_text += new_text + "\n"
@@ -57,6 +81,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Always auto-scroll to the bottom of the log.
         scrollBar = self.ui.log_text_browser.verticalScrollBar()
         scrollBar.setValue(scrollBar.maximum())
+
+    def load_title_data(self, selected_title, selected_version):
+        self.ui.tid_entry.setText(selected_title["TID"])
+        self.ui.version_entry.setText(selected_version)
+        wad_name = selected_title["WAD Name"] + "-v" + selected_version + ".wad"
+        self.ui.wad_file_entry.setText(wad_name)
+        danger_text = ""
+        try:
+            danger_text = selected_title["Danger"]
+        except KeyError:
+            pass
+        self.log_text = (selected_title["TID"] + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version
+                         + "\n\n" + danger_text + "\n")
+        self.ui.log_text_browser.setText(self.log_text)
 
     def download_btn_pressed(self):
         self.ui.download_btn.setEnabled(False)
@@ -182,10 +220,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     wii_database = json.load(open("wii-database.json", "r"))
-    sys_titles = []
-    for key in wii_database["SYS"]:
-        sys_titles.append(key)
-    print(sys_titles[0]["Name"])
 
     out_folder = pathlib.Path("titles")
     if not out_folder.is_dir():

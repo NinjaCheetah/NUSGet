@@ -31,7 +31,7 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py
+        nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
     - name: Prepare Package for Upload
       run: |
         mv NUSD-Py.bin ~/NUSD-Py
@@ -58,7 +58,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build Package
         run: |
-          nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py --macos-create-app-bundle --disable-console
+          nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --macos-create-app-bundle --disable-console
       - name: Prepare Package for Upload
         run: |
           mv NUSD-Py.app ~/NUSD-Py.app
@@ -87,7 +87,7 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        nuitka --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py --disable-console
+        nuitka --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --disable-console
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
       with:

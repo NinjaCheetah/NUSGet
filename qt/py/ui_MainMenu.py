@@ -26,11 +26,21 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(610, 605)
         MainWindow.setMinimumSize(QSize(610, 605))
-        MainWindow.setMaximumSize(QSize(800, 605))
+        MainWindow.setMaximumSize(QSize(610, 605))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_3 = QHBoxLayout(self.centralwidget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        font = QFont()
+        font.setBold(True)
+        self.label_2.setFont(font)
+
+        self.verticalLayout.addWidget(self.label_2)
+
         self.title_tree = QTreeWidget(self.centralwidget)
         __qtreewidgetitem = QTreeWidgetItem()
         __qtreewidgetitem.setText(0, u"1");
@@ -39,25 +49,13 @@ class Ui_MainWindow(object):
         self.title_tree.setColumnCount(1)
         self.title_tree.header().setVisible(False)
 
-        self.horizontalLayout_3.addWidget(self.title_tree)
+        self.verticalLayout.addWidget(self.title_tree)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout)
 
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.show_titles_btn = QPushButton(self.centralwidget)
-        self.show_titles_btn.setObjectName(u"show_titles_btn")
-
-        self.horizontalLayout.addWidget(self.show_titles_btn)
-
-        self.show_more_btn = QPushButton(self.centralwidget)
-        self.show_more_btn.setObjectName(u"show_more_btn")
-
-        self.horizontalLayout.addWidget(self.show_more_btn)
-
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout)
-
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.tid_entry = QLineEdit(self.centralwidget)
@@ -141,14 +139,20 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.show_titles_btn.setText(QCoreApplication.translate("MainWindow", u"Titles", None))
-        self.show_more_btn.setText(QCoreApplication.translate("MainWindow", u"More", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Available Titles", None))
         self.tid_entry.setText("")
         self.tid_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Title ID", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"v", None))
         self.version_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Version", None))
         self.download_btn.setText(QCoreApplication.translate("MainWindow", u"Start NUS Download!", None))
-        self.log_text_browser.setMarkdown("")
+        self.log_text_browser.setMarkdown(QCoreApplication.translate("MainWindow", u"Select a title from the list on the left, or enter a Title ID to begin.\n"
+"\n"
+"", None))
+        self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select a title from the list on the left, or enter a Title ID to begin.</p></body></html>", None))
         self.pack_wad_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack WAD", None))
         self.wad_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
         self.keep_enc_chkbox.setText(QCoreApplication.translate("MainWindow", u"Keep Enc. Contents", None))
