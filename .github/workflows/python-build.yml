@@ -34,7 +34,7 @@ jobs:
         nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
     - name: Prepare Package for Upload
       run: |
-        mv NUSD-Py.bin ~/NUSD-Py
+        mv NUSD-Py.bin ~/NUSD-Py.bin
         cd ~
         tar cvf NUSD-Py.tar NUSD-Py.bin
     - name: Upload Package
