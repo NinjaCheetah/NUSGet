@@ -35,6 +35,7 @@ jobs:
     - name: Prepare Package for Upload
       run: |
         mv NUSD-Py.bin ~/NUSD-Py
+        cd ~
         tar cvf NUSD-Py.tar NUSD-Py.bin
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
@@ -62,6 +63,7 @@ jobs:
       - name: Prepare Package for Upload
         run: |
           mv NUSD-Py.app ~/NUSD-Py.app
+          cd ~
           tar cvf NUSD-Py.tar NUSD-Py.app
       - name: Upload Package
         uses: actions/upload-artifact@v4.3.0
