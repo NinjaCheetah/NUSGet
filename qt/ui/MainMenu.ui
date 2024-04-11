@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>305</width>
+    <width>610</width>
     <height>605</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>305</width>
+    <width>610</width>
     <height>605</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>305</width>
+    <width>800</width>
     <height>605</height>
    </size>
   </property>
@@ -26,120 +26,139 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="show_titles_btn">
-        <property name="text">
-         <string>Titles</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="show_more_btn">
-        <property name="text">
-         <string>More</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QTreeWidget" name="title_tree">
+      <property name="columnCount">
+       <number>1</number>
+      </property>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string notr="true">1</string>
+       </property>
+      </column>
+     </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QLineEdit" name="tid_entry">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="show_titles_btn">
+          <property name="text">
+           <string>Titles</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="show_more_btn">
+          <property name="text">
+           <string>More</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLineEdit" name="tid_entry">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Title ID</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>v</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="version_entry">
+          <property name="maximumSize">
+           <size>
+            <width>75</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="placeholderText">
+           <string>Version</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="download_btn">
         <property name="text">
+         <string>Start NUS Download!</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="log_text_browser">
+        <property name="markdown">
          <string/>
         </property>
-        <property name="placeholderText">
-         <string>Title ID</string>
-        </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QCheckBox" name="pack_wad_chkbox">
+          <property name="text">
+           <string>Pack WAD</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="wad_file_entry">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="placeholderText">
+           <string>File Name</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="keep_enc_chkbox">
         <property name="text">
-         <string>v</string>
+         <string>Keep Enc. Contents</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="version_entry">
-        <property name="maximumSize">
-         <size>
-          <width>75</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="placeholderText">
-         <string>Version</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="download_btn">
-      <property name="text">
-       <string>Start NUS Download!</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTextBrowser" name="log_text_browser">
-      <property name="markdown">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QCheckBox" name="pack_wad_chkbox">
+       <widget class="QCheckBox" name="create_dec_chkbox">
         <property name="text">
-         <string>Pack WAD</string>
+         <string>Create Decrypted Contents (*.app)</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="wad_file_entry">
+       <widget class="QCheckBox" name="use_local_chkbox">
         <property name="enabled">
          <bool>false</bool>
         </property>
-        <property name="placeholderText">
-         <string>File Name</string>
+        <property name="text">
+         <string>Use Local Files If They Exist</string>
         </property>
        </widget>
       </item>
      </layout>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="keep_enc_chkbox">
-      <property name="text">
-       <string>Keep Enc. Contents</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="create_dec_chkbox">
-      <property name="text">
-       <string>Create Decrypted Contents (*.app)</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="use_local_chkbox">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>Use Local Files If They Exist</string>
-      </property>
-     </widget>
     </item>
    </layout>
   </widget>
@@ -148,7 +167,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>305</width>
+     <width>610</width>
      <height>30</height>
     </rect>
    </property>

@@ -1,10 +1,11 @@
 import sys
 import os
+import json
 import pathlib
 
 import libWiiPy
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QTreeWidgetItem, QTreeWidget
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, Qt
 
 from qt.py.ui_MainMenu import Ui_MainWindow
@@ -28,7 +29,7 @@ class Worker(QRunnable):
     def run(self):
         try:
             self.fn(**self.kwargs)
-        except ValueError:
+        except ValueError as e:
             self.signals.result.emit(1)
         else:
             self.signals.result.emit(0)
@@ -43,6 +44,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.pack_wad_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
+
+        tree = self.ui.title_tree
+
+        for title in sys_titles:
+            new_title = QTreeWidgetItem(tree)
+            new_title.setText(0, title["Name"])
 
     def update_log_text(self, new_text):
         self.log_text += new_text + "\n"
@@ -65,12 +72,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def check_download_result(self, result):
         if result == 1:
             msgBox = QMessageBox()
-            msgBox.setWindowTitle("Invalid Title ID/Version")
+            msgBox.setWindowTitle("Invalid Title ID")
             msgBox.setIcon(QMessageBox.Icon.Critical)
-            msgBox.setTextFormat(Qt.MarkdownText)
-            msgBox.setText("### No title with the requested Title ID or version could be found!")
-            msgBox.setInformativeText("Please make sure the Title ID is entered correctly, and if a specific version is"
-                                      " set, that it exists for the chosen title.")
+            msgBox.setText("No title with the provided Title ID could be found!")
+            msgBox.setInformativeText("Please make sure that you have entered a valid Title ID or selected one from the"
+                                      " title database.")
             msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
             msgBox.setDefaultButton(QMessageBox.StandardButton.Ok)
             msgBox.exec()
@@ -78,6 +84,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def run_nus_download(self, progress_callback):
         tid = self.ui.tid_entry.text()
+        if tid == "":
+            raise ValueError
         try:
             version = int(self.ui.version_entry.text())
         except ValueError:
@@ -172,6 +180,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+
+    wii_database = json.load(open("wii-database.json", "r"))
+    sys_titles = []
+    for key in wii_database["SYS"]:
+        sys_titles.append(key)
+    print(sys_titles[0]["Name"])
 
     out_folder = pathlib.Path("titles")
     if not out_folder.is_dir():

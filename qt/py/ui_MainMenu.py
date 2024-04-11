@@ -15,22 +15,34 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QStatusBar, QTextBrowser, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QMenuBar,
+    QPushButton, QSizePolicy, QStatusBar, QTextBrowser,
+    QTreeWidget, QTreeWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(305, 605)
-        MainWindow.setMinimumSize(QSize(305, 605))
-        MainWindow.setMaximumSize(QSize(305, 605))
+        MainWindow.resize(610, 605)
+        MainWindow.setMinimumSize(QSize(610, 605))
+        MainWindow.setMaximumSize(QSize(800, 605))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.horizontalLayout_3 = QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.title_tree = QTreeWidget(self.centralwidget)
+        __qtreewidgetitem = QTreeWidgetItem()
+        __qtreewidgetitem.setText(0, u"1");
+        self.title_tree.setHeaderItem(__qtreewidgetitem)
+        self.title_tree.setObjectName(u"title_tree")
+        self.title_tree.setColumnCount(1)
+        self.title_tree.header().setVisible(False)
+
+        self.horizontalLayout_3.addWidget(self.title_tree)
+
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.show_titles_btn = QPushButton(self.centralwidget)
@@ -44,7 +56,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.show_more_btn)
 
 
-        self.verticalLayout_2.addLayout(self.horizontalLayout)
+        self.verticalLayout_3.addLayout(self.horizontalLayout)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -65,17 +77,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.version_entry)
 
 
-        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_2)
 
         self.download_btn = QPushButton(self.centralwidget)
         self.download_btn.setObjectName(u"download_btn")
 
-        self.verticalLayout_2.addWidget(self.download_btn)
+        self.verticalLayout_3.addWidget(self.download_btn)
 
         self.log_text_browser = QTextBrowser(self.centralwidget)
         self.log_text_browser.setObjectName(u"log_text_browser")
 
-        self.verticalLayout_2.addWidget(self.log_text_browser)
+        self.verticalLayout_3.addWidget(self.log_text_browser)
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -91,29 +103,32 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.wad_file_entry)
 
 
-        self.verticalLayout_2.addLayout(self.horizontalLayout_4)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_4)
 
         self.keep_enc_chkbox = QCheckBox(self.centralwidget)
         self.keep_enc_chkbox.setObjectName(u"keep_enc_chkbox")
         self.keep_enc_chkbox.setChecked(True)
 
-        self.verticalLayout_2.addWidget(self.keep_enc_chkbox)
+        self.verticalLayout_3.addWidget(self.keep_enc_chkbox)
 
         self.create_dec_chkbox = QCheckBox(self.centralwidget)
         self.create_dec_chkbox.setObjectName(u"create_dec_chkbox")
 
-        self.verticalLayout_2.addWidget(self.create_dec_chkbox)
+        self.verticalLayout_3.addWidget(self.create_dec_chkbox)
 
         self.use_local_chkbox = QCheckBox(self.centralwidget)
         self.use_local_chkbox.setObjectName(u"use_local_chkbox")
         self.use_local_chkbox.setEnabled(False)
 
-        self.verticalLayout_2.addWidget(self.use_local_chkbox)
+        self.verticalLayout_3.addWidget(self.use_local_chkbox)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_3)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 305, 30))
+        self.menubar.setGeometry(QRect(0, 0, 610, 30))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")

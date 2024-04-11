@@ -24,6 +24,9 @@ share/python-wheels/
 *.egg-info/
 main.build/
 main.dist/
+NUSD-Py.build/
+NUSD-Py.dist/
+NUSD-Py.onefile-build/
 .installed.cfg
 *.egg
 MANIFEST

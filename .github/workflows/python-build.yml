@@ -31,14 +31,15 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        nuitka3 --onefile --plugin-enable=pyside6 main.py
+        nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py
     - name: Prepare Package for Upload
       run: |
-        mv main.bin ~/NUSD-Py
+        mv NUSD-Py.bin ~/NUSD-Py
+        tar cvf NUSD-Py.tar NUSD-Py.bin
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
       with:
-        path: ~/NUSD-Py
+        path: ~/NUSD-Py.tar
         name: NUSD-Py-linux-bin
 
   build-macos:
@@ -60,11 +61,12 @@ jobs:
           nuitka3 --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py --macos-create-app-bundle --disable-console
       - name: Prepare Package for Upload
         run: |
-          mv main.app ~/NUSD-Py.app
+          mv NUSD-Py.app ~/NUSD-Py.app
+          tar cvf NUSD-Py.tar NUSD-Py.app
       - name: Upload Package
         uses: actions/upload-artifact@v4.3.0
         with:
-          path: ~/NUSD-Py.app
+          path: ~/NUSD-Py.tar
           name: NUSD-Py-macos-bin
 
   build-windows:
@@ -85,10 +87,10 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        nuitka --assume-yes-for-downloads --standalone --plugin-enable=pyside6 main.py --disable-console
+        nuitka --assume-yes-for-downloads --onefile --plugin-enable=pyside6 main.py --disable-console
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
       with:
-        path: D:\a\NUSD-Py\NUSD-Py\main.dist\
+        path: D:\a\NUSD-Py\NUSD-Py\NUSD-Py.exe
         name: NUSD-Py-windows-bin
         
