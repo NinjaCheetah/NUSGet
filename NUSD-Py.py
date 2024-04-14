@@ -6,7 +6,7 @@ import pathlib
 import libWiiPy
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem
-from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, Qt
+from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
@@ -30,12 +30,11 @@ class Worker(QRunnable):
     @Slot()
     def run(self):
         try:
-            self.fn(**self.kwargs)
-        # TODO: Handle errors better than this
+            result = self.fn(**self.kwargs)
         except ValueError:
             self.signals.result.emit(1)
         else:
-            self.signals.result.emit(0)
+            self.signals.result.emit(result)
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -138,22 +137,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadpool.start(worker)
 
     def check_download_result(self, result):
-        if result == 1:
-            msgBox = QMessageBox()
+        msgBox = QMessageBox()
+        msgBox.setIcon(QMessageBox.Icon.Critical)
+        msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msgBox.setDefaultButton(QMessageBox.StandardButton.Ok)
+        if result == -1:
             msgBox.setWindowTitle("Invalid Title ID")
-            msgBox.setIcon(QMessageBox.Icon.Critical)
-            msgBox.setText("No title with the provided Title ID could be found!")
+            msgBox.setText("The Title ID you have entered is not in a valid format!")
+            msgBox.setInformativeText("Title IDs must be 16 digit strings of numbers and letters. Please enter a "
+                                      "correctly formatted Title ID, or select one from the menu on the left.")
+            msgBox.exec()
+        elif result == -2:
+            msgBox.setWindowTitle("Title ID/Version Not Found")
+            msgBox.setText("No title with the provided Title ID or version could be found!")
             msgBox.setInformativeText("Please make sure that you have entered a valid Title ID or selected one from the"
-                                      " title database.")
-            msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
-            msgBox.setDefaultButton(QMessageBox.StandardButton.Ok)
+                                      " title database, and that the provided version exists for the title you are"
+                                      " attempting to download.")
             msgBox.exec()
         self.ui.download_btn.setEnabled(True)
 
     def run_nus_download(self, progress_callback):
         tid = self.ui.tid_entry.text()
         if tid == "":
-            raise ValueError
+            return -1
         try:
             version = int(self.ui.version_entry.text())
         except ValueError:
@@ -171,11 +177,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             progress_callback.emit("Downloading title " + tid + " vLatest, please wait...")
 
         progress_callback.emit(" - Downloading and parsing TMD...")
-        if version is not None:
-            title.load_tmd(libWiiPy.download_tmd(tid, version))
-        else:
-            title.load_tmd(libWiiPy.download_tmd(tid))
-            version = title.tmd.title_version
+        try:
+            if version is not None:
+                title.load_tmd(libWiiPy.download_tmd(tid, version))
+            else:
+                title.load_tmd(libWiiPy.download_tmd(tid))
+                version = title.tmd.title_version
+        except ValueError:
+            return -2
 
         version_dir = pathlib.Path(os.path.join(title_dir, str(version)))
         if not version_dir.is_dir():
