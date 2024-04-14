@@ -159,7 +159,7 @@ p, li { white-space: pre-wrap; }
       <item>
        <widget class="QCheckBox" name="use_local_chkbox">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="text">
          <string>Use Local Files If They Exist</string>

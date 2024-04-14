@@ -116,7 +116,7 @@ class Ui_MainWindow(object):
 
         self.use_local_chkbox = QCheckBox(self.centralwidget)
         self.use_local_chkbox.setObjectName(u"use_local_chkbox")
-        self.use_local_chkbox.setEnabled(False)
+        self.use_local_chkbox.setEnabled(True)
 
         self.verticalLayout_3.addWidget(self.use_local_chkbox)
 

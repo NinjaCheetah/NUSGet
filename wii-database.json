@@ -3,7 +3,9 @@
     {
       "Name": "boot2",
       "TID": "0000000100000001",
-      "Versions": [4],
+      "Versions": {
+        "World": [4]
+      },
       "Ticket": true,
       "WAD Name": "boot2-NUS",
       "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. You're also likely to already be running boot2v4, which is the only version of boot2 available on the NUS."
@@ -11,7 +13,12 @@
     {
       "Name": "System Menu",
       "TID": "0000000100000002",
-      "Versions": [97, 128, 130, 162, 192, 193, 194, 224, 225, 226, 256, 257, 258, 288, 289, 290, 352, 353, 354, 384, 385, 386, 390, 416, 417, 418, 448, 449, 450, 454, 480, 481, 482, 486,512, 513, 514, 518],
+      "Versions": {
+        "USA": [97, 193, 225, 257, 289, 353, 385, 417, 449, 481, 513],
+        "EUR": [130, 162, 194, 226, 258, 290, 354, 386, 418, 450, 482, 514],
+        "JAP": [128, 192, 224, 256, 288, 352, 384, 416, 448, 480, 512],
+        "KOR": [390, 454, 486, 518]
+      },
       "Ticket": true,
       "WAD Name": "RVL-WiiSystemmenu",
       "Danger": "The System Menu is a critical part of the Wii's operation, and should not be modified without proper brick prevention in place. You should have BootMii installed as boot2 if possible, and if not, Priiloader installed before making changes to the System Menu."
@@ -19,7 +26,9 @@
     {
       "Name": "BC",
       "TID": "0000000100000100",
-      "Versions": [2, 4, 5, 6],
+      "Versions": {
+        "World": [2, 4, 5, 6]
+      },
       "Ticket": true,
       "WAD Name": "BC-NUS",
       "Danger": "BC is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if BC is damaged or not present, and BC will need to be reinstalled."
@@ -27,17 +36,47 @@
     {
       "Name": "MIOS",
       "TID": "0000000100000101",
-      "Versions": [4, 5, 8, 9, 10],
+      "Versions": {
+        "World": [4, 5, 8, 9, 10]
+      },
       "Ticket": true,
       "WAD Name": "MIOS-NUS",
       "Danger": "MIOS is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if MIOS is damaged or not present, and MIOS will need to be reinstalled."
+    },
+    {
+      "Name": "EULA",
+      "TID": "0001000848414BXX",
+      "Versions": {
+        "USA": [1, 2, 3],
+        "EUR": [1, 2, 3],
+        "JAP": [1, 2, 3],
+        "KOR": [1, 2, 3]
+      },
+      "Ticket": true,
+      "WAD Name": "EULA-NUS",
+      "Danger": "EULA is required to accept the End User License Agreement required to connect to WiiConnect24. Online services may not work correctly if EULA is damaged or not present, and EULA will need to be reinstalled."
+    },
+    {
+      "Name": "Region Select",
+      "TID": "0001000848414CXX",
+      "Versions": {
+        "USA": [1, 2],
+        "EUR": [1, 2],
+        "JAP": [1, 2],
+        "KOR": [2]
+      },
+      "Ticket": true,
+      "WAD Name": "Region-Select-NUS",
+      "Danger": "Region Select during the Wii's initial setup. It is unlikely to cause functional problems after initial setup, but you will not be able to set up your console again if you factory reset it if Region Select is damaged or not present, and Region Select will need to be reinstalled."
     }
   ],
   "IOS": [
     {
       "Name": "IOS 4",
       "TID": "0000000100000004",
-      "Versions": [65280],
+      "Versions": {
+        "World": [65280]
+      },
       "Ticket": true,
       "WAD Name": "IOS4-64",
       "Danger": "This IOS is a stub, and no longer offers any functionality. It cannot be used to run any code."
@@ -45,21 +84,27 @@
     {
       "Name": "IOS 9",
       "TID": "0000000100000009",
-      "Versions": [520, 521, 778, 1034],
+      "Versions": {
+        "World": [520, 521, 778, 1034]
+      },
       "Ticket": true,
       "WAD Name": "IOS9-64"
     },
     {
       "Name": "IOS 10",
       "TID": "000000010000000A",
-      "Versions": [768],
+      "Versions": {
+        "World": [768]
+      },
       "Ticket": true,
       "WAD Name": "IOS10-64"
     },
     {
       "Name": "IOS 11",
       "TID": "000000010000000B",
-      "Versions": [10, 256],
+      "Versions": {
+        "World": [10, 256]
+      },
       "Ticket": true,
       "WAD Name": "IOS11-64",
       "Danger": "Version 256 of IOS 11 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.0-2.1, DO NOT install version 256, as the System Menu relies on IOS 11."
@@ -67,35 +112,45 @@
     {
       "Name": "IOS 12",
       "TID": "000000010000000C",
-      "Versions": [6, 11, 12, 269, 525, 526],
+      "Versions": {
+        "World": [6, 11, 12, 269, 525, 526]
+      },
       "Ticket": true,
       "WAD Name": "IOS12-64"
     },
     {
       "Name": "IOS 13",
       "TID": "000000010000000D",
-      "Versions": [10, 15, 16, 273, 1031, 1032],
+      "Versions": {
+        "World": [10, 15, 16, 273, 1031, 1032]
+      },
       "Ticket": true,
       "WAD Name": "IOS13-64"
     },
     {
       "Name": "IOS 14",
       "TID": "000000010000000E",
-      "Versions": [262, 263, 520, 1031, 1032],
+      "Versions": {
+        "World": [262, 263, 520, 1031, 1032]
+      },
       "Ticket": true,
       "WAD Name": "IOS14-64"
     },
     {
       "Name": "IOS 15",
       "TID": "000000010000000F",
-      "Versions": [257, 258, 259, 260, 265, 266, 523, 1031, 1032],
+      "Versions": {
+        "World": [257, 258, 259, 260, 265, 266, 523, 1031, 1032]
+      },
       "Ticket": true,
       "WAD Name": "IOS15-64"
     },
     {
       "Name": "IOS 16",
       "TID": "0000000100000010",
-      "Versions": [512],
+      "Versions": {
+        "World": [512]
+      },
       "Ticket": true,
       "WAD Name": "IOS16-64",
       "Danger": "This IOS is a stub, and no longer offers any functionality. It cannot be used to run any code."
@@ -103,14 +158,18 @@
     {
       "Name": "IOS 17",
       "TID": "0000000100000011",
-      "Versions": [512, 517, 518, 775, 1031, 1032],
+      "Versions": {
+        "World": [512, 517, 518, 775, 1031, 1032]
+      },
       "Ticket": true,
       "WAD Name": "IOS17-64"
     },
     {
       "Name": "IOS 20",
       "TID": "0000000100000014",
-      "Versions": [12, 256],
+      "Versions": {
+        "World": [12, 256]
+      },
       "Ticket": true,
       "WAD Name": "IOS20-64",
       "Danger": "Version 256 of IOS 20 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.2, DO NOT install version 256, as the System Menu relies on IOS 20."
@@ -118,28 +177,36 @@
     {
       "Name": "IOS 21",
       "TID": "0000000100000015",
-      "Versions": [514, 515, 516, 517, 522, 525, 782, 1038, 1039],
+      "Versions": {
+        "World": [514, 515, 516, 517, 522, 525, 782, 1038, 1039]
+      },
       "Ticket": true,
       "WAD Name": "IOS21-64"
     },
     {
       "Name": "IOS 22",
       "TID": "0000000100000016",
-      "Versions": [777, 780, 1037, 1293, 1294],
+      "Versions": {
+        "World": [777, 780, 1037, 1293, 1294]
+      },
       "Ticket": true,
       "WAD Name": "IOS22-64"
     },
     {
       "Name": "IOS 28",
       "TID": "000000010000001C",
-      "Versions": [1292, 1293, 1550, 1806, 1807],
+      "Versions": {
+        "World": [1292, 1293, 1550, 1806, 1807]
+      },
       "Ticket": true,
       "WAD Name": "IOS28-64"
     },
     {
       "Name": "IOS 30",
       "TID": "000000010000001E",
-      "Versions": [1037, 1039, 1040, 2576, 2816],
+      "Versions": {
+        "World": [1037, 1039, 1040, 2576, 2816]
+      },
       "Ticket": true,
       "WAD Name": "IOS30-64",
       "Danger": "Version 2816 of IOS 30 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.0-3.3, DO NOT install version 2816, as the System Menu relies on IOS 30."
@@ -147,56 +214,72 @@
     {
       "Name": "IOS 31",
       "TID": "000000010000001F",
-      "Versions": [1037, 1039, 1040, 2576, 3088, 3092, 3349, 3607, 3608],
+      "Versions": {
+        "World": [1037, 1039, 1040, 2576, 3088, 3092, 3349, 3607, 3608]
+      },
       "Ticket": true,
       "WAD Name": "IOS31-64"
     },
     {
       "Name": "IOS 33",
       "TID": "0000000100000021",
-      "Versions": [1040, 2832, 2834, 3091, 3607, 3608],
+      "Versions": {
+        "World": [1040, 2832, 2834, 3091, 3607, 3608]
+      },
       "Ticket": true,
       "WAD Name": "IOS33-64"
     },
     {
       "Name": "IOS 34",
       "TID": "0000000100000022",
-      "Versions": [1039, 3087, 3091, 3348, 3607, 3608],
+      "Versions": {
+        "World": [1039, 3087, 3091, 3348, 3607, 3608]
+      },
       "Ticket": true,
       "WAD Name": "IOS34-64"
     },
     {
       "Name": "IOS 35",
       "TID": "0000000100000023",
-      "Versions": [1040, 3088, 3092, 3349, 3607, 3608],
+      "Versions": {
+        "World": [1040, 3088, 3092, 3349, 3607, 3608]
+      },
       "Ticket": true,
       "WAD Name": "IOS35-64"
     },
     {
       "Name": "IOS 36",
       "TID": "0000000100000024",
-      "Versions": [1042, 3090, 3094, 3351, 3607, 3608],
+      "Versions": {
+        "World": [1042, 3090, 3094, 3351, 3607, 3608]
+      },
       "Ticket": true,
       "WAD Name": "IOS36-64"
     },
     {
       "Name": "IOS 37",
       "TID": "0000000100000025",
-      "Versions": [2070, 3609, 3612, 3869, 5662, 5663],
+      "Versions": {
+        "World": [2070, 3609, 3612, 3869, 5662, 5663]
+      },
       "Ticket": true,
       "WAD Name": "IOS37-64"
     },
     {
       "Name": "IOS 38",
       "TID": "0000000100000026",
-      "Versions": [3610, 3867, 4123, 4124],
+      "Versions": {
+        "World": [3610, 3867, 4123, 4124]
+      },
       "Ticket": true,
       "WAD Name": "IOS38-64"
     },
     {
       "Name": "IOS 40",
       "TID": "0000000100000028",
-      "Versions": [3072],
+      "Versions": {
+        "World": [3072]
+      },
       "Ticket": true,
       "WAD Name": "IOS40-64",
       "Danger": "Version 3072 of IOS 40 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, DO NOT install version 3072, as the System Menu relies on IOS 40."
@@ -204,42 +287,54 @@
     {
       "Name": "IOS 41",
       "TID": "0000000100000029",
-      "Versions": [2835, 3091, 3348, 3606, 3607],
+      "Versions": {
+        "World": [2835, 3091, 3348, 3606, 3607]
+      },
       "Ticket": true,
       "WAD Name": "IOS41-64"
     },
     {
       "Name": "IOS 43",
       "TID": "000000010000002B",
-      "Versions": [2835, 3091, 3348, 3606, 3607],
+      "Versions": {
+        "World": [2835, 3091, 3348, 3606, 3607]
+      },
       "Ticket": true,
       "WAD Name": "IOS43-64"
     },
     {
       "Name": "IOS 45",
       "TID": "000000010000002D",
-      "Versions": [2835, 3091, 3348, 3606, 3607],
+      "Versions": {
+        "World": [2835, 3091, 3348, 3606, 3607]
+      },
       "Ticket": true,
       "WAD Name": "IOS45-64"
     },
     {
       "Name": "IOS 46",
       "TID": "000000010000002E",
-      "Versions": [2837, 3093, 3350, 3606, 3607],
+      "Versions": {
+        "World": [2837, 3093, 3350, 3606, 3607]
+      },
       "Ticket": true,
       "WAD Name": "IOS46-64"
     },
     {
       "Name": "IOS 48",
       "TID": "0000000100000030",
-      "Versions": [4123, 4124],
+      "Versions": {
+        "World": [4123, 4124]
+      },
       "Ticket": true,
       "WAD Name": "IOS48-64"
     },
     {
       "Name": "IOS 50",
       "TID": "0000000100000032",
-      "Versions": [4889, 5120],
+      "Versions": {
+        "World": [4889, 5120]
+      },
       "Ticket": true,
       "WAD Name": "IOS50-64",
       "Danger": "Version 5120 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, DO NOT install version 5120, as the System Menu relies on IOS 50."
@@ -247,7 +342,9 @@
     {
       "Name": "IOS 51",
       "TID": "0000000100000033",
-      "Versions": [4633, 4864],
+      "Versions": {
+        "World": [4633, 4864]
+      },
       "Ticket": true,
       "WAD Name": "IOS51-64",
       "Danger": "Version 4864 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code."
@@ -255,7 +352,9 @@
     {
       "Name": "IOS 52",
       "TID": "0000000100000034",
-      "Versions": [5661, 5888],
+      "Versions": {
+        "World": [5661, 5888]
+      },
       "Ticket": true,
       "WAD Name": "IOS52-64",
       "Danger": "Version 5888 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.5, DO NOT install version 5888, as the System Menu relies on IOS 50."

@@ -6,9 +6,11 @@ import pathlib
 import libWiiPy
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem
-from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
+from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, Qt
 
 from qt.py.ui_MainMenu import Ui_MainWindow
+
+regions = [["USA", "USA/NTSC", "45"], ["JAP", "Japan", "4A"], ["EUR", "Europe/PAL", "50"], ["KOR", "Korea", "4B"]]
 
 
 class WorkerSignals(QObject):
@@ -29,6 +31,7 @@ class Worker(QRunnable):
     def run(self):
         try:
             self.fn(**self.kwargs)
+        # TODO: Handle errors better than this
         except ValueError:
             self.signals.result.emit(1)
         else:
@@ -48,17 +51,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         tree = self.ui.title_tree
         self.tree_categories = []
 
+        global regions
         for key in wii_database:
             new_category = QTreeWidgetItem()
             new_category.setText(0, key)
             for title in wii_database[key]:
                 new_title = QTreeWidgetItem()
                 new_title.setText(0, title["TID"] + " - " + title["Name"])
-                for version in title["Versions"]:
-                    new_version = QTreeWidgetItem()
-                    new_version.setText(0, str(version))
 
-                    new_title.addChild(new_version)
+                for region in title["Versions"]:
+                    new_region = QTreeWidgetItem()
+                    region_title = ""
+                    if region == "World":
+                        region_title = "World"
+                    else:
+                        for entry in regions:
+                            if entry[0] == region:
+                                region_title = entry[1]
+                    new_region.setText(0, region_title)
+                    for version in title["Versions"][region]:
+                        new_version = QTreeWidgetItem()
+                        new_version.setText(0, "v" + str(version))
+                        new_region.addChild(new_version)
+                    new_title.addChild(new_region)
                 new_category.addChild(new_title)
             self.tree_categories.append(new_category)
 
@@ -67,13 +82,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     @Slot(QTreeWidgetItem, int)
     def onItemClicked(self, item, col):
+        global regions
+        region_names = []
+        for region in regions:
+            region_names.append(region[1])
         if item.parent() is not None and item.parent() not in self.tree_categories:
-            category = item.parent().parent().text(0)
+            category = item.parent().parent().parent().text(0)
             for title in wii_database[category]:
-                if item.parent().text(0) == (title["TID"] + " - " + title["Name"]):
+                if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
                     selected_title = title
                     selected_version = item.text(0)
-                    self.load_title_data(selected_title, selected_version)
+                    selected_region = item.parent().text(0)
+                    self.load_title_data(selected_title, selected_version, selected_region)
 
     def update_log_text(self, new_text):
         self.log_text += new_text + "\n"
@@ -82,8 +102,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         scrollBar = self.ui.log_text_browser.verticalScrollBar()
         scrollBar.setValue(scrollBar.maximum())
 
-    def load_title_data(self, selected_title, selected_version):
-        self.ui.tid_entry.setText(selected_title["TID"])
+    def load_title_data(self, selected_title, selected_version, selected_region=None):
+        selected_version = selected_version[1:]
+        if selected_title["TID"][-2:] == "XX":
+            global regions
+            region_code = ""
+            for region in regions:
+                if region[1] == selected_region:
+                    region_code = region[2]
+            tid = selected_title["TID"][:-2] + region_code
+        else:
+            tid = selected_title["TID"]
+        self.ui.tid_entry.setText(tid)
         self.ui.version_entry.setText(selected_version)
         wad_name = selected_title["WAD Name"] + "-v" + selected_version + ".wad"
         self.ui.wad_file_entry.setText(wad_name)
@@ -92,8 +122,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             danger_text = selected_title["Danger"]
         except KeyError:
             pass
-        self.log_text = (selected_title["TID"] + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version
-                         + "\n\n" + danger_text + "\n")
+        self.log_text = (tid + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version + "\n\n" +
+                         danger_text + "\n")
         self.ui.log_text_browser.setText(self.log_text)
 
     def download_btn_pressed(self):
@@ -164,19 +194,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         title.load_content_records()
         content_list = []
         for content in range(len(title.tmd.content_records)):
-            progress_callback.emit(" - Downloading content " + str(content + 1) + " of " +
-                                   str(len(title.tmd.content_records)) + " (" +
-                                   str(title.tmd.content_records[content].content_size) + " bytes)...")
-            content_list.append(libWiiPy.download_content(tid, title.tmd.content_records[content].content_id))
-            progress_callback.emit("  - Done!")
-            if self.ui.keep_enc_chkbox.isChecked() is True:
-                content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
-                if len(content_id_hex) < 2:
-                    content_id_hex = "0" + content_id_hex
-                content_file_name = "000000" + content_id_hex
-                enc_content_out = open(os.path.join(version_dir, content_file_name), "wb")
-                enc_content_out.write(content_list[content])
-                enc_content_out.close()
+            content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
+            if len(content_id_hex) < 2:
+                content_id_hex = "0" + content_id_hex
+            content_file_name = "000000" + content_id_hex
+            if self.ui.use_local_chkbox.isChecked() is True and os.path.exists(os.path.join(version_dir,
+                                                                                            content_file_name)):
+                progress_callback.emit(" - Using local copy of content " + str(content + 1) + " of " +
+                                       str(len(title.tmd.content_records)))
+                local_file = open(os.path.join(version_dir, content_file_name), "rb")
+                content_list.append(local_file.read())
+            else:
+                progress_callback.emit(" - Downloading content " + str(content + 1) + " of " +
+                                       str(len(title.tmd.content_records)) + " (" +
+                                       str(title.tmd.content_records[content].content_size) + " bytes)...")
+                content_list.append(libWiiPy.download_content(tid, title.tmd.content_records[content].content_id))
+                progress_callback.emit("  - Done!")
+                if self.ui.keep_enc_chkbox.isChecked() is True:
+                    content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
+                    if len(content_id_hex) < 2:
+                        content_id_hex = "0" + content_id_hex
+                    content_file_name = "000000" + content_id_hex
+                    enc_content_out = open(os.path.join(version_dir, content_file_name), "wb")
+                    enc_content_out.write(content_list[content])
+                    enc_content_out.close()
         title.content.content_list = content_list
 
         if self.ui.create_dec_chkbox.isChecked() is True:
