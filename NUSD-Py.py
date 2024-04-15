@@ -47,6 +47,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.pack_wad_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
 
+        self.ui.log_text_browser.setText("NUSD-Py v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy\n\n"
+                                         "Select a title from the list on the left, or enter a Title ID to begin.")
+
         tree = self.ui.title_tree
         self.tree_categories = []
 
@@ -81,18 +84,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     @Slot(QTreeWidgetItem, int)
     def onItemClicked(self, item, col):
-        global regions
-        region_names = []
-        for region in regions:
-            region_names.append(region[1])
-        if item.parent() is not None and item.parent() not in self.tree_categories:
-            category = item.parent().parent().parent().text(0)
-            for title in wii_database[category]:
-                if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
-                    selected_title = title
-                    selected_version = item.text(0)
-                    selected_region = item.parent().text(0)
-                    self.load_title_data(selected_title, selected_version, selected_region)
+        if self.ui.download_btn.isEnabled() is True:
+            global regions
+            region_names = []
+            for region in regions:
+                region_names.append(region[1])
+            if (item.parent() is not None and item.parent() not in self.tree_categories
+                    and item.parent().parent() not in self.tree_categories):
+                category = item.parent().parent().parent().text(0)
+                for title in wii_database[category]:
+                    if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
+                        selected_title = title
+                        selected_version = item.text(0)
+                        selected_region = item.parent().text(0)
+                        self.load_title_data(selected_title, selected_version, selected_region)
 
     def update_log_text(self, new_text):
         self.log_text += new_text + "\n"
@@ -121,12 +126,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             danger_text = selected_title["Danger"]
         except KeyError:
             pass
+        if selected_title["Ticket"] is False:
+            danger_text = danger_text + ("\n\nNote: This Title does not have a Ticket available, so it cannot be "
+                                         "packed into a WAD or decrypted.")
         self.log_text = (tid + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version + "\n\n" +
                          danger_text + "\n")
         self.ui.log_text_browser.setText(self.log_text)
 
     def download_btn_pressed(self):
+        self.ui.tid_entry.setEnabled(False)
+        self.ui.version_entry.setEnabled(False)
         self.ui.download_btn.setEnabled(False)
+        self.ui.pack_wad_chkbox.setEnabled(False)
+        self.ui.keep_enc_chkbox.setEnabled(False)
+        self.ui.create_dec_chkbox.setEnabled(False)
+        self.ui.use_local_chkbox.setEnabled(False)
+        self.ui.wad_file_entry.setEnabled(False)
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
 
@@ -154,7 +169,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                       " title database, and that the provided version exists for the title you are"
                                       " attempting to download.")
             msgBox.exec()
+        elif result == 1:
+            msgBox.setIcon(QMessageBox.Icon.Warning)
+            msgBox.setWindowTitle("Ticket Not Available")
+            msgBox.setText("No Ticket is Available for the Requested Title!")
+            msgBox.setInformativeText("A ticket could not be downloaded for the requested title, but you have selected "
+                                      "\"Pack WAD\" or \"Create Decrypted Contents\". These options are not available "
+                                      "for titles without a ticket. Only encrypted contents have been saved.")
+            msgBox.exec()
+        self.ui.tid_entry.setEnabled(True)
+        self.ui.version_entry.setEnabled(True)
         self.ui.download_btn.setEnabled(True)
+        self.ui.pack_wad_chkbox.setEnabled(True)
+        self.ui.keep_enc_chkbox.setEnabled(True)
+        self.ui.create_dec_chkbox.setEnabled(True)
+        self.ui.use_local_chkbox.setEnabled(True)
+        if self.ui.pack_wad_chkbox.isChecked() is True:
+            self.ui.wad_file_entry.setEnabled(True)
 
     def run_nus_download(self, progress_callback):
         tid = self.ui.tid_entry.text()
@@ -164,6 +195,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             version = int(self.ui.version_entry.text())
         except ValueError:
             version = None
+
+        pack_wad_enabled = self.ui.pack_wad_chkbox.isChecked()
+        decrypt_contents_enabled = self.ui.create_dec_chkbox.isChecked()
 
         title = libWiiPy.Title()
 
@@ -195,10 +229,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         tmd_out.close()
 
         progress_callback.emit(" - Downloading and parsing Ticket...")
-        title.load_ticket(libWiiPy.download_ticket(tid))
-        ticket_out = open(os.path.join(version_dir, "tik"), "wb")
-        ticket_out.write(title.ticket.dump())
-        ticket_out.close()
+        try:
+            title.load_ticket(libWiiPy.download_ticket(tid))
+            ticket_out = open(os.path.join(version_dir, "tik"), "wb")
+            ticket_out.write(title.ticket.dump())
+            ticket_out.close()
+        except ValueError:
+            progress_callback.emit("  - No Ticket is available!")
+            pack_wad_enabled = False
+            decrypt_contents_enabled = False
 
         title.load_content_records()
         content_list = []
@@ -229,7 +268,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     enc_content_out.close()
         title.content.content_list = content_list
 
-        if self.ui.create_dec_chkbox.isChecked() is True:
+        if decrypt_contents_enabled is True:
             for content in range(len(title.tmd.content_records)):
                 progress_callback.emit(" - Decrypting content " + str(content + 1) + " of " +
                                        str(len(title.tmd.content_records)) + "...")
@@ -242,7 +281,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 dec_content_out.write(dec_content)
                 dec_content_out.close()
 
-        if self.ui.pack_wad_chkbox.isChecked() is True:
+        if pack_wad_enabled is True:
             progress_callback.emit(" - Building certificate...")
             title.wad.set_cert_data(libWiiPy.download_cert())
 
@@ -258,6 +297,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             file.close()
 
         progress_callback.emit("Download complete!")
+        if ((not pack_wad_enabled and self.ui.pack_wad_chkbox.isChecked()) or
+                (not decrypt_contents_enabled and self.ui.create_dec_chkbox.isChecked())):
+            return 1
+        return 0
 
     def pack_wad_chkbox_toggled(self):
         if self.ui.pack_wad_chkbox.isChecked() is True:
