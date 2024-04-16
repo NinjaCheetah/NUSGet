@@ -5,7 +5,7 @@ import pathlib
 
 import libWiiPy
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
 
 from qt.py.ui_MainMenu import Ui_MainWindow
@@ -46,6 +46,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.pack_wad_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
+        # noinspection PyUnresolvedReferences
+        self.ui.title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
 
         self.ui.log_text_browser.setText("NUSD-Py v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy\n\n"
                                          "Select a title from the list on the left, or enter a Title ID to begin.")

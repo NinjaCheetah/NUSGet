@@ -1,27 +1,13 @@
 {
   "System": [
     {
-      "Name": "boot2",
-      "TID": "0000000100000001",
+      "Name": "BBC iPlayer Channel",
+      "TID": "0001000148434AXX",
       "Versions": {
-        "World": [4]
+        "EUR": [768]
       },
-      "Ticket": true,
-      "WAD Name": "boot2-NUS",
-      "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. You're also likely to already be running boot2v4, which is the only version of boot2 available on the NUS."
-    },
-    {
-      "Name": "System Menu",
-      "TID": "0000000100000002",
-      "Versions": {
-        "USA": [97, 193, 225, 257, 289, 353, 385, 417, 449, 481, 513],
-        "EUR": [130, 162, 194, 226, 258, 290, 354, 386, 418, 450, 482, 514],
-        "JAP": [128, 192, 224, 256, 288, 352, 384, 416, 448, 480, 512],
-        "KOR": [390, 454, 486, 518]
-      },
-      "Ticket": true,
-      "WAD Name": "RVL-WiiSystemmenu",
-      "Danger": "The System Menu is a critical part of the Wii's operation, and should not be modified without proper brick prevention in place. You should have BootMii installed as boot2 if possible, and if not, Priiloader installed before making changes to the System Menu."
+      "Ticket": false,
+      "WAD Name": "BBC-iPlayer-Channel-NUS"
     },
     {
       "Name": "BC",
@@ -34,14 +20,34 @@
       "Danger": "BC is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if BC is damaged or not present."
     },
     {
-      "Name": "MIOS",
-      "TID": "0000000100000101",
+      "Name": "boot2",
+      "TID": "0000000100000001",
       "Versions": {
-        "World": [4, 5, 8, 9, 10]
+        "World": [4]
       },
       "Ticket": true,
-      "WAD Name": "MIOS-NUS",
-      "Danger": "MIOS is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if MIOS is damaged or not present."
+      "WAD Name": "boot2-NUS",
+      "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. You're also likely to already be running boot2v4, which is the only version of boot2 available on the NUS."
+    },
+    {
+      "Name": "Check Mii Out Channel",
+      "TID": "00010001484150XX",
+      "Versions": {
+        "USA": [1, 3, 512],
+        "EUR": [1, 3, 512],
+        "JAP": [1, 3, 512]
+      },
+      "Ticket": false,
+      "WAD Name": "Check-Mii-Out-Channel-NUS"
+    },
+    {
+      "Name": "Digicam Print Channel",
+      "TID": "00010001484344XX",
+      "Versions": {
+        "JAP": [1024]
+      },
+      "Ticket": true,
+      "WAD Name": "Digicam-Print-Channel-NUS"
     },
     {
       "Name": "EULA",
@@ -57,6 +63,16 @@
       "Danger": "\"EULA\" is a hidden channel used to display the End User License Agreement that must be accepted to connect to WiiConnect24. Online services may not work correctly if this channel is damaged or not present."
     },
     {
+      "Name": "MIOS",
+      "TID": "0000000100000101",
+      "Versions": {
+        "World": [4, 5, 8, 9, 10]
+      },
+      "Ticket": true,
+      "WAD Name": "MIOS-NUS",
+      "Danger": "MIOS is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if MIOS is damaged or not present."
+    },
+    {
       "Name": "Region Select",
       "TID": "0001000848414CXX",
       "Versions": {
@@ -68,6 +84,19 @@
       "Ticket": true,
       "WAD Name": "Region-Select-NUS",
       "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. It is unlikely to cause functional problems after setup is complete, but you will not be able to set up your console again if it is factory reset if this channel is damaged or not present, and it will need to be reinstalled."
+    },
+    {
+      "Name": "System Menu",
+      "TID": "0000000100000002",
+      "Versions": {
+        "USA": [97, 193, 225, 257, 289, 353, 385, 417, 449, 481, 513],
+        "EUR": [130, 162, 194, 226, 258, 290, 354, 386, 418, 450, 482, 514],
+        "JAP": [128, 192, 224, 256, 288, 352, 384, 416, 448, 480, 512],
+        "KOR": [390, 454, 486, 518]
+      },
+      "Ticket": true,
+      "WAD Name": "RVL-WiiSystemmenu",
+      "Danger": "The System Menu is a critical part of the Wii's operation, and should not be modified without proper brick prevention in place. You should have BootMii installed as boot2 if possible, and if not, Priiloader installed before making changes to the System Menu."
     }
   ],
   "IOS": [
