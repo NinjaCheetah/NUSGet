@@ -149,7 +149,7 @@ p, li { white-space: pre-wrap; }
       <item>
        <widget class="QCheckBox" name="keep_enc_chkbox">
         <property name="text">
-         <string>Keep Enc. Contents</string>
+         <string>Keep encrypted contents</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -159,7 +159,7 @@ p, li { white-space: pre-wrap; }
       <item>
        <widget class="QCheckBox" name="create_dec_chkbox">
         <property name="text">
-         <string>Create Decrypted Contents (*.app)</string>
+         <string>Create decrypted contents (*.app)</string>
         </property>
        </widget>
       </item>
@@ -169,7 +169,7 @@ p, li { white-space: pre-wrap; }
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>Use Local Files If They Exist</string>
+         <string>Use local files, if they exist</string>
         </property>
        </widget>
       </item>

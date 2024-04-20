@@ -156,8 +156,8 @@ class Ui_MainWindow(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
         self.pack_wad_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack WAD", None))
         self.wad_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
-        self.keep_enc_chkbox.setText(QCoreApplication.translate("MainWindow", u"Keep Enc. Contents", None))
-        self.create_dec_chkbox.setText(QCoreApplication.translate("MainWindow", u"Create Decrypted Contents (*.app)", None))
-        self.use_local_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use Local Files If They Exist", None))
+        self.keep_enc_chkbox.setText(QCoreApplication.translate("MainWindow", u"Keep encrypted contents", None))
+        self.create_dec_chkbox.setText(QCoreApplication.translate("MainWindow", u"Create decrypted contents (*.app)", None))
+        self.use_local_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use local files, if they exist", None))
     # retranslateUi
 

@@ -171,6 +171,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                       " title database, and that the provided version exists for the title you are"
                                       " attempting to download.")
             msgBox.exec()
+        elif result == -3:
+            msgBox.setWindowTitle("Content Decryption Failed")
+            msgBox.setText("Content decryption was not successful! Decrypted contents could not be created.")
+            msgBox.setInformativeText("Your TMD or Ticket may be damaged, or they may not correspond with the content "
+                                      "being decrypted. If you have checked \"Use local files, if they exist\", try "
+                                      "disabling that option before trying the download again to fix potential issues "
+                                      "with local data.")
+            msgBox.exec()
         elif result == 1:
             msgBox.setIcon(QMessageBox.Icon.Warning)
             msgBox.setWindowTitle("Ticket Not Available")
@@ -230,16 +238,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         tmd_out.write(title.tmd.dump())
         tmd_out.close()
 
-        progress_callback.emit(" - Downloading and parsing Ticket...")
-        try:
-            title.load_ticket(libWiiPy.download_ticket(tid))
-            ticket_out = open(os.path.join(version_dir, "tik"), "wb")
-            ticket_out.write(title.ticket.dump())
-            ticket_out.close()
-        except ValueError:
-            progress_callback.emit("  - No Ticket is available!")
-            pack_wad_enabled = False
-            decrypt_contents_enabled = False
+        if self.ui.use_local_chkbox.isChecked() is True and os.path.exists(os.path.join(version_dir, "tik")):
+            progress_callback.emit(" - Parsing local copy of Ticket...")
+            local_ticket = open(os.path.join(version_dir, "tik"), "rb")
+            title.load_ticket(local_ticket.read())
+        else:
+            progress_callback.emit(" - Downloading and parsing Ticket...")
+            try:
+                title.load_ticket(libWiiPy.download_ticket(tid))
+                ticket_out = open(os.path.join(version_dir, "tik"), "wb")
+                ticket_out.write(title.ticket.dump())
+                ticket_out.close()
+            except ValueError:
+                progress_callback.emit("  - No Ticket is available!")
+                pack_wad_enabled = False
+                decrypt_contents_enabled = False
 
         title.load_content_records()
         content_list = []
@@ -271,17 +284,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         title.content.content_list = content_list
 
         if decrypt_contents_enabled is True:
-            for content in range(len(title.tmd.content_records)):
-                progress_callback.emit(" - Decrypting content " + str(content + 1) + " of " +
-                                       str(len(title.tmd.content_records)) + "...")
-                dec_content = title.get_content_by_index(content)
-                content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
-                if len(content_id_hex) < 2:
-                    content_id_hex = "0" + content_id_hex
-                content_file_name = "000000" + content_id_hex + ".app"
-                dec_content_out = open(os.path.join(version_dir, content_file_name), "wb")
-                dec_content_out.write(dec_content)
-                dec_content_out.close()
+            try:
+                for content in range(len(title.tmd.content_records)):
+                    progress_callback.emit(" - Decrypting content " + str(content + 1) + " of " +
+                                           str(len(title.tmd.content_records)) + "...")
+                    dec_content = title.get_content_by_index(content)
+                    content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
+                    if len(content_id_hex) < 2:
+                        content_id_hex = "0" + content_id_hex
+                    content_file_name = "000000" + content_id_hex + ".app"
+                    dec_content_out = open(os.path.join(version_dir, content_file_name), "wb")
+                    dec_content_out.write(dec_content)
+                    dec_content_out.close()
+            except ValueError:
+                return -3
 
         if pack_wad_enabled is True:
             progress_callback.emit(" - Building certificate...")
