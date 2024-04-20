@@ -167,8 +167,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         elif result == -2:
             msgBox.setWindowTitle("Title ID/Version Not Found")
             msgBox.setText("No title with the provided Title ID or version could be found!")
-            msgBox.setInformativeText("Please make sure that you have entered a valid Title ID or selected one from the"
-                                      " title database, and that the provided version exists for the title you are"
+            msgBox.setInformativeText("Please make sure that you have entered a valid Title ID, or selected one from "
+                                      " the title database, and that the provided version exists for the title you are"
                                       " attempting to download.")
             msgBox.exec()
         elif result == -3:
@@ -199,7 +199,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def run_nus_download(self, progress_callback):
         tid = self.ui.tid_entry.text()
-        if tid == "":
+        if len(tid) != 16:
             return -1
         try:
             version = int(self.ui.version_entry.text())
