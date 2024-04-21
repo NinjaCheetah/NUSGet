@@ -17,7 +17,7 @@
       },
       "Ticket": true,
       "WAD Name": "BC-NUS",
-      "Danger": "BC is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if BC is damaged or not present."
+      "Danger": "BC is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if BC is damaged or missing."
     },
     {
       "Name": "boot2",
@@ -27,7 +27,7 @@
       },
       "Ticket": true,
       "WAD Name": "boot2-NUS",
-      "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. You're also likely to already be running boot2v4, which is the only version of boot2 available on the NUS."
+      "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. Most updated Wiis will already be running boot2v4, which is the only version of boot2 available on the NUS."
     },
     {
       "Name": "Check Mii Out Channel",
@@ -60,7 +60,7 @@
       },
       "Ticket": true,
       "WAD Name": "EULA-NUS",
-      "Danger": "\"EULA\" is a hidden channel used to display the End User License Agreement that must be accepted to connect to WiiConnect24. Online services may not work correctly if this channel is damaged or not present."
+      "Danger": "\"EULA\" is a hidden channel used to display the End User License Agreement that must be accepted to connect to WiiConnect24. Online services may not work correctly if this channel is damaged or missing."
     },
     {
       "Name": "MIOS",
@@ -70,7 +70,7 @@
       },
       "Ticket": true,
       "WAD Name": "MIOS-NUS",
-      "Danger": "MIOS is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if MIOS is damaged or not present."
+      "Danger": "MIOS is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if MIOS is damaged or missing."
     },
     {
       "Name": "Region Select",
@@ -83,7 +83,7 @@
       },
       "Ticket": true,
       "WAD Name": "Region-Select-NUS",
-      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. It is unlikely to cause functional problems after setup is complete, but you will not be able to set up your console again if it is factory reset if this channel is damaged or not present, and it will need to be reinstalled."
+      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
     },
     {
       "Name": "System Menu",
@@ -376,7 +376,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS51-64",
-      "Danger": "Version 4864 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code."
+      "Danger": "Version 4864 of IOS 51 is a stub, and no longer offers any functionality. It cannot be used to run any code."
     },
     {
       "Name": "IOS 52",

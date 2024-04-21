@@ -91,7 +91,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             region_names = []
             for region in regions:
                 region_names.append(region[1])
-            if (item.parent() is not None and item.parent() not in self.tree_categories
+            if ((item.parent() is not None) and item.parent() not in self.tree_categories
                     and item.parent().parent() not in self.tree_categories):
                 category = item.parent().parent().parent().text(0)
                 for title in wii_database[category]:
@@ -129,7 +129,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         except KeyError:
             pass
         if selected_title["Ticket"] is False:
-            danger_text = danger_text + ("\n\nNote: This Title does not have a Ticket available, so it cannot be "
+            danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be "
                                          "packed into a WAD or decrypted.")
         self.log_text = (tid + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version + "\n\n" +
                          danger_text + "\n")
