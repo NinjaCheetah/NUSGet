@@ -330,7 +330,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    wii_database = json.load(open("wii-database.json", "r"))
+    database_file = open(os.path.join(os.path.dirname(__file__), "data/wii-database.json"))
+    wii_database = json.load(database_file)
 
     out_folder = pathlib.Path("titles")
     if not out_folder.is_dir():
