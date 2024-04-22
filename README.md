@@ -35,12 +35,12 @@ nuitka --show-progress --assume-yes-for-downloads --onefile --plugin-enable=pysi
 
 **Linux**
 ```
-nuitka3 --show-progress  --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
+nuitka3 --show-progress --include-data-dir=data=data  --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
 ```
 
 **macOS**
 ```
-nuitka3 --show-progress --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --macos-create-app-bundle --disable-console
+nuitka3 --show-progress --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --macos-create-app-bundle --disable-console
 ```
 
 The result will be a single binary named `NUSD-Py` that contains everything required to run NUSD-Py. No dependencies are needed on the target system.
