@@ -20,10 +20,9 @@ The following options are available:
 - **Linux:** Python 3.11
 - **macOS:** Python 3.11 (Requires macOS 10.9 or later, however macOS 11.0 or later may be required for library support)
 
-Python 3.12 is not supported at this time.
+**Python 3.12 is not supported at this time.**
 
 First, install the required dependencies:
-To build it yourself, first install required Python modules with:
 ```
 pip install -r requirements.txt
 ```
