@@ -1,6 +1,8 @@
 # NUSD-Py
 A modern replacement for NUS Downloader built with Python and Qt 6. Powered by libWiiPy.
 
+[![Python application](https://github.com/NinjaCheetah/NUSD-Py/actions/workflows/python-build.yml/badge.svg)](https://github.com/NinjaCheetah/NUSD-Py/actions/workflows/python-build.yml)
+
 ## Why?
 NUS Downloader (Nintendo Update Server Downloader), is an old tool for downloading titles from the Nintendo Update Servers for the Wii and DSi. Originally released in 2009, and effectively last updated in 2011, it stills works today, however it definitely shows its age, and is in need of a refresh. One of the major shortcomings of NUSD is that it only supports Windows, as most of the tools for the Wii from that era are written in C# and use the .NET Framework, especially since they tend to rely on the C# library libWiiSharp.
 
@@ -30,12 +32,12 @@ Then, use the command for your platform to build an executable with Nuitka:
 
 **Windows**
 ```
-nuitka --show-progress --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --disable-console
+nuitka --show-progress --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --disable-console
 ```
 
 **Linux**
 ```
-nuitka3 --show-progress --include-data-dir=data=data  --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
+nuitka3 --show-progress  --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
 ```
 
 **macOS**
