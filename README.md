@@ -14,17 +14,34 @@ The following options are available:
 - Create decrypted contents (*.app): Create decrypted files like `00000000.app`, `00000001.app`, etc., which are the decrypted data from the encrypted contents on the servers. Only supported for free titles.
 - Pack WAD: Pack the encrypted contents into a WAD file that can be installed on a Wii or in Dolphin Emulator. Only supported for free titles.
 
+## Building
 ### System Requirements
-**Windows:** 
-- 8.1 or newer (required for Python > 3.9)
-- Python 3.11
+- **Windows:** Python 3.11 (Requires Windows 8.1 or later)
+- **Linux:** Python 3.11
+- **macOS:** Python 3.11 (Requires macOS 10.9 or later, however macOS 11.0 or later may be required for library support)
 
-**Linux:** 
-- A modern Linux distro that offers Python 3.11
-- Python 3.11
+Python 3.12 is not supported at this time.
+
+First, install the required dependencies:
+To build it yourself, first install required Python modules with:
+```
+pip install -r requirements.txt
+```
+Then, use the command for your platform to build an executable with Nuitka:
+
+**Windows**
+```
+nuitka --show-progress --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --disable-console
+```
+
+**Linux**
+```
+nuitka3 --show-progress  --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
+```
 
 **macOS**
-- macOS 11.0+ (Older version may be supported, but Nuitka targets macOS 11.0)
-- Python 3.11
+```
+nuitka3 --show-progress --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --macos-create-app-bundle --disable-console
+```
 
-Python 3.12 is not fully compatible at this time. macOS is also unsupported at this time, because this tool relies on Windows exectuables that cannot easily be run on macOS.
+The result will be a single binary named `NUSD-Py` that contains everything required to run NUSD-Py. No dependencies are needed on the target system.
