@@ -333,9 +333,13 @@ if __name__ == "__main__":
     database_file = open(os.path.join(os.path.dirname(__file__), "data/wii-database.json"))
     wii_database = json.load(database_file)
 
-    out_folder = pathlib.Path("titles")
-    if not out_folder.is_dir():
-        out_folder.mkdir()
+    try:
+        # noinspection PyUnresolvedReferences
+        out_folder = os.path.join(__compiled__.containing_dir, "titles")
+    except NameError:
+        out_folder = os.path.join(os.path.dirname(sys.argv[0]), "titles")
+    if not os.path.isdir(out_folder):
+        os.mkdir(out_folder)
 
     window = MainWindow()
     window.setWindowTitle("NUSD-Py")
