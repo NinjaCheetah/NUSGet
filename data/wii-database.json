@@ -1,15 +1,6 @@
 {
   "System": [
     {
-      "Name": "BBC iPlayer Channel",
-      "TID": "0001000148434AXX",
-      "Versions": {
-        "EUR": [768]
-      },
-      "Ticket": false,
-      "WAD Name": "BBC-iPlayer-Channel-NUS"
-    },
-    {
       "Name": "BC",
       "TID": "0000000100000100",
       "Versions": {
@@ -28,26 +19,6 @@
       "Ticket": true,
       "WAD Name": "boot2-NUS",
       "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. Most updated Wiis will already be running boot2v4, which is the only version of boot2 available on the NUS."
-    },
-    {
-      "Name": "Check Mii Out Channel",
-      "TID": "00010001484150XX",
-      "Versions": {
-        "USA": [1, 3, 512],
-        "EUR": [1, 3, 512],
-        "JAP": [1, 3, 512]
-      },
-      "Ticket": false,
-      "WAD Name": "Check-Mii-Out-Channel-NUS"
-    },
-    {
-      "Name": "Digicam Print Channel",
-      "TID": "00010001484344XX",
-      "Versions": {
-        "JAP": [1024]
-      },
-      "Ticket": true,
-      "WAD Name": "Digicam-Print-Channel-NUS"
     },
     {
       "Name": "EULA",
@@ -95,8 +66,292 @@
         "KOR": [390, 454, 486, 518]
       },
       "Ticket": true,
-      "WAD Name": "RVL-WiiSystemmenu",
+      "WAD Name": "Wii-System-Menu",
       "Danger": "The System Menu is a critical part of the Wii's operation, and should not be modified without proper brick prevention in place. You should have BootMii installed as boot2 if possible, and if not, Priiloader installed before making changes to the System Menu."
+    }
+  ],
+  "System Channels": [
+    {
+      "Name": "Forecast Channel",
+      "TID": "00010002484146XX",
+      "Versions": {
+        "World": [3],
+        "USA": [6, 7],
+        "EUR": [6, 7],
+        "JAP": [6, 7]
+      },
+      "Ticket": true,
+      "WAD Name": "Forecast-Channel-NUS"
+    },
+    {
+      "Name": "Mii Channel",
+      "TID": "00010002484143XX",
+      "Versions": {
+        "World": [2, 3, 4, 5, 6]
+      },
+      "Ticket": true,
+      "WAD Name": "Mii-Channel-NUS"
+    },
+    {
+      "Name": "News Channel",
+      "TID": "00010002484147XX",
+      "Versions": {
+        "World": [3],
+        "USA": [6, 7],
+        "EUR": [6, 7],
+        "JAP": [6, 7]
+      },
+      "Ticket": true,
+      "WAD Name": "News-Channel-NUS"
+    },
+    {
+      "Name": "Photo Channel",
+      "TID": "00010002484141XX",
+      "Versions": {
+        "World": [1, 2]
+      },
+      "Ticket": true,
+      "WAD Name": "Photo-Channel-NUS"
+    },
+    {
+      "Name": "Photo Channel 1.1",
+      "TID": "00010002484159XX",
+      "Versions": {
+        "World": [1, 2, 3],
+        "KOR": [3]
+      },
+      "Ticket": true,
+      "WAD Name": "Photo-Channel-1.1-NUS"
+    },
+    {
+      "Name": "Shopping Channel",
+      "TID": "00010002484142XX",
+      "Versions": {
+        "World": [3, 4, 5, 6, 7, 8, 10, 13, 16, 17, 18, 19, 20, 21],
+        "KOR": [3, 4, 5, 6, 7, 8, 10, 13, 14, 16, 17, 18, 19, 20, 21]
+      },
+      "Ticket": true,
+      "WAD Name": "Shopping-Channel-NUS"
+    }
+  ],
+  "Downloadable Channels": [
+    {
+      "Name": "Amazon Instant Video",
+      "TID": "00010001484357XX",
+      "Versions": {
+        "USA": [1280]
+      },
+      "Ticket": false,
+      "WAD Name": "Amazon-Instant-Video-NUS"
+    },
+    {
+      "Name": "BBC iPlayer Channel",
+      "TID": "0001000148434AXX",
+      "Versions": {
+        "EUR": [768]
+      },
+      "Ticket": false,
+      "WAD Name": "BBC-iPlayer-Channel-NUS"
+    },
+    {
+      "Name": "Check Mii Out Channel",
+      "TID": "00010001484150XX",
+      "Versions": {
+        "USA": [1, 3, 512],
+        "EUR": [1, 3, 512],
+        "JAP": [1, 3, 512]
+      },
+      "Ticket": false,
+      "WAD Name": "Check-Mii-Out-Channel-NUS"
+    },
+    {
+      "Name": "Demae Channel",
+      "TID": "00010008484343XX",
+      "Versions": {
+        "JAP": [0, 1, 2]
+      },
+      "Ticket": true,
+      "WAD Name": "Demae-Channel-NUS"
+    },
+    {
+      "Name": "Digicam Print Channel",
+      "TID": "00010001484344XX",
+      "Versions": {
+        "JAP": [1024]
+      },
+      "Ticket": true,
+      "WAD Name": "Digicam-Print-Channel-NUS"
+    },
+    {
+      "Name": "Everyone Votes Channel",
+      "TID": "0001000148414AXX",
+      "Versions": {
+        "USA": [1, 2, 3],
+        "EUR": [1, 2, 3],
+        "JAP": [1, 2, 3]
+      },
+      "Ticket": false,
+      "WAD Name": "Everyone-Votes-Channel-NUS"
+    },
+    {
+      "Name": "Hulu Plus",
+      "TID": "00010001484351XX",
+      "Versions": {
+        "USA": [1283],
+        "JAP": [1024]
+      },
+      "Ticket": false,
+      "WAD Name": "Hulu-Plus-NUS"
+    },
+    {
+      "Name": "Internet Channel",
+      "TID": "00010001484144XX",
+      "Versions": {
+        "USA": [1, 3, 257, 512, 1024],
+        "EUR": [1, 3, 257, 512, 1024],
+        "JAP": [1, 3, 257, 512, 1024]
+      },
+      "Ticket": true,
+      "WAD Name": "Internet-Channel-NUS"
+    },
+    {
+      "Name": "Jam With The Band Live Channel",
+      "TID": "00010001484341XX",
+      "Versions": {
+        "EUR": [2],
+        "JAP": [2]
+      },
+      "Ticket": false,
+      "WAD Name": "Jam-With-The-Band-Live-Channel-NUS"
+    },
+    {
+      "Name": "Kirby TV Channel",
+      "TID": "0001000148434DXX",
+      "Versions": {
+        "EUR": [257]
+      },
+      "Ticket": false,
+      "WAD Name": "Kirby-TV-Channel-NUS"
+    },
+    {
+      "Name": "Metroid Prime 3 Preview",
+      "TID": "00010001484157XX",
+      "Versions": {
+        "EUR": [1, 2],
+        "JAP": [1, 2]
+      },
+      "Ticket": false,
+      "WAD Name": "Metroid-Prime-3-Preview-NUS"
+    },
+    {
+      "Name": "Netflix Channel",
+      "TID": "0001000148434CXX",
+      "Versions": {
+        "USA": [2049],
+        "EUR": [2049]
+      },
+      "Ticket": false,
+      "WAD Name": "Netflix-Channel-NUS"
+    },
+    {
+      "Name": "Nintendo Channel",
+      "TID": "00010001484154XX",
+      "Versions": {
+        "USA": [1792],
+        "EUR": [1792],
+        "JAP": [1792]
+      },
+      "Ticket": false,
+      "WAD Name": "Nintendo-Channel-NUS"
+    },
+    {
+      "Name": "Photo Channel 1.0 Restore Program",
+      "TID": "00010001484342XX",
+      "Versions": {
+        "JAP": [0]
+      },
+      "Ticket": true,
+      "WAD Name": "Photo-Channel-1.0-Restore-Program-NUS"
+    },
+    {
+      "Name": "The Legend of Zelda: Skyward Sword Save Data Update Channel",
+      "TID": "00010001484352XX",
+      "Versions": {
+        "USA": [1],
+        "EUR": [0],
+        "JAP": [1]
+      },
+      "Ticket": false,
+      "WAD Name": "Skyward-Sword-Save-Data-Update-Channel-NUS"
+    },
+    {
+      "Name": "Today and Tomorrow Channel",
+      "TID": "00010001484156XX",
+      "Versions": {
+        "EUR": [1],
+        "JAP": [1]
+      },
+      "Ticket": false,
+      "WAD Name": "Today-and-Tomorrow-Channel-NUS"
+    },
+    {
+      "Name": "TV Friend Channel / G-Guide for Wii",
+      "TID": "0001000148424EXX",
+      "Versions": {
+        "JAP": [1]
+      },
+      "Ticket": true,
+      "WAD Name": "TV-Friend-Channel-NUS"
+    },
+    {
+      "Name": "USB Memory Repair Program",
+      "TID": "00010001484333XX",
+      "Versions": {
+        "JAP": [12]
+      },
+      "Ticket": false,
+      "WAD Name": "USB-Repair-Program-NUS"
+    },
+    {
+      "Name": "Wii no Ma Channel",
+      "TID": "00010001484349XX",
+      "Versions": {
+        "JAP": [0]
+      },
+      "Ticket": true,
+      "WAD Name": "Wii-no-Ma-Channel-NUS"
+    },
+    {
+      "Name": "Wii Speak Channel",
+      "TID": "00010001484346XX",
+      "Versions": {
+        "USA": [1, 256, 512],
+        "EUR": [1, 256, 512],
+        "JAP": [1, 256, 512]
+      },
+      "Ticket": true,
+      "WAD Name": "Wii-Speak-Channel-NUS"
+    },
+    {
+      "Name": "Wii U Transfer Tool",
+      "TID": "00010001484353XX",
+      "Versions": {
+        "USA": [516],
+        "EUR": [516],
+        "JAP": [516]
+      },
+      "Ticket": false,
+      "WAD Name": "Wii-U-Transfer-Tool-NUS"
+    },
+    {
+      "Name": "YouTube",
+      "TID": "00010001484358XX",
+      "Versions": {
+        "USA": [1536],
+        "JAP": [768]
+      },
+      "Ticket": false,
+      "WAD Name": "YouTube-NUS"
     }
   ],
   "IOS": [
@@ -387,6 +642,170 @@
       "Ticket": true,
       "WAD Name": "IOS52-64",
       "Danger": "Version 5888 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.5, DO NOT install version 5888, as the System Menu relies on IOS 50."
+    },
+    {
+      "Name": "IOS 53",
+      "TID": "0000000100000035",
+      "Versions": {
+        "World": [4113, 5149, 5406, 5662, 5663]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS53-64"
+    },
+    {
+      "Name": "IOS 55",
+      "TID": "0000000100000037",
+      "Versions": {
+        "World": [4633, 5149, 5406, 5662, 5663]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS55-64"
+    },
+    {
+      "Name": "IOS 56",
+      "TID": "0000000100000038",
+      "Versions": {
+        "World": [4890, 5405, 5661, 5662]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS56-64"
+    },
+    {
+      "Name": "IOS 57",
+      "TID": "0000000100000039",
+      "Versions": {
+        "World": [5404, 5661, 5918, 5919]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS57-64"
+    },
+    {
+      "Name": "IOS 58",
+      "TID": "000000010000003A",
+      "Versions": {
+        "World": [6175, 6176]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS58-64"
+    },
+    {
+      "Name": "IOS 59",
+      "TID": "000000010000003B",
+      "Versions": {
+        "World": [8737, 9249]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS59-64"
+    },
+    {
+      "Name": "IOS 60",
+      "TID": "000000010000003C",
+      "Versions": {
+        "World": [6174, 6400]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS60-64",
+      "Danger": "Version 6400 of IOS 60 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.0 or 4.1, DO NOT install version 6400, as the System Menu relies on IOS 60."
+    },
+    {
+      "Name": "IOS 61",
+      "TID": "000000010000003D",
+      "Versions": {
+        "World": [4890, 5405, 5661, 5662]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS61-64"
+    },
+    {
+      "Name": "IOS 62",
+      "TID": "000000010000003E",
+      "Versions": {
+        "World": [6430]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS62-64"
+    },
+    {
+      "Name": "IOS 70",
+      "TID": "0000000100000046",
+      "Versions": {
+        "World": [6687,6912]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS70-64",
+      "Danger": "Version 6912 of IOS 60 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.2, DO NOT install version 6912, as the System Menu relies on IOS 70."
+    },
+    {
+      "Name": "IOS 80",
+      "TID": "0000000100000050",
+      "Versions": {
+        "World": [6943, 6944]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS80-64",
+      "Danger": "IOS 80 is the IOS that the current System Menu, 4.3, relies on, and is required to load the System Menu. Do not modify or remove this IOS unless you have BootMii installed as boot2 to recover from a brick."
+    },
+    {
+      "Name": "IOS 222",
+      "TID": "00000001000000DE",
+      "Versions": {
+        "World": [65280]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS222-64",
+      "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
+    },
+    {
+      "Name": "IOS 223",
+      "TID": "00000001000000DF",
+      "Versions": {
+        "World": [65280]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS223-64",
+      "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
+    },
+    {
+      "Name": "IOS 249",
+      "TID": "00000001000000F9",
+      "Versions": {
+        "World": [65280]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS249-64",
+      "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
+    },
+    {
+      "Name": "IOS 250",
+      "TID": "00000001000000FA",
+      "Versions": {
+        "World": [65280]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS250-64",
+      "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
+    },
+    {
+      "Name": "IOS 254",
+      "TID": "00000001000000FE",
+      "Versions": {
+        "World": [2, 3, 260, 65280]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS254-64",
+      "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
+    }
+  ],
+  "WiiWare": [
+    {
+      "Name": "Brain Challenge",
+      "TID": "00010001573243XX",
+      "Versions": {
+        "USA": [1],
+        "EUR": [1],
+        "JAP": [1]
+      },
+      "Ticket": false
     }
   ]
 }

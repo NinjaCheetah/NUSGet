@@ -10,7 +10,8 @@ from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
-regions = [["USA", "USA/NTSC", "45"], ["JAP", "Japan", "4A"], ["EUR", "Europe/PAL", "50"], ["KOR", "Korea", "4B"]]
+regions = [["World", "World", "41"], ["USA", "USA/NTSC", "45"], ["JAP", "Japan", "4A"], ["EUR", "Europe/PAL", "50"],
+           ["KOR", "Korea", "4B"]]
 
 
 class WorkerSignals(QObject):
@@ -121,8 +122,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tid = selected_title["TID"]
         self.ui.tid_entry.setText(tid)
         self.ui.version_entry.setText(selected_version)
-        wad_name = selected_title["WAD Name"] + "-v" + selected_version + ".wad"
-        self.ui.wad_file_entry.setText(wad_name)
+        try:
+            wad_name = selected_title["WAD Name"] + "-v" + selected_version + ".wad"
+            self.ui.wad_file_entry.setText(wad_name)
+        except KeyError:
+            pass
         danger_text = ""
         try:
             danger_text = selected_title["Danger"]
@@ -136,6 +140,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.log_text_browser.setText(self.log_text)
 
     def download_btn_pressed(self):
+        if (self.ui.pack_wad_chkbox.isChecked() is False and self.ui.keep_enc_chkbox.isChecked() is False and
+                self.ui.create_dec_chkbox.isChecked() is False):
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Icon.Critical)
+            msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
+            msgBox.setDefaultButton(QMessageBox.StandardButton.Ok)
+            msgBox.setWindowTitle("No Output Selected")
+            msgBox.setText("You have not selected any format to output the data in!")
+            msgBox.setInformativeText("Please select at least one option for how you would like the download to be "
+                                      "saved.")
+            msgBox.exec()
+            return
+
         self.ui.tid_entry.setEnabled(False)
         self.ui.version_entry.setEnabled(False)
         self.ui.download_btn.setEnabled(False)
