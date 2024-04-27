@@ -45,7 +45,7 @@ jobs:
 
   build-macos:
 
-    runs-on: macos-latest
+    runs-on: macos-12
 
     steps:
       - uses: actions/checkout@v4
@@ -59,7 +59,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build Package
         run: |
-          nuitka3 --show-progress --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --macos-create-app-bundle --disable-console
+          nuitka3 --show-progress --include-data-dir=data=data --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSD-Py.py --macos-create-app-bundle --disable-console
       - name: Prepare Package for Upload
         run: |
           mv NUSD-Py.app ~/NUSD-Py.app
