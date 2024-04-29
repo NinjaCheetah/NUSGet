@@ -8,8 +8,9 @@ import pathlib
 
 import libWiiPy
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
+from PySide6.QtGui import QIcon
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
@@ -54,7 +55,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
 
         self.ui.log_text_browser.setText("NUSGet v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy\n\n"
-                                         "Select a title from the list on the left, or enter a Title ID to begin.")
+                                         "Select a title from the list on the left, or enter a Title ID to begin.\n\n"
+                                         "Titles marked with a checkmark are free and have a ticket available, and can"
+                                         " be decrypted and packed into a WAD. Titles with an X do not have a ticket,"
+                                         " and only their encrypted contents can be saved.")
 
         tree = self.ui.title_tree
         self.tree_categories = []
@@ -82,6 +86,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         new_version.setText(0, "v" + str(version))
                         new_region.addChild(new_version)
                     new_title.addChild(new_region)
+                if title["Ticket"] is True:
+                    new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogApplyButton))
+                else:
+                    new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton))
                 new_category.addChild(new_title)
             self.tree_categories.append(new_category)
 
