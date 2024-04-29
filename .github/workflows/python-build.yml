@@ -31,17 +31,17 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        nuitka3 --show-progress  --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py
+        nuitka3 --show-progress  --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py
     - name: Prepare Package for Upload
       run: |
-        mv NUSD-Py.bin ~/NUSD-Py.bin
+        mv NUSGet.bin ~/NUSGet.bin
         cd ~
-        tar cvf NUSD-Py.tar NUSD-Py.bin
+        tar cvf NUSGet.tar NUSGet.bin
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
       with:
-        path: ~/NUSD-Py.tar
-        name: NUSD-Py-linux-bin
+        path: ~/NUSGet.tar
+        name: NUSGet-linux-bin
 
   build-macos:
 
@@ -59,17 +59,17 @@ jobs:
           pip install -r requirements.txt
       - name: Build Package
         run: |
-          nuitka3 --show-progress --include-data-dir=data=data --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSD-Py.py --macos-create-app-bundle --disable-console
+          nuitka3 --show-progress --include-data-dir=data=data --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --disable-console
       - name: Prepare Package for Upload
         run: |
-          mv NUSD-Py.app ~/NUSD-Py.app
+          mv NUSGet.app ~/NUSGet.app
           cd ~
-          tar cvf NUSD-Py.tar NUSD-Py.app
+          tar cvf NUSGet.tar NUSGet.app
       - name: Upload Package
         uses: actions/upload-artifact@v4.3.0
         with:
-          path: ~/NUSD-Py.tar
-          name: NUSD-Py-macos-bin
+          path: ~/NUSGet.tar
+          name: NUSGet-macos-bin
 
   build-windows:
 
@@ -89,10 +89,10 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        nuitka --show-progress --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSD-Py.py --disable-console
+        nuitka --show-progress --include-data-dir=data=data --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py --disable-console
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
       with:
-        path: D:\a\NUSD-Py\NUSD-Py\NUSD-Py.exe
-        name: NUSD-Py-windows-bin
+        path: D:\a\NUSGet\NUSGet\NUSGet.exe
+        name: NUSGet-windows-bin
         

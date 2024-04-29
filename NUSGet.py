@@ -1,3 +1,6 @@
+# NUSGet.py, licensed under the MIT license
+# Copyright 2024 NinjaCheetah
+
 import sys
 import os
 import json
@@ -50,7 +53,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # noinspection PyUnresolvedReferences
         self.ui.title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
 
-        self.ui.log_text_browser.setText("NUSD-Py v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy\n\n"
+        self.ui.log_text_browser.setText("NUSGet v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy\n\n"
                                          "Select a title from the list on the left, or enter a Title ID to begin.")
 
         tree = self.ui.title_tree
@@ -359,7 +362,7 @@ if __name__ == "__main__":
         os.mkdir(out_folder)
 
     window = MainWindow()
-    window.setWindowTitle("NUSD-Py")
+    window.setWindowTitle("NUSGet")
     window.show()
 
     sys.exit(app.exec())
