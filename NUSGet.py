@@ -13,8 +13,8 @@ from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
-regions = [["World", "World", "41"], ["USA", "USA/NTSC", "45"], ["JAP", "Japan", "4A"], ["EUR", "Europe/PAL", "50"],
-           ["KOR", "Korea", "4B"]]
+
+regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"]}
 
 
 # Signals needed for the worker used for threading the downloads.
@@ -78,15 +78,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 # Build the list of regions and what versions are offered for each region.
                 for region in title["Versions"]:
                     new_region = QTreeWidgetItem()
-                    region_title = ""
-                    # This part is probably done poorly and should be improved.
-                    if region == "World":
-                        region_title = "World"
-                    else:
-                        for entry in regions:
-                            if entry[0] == region:
-                                region_title = entry[1]
-                    new_region.setText(0, region_title)
+                    new_region.setText(0, region)
                     for version in title["Versions"][region]:
                         new_version = QTreeWidgetItem()
                         new_version.setText(0, "v" + str(version))
@@ -106,10 +98,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     @Slot(QTreeWidgetItem, int)
     def onItemClicked(self, item, col):
         if self.ui.download_btn.isEnabled() is True:
-            global regions
-            region_names = []
-            for region in regions:
-                region_names.append(region[1])
             # This is checking to make sure all category names, title names, and region names are not handled as
             # valid choices. item.parent().parent().parent().text(0) is terrifying, I know.
             if ((item.parent() is not None) and item.parent() not in self.tree_categories
@@ -138,11 +126,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # two-digit code. Use the region info passed to load the correct code.
         if selected_title["TID"][-2:] == "XX":
             global regions
-            region_code = ""
-            # Similarly to previous region-related code, this can definitely be improved.
-            for region in regions:
-                if region[1] == selected_region:
-                    region_code = region[2]
+            region_code = regions[selected_region][0]
             tid = selected_title["TID"][:-2] + region_code
         else:
             tid = selected_title["TID"]
@@ -164,8 +148,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             pass
         # Add warning text to the log if the selected title has no ticket.
         if selected_title["Ticket"] is False:
-            danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be "
-                                         "packed into a WAD or decrypted.")
+            danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be packed "
+                                         "into a WAD or be decrypted.")
         # Print log info about the selected title and version.
         self.log_text = (tid + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version + "\n\n" +
                          danger_text + "\n")

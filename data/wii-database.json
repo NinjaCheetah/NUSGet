@@ -24,10 +24,10 @@
       "Name": "EULA",
       "TID": "0001000848414BXX",
       "Versions": {
-        "USA": [1, 2, 3],
-        "EUR": [1, 2, 3],
-        "JAP": [1, 2, 3],
-        "KOR": [1, 2, 3]
+        "USA/NTSC": [1, 2, 3],
+        "Europe/PAL": [1, 2, 3],
+        "Japan": [1, 2, 3],
+        "Korea": [1, 2, 3]
       },
       "Ticket": true,
       "WAD Name": "EULA-NUS",
@@ -47,10 +47,10 @@
       "Name": "Region Select",
       "TID": "0001000848414CXX",
       "Versions": {
-        "USA": [1, 2],
-        "EUR": [1, 2],
-        "JAP": [1, 2],
-        "KOR": [2]
+        "USA/NTSC": [1, 2],
+        "Europe/PAL": [1, 2],
+        "Japan": [1, 2],
+        "Korea": [2]
       },
       "Ticket": true,
       "WAD Name": "Region-Select-NUS",
@@ -60,10 +60,10 @@
       "Name": "System Menu",
       "TID": "0000000100000002",
       "Versions": {
-        "USA": [97, 193, 225, 257, 289, 353, 385, 417, 449, 481, 513],
-        "EUR": [130, 162, 194, 226, 258, 290, 354, 386, 418, 450, 482, 514],
-        "JAP": [128, 192, 224, 256, 288, 352, 384, 416, 448, 480, 512],
-        "KOR": [390, 454, 486, 518]
+        "USA/NTSC": [97, 193, 225, 257, 289, 353, 385, 417, 449, 481, 513],
+        "Europe/PAL": [130, 162, 194, 226, 258, 290, 354, 386, 418, 450, 482, 514],
+        "Japan": [128, 192, 224, 256, 288, 352, 384, 416, 448, 480, 512],
+        "Korea": [390, 454, 486, 518]
       },
       "Ticket": true,
       "WAD Name": "Wii-System-Menu",
@@ -76,9 +76,9 @@
       "TID": "00010002484146XX",
       "Versions": {
         "World": [3],
-        "USA": [6, 7],
-        "EUR": [6, 7],
-        "JAP": [6, 7]
+        "USA/NTSC": [6, 7],
+        "Europe/PAL": [6, 7],
+        "Japan": [6, 7]
       },
       "Ticket": true,
       "WAD Name": "Forecast-Channel-NUS"
@@ -97,9 +97,9 @@
       "TID": "00010002484147XX",
       "Versions": {
         "World": [3],
-        "USA": [6, 7],
-        "EUR": [6, 7],
-        "JAP": [6, 7]
+        "USA/NTSC": [6, 7],
+        "Europe/PAL": [6, 7],
+        "Japan": [6, 7]
       },
       "Ticket": true,
       "WAD Name": "News-Channel-NUS"
@@ -118,7 +118,7 @@
       "TID": "00010002484159XX",
       "Versions": {
         "World": [1, 2, 3],
-        "KOR": [3]
+        "Korea": [3]
       },
       "Ticket": true,
       "WAD Name": "Photo-Channel-1.1-NUS"
@@ -128,7 +128,7 @@
       "TID": "00010002484142XX",
       "Versions": {
         "World": [3, 4, 5, 6, 7, 8, 10, 13, 16, 17, 18, 19, 20, 21],
-        "KOR": [3, 4, 5, 6, 7, 8, 10, 13, 14, 16, 17, 18, 19, 20, 21]
+        "Korea": [3, 4, 5, 6, 7, 8, 10, 13, 14, 16, 17, 18, 19, 20, 21]
       },
       "Ticket": true,
       "WAD Name": "Shopping-Channel-NUS"
@@ -139,7 +139,7 @@
       "Name": "Amazon Instant Video",
       "TID": "00010001484357XX",
       "Versions": {
-        "USA": [1280]
+        "USA/NTSC": [1280]
       },
       "Ticket": false,
       "WAD Name": "Amazon-Instant-Video-NUS"
@@ -148,7 +148,7 @@
       "Name": "BBC iPlayer Channel",
       "TID": "0001000148434AXX",
       "Versions": {
-        "EUR": [768]
+        "Europe/PAL": [768]
       },
       "Ticket": false,
       "WAD Name": "BBC-iPlayer-Channel-NUS"
@@ -157,9 +157,9 @@
       "Name": "Check Mii Out Channel",
       "TID": "00010001484150XX",
       "Versions": {
-        "USA": [1, 3, 512],
-        "EUR": [1, 3, 512],
-        "JAP": [1, 3, 512]
+        "USA/NTSC": [1, 3, 512],
+        "Europe/PAL": [1, 3, 512],
+        "Japan": [1, 3, 512]
       },
       "Ticket": false,
       "WAD Name": "Check-Mii-Out-Channel-NUS"
@@ -168,7 +168,7 @@
       "Name": "Demae Channel",
       "TID": "00010008484343XX",
       "Versions": {
-        "JAP": [0, 1, 2]
+        "Japan": [0, 1, 2]
       },
       "Ticket": true,
       "WAD Name": "Demae-Channel-NUS"
@@ -177,7 +177,7 @@
       "Name": "Digicam Print Channel",
       "TID": "00010001484344XX",
       "Versions": {
-        "JAP": [1024]
+        "Japan": [1024]
       },
       "Ticket": true,
       "WAD Name": "Digicam-Print-Channel-NUS"
@@ -186,9 +186,9 @@
       "Name": "Everyone Votes Channel",
       "TID": "0001000148414AXX",
       "Versions": {
-        "USA": [1, 2, 3],
-        "EUR": [1, 2, 3],
-        "JAP": [1, 2, 3]
+        "USA/NTSC": [1, 2, 3],
+        "Europe/PAL": [1, 2, 3],
+        "Japan": [1, 2, 3]
       },
       "Ticket": false,
       "WAD Name": "Everyone-Votes-Channel-NUS"
@@ -197,8 +197,8 @@
       "Name": "Hulu Plus",
       "TID": "00010001484351XX",
       "Versions": {
-        "USA": [1283],
-        "JAP": [1024]
+        "USA/NTSC": [1283],
+        "Japan": [1024]
       },
       "Ticket": false,
       "WAD Name": "Hulu-Plus-NUS"
@@ -207,9 +207,9 @@
       "Name": "Internet Channel",
       "TID": "00010001484144XX",
       "Versions": {
-        "USA": [1, 3, 257, 512, 1024],
-        "EUR": [1, 3, 257, 512, 1024],
-        "JAP": [1, 3, 257, 512, 1024]
+        "USA/NTSC": [1, 3, 257, 512, 1024],
+        "Europe/PAL": [1, 3, 257, 512, 1024],
+        "Japan": [1, 3, 257, 512, 1024]
       },
       "Ticket": true,
       "WAD Name": "Internet-Channel-NUS"
@@ -218,8 +218,8 @@
       "Name": "Jam With The Band Live Channel",
       "TID": "00010001484341XX",
       "Versions": {
-        "EUR": [2],
-        "JAP": [2]
+        "Europe/PAL": [2],
+        "Japan": [2]
       },
       "Ticket": false,
       "WAD Name": "Jam-With-The-Band-Live-Channel-NUS"
@@ -228,7 +228,7 @@
       "Name": "Kirby TV Channel",
       "TID": "0001000148434DXX",
       "Versions": {
-        "EUR": [257]
+        "Europe/PAL": [257]
       },
       "Ticket": false,
       "WAD Name": "Kirby-TV-Channel-NUS"
@@ -237,8 +237,8 @@
       "Name": "Metroid Prime 3 Preview",
       "TID": "00010001484157XX",
       "Versions": {
-        "EUR": [1, 2],
-        "JAP": [1, 2]
+        "Europe/PAL": [1, 2],
+        "Japan": [1, 2]
       },
       "Ticket": false,
       "WAD Name": "Metroid-Prime-3-Preview-NUS"
@@ -247,8 +247,8 @@
       "Name": "Netflix Channel",
       "TID": "0001000148434CXX",
       "Versions": {
-        "USA": [2049],
-        "EUR": [2049]
+        "USA/NTSC": [2049],
+        "Europe/PAL": [2049]
       },
       "Ticket": false,
       "WAD Name": "Netflix-Channel-NUS"
@@ -257,9 +257,9 @@
       "Name": "Nintendo Channel",
       "TID": "00010001484154XX",
       "Versions": {
-        "USA": [1792],
-        "EUR": [1792],
-        "JAP": [1792]
+        "USA/NTSC": [1792],
+        "Europe/PAL": [1792],
+        "Japan": [1792]
       },
       "Ticket": false,
       "WAD Name": "Nintendo-Channel-NUS"
@@ -268,7 +268,7 @@
       "Name": "Photo Channel 1.0 Restore Program",
       "TID": "00010001484342XX",
       "Versions": {
-        "JAP": [0]
+        "Japan": [0]
       },
       "Ticket": true,
       "WAD Name": "Photo-Channel-1.0-Restore-Program-NUS"
@@ -277,9 +277,9 @@
       "Name": "The Legend of Zelda: Skyward Sword Save Data Update Channel",
       "TID": "00010001484352XX",
       "Versions": {
-        "USA": [1],
-        "EUR": [0],
-        "JAP": [1]
+        "USA/NTSC": [1],
+        "Europe/PAL": [0],
+        "Japan": [1]
       },
       "Ticket": false,
       "WAD Name": "Skyward-Sword-Save-Data-Update-Channel-NUS"
@@ -288,8 +288,8 @@
       "Name": "Today and Tomorrow Channel",
       "TID": "00010001484156XX",
       "Versions": {
-        "EUR": [1],
-        "JAP": [1]
+        "Europe/PAL": [1],
+        "Japan": [1]
       },
       "Ticket": false,
       "WAD Name": "Today-and-Tomorrow-Channel-NUS"
@@ -298,7 +298,7 @@
       "Name": "TV Friend Channel / G-Guide for Wii",
       "TID": "0001000148424EXX",
       "Versions": {
-        "JAP": [1]
+        "Japan": [1]
       },
       "Ticket": true,
       "WAD Name": "TV-Friend-Channel-NUS"
@@ -307,7 +307,7 @@
       "Name": "USB Memory Repair Program",
       "TID": "00010001484333XX",
       "Versions": {
-        "JAP": [12]
+        "Japan": [12]
       },
       "Ticket": false,
       "WAD Name": "USB-Repair-Program-NUS"
@@ -316,7 +316,7 @@
       "Name": "Wii no Ma Channel",
       "TID": "00010001484349XX",
       "Versions": {
-        "JAP": [0]
+        "Japan": [0]
       },
       "Ticket": true,
       "WAD Name": "Wii-no-Ma-Channel-NUS"
@@ -325,9 +325,9 @@
       "Name": "Wii Speak Channel",
       "TID": "00010001484346XX",
       "Versions": {
-        "USA": [1, 256, 512],
-        "EUR": [1, 256, 512],
-        "JAP": [1, 256, 512]
+        "USA/NTSC": [1, 256, 512],
+        "Europe/PAL": [1, 256, 512],
+        "Japan": [1, 256, 512]
       },
       "Ticket": true,
       "WAD Name": "Wii-Speak-Channel-NUS"
@@ -336,9 +336,9 @@
       "Name": "Wii U Transfer Tool",
       "TID": "00010001484353XX",
       "Versions": {
-        "USA": [516],
-        "EUR": [516],
-        "JAP": [516]
+        "USA/NTSC": [516],
+        "Europe/PAL": [516],
+        "Japan": [516]
       },
       "Ticket": false,
       "WAD Name": "Wii-U-Transfer-Tool-NUS"
@@ -347,8 +347,8 @@
       "Name": "YouTube",
       "TID": "00010001484358XX",
       "Versions": {
-        "USA": [1536],
-        "JAP": [768]
+        "USA/NTSC": [1536],
+        "Japan": [768]
       },
       "Ticket": false,
       "WAD Name": "YouTube-NUS"
@@ -801,9 +801,9 @@
       "Name": "Brain Challenge",
       "TID": "00010001573243XX",
       "Versions": {
-        "USA": [1],
-        "EUR": [1],
-        "JAP": [1]
+        "USA/NTSC": [1],
+        "Europe/PAL": [1],
+        "Japan": [1]
       },
       "Ticket": false
     }
