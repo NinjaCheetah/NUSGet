@@ -302,10 +302,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for content in range(len(title.tmd.content_records)):
             # Generate the correct file name by converting the content ID into hex, minus the 0x, and then appending
             # that to the end of 000000. I refuse to believe there isn't a better way to do this here and in libWiiPy.
-            content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
-            if len(content_id_hex) < 2:
-                content_id_hex = "0" + content_id_hex
-            content_file_name = "000000" + content_id_hex
+            content_file_name = hex(title.tmd.content_records[content].content_id)[2:]
+            while len(content_file_name) < 8:
+                content_file_name = "0" + content_file_name
             # Check for a local copy of the current content if "use local files" is enabled, and use it.
             if self.ui.use_local_chkbox.isChecked() is True and os.path.exists(os.path.join(version_dir,
                                                                                             content_file_name)):
@@ -321,10 +320,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 progress_callback.emit("  - Done!")
                 # If keep encrypted contents is on, write out each content after its downloaded.
                 if self.ui.keep_enc_chkbox.isChecked() is True:
-                    content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
-                    if len(content_id_hex) < 2:
-                        content_id_hex = "0" + content_id_hex
-                    content_file_name = "000000" + content_id_hex
                     enc_content_out = open(os.path.join(version_dir, content_file_name), "wb")
                     enc_content_out.write(content_list[content])
                     enc_content_out.close()
@@ -336,10 +331,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     progress_callback.emit(" - Decrypting content " + str(content + 1) + " of " +
                                            str(len(title.tmd.content_records)) + "...")
                     dec_content = title.get_content_by_index(content)
-                    content_id_hex = hex(title.tmd.content_records[content].content_id)[2:]
-                    if len(content_id_hex) < 2:
-                        content_id_hex = "0" + content_id_hex
-                    content_file_name = "000000" + content_id_hex + ".app"
+                    content_file_name = hex(title.tmd.content_records[content].content_id)[2:]
+                    while len(content_file_name) < 8:
+                        content_file_name = "0" + content_file_name
+                    content_file_name = content_file_name + ".app"
                     dec_content_out = open(os.path.join(version_dir, content_file_name), "wb")
                     dec_content_out.write(dec_content)
                     dec_content_out.close()
