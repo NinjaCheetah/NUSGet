@@ -24,9 +24,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(610, 605)
-        MainWindow.setMinimumSize(QSize(610, 605))
-        MainWindow.setMaximumSize(QSize(610, 605))
+        MainWindow.resize(610, 625)
+        MainWindow.setMinimumSize(QSize(610, 625))
+        MainWindow.setMaximumSize(QSize(610, 625))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_3 = QHBoxLayout(self.centralwidget)
@@ -123,6 +123,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.use_local_chkbox)
 
+        self.use_wiiu_nus_chkbox = QCheckBox(self.centralwidget)
+        self.use_wiiu_nus_chkbox.setObjectName(u"use_wiiu_nus_chkbox")
+        self.use_wiiu_nus_chkbox.setChecked(True)
+
+        self.verticalLayout_3.addWidget(self.use_wiiu_nus_chkbox)
+
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_3)
 
@@ -156,5 +162,6 @@ class Ui_MainWindow(object):
         self.keep_enc_chkbox.setText(QCoreApplication.translate("MainWindow", u"Keep encrypted contents", None))
         self.create_dec_chkbox.setText(QCoreApplication.translate("MainWindow", u"Create decrypted contents (*.app)", None))
         self.use_local_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use local files, if they exist", None))
+        self.use_wiiu_nus_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use the Wii U NUS (faster, NOT vWii titles)", None))
     # retranslateUi
 

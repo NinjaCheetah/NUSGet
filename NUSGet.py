@@ -5,6 +5,7 @@ import sys
 import os
 import json
 import pathlib
+from importlib.metadata import version
 
 import libWiiPy
 
@@ -58,12 +59,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # noinspection PyUnresolvedReferences
         self.ui.title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
-        self.ui.log_text_browser.setText("NUSGet v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy\n\n"
-                                         "Select a title from the list on the left, or enter a Title ID to begin.\n\n"
-                                         "Titles marked with a checkmark are free and have a ticket available, and can"
-                                         " be decrypted and packed into a WAD. Titles with an X do not have a ticket,"
-                                         " and only their encrypted contents can be saved.")
-        # Tree building code.
+        libwiipy_version = "v" + version("libWiiPy")
+        self.ui.log_text_browser.setText(f"NUSGet v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
+                                         f"{libwiipy_version}\n\nSelect a title from the list on the left, or enter a "
+                                         f"Title ID to begin.\n\nTitles marked with a checkmark are free and have a "
+                                         f"ticket available, and can be decrypted and packed into a WAD. Titles with an"
+                                         f" X do not have a ticket, and only their encrypted contents can be saved.")
+        # Title tree building code.
         tree = self.ui.title_tree
         self.tree_categories = []
         global regions
@@ -79,9 +81,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 for region in title["Versions"]:
                     new_region = QTreeWidgetItem()
                     new_region.setText(0, region)
-                    for version in title["Versions"][region]:
+                    for title_version in title["Versions"][region]:
                         new_version = QTreeWidgetItem()
-                        new_version.setText(0, "v" + str(version))
+                        new_version.setText(0, "v" + str(title_version))
                         new_region.addChild(new_version)
                     new_title.addChild(new_region)
                 # Set an indicator icon to show if a ticket is offered for this title or not.
@@ -177,6 +179,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.keep_enc_chkbox.setEnabled(False)
         self.ui.create_dec_chkbox.setEnabled(False)
         self.ui.use_local_chkbox.setEnabled(False)
+        self.ui.use_wiiu_nus_chkbox.setEnabled(False)
         self.ui.wad_file_entry.setEnabled(False)
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
@@ -230,6 +233,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.keep_enc_chkbox.setEnabled(True)
         self.ui.create_dec_chkbox.setEnabled(True)
         self.ui.use_local_chkbox.setEnabled(True)
+        self.ui.use_wiiu_nus_chkbox.setEnabled(True)
         if self.ui.pack_wad_chkbox.isChecked() is True:
             self.ui.wad_file_entry.setEnabled(True)
 
@@ -242,12 +246,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # An error here is acceptable, because it may just mean the box is empty. Or the version string is nonsense.
         # Either way, just fall back on downloading the latest version of the title.
         try:
-            version = int(self.ui.version_entry.text())
+            title_version = int(self.ui.version_entry.text())
         except ValueError:
-            version = None
+            title_version = None
         # Set variables for these two options so that their state can be compared against the user's choices later.
         pack_wad_enabled = self.ui.pack_wad_chkbox.isChecked()
         decrypt_contents_enabled = self.ui.create_dec_chkbox.isChecked()
+        # Check whether we're going to be using the "fallback" (but faster) Wii U NUS or not.
+        fallback_enabled = self.ui.use_wiiu_nus_chkbox.isChecked()
         # Create a new libWiiPy Title.
         title = libWiiPy.Title()
         # Make a directory for this title if it doesn't exist.
@@ -255,27 +261,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not title_dir.is_dir():
             title_dir.mkdir()
         # Announce the title being downloaded, and the version if applicable.
-        if version is not None:
-            progress_callback.emit("Downloading title " + tid + " v" + str(version) + ", please wait...")
+        if title_version is not None:
+            progress_callback.emit("Downloading title " + tid + " v" + str(title_version) + ", please wait...")
         else:
             progress_callback.emit("Downloading title " + tid + " vLatest, please wait...")
         progress_callback.emit(" - Downloading and parsing TMD...")
         # Download a specific TMD version if a version was specified, otherwise just download the latest TMD.
         try:
-            if version is not None:
-                title.load_tmd(libWiiPy.download_tmd(tid, version))
+            if title_version is not None:
+                title.load_tmd(libWiiPy.download_tmd(tid, title_version, fallback_endpoint=fallback_enabled))
             else:
-                title.load_tmd(libWiiPy.download_tmd(tid))
-                version = title.tmd.title_version
+                title.load_tmd(libWiiPy.download_tmd(tid, fallback_endpoint=fallback_enabled))
+                title_version = title.tmd.title_version
         # If libWiiPy returns an error, that means that either the TID or version doesn't exist, so return code -2.
         except ValueError:
             return -2
         # Make a directory for this version if it doesn't exist.
-        version_dir = pathlib.Path(os.path.join(title_dir, str(version)))
+        version_dir = pathlib.Path(os.path.join(title_dir, str(title_version)))
         if not version_dir.is_dir():
             version_dir.mkdir()
         # Write out the TMD to a file.
-        tmd_out = open(os.path.join(version_dir, "tmd." + str(version)), "wb")
+        tmd_out = open(os.path.join(version_dir, "tmd." + str(title_version)), "wb")
         tmd_out.write(title.tmd.dump())
         tmd_out.close()
         # Use a local ticket, if one exists and "use local files" is enabled.
@@ -286,7 +292,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             progress_callback.emit(" - Downloading and parsing Ticket...")
             try:
-                title.load_ticket(libWiiPy.download_ticket(tid))
+                title.load_ticket(libWiiPy.download_ticket(tid, fallback_endpoint=fallback_enabled))
                 ticket_out = open(os.path.join(version_dir, "tik"), "wb")
                 ticket_out.write(title.ticket.dump())
                 ticket_out.close()
@@ -316,7 +322,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 progress_callback.emit(" - Downloading content " + str(content + 1) + " of " +
                                        str(len(title.tmd.content_records)) + " (" +
                                        str(title.tmd.content_records[content].content_size) + " bytes)...")
-                content_list.append(libWiiPy.download_content(tid, title.tmd.content_records[content].content_id))
+                content_list.append(libWiiPy.download_content(tid, title.tmd.content_records[content].content_id,
+                                                              fallback_endpoint=fallback_enabled))
                 progress_callback.emit("  - Done!")
                 # If keep encrypted contents is on, write out each content after its downloaded.
                 if self.ui.keep_enc_chkbox.isChecked() is True:
@@ -346,7 +353,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if pack_wad_enabled is True:
             # Get the WAD certificate chain, courtesy of libWiiPy.
             progress_callback.emit(" - Building certificate...")
-            title.wad.set_cert_data(libWiiPy.download_cert())
+            title.wad.set_cert_data(libWiiPy.download_cert(fallback_endpoint=fallback_enabled))
             # Use a typed WAD name if there is one, and auto generate one based on the TID and version if there isn't.
             progress_callback.emit("Packing WAD...")
             if self.ui.wad_file_entry.text() != "":
@@ -354,7 +361,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if wad_file_name[-4:] != ".wad":
                     wad_file_name = wad_file_name + ".wad"
             else:
-                wad_file_name = tid + "-v" + str(version) + ".wad"
+                wad_file_name = tid + "-v" + str(title_version) + ".wad"
             # Have libWiiPy dump the WAD, and write that data out.
             file = open(os.path.join(version_dir, wad_file_name), "wb")
             file.write(title.dump_wad())

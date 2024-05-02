@@ -1,4 +1,4 @@
 pyside6
 nuitka
-libWiiPy
+git+https://github.com/NinjaCheetah/libWiipy
 zstandard
