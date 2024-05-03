@@ -1,0 +1,71 @@
+{
+  "System": [
+    {
+      "Name": "BC-NAND",
+      "TID": "0000000700000200",
+      "Versions": {
+        "World": [6, 7]
+      },
+      "Ticket": true,
+      "WAD Name": "BC-NAND-NUS",
+      "Danger": "BC-NAND is required for the Wii U to be able to boot any vWii titles. DO NOT modify it, or your Wii U will no longer be able to load into the vWii without restoring it from Wii U mode."
+    },
+    {
+      "Name": "BC-WFS",
+      "TID": "0000000700000201",
+      "Versions": {
+        "World": [1]
+      },
+      "Ticket": true,
+      "WAD Name": "BC-WFS-NUS",
+      "Danger": "BC-WFS is required for the Wii U to be able to boot Dragon Quest X Online. While not generally essential, this is a system title and should not be modified."
+    },
+    {
+      "Name": "System Menu",
+      "TID": "0000000700000002",
+      "Versions": {
+        "USA/NTSC": [513, 545, 609],
+        "Europe/PAL": [514, 546, 610],
+        "Japan": [512, 544, 608]
+      },
+      "Ticket": true,
+      "WAD Name": "vWii-System-Menu",
+      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If it is deleted, it will need to be restored from Wii U mode to be able to access the vWii again."
+    }
+  ],
+  "System Channels": [
+    {
+      "Name": "Region Select",
+      "TID": "0007000848414CXX",
+      "Versions": {
+        "USA/NTSC": [2],
+        "Europe/PAL": [2],
+        "Japan": [2]
+      },
+      "Ticket": true,
+      "WAD Name": "Region-Select-NUS",
+      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
+    },
+    {
+      "Name": "Return to Wii U Menu",
+      "TID": "00070002484356XX",
+      "Versions": {
+        "World": [0]
+      },
+      "Ticket": true,
+      "WAD Name": "Return-to-Wii-U-Menu-NUS",
+      "Danger": "\"Return to Wii U Menu\" is the channel launched from the vWii menu to reboot your console back into Wii U mode. While it generally should not be modified, modifying or removing it will not prevent the vWii from working."
+    },
+    {
+      "Name": "Wii Electronic Manual",
+      "TID": "00070002484355XX",
+      "Versions": {
+        "USA/NTSC": [0, 1, 2, 3, 5],
+        "Europe/PAL": [0, 1, 2, 3, 4, 5],
+        "Japan": [0, 1, 2, 3, 5]
+      },
+      "Ticket": true,
+      "WAD Name": "Wii-Electronic-Manual-NUS"
+    }
+  ]
+}

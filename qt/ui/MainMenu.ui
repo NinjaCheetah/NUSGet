@@ -43,27 +43,72 @@
        </widget>
       </item>
       <item>
-       <widget class="QTreeWidget" name="title_tree">
-        <property name="columnCount">
-         <number>1</number>
+       <widget class="QTabWidget" name="platform_tabs">
+        <property name="currentIndex">
+         <number>0</number>
         </property>
-        <attribute name="headerVisible">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="headerMinimumSectionSize">
-         <number>49</number>
-        </attribute>
-        <attribute name="headerDefaultSectionSize">
-         <number>100</number>
-        </attribute>
-        <attribute name="headerStretchLastSection">
-         <bool>false</bool>
-        </attribute>
-        <column>
-         <property name="text">
-          <string notr="true">1</string>
-         </property>
-        </column>
+        <widget class="QWidget" name="wii_tab">
+         <attribute name="title">
+          <string>Wii</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QTreeWidget" name="wii_title_tree">
+            <property name="columnCount">
+             <number>1</number>
+            </property>
+            <attribute name="headerVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="headerMinimumSectionSize">
+             <number>49</number>
+            </attribute>
+            <attribute name="headerDefaultSectionSize">
+             <number>100</number>
+            </attribute>
+            <attribute name="headerStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string notr="true">1</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="vwii_tab">
+         <attribute name="title">
+          <string>vWii</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QTreeWidget" name="vwii_title_tree">
+            <property name="columnCount">
+             <number>1</number>
+            </property>
+            <attribute name="headerVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="headerMinimumSectionSize">
+             <number>49</number>
+            </attribute>
+            <attribute name="headerDefaultSectionSize">
+             <number>100</number>
+            </attribute>
+            <attribute name="headerStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string notr="true">1</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -176,7 +221,7 @@ p, li { white-space: pre-wrap; }
       <item>
        <widget class="QCheckBox" name="use_wiiu_nus_chkbox">
         <property name="text">
-         <string>Use the Wii U NUS (faster, NOT vWii titles)</string>
+         <string>Use the Wii U NUS (faster)</string>
         </property>
         <property name="checked">
          <bool>true</bool>

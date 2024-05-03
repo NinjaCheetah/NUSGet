@@ -57,7 +57,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.pack_wad_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
         # noinspection PyUnresolvedReferences
-        self.ui.title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
+        self.ui.wii_title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
+        # noinspection PyUnresolvedReferences
+        self.ui.vwii_title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
         self.ui.log_text_browser.setText(f"NUSGet v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
@@ -66,46 +68,51 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                          f"ticket available, and can be decrypted and packed into a WAD. Titles with an"
                                          f" X do not have a ticket, and only their encrypted contents can be saved.")
         # Title tree building code.
-        tree = self.ui.title_tree
-        self.tree_categories = []
-        global regions
-        # Iterate over each category in the database file.
-        for key in wii_database:
-            new_category = QTreeWidgetItem()
-            new_category.setText(0, key)
-            # Iterate over each title in the current category.
-            for title in wii_database[key]:
-                new_title = QTreeWidgetItem()
-                new_title.setText(0, title["TID"] + " - " + title["Name"])
-                # Build the list of regions and what versions are offered for each region.
-                for region in title["Versions"]:
-                    new_region = QTreeWidgetItem()
-                    new_region.setText(0, region)
-                    for title_version in title["Versions"][region]:
-                        new_version = QTreeWidgetItem()
-                        new_version.setText(0, "v" + str(title_version))
-                        new_region.addChild(new_version)
-                    new_title.addChild(new_region)
-                # Set an indicator icon to show if a ticket is offered for this title or not.
-                if title["Ticket"] is True:
-                    new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogApplyButton))
-                else:
-                    new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton))
-                new_category.addChild(new_title)
-            self.tree_categories.append(new_category)
-        tree.insertTopLevelItems(0, self.tree_categories)
-        # Connect the double click signal for handling when titles are selected.
-        tree.itemDoubleClicked.connect(self.onItemClicked)
+        wii_tree = self.ui.wii_title_tree
+        vwii_tree = self.ui.vwii_title_tree
+        self.trees = [[wii_tree, wii_database], [vwii_tree, vwii_database]]
+        for tree in self.trees:
+            self.tree_categories = []
+            global regions
+            # Iterate over each category in the database file.
+            for key in tree[1]:
+                new_category = QTreeWidgetItem()
+                new_category.setText(0, key)
+                # Iterate over each title in the current category.
+                for title in tree[1][key]:
+                    new_title = QTreeWidgetItem()
+                    new_title.setText(0, title["TID"] + " - " + title["Name"])
+                    # Build the list of regions and what versions are offered for each region.
+                    for region in title["Versions"]:
+                        new_region = QTreeWidgetItem()
+                        new_region.setText(0, region)
+                        for title_version in title["Versions"][region]:
+                            new_version = QTreeWidgetItem()
+                            new_version.setText(0, "v" + str(title_version))
+                            new_region.addChild(new_version)
+                        new_title.addChild(new_region)
+                    # Set an indicator icon to show if a ticket is offered for this title or not.
+                    if title["Ticket"] is True:
+                        new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogApplyButton))
+                    else:
+                        new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton))
+                    new_category.addChild(new_title)
+                self.tree_categories.append(new_category)
+            tree[0].insertTopLevelItems(0, self.tree_categories)
+            # Connect the double click signal for handling when titles are selected.
+            tree[0].itemDoubleClicked.connect(self.onItemClicked)
 
     @Slot(QTreeWidgetItem, int)
     def onItemClicked(self, item, col):
         if self.ui.download_btn.isEnabled() is True:
-            # This is checking to make sure all category names, title names, and region names are not handled as
-            # valid choices. item.parent().parent().parent().text(0) is terrifying, I know.
-            if ((item.parent() is not None) and item.parent() not in self.tree_categories
-                    and item.parent().parent() not in self.tree_categories):
+            # Check to make sure that this is a version and nothing higher. If you've doubled clicked on anything other
+            # than a version, this returns an AttributeError and the click can be ignored.
+            try:
                 category = item.parent().parent().parent().text(0)
-                for title in wii_database[category]:
+            except AttributeError:
+                return
+            for tree in self.trees:
+                for title in tree[1][category]:
                     # Check to see if the current title matches the selected one, and if it does, pass that info on.
                     if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
                         selected_title = title
@@ -252,8 +259,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Set variables for these two options so that their state can be compared against the user's choices later.
         pack_wad_enabled = self.ui.pack_wad_chkbox.isChecked()
         decrypt_contents_enabled = self.ui.create_dec_chkbox.isChecked()
-        # Check whether we're going to be using the "fallback" (but faster) Wii U NUS or not.
-        fallback_enabled = self.ui.use_wiiu_nus_chkbox.isChecked()
+        # Check whether we're going to be using the (faster) Wii U NUS or not.
+        wiiu_nus_enabled = self.ui.use_wiiu_nus_chkbox.isChecked()
         # Create a new libWiiPy Title.
         title = libWiiPy.Title()
         # Make a directory for this title if it doesn't exist.
@@ -269,9 +276,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Download a specific TMD version if a version was specified, otherwise just download the latest TMD.
         try:
             if title_version is not None:
-                title.load_tmd(libWiiPy.download_tmd(tid, title_version, fallback_endpoint=fallback_enabled))
+                title.load_tmd(libWiiPy.download_tmd(tid, title_version, wiiu_endpoint=wiiu_nus_enabled))
             else:
-                title.load_tmd(libWiiPy.download_tmd(tid, fallback_endpoint=fallback_enabled))
+                title.load_tmd(libWiiPy.download_tmd(tid, wiiu_endpoint=wiiu_nus_enabled))
                 title_version = title.tmd.title_version
         # If libWiiPy returns an error, that means that either the TID or version doesn't exist, so return code -2.
         except ValueError:
@@ -292,7 +299,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             progress_callback.emit(" - Downloading and parsing Ticket...")
             try:
-                title.load_ticket(libWiiPy.download_ticket(tid, fallback_endpoint=fallback_enabled))
+                title.load_ticket(libWiiPy.download_ticket(tid, wiiu_endpoint=wiiu_nus_enabled))
                 ticket_out = open(os.path.join(version_dir, "tik"), "wb")
                 ticket_out.write(title.ticket.dump())
                 ticket_out.close()
@@ -323,7 +330,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                        str(len(title.tmd.content_records)) + " (" +
                                        str(title.tmd.content_records[content].content_size) + " bytes)...")
                 content_list.append(libWiiPy.download_content(tid, title.tmd.content_records[content].content_id,
-                                                              fallback_endpoint=fallback_enabled))
+                                                              wiiu_endpoint=wiiu_nus_enabled))
                 progress_callback.emit("  - Done!")
                 # If keep encrypted contents is on, write out each content after its downloaded.
                 if self.ui.keep_enc_chkbox.isChecked() is True:
@@ -353,7 +360,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if pack_wad_enabled is True:
             # Get the WAD certificate chain, courtesy of libWiiPy.
             progress_callback.emit(" - Building certificate...")
-            title.wad.set_cert_data(libWiiPy.download_cert(fallback_endpoint=fallback_enabled))
+            title.wad.set_cert_data(libWiiPy.download_cert(wiiu_endpoint=wiiu_nus_enabled))
             # Use a typed WAD name if there is one, and auto generate one based on the TID and version if there isn't.
             progress_callback.emit("Packing WAD...")
             if self.ui.wad_file_entry.text() != "":
@@ -389,6 +396,8 @@ if __name__ == "__main__":
     # Load the database file, this will work for both the raw Python file and compiled standalone/onefile binaries.
     database_file = open(os.path.join(os.path.dirname(__file__), "data/wii-database.json"))
     wii_database = json.load(database_file)
+    database_file = open(os.path.join(os.path.dirname(__file__), "data/vwii-database.json"))
+    vwii_database = json.load(database_file)
     # If this is a compiled build, the path needs to be obtained differently than if it isn't. The use of an absolute
     # path here is for compatibility with macOS .app bundles, which require the use of absolute paths.
     try:
