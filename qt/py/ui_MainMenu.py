@@ -78,6 +78,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.vwii_title_tree)
 
+        self.pack_vwii_mode_chkbox = QCheckBox(self.vwii_tab)
+        self.pack_vwii_mode_chkbox.setObjectName(u"pack_vwii_mode_chkbox")
+
+        self.verticalLayout_4.addWidget(self.pack_vwii_mode_chkbox)
+
         self.platform_tabs.addTab(self.vwii_tab, "")
 
         self.verticalLayout.addWidget(self.platform_tabs)
@@ -163,7 +168,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 610, 30))
+        self.menubar.setGeometry(QRect(0, 0, 610, 29))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -178,6 +183,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Available Titles", None))
         self.platform_tabs.setTabText(self.platform_tabs.indexOf(self.wii_tab), QCoreApplication.translate("MainWindow", u"Wii", None))
+        self.pack_vwii_mode_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack for vWii mode instead of Wii U mode", None))
         self.platform_tabs.setTabText(self.platform_tabs.indexOf(self.vwii_tab), QCoreApplication.translate("MainWindow", u"vWii", None))
         self.tid_entry.setText("")
         self.tid_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Title ID", None))
@@ -188,8 +194,8 @@ class Ui_MainWindow(object):
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.pack_wad_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack WAD", None))
         self.wad_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
         self.keep_enc_chkbox.setText(QCoreApplication.translate("MainWindow", u"Keep encrypted contents", None))

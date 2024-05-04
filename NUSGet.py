@@ -1,6 +1,5 @@
 # NUSGet.py, licensed under the MIT license
 # Copyright 2024 NinjaCheetah
-
 import sys
 import os
 import json
@@ -125,8 +124,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.log_text += new_text + "\n"
         self.ui.log_text_browser.setText(self.log_text)
         # Always auto-scroll to the bottom of the log.
-        scrollBar = self.ui.log_text_browser.verticalScrollBar()
-        scrollBar.setValue(scrollBar.maximum())
+        scroll_bar = self.ui.log_text_browser.verticalScrollBar()
+        scroll_bar.setValue(scroll_bar.maximum())
 
     def load_title_data(self, selected_title, selected_version, selected_region=None):
         # Use the information passed from the double click callback to prepare a title for downloading.
@@ -168,15 +167,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Throw an error and make a message box appear if you haven't selected any options to output the title.
         if (self.ui.pack_wad_chkbox.isChecked() is False and self.ui.keep_enc_chkbox.isChecked() is False and
                 self.ui.create_dec_chkbox.isChecked() is False):
-            msgBox = QMessageBox()
-            msgBox.setIcon(QMessageBox.Icon.Critical)
-            msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
-            msgBox.setDefaultButton(QMessageBox.StandardButton.Ok)
-            msgBox.setWindowTitle("No Output Selected")
-            msgBox.setText("You have not selected any format to output the data in!")
-            msgBox.setInformativeText("Please select at least one option for how you would like the download to be "
-                                      "saved.")
-            msgBox.exec()
+            msg_box = QMessageBox()
+            msg_box.setIcon(QMessageBox.Icon.Critical)
+            msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+            msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+            msg_box.setWindowTitle("No Output Selected")
+            msg_box.setText("You have not selected any format to output the data in!")
+            msg_box.setInformativeText("Please select at least one option for how you would like the download to be "
+                                       "saved.")
+            msg_box.exec()
             return
         # Lock the UI prior to the download beginning to avoid spawning multiple threads or changing info part way in.
         self.ui.tid_entry.setEnabled(False)
@@ -187,6 +186,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.create_dec_chkbox.setEnabled(False)
         self.ui.use_local_chkbox.setEnabled(False)
         self.ui.use_wiiu_nus_chkbox.setEnabled(False)
+        self.ui.pack_vwii_mode_chkbox.setEnabled(False)
         self.ui.wad_file_entry.setEnabled(False)
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
@@ -241,6 +241,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.create_dec_chkbox.setEnabled(True)
         self.ui.use_local_chkbox.setEnabled(True)
         self.ui.use_wiiu_nus_chkbox.setEnabled(True)
+        self.ui.pack_vwii_mode_chkbox.setEnabled(True)
         if self.ui.pack_wad_chkbox.isChecked() is True:
             self.ui.wad_file_entry.setEnabled(True)
 
@@ -358,6 +359,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 return -3
         # If pack WAD is still true, pack the TMD, ticket, and contents all into a WAD.
         if pack_wad_enabled is True:
+            # If the option to pack for vWii mode instead of Wii U mode is enabled, then the Title Key needs to be
+            # re-encrypted with the common key instead of the vWii key, so that the title can be installed from within
+            # vWii mode. (vWii mode does not have access to the vWii key, only Wii U mode has that.)
+            if self.ui.pack_vwii_mode_chkbox.isChecked() is True and (tid[3] == "7" or tid[7] == "7"):
+                progress_callback.emit(" - Re-encrypting Title Key with the common key...")
+                title_key_dec = title.ticket.get_title_key()
+                title_key_common = libWiiPy.encrypt_title_key(title_key_dec, 0, title.tmd.title_id)
+                title.ticket.common_key_index = 0
+                title.ticket.title_key_enc = title_key_common
             # Get the WAD certificate chain, courtesy of libWiiPy.
             progress_callback.emit(" - Building certificate...")
             title.wad.set_cert_data(libWiiPy.download_cert(wiiu_endpoint=wiiu_nus_enabled))
