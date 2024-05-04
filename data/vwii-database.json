@@ -35,6 +35,15 @@
   ],
   "System Channels": [
     {
+      "Name": "Mii Channel",
+      "TID": "00070002484143XX",
+      "Versions": {
+        "World": [6]
+      },
+      "Ticket": true,
+      "WAD Name": "Mii-Channel-NUS"
+    },
+    {
       "Name": "Region Select",
       "TID": "0007000848414CXX",
       "Versions": {
@@ -45,6 +54,15 @@
       "Ticket": true,
       "WAD Name": "Region-Select-NUS",
       "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
+    },
+    {
+      "Name": "Shopping Channel",
+      "TID": "00070002484142XX",
+      "Versions": {
+        "World": [21]
+      },
+      "Ticket": true,
+      "WAD Name": "Shopping-Channel-NUS"
     },
     {
       "Name": "Return to Wii U Menu",
@@ -66,6 +84,294 @@
       },
       "Ticket": true,
       "WAD Name": "Wii-Electronic-Manual-NUS"
+    },
+    {
+      "Name": "Wii System Transfer (WagonCompat)",
+      "TID": "0007000848435AXX",
+      "Versions": {
+        "USA/NTSC": [29, 31],
+        "Europe/PAL": [29, 31],
+        "Japan": [29, 31]
+      },
+      "Ticket": true,
+      "WAD Name": "Wii-System-Transfer-WC-NUS",
+      "Danger": "Note: It is currently unknown how this channel works, but it is involved somehow in the Wii to vWii transfer process. It is recommended to not modify it. Also note that this is separate from the normal, non-hidden channel \"Wii System Transfer Tool\" that works alongside \"Wii U Transfer Tool\" on a source Wii."
+    }
+  ],
+  "Downloadable Channels": [
+    {
+      "Name": "Wii System Transfer Tool (WagonNP)",
+      "TID": "00010001484354XX",
+      "Versions": {
+        "USA/NTSC": [516],
+        "Europe/PAL": [516],
+        "Japan": [516]
+      },
+      "Ticket": false,
+      "WAD Name": "Wii-System-Transfer-Tool-WNP-NUS"
+    }
+  ],
+  "IOS": [
+    {
+      "Name": "IOS 9",
+      "TID": "0000000700000009",
+      "Versions": {
+        "World": [1290]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS9-64-vWii"
+    },
+    {
+      "Name": "IOS 12",
+      "TID": "000000070000000C",
+      "Versions": {
+        "World": [782]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS12-64-vWii"
+    },
+    {
+      "Name": "IOS 13",
+      "TID": "000000070000000D",
+      "Versions": {
+        "World": [1288]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS13-64-vWii"
+    },
+    {
+      "Name": "IOS 14",
+      "TID": "000000070000000E",
+      "Versions": {
+        "World": [1288]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS14-64-vWii"
+    },
+    {
+      "Name": "IOS 15",
+      "TID": "000000070000000F",
+      "Versions": {
+        "World": [1288]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS15-64-vWii"
+    },
+    {
+      "Name": "IOS 17",
+      "TID": "0000000700000011",
+      "Versions": {
+        "World": [1288]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS17-64-vWii"
+    },
+    {
+      "Name": "IOS 21",
+      "TID": "0000000700000015",
+      "Versions": {
+        "World": [1295]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS21-64-vWii"
+    },
+    {
+      "Name": "IOS 22",
+      "TID": "0000000700000016",
+      "Versions": {
+        "World": [1550]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS22-64-vWii"
+    },
+    {
+      "Name": "IOS 28",
+      "TID": "000000070000001C",
+      "Versions": {
+        "World": [2063]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS28-64-vWii"
+    },
+    {
+      "Name": "IOS 31",
+      "TID": "000000070000001F",
+      "Versions": {
+        "World": [3864]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS31-64-vWii"
+    },
+    {
+      "Name": "IOS 33",
+      "TID": "0000000700000021",
+      "Versions": {
+        "World": [3864]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS33-64-vWii"
+    },
+    {
+      "Name": "IOS 34",
+      "TID": "0000000700000022",
+      "Versions": {
+        "World": [3864]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS34-64-vWii"
+    },
+    {
+      "Name": "IOS 35",
+      "TID": "0000000700000023",
+      "Versions": {
+        "World": [3864]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS35-64-vWii"
+    },
+    {
+      "Name": "IOS 36",
+      "TID": "0000000700000024",
+      "Versions": {
+        "World": [3864]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS36-64-vWii"
+    },
+    {
+      "Name": "IOS 37",
+      "TID": "0000000700000025",
+      "Versions": {
+        "World": [5919]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS37-64-vWii"
+    },
+    {
+      "Name": "IOS 38",
+      "TID": "0000000700000026",
+      "Versions": {
+        "World": [4380]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS38-64-vWii"
+    },
+    {
+      "Name": "IOS 41",
+      "TID": "0000000700000029",
+      "Versions": {
+        "World": [3863]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS41-64-vWii"
+    },
+    {
+      "Name": "IOS 43",
+      "TID": "000000070000002B",
+      "Versions": {
+        "World": [3863]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS43-64-vWii"
+    },
+    {
+      "Name": "IOS 45",
+      "TID": "000000070000002D",
+      "Versions": {
+        "World": [3863]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS45-64-vWii"
+    },
+    {
+      "Name": "IOS 46",
+      "TID": "000000070000002E",
+      "Versions": {
+        "World": [3863]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS46-64-vWii"
+    },
+    {
+      "Name": "IOS 48",
+      "TID": "0000000700000030",
+      "Versions": {
+        "World": [4380]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS48-64-vWii"
+    },
+    {
+      "Name": "IOS 53",
+      "TID": "0000000700000035",
+      "Versions": {
+        "World": [5919]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS53-64-vWii"
+    },
+    {
+      "Name": "IOS 55",
+      "TID": "0000000700000037",
+      "Versions": {
+        "World": [5919]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS55-64-vWii"
+    },
+    {
+      "Name": "IOS 56",
+      "TID": "0000000700000038",
+      "Versions": {
+        "World": [5918]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS56-64-vWii"
+    },
+    {
+      "Name": "IOS 57",
+      "TID": "0000000700000039",
+      "Versions": {
+        "World": [6175]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS57-64-vWii"
+    },
+    {
+      "Name": "IOS 58",
+      "TID": "000000070000003A",
+      "Versions": {
+        "World": [6432]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS58-64-vWii"
+    },
+    {
+      "Name": "IOS 59",
+      "TID": "000000070000003B",
+      "Versions": {
+        "World": [7201, 8737, 9249]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS59-64-vWii"
+    },
+    {
+      "Name": "IOS 62",
+      "TID": "000000070000003E",
+      "Versions": {
+        "World": [6430, 6686, 6942]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS62-64-vWii"
+    },
+    {
+      "Name": "IOS 80",
+      "TID": "0000000700000050",
+      "Versions": {
+        "World": [7200]
+      },
+      "Ticket": true,
+      "WAD Name": "IOS80-64-vWii"
     }
   ]
 }
