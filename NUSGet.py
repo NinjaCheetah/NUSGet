@@ -66,6 +66,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                          f"Title ID to begin.\n\nTitles marked with a checkmark are free and have a "
                                          f"ticket available, and can be decrypted and packed into a WAD. Titles with an"
                                          f" X do not have a ticket, and only their encrypted contents can be saved.")
+        # Add console entries to dropdown and attach on change signal.
+        self.ui.console_select_dropdown.addItem("Wii")
+        self.ui.console_select_dropdown.addItem("vWii")
+        self.ui.console_select_dropdown.currentIndexChanged.connect(self.selected_console_changed)
         # Title tree building code.
         wii_tree = self.ui.wii_title_tree
         vwii_tree = self.ui.vwii_title_tree
@@ -117,6 +121,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         selected_title = title
                         selected_version = item.text(0)
                         selected_region = item.parent().text(0)
+                        self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
                         self.load_title_data(selected_title, selected_version, selected_region)
 
     def update_log_text(self, new_text):
@@ -241,9 +246,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.create_dec_chkbox.setEnabled(True)
         self.ui.use_local_chkbox.setEnabled(True)
         self.ui.use_wiiu_nus_chkbox.setEnabled(True)
-        self.ui.pack_vwii_mode_chkbox.setEnabled(True)
         if self.ui.pack_wad_chkbox.isChecked() is True:
             self.ui.wad_file_entry.setEnabled(True)
+        # Call the dropdown callback because this will automagically handle setting console-specific settings based
+        # on the currently selected console, and saves on duplicate code.
+        self.selected_console_changed()
 
     def run_nus_download(self, progress_callback):
         # Actual NUS download function that runs in a separate thread.
@@ -399,6 +406,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.wad_file_entry.setEnabled(True)
         else:
             self.ui.wad_file_entry.setEnabled(False)
+
+    def selected_console_changed(self):
+        # Callback function to enable or disable console-specific settings based on the selected console.
+        if self.ui.console_select_dropdown.currentText() == "vWii":
+            self.ui.pack_vwii_mode_chkbox.setEnabled(True)
+        elif self.ui.console_select_dropdown.currentText() == "Wii":
+            self.ui.pack_vwii_mode_chkbox.setEnabled(False)
 
 
 if __name__ == "__main__":
