@@ -193,6 +193,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.use_wiiu_nus_chkbox.setEnabled(False)
         self.ui.pack_vwii_mode_chkbox.setEnabled(False)
         self.ui.wad_file_entry.setEnabled(False)
+        self.ui.console_select_dropdown.setEnabled(False)
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
         # Create a new worker object to handle the download in a new thread.
@@ -246,6 +247,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.create_dec_chkbox.setEnabled(True)
         self.ui.use_local_chkbox.setEnabled(True)
         self.ui.use_wiiu_nus_chkbox.setEnabled(True)
+        self.ui.console_select_dropdown.setEnabled(True)
         if self.ui.pack_wad_chkbox.isChecked() is True:
             self.ui.wad_file_entry.setEnabled(True)
         # Call the dropdown callback because this will automagically handle setting console-specific settings based
