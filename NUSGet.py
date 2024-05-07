@@ -337,11 +337,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 content_list.append(local_file.read())
             else:
                 progress_callback.emit(" - Downloading content " + str(content + 1) + " of " +
-                                       str(len(title.tmd.content_records)) + " (" +
+                                       str(len(title.tmd.content_records)) + " (Content ID: " +
+                                       str(title.tmd.content_records[content].content_id) + ", Size: " +
                                        str(title.tmd.content_records[content].content_size) + " bytes)...")
                 content_list.append(libWiiPy.download_content(tid, title.tmd.content_records[content].content_id,
                                                               wiiu_endpoint=wiiu_nus_enabled))
-                progress_callback.emit("  - Done!")
+                progress_callback.emit("   - Done!")
                 # If keep encrypted contents is on, write out each content after its downloaded.
                 if self.ui.keep_enc_chkbox.isChecked() is True:
                     enc_content_out = open(os.path.join(version_dir, content_file_name), "wb")
@@ -353,7 +354,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             try:
                 for content in range(len(title.tmd.content_records)):
                     progress_callback.emit(" - Decrypting content " + str(content + 1) + " of " +
-                                           str(len(title.tmd.content_records)) + "...")
+                                           str(len(title.tmd.content_records)) + " (Content ID: " +
+                                           str(title.tmd.content_records[content].content_id) + ")...")
                     dec_content = title.get_content_by_index(content)
                     content_file_name = hex(title.tmd.content_records[content].content_id)[2:]
                     while len(content_file_name) < 8:
