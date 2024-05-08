@@ -1,0 +1,208 @@
+{
+  "System": [
+    {
+      "Name": "Nintendo DS Cartridge Whitelist",
+      "TID": "0003000F484E4341",
+      "Versions": {
+        "World": [256, 512]
+      },
+      "Ticket": true,
+      "TAD Name": "Nintendo-DS-Cartridge-Whitelist-NUS"
+    },
+    {
+      "Name": "Launcher (System Menu)",
+      "TID": "00030017484E41XX",
+      "Versions": {
+        "USA/NTSC": [512, 768, 1024, 1280, 1536, 1792],
+        "Europe/PAL": [512, 768, 1024, 1280, 1536, 1792],
+        "Japan": [256, 512, 768, 1024, 1280, 1536, 1792],
+        "Korea": [768, 1024, 1280, 1536, 1792],
+        "China": [768, 1024, 1280, 1536, 1792],
+        "Australia/NZ": [512, 768, 1024, 1280, 1536, 1792]
+      },
+      "Ticket": true,
+      "TAD Name": "Launcher-NUS",
+      "Danger": "wip"
+    },
+    {
+      "Name": "Version Data",
+      "TID": "0003000F484E4CXX",
+      "Versions": {
+        "USA/NTSC": [3, 4, 5, 6, 7, 8, 9],
+        "Europe/PAL": [3, 4, 5, 6, 7, 8, 9],
+        "Japan": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "Korea": [5, 6, 7, 8, 9],
+        "China": [4, 5, 6, 7, 8, 9],
+        "Australia/NZ": [3, 4, 5, 6, 7, 8, 9]
+      },
+      "Ticket": true,
+      "TAD Name": "Version-Data-NUS"
+    },
+    {
+      "Name": "WiFi Firmware",
+      "TID": "0003000F484E4341",
+      "Versions": {
+        "World": [256, 512]
+      },
+      "Ticket": true,
+      "TAD Name": "WiFi-Firmware-NUS",
+      "Danger": "wip"
+    }
+  ],
+  "System Apps": [
+    {
+      "Name": "DS Download Play",
+      "TID": "00030005484E4441",
+      "Versions": {
+        "World": [256]
+      },
+      "Ticket": true,
+      "TAD Name": "DS-Download-Play-NUS",
+      "Danger": "wip"
+    },
+    {
+      "Name": "Nintendo 3DS Transfer Tool",
+      "TID": "00030015484E4FXX",
+      "Versions": {
+        "USA/NTSC": [0],
+        "Europe/PAL": [512, 768],
+        "Japan": [0],
+        "Korea": [256],
+        "Australia/NZ": [512, 768]
+      },
+      "Ticket": false,
+      "TAD Name": "Nintendo-3DS-Transfer-Tool-NUS",
+      "Danger": "wip"
+    },
+    {
+      "Name": "Nintendo DSi Camera",
+      "TID": "00030005484E49XX",
+      "Versions": {
+        "USA/NTSC": [768, 1024],
+        "Europe/PAL": [768, 1024],
+        "Japan": [256, 768, 1024],
+        "Australia/NZ": [768, 1024]
+      },
+      "Ticket": true,
+      "TAD Name": "Nintendo-DSi-Camera-NUS"
+    },
+    {
+      "Name": "Nintendo DSi Shop",
+      "TID": "00030015484E46XX",
+      "Versions": {
+        "USA/NTSC": [1536, 1792, 2048, 2304, 2560, 2816, 3072],
+        "Europe/PAL": [1536, 1792, 2048, 2304, 2560, 2816, 3072],
+        "Japan": [1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072],
+        "Korea": [768],
+        "China": [768],
+        "Australia/NZ": [1536, 1792, 2048, 2304, 2560, 2816, 3072]
+      },
+      "Ticket": true,
+      "TAD Name": "Nintendo-DSi-Shop-NUS",
+      "Danger": "wip"
+    },
+    {
+      "Name": "Nintendo DSi Sound",
+      "TID": "00030005484E4BXX",
+      "Versions": {
+        "USA/NTSC": [256, 512],
+        "Europe/PAL": [256, 512],
+        "Japan": [256, 512],
+        "Australia/NZ": [256, 512]
+      },
+      "Ticket": true,
+      "TAD Name": "Nintendo-DSi-Sound-NUS"
+    },
+    {
+      "Name": "Nintendo Zone",
+      "TID": "00030005484E4AXX",
+      "Versions": {
+        "USA/NTSC": [512, 768],
+        "Europe/PAL": [512, 768],
+        "Japan": [512, 768],
+        "Australia/NZ": [512, 768]
+      },
+      "Ticket": true,
+      "TAD Name": "Nintendo-DSi-Sound-NUS"
+    },
+    {
+      "Name": "System Settings",
+      "TID": "00030015484E42XX",
+      "Versions": {
+        "USA/NTSC": [512, 768],
+        "Europe/PAL": [512, 768],
+        "Japan": [512, 768],
+        "Korea": [768],
+        "China": [768],
+        "Australia/NZ": [512, 768]
+      },
+      "Ticket": true,
+      "TAD Name": "System-Settings-NUS"
+    }
+  ],
+  "DSiWare": [
+    {
+      "Name": "A Little Bit of... Brain Training™: Maths Edition",
+      "TID": "000300044B4E5256",
+      "Versions": {
+        "Europe/PAL": [256]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "A Little Bit of... Dr. Mario™",
+      "TID": "000300044B443956",
+      "Versions": {
+        "Europe/PAL": [0]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "A Little Bit of... Magic Made Fun™: Deep Psyche",
+      "TID": "000300044B4D39XX",
+      "Versions": {
+        "Europe/PAL": [1]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "A Little Bit of... Magic Made Fun™: Funny Face",
+      "TID": "000300044B4D46XX",
+      "Versions": {
+        "Europe/PAL": [1],
+        "Japan": [0]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "A Little Bit of... Magic Made Fun™: Shuffle Games",
+      "TID": "000300044B4D53XX",
+      "Versions": {
+        "Europe/PAL": [1]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Nintendo DSi Browser",
+      "TID": "00030004484E47XX",
+      "Versions": {
+        "USA/NTSC": [768],
+        "Europe/PAL": [768],
+        "Japan": [768]
+      },
+      "Ticket": true,
+      "TAD Name": "Nintendo-DSi-Browser-NUS"
+    },
+    {
+      "Name": "Flipnote Studio",
+      "TID": "000300044B4755XX",
+      "Versions": {
+        "USA/NTSC": [0],
+        "Europe/PAL": [0],
+        "Japan": [512]
+      },
+      "Ticket": true,
+      "TAD Name": "Flipnote-Studio-NUS"
+    }
+  ]
+}

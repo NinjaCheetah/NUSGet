@@ -87,6 +87,22 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.vwii_title_tree)
 
         self.platform_tabs.addTab(self.vwii_tab, "")
+        self.dsi_tab = QWidget()
+        self.dsi_tab.setObjectName(u"dsi_tab")
+        self.verticalLayout = QVBoxLayout(self.dsi_tab)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.dsi_title_tree = QTreeWidget(self.dsi_tab)
+        __qtreewidgetitem2 = QTreeWidgetItem()
+        __qtreewidgetitem2.setText(0, u"1");
+        self.dsi_title_tree.setHeaderItem(__qtreewidgetitem2)
+        self.dsi_title_tree.setObjectName(u"dsi_title_tree")
+        self.dsi_title_tree.setHeaderHidden(True)
+        self.dsi_title_tree.header().setMinimumSectionSize(49)
+        self.dsi_title_tree.header().setStretchLastSection(False)
+
+        self.verticalLayout.addWidget(self.dsi_title_tree)
+
+        self.platform_tabs.addTab(self.dsi_tab, "")
 
         self.vertical_layout_trees.addWidget(self.platform_tabs)
 
@@ -144,16 +160,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.label_3)
 
-        self.pack_wad_chkbox = QCheckBox(self.centralwidget)
-        self.pack_wad_chkbox.setObjectName(u"pack_wad_chkbox")
+        self.pack_archive_chkbox = QCheckBox(self.centralwidget)
+        self.pack_archive_chkbox.setObjectName(u"pack_archive_chkbox")
 
-        self.verticalLayout_7.addWidget(self.pack_wad_chkbox)
+        self.verticalLayout_7.addWidget(self.pack_archive_chkbox)
 
-        self.wad_file_entry = QLineEdit(self.centralwidget)
-        self.wad_file_entry.setObjectName(u"wad_file_entry")
-        self.wad_file_entry.setEnabled(False)
+        self.archive_file_entry = QLineEdit(self.centralwidget)
+        self.archive_file_entry.setObjectName(u"archive_file_entry")
+        self.archive_file_entry.setEnabled(False)
 
-        self.verticalLayout_7.addWidget(self.wad_file_entry)
+        self.verticalLayout_7.addWidget(self.archive_file_entry)
 
         self.keep_enc_chkbox = QCheckBox(self.centralwidget)
         self.keep_enc_chkbox.setObjectName(u"keep_enc_chkbox")
@@ -221,7 +237,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1010, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1010, 29))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -238,6 +254,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Available Titles", None))
         self.platform_tabs.setTabText(self.platform_tabs.indexOf(self.wii_tab), QCoreApplication.translate("MainWindow", u"Wii", None))
         self.platform_tabs.setTabText(self.platform_tabs.indexOf(self.vwii_tab), QCoreApplication.translate("MainWindow", u"vWii", None))
+        self.platform_tabs.setTabText(self.platform_tabs.indexOf(self.dsi_tab), QCoreApplication.translate("MainWindow", u"DSi", None))
         self.tid_entry.setText("")
         self.tid_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Title ID", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"v", None))
@@ -246,19 +263,19 @@ class Ui_MainWindow(object):
         self.console_select_dropdown.setCurrentText("")
         self.download_btn.setText(QCoreApplication.translate("MainWindow", u"Start Download", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"General Settings", None))
-        self.pack_wad_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack installable archive (WAD/TAD)", None))
-        self.wad_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
+        self.pack_archive_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack installable archive (WAD/TAD)", None))
+        self.archive_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
         self.keep_enc_chkbox.setText(QCoreApplication.translate("MainWindow", u"Keep encrypted contents", None))
         self.create_dec_chkbox.setText(QCoreApplication.translate("MainWindow", u"Create decrypted contents (*.app)", None))
         self.use_local_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use local files, if they exist", None))
-        self.use_wiiu_nus_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use the Wii U NUS (faster)", None))
+        self.use_wiiu_nus_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use the Wii U NUS (faster, only effects Wii/vWii)", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"vWii Title Settings", None))
         self.pack_vwii_mode_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack for vWii mode instead of Wii U mode", None))
         self.log_text_browser.setMarkdown("")
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
     # retranslateUi
 
