@@ -65,11 +65,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.dsi_title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
+        libtwlpy_version = "v" + version("libTWLPy")
         self.ui.log_text_browser.setText(f"NUSGet v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
-                                         f"{libwiipy_version}\n\nSelect a title from the list on the left, or enter a "
-                                         f"Title ID to begin.\n\nTitles marked with a checkmark are free and have a "
-                                         f"ticket available, and can be decrypted and packed into a WAD. Titles with an"
-                                         f" X do not have a ticket, and only their encrypted contents can be saved.")
+                                         f"{libwiipy_version}\nDSi support provided by libTWLPy {libtwlpy_version}\n\n"
+                                         f"Select a title from the list on the left, or enter a Title ID to begin.\n\n"
+                                         f"Titles marked with a checkmark are free and have a ticket available, and can"
+                                         f" be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
+                                         f"a ticket, and only their encrypted contents can be saved.")
         # Add console entries to dropdown and attach on change signal.
         self.ui.console_select_dropdown.addItem("Wii")
         self.ui.console_select_dropdown.addItem("vWii")

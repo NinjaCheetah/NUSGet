@@ -61,6 +61,17 @@
       "Danger": "wip"
     },
     {
+      "Name": "Flipnote Studio",
+      "TID": "000300044B4755XX",
+      "Versions": {
+        "USA/NTSC": [0],
+        "Europe/PAL": [0],
+        "Japan": [512]
+      },
+      "Ticket": true,
+      "TAD Name": "Flipnote-Studio-NUS"
+    },
+    {
       "Name": "Nintendo 3DS Transfer Tool",
       "TID": "00030015484E4FXX",
       "Versions": {
@@ -73,6 +84,17 @@
       "Ticket": false,
       "TAD Name": "Nintendo-3DS-Transfer-Tool-NUS",
       "Danger": "wip"
+    },
+    {
+      "Name": "Nintendo DSi Browser",
+      "TID": "00030004484E47XX",
+      "Versions": {
+        "USA/NTSC": [768],
+        "Europe/PAL": [768],
+        "Japan": [768]
+      },
+      "Ticket": true,
+      "TAD Name": "Nintendo-DSi-Browser-NUS"
     },
     {
       "Name": "Nintendo DSi Camera",
@@ -181,28 +203,6 @@
         "Europe/PAL": [1]
       },
       "Ticket": false
-    },
-    {
-      "Name": "Nintendo DSi Browser",
-      "TID": "00030004484E47XX",
-      "Versions": {
-        "USA/NTSC": [768],
-        "Europe/PAL": [768],
-        "Japan": [768]
-      },
-      "Ticket": true,
-      "TAD Name": "Nintendo-DSi-Browser-NUS"
-    },
-    {
-      "Name": "Flipnote Studio",
-      "TID": "000300044B4755XX",
-      "Versions": {
-        "USA/NTSC": [0],
-        "Europe/PAL": [0],
-        "Japan": [512]
-      },
-      "Ticket": true,
-      "TAD Name": "Flipnote-Studio-NUS"
     }
   ]
 }
