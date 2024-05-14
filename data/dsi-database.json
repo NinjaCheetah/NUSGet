@@ -22,7 +22,7 @@
       },
       "Ticket": true,
       "TAD Name": "Launcher-NUS",
-      "Danger": "wip"
+      "Danger": "The Launcher (DSi Menu) is a critical part of the DSi's operation, and should not be modified unless you have Unlaunch installed."
     },
     {
       "Name": "Version Data",
@@ -46,7 +46,7 @@
       },
       "Ticket": true,
       "TAD Name": "WiFi-Firmware-NUS",
-      "Danger": "wip"
+      "Danger": "The WiFi Firmware is the firmware that runs on the DSi's WiFi chip, and should not be modified. WiFi will not work properly if this title is missing or damaged."
     }
   ],
   "System Apps": [
@@ -57,8 +57,7 @@
         "World": [256]
       },
       "Ticket": true,
-      "TAD Name": "DS-Download-Play-NUS",
-      "Danger": "wip"
+      "TAD Name": "DS-Download-Play-NUS"
     },
     {
       "Name": "Flipnote Studio",
@@ -82,8 +81,7 @@
         "Australia/NZ": [512, 768]
       },
       "Ticket": false,
-      "TAD Name": "Nintendo-3DS-Transfer-Tool-NUS",
-      "Danger": "wip"
+      "TAD Name": "Nintendo-3DS-Transfer-Tool-NUS"
     },
     {
       "Name": "Nintendo DSi Browser",
@@ -120,8 +118,7 @@
         "Australia/NZ": [1536, 1792, 2048, 2304, 2560, 2816, 3072]
       },
       "Ticket": true,
-      "TAD Name": "Nintendo-DSi-Shop-NUS",
-      "Danger": "wip"
+      "TAD Name": "Nintendo-DSi-Shop-NUS"
     },
     {
       "Name": "Nintendo DSi Sound",
