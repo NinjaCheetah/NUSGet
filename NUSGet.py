@@ -73,7 +73,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                          f"Select a title from the list on the left, or enter a Title ID to begin.\n\n"
                                          f"Titles marked with a checkmark are free and have a ticket available, and can"
                                          f" be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
-                                         f"a ticket, and only their encrypted contents can be saved.")
+                                         f"a ticket, and only their encrypted contents can be saved.\n\nTitles will be "
+                                         f"downloaded to a folder named \"NUSGet\" inside your downloads folder.")
         # Add console entries to dropdown and attach on change signal.
         self.ui.console_select_dropdown.addItem("Wii")
         self.ui.console_select_dropdown.addItem("vWii")
@@ -177,8 +178,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             pass
         # Add warning text to the log if the selected title has no ticket.
         if selected_title["Ticket"] is False:
-            danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be packed "
-                                         "into a WAD or be decrypted.")
+            danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be decrypted"
+                                         " or packed into a WAD/TAD.")
         # Print log info about the selected title and version.
         self.log_text = (tid + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version + "\n\n" +
                          danger_text + "\n")
@@ -564,6 +565,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.pack_vwii_mode_chkbox.setEnabled(True)
         elif self.ui.console_select_dropdown.currentText() == "Wii":
             self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+        elif self.ui.console_select_dropdown.currentText() == "DSi":
+            self.ui.pack_vwii_mode_chkbox.setEnabled(False)
 
 
 if __name__ == "__main__":
@@ -575,14 +578,19 @@ if __name__ == "__main__":
     vwii_database = json.load(database_file)
     database_file = open(os.path.join(os.path.dirname(__file__), "data/dsi-database.json"))
     dsi_database = json.load(database_file)
-    # If this is a compiled build, the path needs to be obtained differently than if it isn't. The use of an absolute
-    # path here is for compatibility with macOS .app bundles, which require the use of absolute paths.
-    try:
-        # noinspection PyUnresolvedReferences
-        out_folder = os.path.join(__compiled__.containing_dir, "titles")
-    except NameError:
-        out_folder = os.path.join(os.path.dirname(sys.argv[0]), "titles")
-    # Create the titles directory if it doesn't exist. In the future, this directory will probably be elsewhere.
+    # Load the user's Downloads directory, which of course requires different steps on Windows vs macOS/Linux.
+    if os.name == 'nt':
+        import winreg
+        sub_key = r'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
+        downloads_guid = '{374DE290-123F-4565-9164-39C4925E467B}'
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, sub_key) as key:
+            location = winreg.QueryValueEx(key, downloads_guid)[0]
+    else:
+        location = os.path.join(os.path.expanduser('~'), 'Downloads')
+    # Build the path by combining the path to the Downloads photo with "NUSGet".
+    out_folder = os.path.join(location, "NUSGet")
+    # Create the "NUSGet" directory if it doesn't exist. In the future, this will be user-customizable, but this works
+    # for now, and avoids the issues from when it used to use a directory next to the binary (mostly on macOS).
     if not os.path.isdir(out_folder):
         os.mkdir(out_folder)
 
