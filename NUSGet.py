@@ -4,12 +4,14 @@ import sys
 import os
 import json
 import pathlib
+import platform
 from importlib.metadata import version
 
 import libWiiPy
 import libTWLPy
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle
+from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle,
+                               QStyleFactory)
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
 
 from qt.py.ui_MainMenu import Ui_MainWindow
@@ -583,6 +585,16 @@ if __name__ == "__main__":
     # Create the titles directory if it doesn't exist. In the future, this directory will probably be elsewhere.
     if not os.path.isdir(out_folder):
         os.mkdir(out_folder)
+
+    # Load the system plugins directory on Linux for system styles, if it exists. Try using Breeze if available, because
+    # it looks nice, but fallback on kvantum if it isn't, since kvantum is likely to exist. If all else fails, fusion.
+    if platform.system() == "Linux":
+        if os.path.isdir("/usr/lib/qt6/plugins"):
+            app.addLibraryPath("/usr/lib/qt6/plugins")
+            if "Breeze" in QStyleFactory.keys():
+                app.setStyle("Breeze")
+            elif "kvantum" in QStyleFactory.keys():
+                app.setStyle("kvantum")
 
     window = MainWindow()
     window.setWindowTitle("NUSGet")
