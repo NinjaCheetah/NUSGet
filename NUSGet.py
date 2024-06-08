@@ -292,7 +292,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Check whether we're going to be using the (faster) Wii U NUS or not.
         wiiu_nus_enabled = self.ui.use_wiiu_nus_chkbox.isChecked()
         # Create a new libWiiPy Title.
-        title = libWiiPy.Title()
+        title = libWiiPy.title.Title()
         # Make a directory for this title if it doesn't exist.
         title_dir = pathlib.Path(os.path.join(out_folder, tid))
         if not title_dir.is_dir():
@@ -306,9 +306,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Download a specific TMD version if a version was specified, otherwise just download the latest TMD.
         try:
             if title_version is not None:
-                title.load_tmd(libWiiPy.download_tmd(tid, title_version, wiiu_endpoint=wiiu_nus_enabled))
+                title.load_tmd(libWiiPy.title.download_tmd(tid, title_version, wiiu_endpoint=wiiu_nus_enabled))
             else:
-                title.load_tmd(libWiiPy.download_tmd(tid, wiiu_endpoint=wiiu_nus_enabled))
+                title.load_tmd(libWiiPy.title.download_tmd(tid, wiiu_endpoint=wiiu_nus_enabled))
                 title_version = title.tmd.title_version
         # If libWiiPy returns an error, that means that either the TID or version doesn't exist, so return code -2.
         except ValueError:
@@ -329,7 +329,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             progress_callback.emit(" - Downloading and parsing Ticket...")
             try:
-                title.load_ticket(libWiiPy.download_ticket(tid, wiiu_endpoint=wiiu_nus_enabled))
+                title.load_ticket(libWiiPy.title.download_ticket(tid, wiiu_endpoint=wiiu_nus_enabled))
                 ticket_out = open(os.path.join(version_dir, "tik"), "wb")
                 ticket_out.write(title.ticket.dump())
                 ticket_out.close()
@@ -360,8 +360,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                        str(len(title.tmd.content_records)) + " (Content ID: " +
                                        str(title.tmd.content_records[content].content_id) + ", Size: " +
                                        str(title.tmd.content_records[content].content_size) + " bytes)...")
-                content_list.append(libWiiPy.download_content(tid, title.tmd.content_records[content].content_id,
-                                                              wiiu_endpoint=wiiu_nus_enabled))
+                content_list.append(libWiiPy.title.download_content(tid, title.tmd.content_records[content].content_id,
+                                                                    wiiu_endpoint=wiiu_nus_enabled))
                 progress_callback.emit("   - Done!")
                 # If keep encrypted contents is on, write out each content after its downloaded.
                 if self.ui.keep_enc_chkbox.isChecked() is True:
@@ -396,12 +396,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if self.ui.pack_vwii_mode_chkbox.isChecked() is True and (tid[3] == "7" or tid[7] == "7"):
                 progress_callback.emit(" - Re-encrypting Title Key with the common key...")
                 title_key_dec = title.ticket.get_title_key()
-                title_key_common = libWiiPy.encrypt_title_key(title_key_dec, 0, title.tmd.title_id)
+                title_key_common = libWiiPy.title.encrypt_title_key(title_key_dec, 0, title.tmd.title_id)
                 title.ticket.common_key_index = 0
                 title.ticket.title_key_enc = title_key_common
             # Get the WAD certificate chain, courtesy of libWiiPy.
             progress_callback.emit(" - Building certificate...")
-            title.wad.set_cert_data(libWiiPy.download_cert(wiiu_endpoint=wiiu_nus_enabled))
+            title.wad.set_cert_data(libWiiPy.title.download_cert(wiiu_endpoint=wiiu_nus_enabled))
             # Use a typed WAD name if there is one, and auto generate one based on the TID and version if there isn't.
             progress_callback.emit("Packing WAD...")
             if self.ui.archive_file_entry.text() != "":
@@ -600,7 +600,7 @@ if __name__ == "__main__":
         if os.path.isdir("/usr/lib/qt6/plugins"):
             app.addLibraryPath("/usr/lib/qt6/plugins")
             if "Breeze" in QStyleFactory.keys():
-                app.setStyle("Breeze")
+                app.setStyle(QStyleFactory.create("breeze"))
             elif "kvantum" in QStyleFactory.keys():
                 app.setStyle("kvantum")
 
