@@ -10,6 +10,8 @@ from importlib.metadata import version
 import libWiiPy
 import libTWLPy
 
+from PySide6.QtGui import QIcon
+
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle,
                                QStyleFactory)
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
@@ -600,12 +602,13 @@ if __name__ == "__main__":
         if os.path.isdir("/usr/lib/qt6/plugins"):
             app.addLibraryPath("/usr/lib/qt6/plugins")
             if "Breeze" in QStyleFactory.keys():
-                app.setStyle(QStyleFactory.create("breeze"))
+                app.setStyle("Breeze")
             elif "kvantum" in QStyleFactory.keys():
                 app.setStyle("kvantum")
 
     window = MainWindow()
     window.setWindowTitle("NUSGet")
+    window.setWindowIcon(QIcon(os.path.join(os.path.dirname(__file__), "resources/icon.png")))
     window.show()
 
     sys.exit(app.exec())
