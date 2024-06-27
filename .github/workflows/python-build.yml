@@ -59,7 +59,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build Package
         run: |
-          nuitka3 --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png --disable-console
+          nuitka3 --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
       - name: Prepare Package for Upload
         run: |
           mv NUSGet.app ~/NUSGet.app
@@ -89,7 +89,7 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --disable-console
+        nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
       with:
