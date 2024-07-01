@@ -166,9 +166,9 @@
     },
     {
       "Name": "Demae Channel",
-      "TID": "00010008484343XX",
+      "TID": "00010001484348XX",
       "Versions": {
-        "Japan": [0, 1, 2]
+        "Japan": [512]
       },
       "Ticket": true,
       "WAD Name": "Demae-Channel-NUS"
@@ -272,6 +272,15 @@
       },
       "Ticket": true,
       "WAD Name": "Photo-Channel-1.0-Restore-Program-NUS"
+    },
+    {
+      "Name": "Set Personal Data Channel",
+      "TID": "00010008484343XX",
+      "Versions": {
+        "Japan": [0, 1, 2]
+      },
+      "Ticket": true,
+      "WAD Name": "Set-Personal-Data-Channel-NUS"
     },
     {
       "Name": "The Legend of Zelda: Skyward Sword Save Data Update Channel",

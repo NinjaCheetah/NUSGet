@@ -335,7 +335,7 @@
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Pack for vWii mode instead of Wii U mode</string>
+             <string>Re-encrypt title using the Wii Common Key</string>
             </property>
            </widget>
           </item>

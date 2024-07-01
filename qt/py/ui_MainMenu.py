@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainMenu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.0
+## Created by: Qt User Interface Compiler version 6.7.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -270,7 +270,7 @@ class Ui_MainWindow(object):
         self.use_local_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use local files, if they exist", None))
         self.use_wiiu_nus_chkbox.setText(QCoreApplication.translate("MainWindow", u"Use the Wii U NUS (faster, only effects Wii/vWii)", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"vWii Title Settings", None))
-        self.pack_vwii_mode_chkbox.setText(QCoreApplication.translate("MainWindow", u"Pack for vWii mode instead of Wii U mode", None))
+        self.pack_vwii_mode_chkbox.setText(QCoreApplication.translate("MainWindow", u"Re-encrypt title using the Wii Common Key", None))
         self.log_text_browser.setMarkdown("")
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

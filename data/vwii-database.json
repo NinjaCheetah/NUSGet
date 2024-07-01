@@ -8,7 +8,7 @@
       },
       "Ticket": true,
       "WAD Name": "BC-NAND-NUS",
-      "Danger": "BC-NAND is required for the Wii U to be able to boot any vWii titles. DO NOT modify it, or your Wii U will no longer be able to load into the vWii without restoring it from Wii U mode."
+      "Danger": "BC-NAND is required for the Wii U to be able to boot any vWii titles. DO NOT modify it, or your Wii U will no longer be able to load the vWii."
     },
     {
       "Name": "BC-WFS",
@@ -30,7 +30,7 @@
       },
       "Ticket": true,
       "WAD Name": "vWii-System-Menu",
-      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If it is deleted, it will need to be restored from Wii U mode to be able to access the vWii again."
+      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If you intend to modify it, you should have Preloader installed, or else you may not be able to use the vWii."
     }
   ],
   "System Channels": [
@@ -53,7 +53,7 @@
       },
       "Ticket": true,
       "WAD Name": "Region-Select-NUS",
-      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
+      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset."
     },
     {
       "Name": "Shopping Channel",
