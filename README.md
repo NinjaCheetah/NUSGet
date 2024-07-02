@@ -1,7 +1,7 @@
 # NUSGet
 A modern and supercharged NUS downloader built with Python and Qt6. Powered by libWiiPy and libTWLPy. 
 
-[![Python application](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml/badge.svg)](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml)
+[![Python application](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml/badge.svg)](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml)[![gitlocalized-badge](https://gitlocalize.com/repo/9731/whole_project/badge.svg)](https://gitlocalize.com/repo/9731?utm_source=badge)
 
 The name is a play on NuGet, the .NET package manager. Thank you [@Janni9009](https://github.com/Janni9009) for the name idea!
 
@@ -22,6 +22,10 @@ The following features are available for all supported consoles:
 
 **For DSi titles only:**
 - "Pack installable archive (WAD/TAD)": Pack the encrypted contents, TMD, and Ticket into a TAD file that can be installed on a TAD or in a DSi-capable emulator. Only supported for free titles. For real hardware, these titles can be installed using [@rvtr](https://github.com/rvtr)'s handy [TAD Delivery Tool](https://github.com/rvtr/TDT).
+
+## Translating
+If you want to contribute tom this project by translating, you can do that on [GitLocalize!](https://gitlocalize.com/repo/9731/badge) Only the strings containing instructions should be translated, the rest should **not** be touched.
+Any string is appreciated! :D
 
 ## Building
 ### System Requirements
