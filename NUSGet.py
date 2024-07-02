@@ -14,7 +14,7 @@ from PySide6.QtGui import QIcon
 
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle,
                                QStyleFactory)
-from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject
+from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
@@ -605,6 +605,15 @@ if __name__ == "__main__":
                 app.setStyle("Breeze")
             elif "kvantum" in QStyleFactory.keys():
                 app.setStyle("kvantum")
+
+    path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
+    translator = QTranslator(app)
+    if translator.load(QLocale.system(), 'qtbase', '_', path):
+        app.installTranslator(translator)
+    translator = QTranslator(app)
+    path = 'resources/translations'
+    if translator.load(QLocale.system(), 'nusget', '_', path):
+        app.installTranslator(translator)
 
     window = MainWindow()
     window.setWindowTitle("NUSGet")
