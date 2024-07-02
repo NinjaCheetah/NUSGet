@@ -18,6 +18,7 @@ from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibra
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
+nusget_version = "1.1"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -70,13 +71,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
         libtwlpy_version = "v" + version("libTWLPy")
-        self.ui.log_text_browser.setText(f"NUSGet v1.0\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
-                                         f"{libwiipy_version}\nDSi support provided by libTWLPy {libtwlpy_version}\n\n"
-                                         f"Select a title from the list on the left, or enter a Title ID to begin.\n\n"
-                                         f"Titles marked with a checkmark are free and have a ticket available, and can"
-                                         f" be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
-                                         f"a ticket, and only their encrypted contents can be saved.\n\nTitles will be "
-                                         f"downloaded to a folder named \"NUSGet\" inside your downloads folder.")
+        log_message = self.tr(f"NUSGet v{nusget_version}\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
+                              f"{libwiipy_version}\nDSi support provided by libTWLPy {libtwlpy_version}\n\n"
+                              f"Select a title from the list on the left, or enter a Title ID to begin.\n\n"
+                              f"Titles marked with a checkmark are free and have a ticket available, and can"
+                              f" be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
+                              f"a ticket, and only their encrypted contents can be saved.\n\nTitles will be "
+                              f"downloaded to a folder named \"NUSGet\" inside your downloads folder.")
+        self.ui.log_text_browser.setText(log_message)
         # Add console entries to dropdown and attach on change signal.
         self.ui.console_select_dropdown.addItem("Wii")
         self.ui.console_select_dropdown.addItem("vWii")
@@ -231,34 +233,38 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
         msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
         if result == -1:
-            msg_box.setWindowTitle("Invalid Title ID")
-            msg_box.setText("The Title ID you have entered is not in a valid format!")
-            msg_box.setInformativeText("Title IDs must be 16 digit strings of numbers and letters. Please enter a "
-                                       "correctly formatted Title ID, or select one from the menu on the left.")
-            msg_box.exec()
+            window_title = self.tr("Invalid Title ID")
+            title_text = self.tr("The Title ID you have entered is not in a valid format!")
+            body_text = self.tr("Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly "
+                                "formatted Title ID, or select one from the menu on the left.")
         elif result == -2:
-            msg_box.setWindowTitle("Title ID/Version Not Found")
-            msg_box.setText("No title with the provided Title ID or version could be found!")
-            msg_box.setInformativeText("Please make sure that you have entered a valid Title ID, or selected one from "
-                                       " the title database, and that the provided version exists for the title you are"
-                                       " attempting to download.")
-            msg_box.exec()
+            window_title = self.tr("Title ID/Version Not Found")
+            title_text = self.tr("No title with the provided Title ID or version could be found!")
+            body_text = self.tr("Please make sure that you have entered a valid Title ID, or selected one from the "
+                                "title database, and that the provided version exists for the title you are attempting "
+                                "to download.")
         elif result == -3:
-            msg_box.setWindowTitle("Content Decryption Failed")
-            msg_box.setText("Content decryption was not successful! Decrypted contents could not be created.")
-            msg_box.setInformativeText("Your TMD or Ticket may be damaged, or they may not correspond with the content "
-                                       "being decrypted. If you have checked \"Use local files, if they exist\", try "
-                                       "disabling that option before trying the download again to fix potential issues "
-                                       "with local data.")
-            msg_box.exec()
+            window_title = self.tr("Content Decryption Failed")
+            title_text = self.tr("Content decryption was not successful! Decrypted contents could not be created.")
+            body_text = self.tr("Your TMD or Ticket may be damaged, or they may not correspond with the content being "
+                                "decrypted. If you have checked \"Use local files, if they exist\", try disabling that "
+                                "option before trying the download again to fix potential issues with local data.")
         elif result == 1:
             msg_box.setIcon(QMessageBox.Icon.Warning)
-            msg_box.setWindowTitle("Ticket Not Available")
-            msg_box.setText("No Ticket is Available for the Requested Title!")
-            msg_box.setInformativeText(
-                "A ticket could not be downloaded for the requested title, but you have selected \"Pack installable "
-                " archive\" or \"Create decrypted contents\". These options are not available for titles without a "
-                " ticket. Only encrypted contents have been saved.")
+            window_title = self.tr("Ticket Not Available")
+            title_text = self.tr("No Ticket is Available for the Requested Title!")
+            body_text = self.tr("A ticket could not be downloaded for the requested title, but you have selected \"Pack"
+                                " installable archive\" or \"Create decrypted contents\". These options are not "
+                                "available for titles without a ticket. Only encrypted contents have been saved.")
+        else:
+            window_title = self.tr("Unknown Error")
+            title_text = self.tr("An Unknown Error has Occurred!")
+            body_text = self.tr("Please try again. If this issue persists, please open a new issue on GitHub detailing"
+                                " what you were trying to do when this error occurred.")
+        if result != 0:
+            msg_box.setWindowTitle(window_title)
+            msg_box.setText(title_text)
+            msg_box.setInformativeText(body_text)
             msg_box.exec()
         # Now that the thread has closed, unlock the UI to allow for the next download.
         self.ui.tid_entry.setEnabled(True)
@@ -606,6 +612,7 @@ if __name__ == "__main__":
             elif "kvantum" in QStyleFactory.keys():
                 app.setStyle("kvantum")
 
+    # Load qtbase translations, and then apps-specific translations.
     path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
     translator = QTranslator(app)
     if translator.load(QLocale.system(), 'qtbase', '_', path):

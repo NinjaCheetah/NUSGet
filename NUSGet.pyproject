@@ -1,3 +1,8 @@
 {
-    "files": ["NUSGet.py", "./qt/py/ui_MainMenu.py", "resources/translations/nusget_es.ts"]
+    "files": [
+        "NUSGet.py",
+        "./qt/py/ui_MainMenu.py",
+        "./resources/translations/nusget_es.ts",
+        "./resources/translations/nusget_no.ts"
+    ]
 }
