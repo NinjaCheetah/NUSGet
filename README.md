@@ -27,14 +27,21 @@ The following features are available for all supported consoles:
 If you want to contribute to this project by translating, you can do that using the app Qt Linguist for Windows.
 
 1. Fork this repository.
+
 2. Go to the folder resources/translations and search for the file "nusget_xx.ts", where xx stands for the 2 letters code of your language. If it's not there, create the file.
 
 2-1. **ONLY IF YOU JUST CREATED THE FILE:** Now open the file "nusget_en.ts" in the same folder, copy its contents, and paste them inside the new file.
+
 3. Google up Qt Linguist and download the latest version from their GitHub.
+
 4. Open linguist.exe from the zip file you just downloaded, and drag the file for your language inside the app.
+
 5. Translate all the strings, **EXCEPT** the first one.
+
 6. Save the file, close Qt Linguist, and upload the translations inside the folder resources/translations in your fork.
+
 7. Make sure the fork is out to date (if not, update it with the Sync Fork button in the "Code" tab).
+
 8. Go to the "Code" tab. click "Contribute" and follow the instructions to send a pull request.
 Any string is appreciated! :D
 
