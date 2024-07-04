@@ -8,7 +8,7 @@
       },
       "Ticket": true,
       "WAD Name": "BC-NAND-NUS",
-      "Danger": "BC-NAND is required for the Wii U to be able to boot any vWii titles. **DO NOT** modify it, or your Wii U will no longer be able to load the vWii."
+      "Danger": "BC-NAND is required for the Wii U to be able to boot any vWii titles. DO NOT modify it, or your Wii U will no longer be able to load the vWii."
     },
     {
       "Name": "BC-WFS",
@@ -18,7 +18,7 @@
       },
       "Ticket": true,
       "WAD Name": "BC-WFS-NUS",
-      "Danger": "BC-WFS is required for the Wii U to be able to boot Dragon Quest X Online. While not generally essential, this is a system title and should **not** be modified."
+      "Danger": "BC-WFS is required for the Wii U to be able to boot Dragon Quest X Online. While not generally essential, this is a system title and should not be modified."
     },
     {
       "Name": "System Menu",
@@ -30,7 +30,7 @@
       },
       "Ticket": true,
       "WAD Name": "vWii-System-Menu",
-      "Danger": "The System Menu is a critical part of the vWii's operation, and should **not** be modified. If you intend to modify it, you should have Priiloader installed, or else you may not be able to use the vWii."
+      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If you intend to modify it, you should have Priiloader installed, or else you may not be able to use the vWii."
     }
   ],
   "System Channels": [
@@ -53,7 +53,7 @@
       },
       "Ticket": true,
       "WAD Name": "Region-Select-NUS",
-      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will **not** be able to set up your Wii again after a factory reset."
+      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset."
     },
     {
       "Name": "Shopping Channel",
@@ -95,7 +95,7 @@
       },
       "Ticket": true,
       "WAD Name": "Wii-System-Transfer-WC-NUS",
-      "Danger": "Note: It is currently unknown how this channel works, but it is involved somehow in the Wii to vWii transfer process. It is recommended **not** to modify it. Also note that this is separate from the normal, non-hidden channel \"Wii System Transfer Tool\" that works alongside \"Wii U Transfer Tool\" on a source Wii."
+      "Danger": "Note: It is currently unknown how this channel works, but it is involved somehow in the Wii to vWii transfer process. It is recommended not to modify it. Also note that this is separate from the normal, non-hidden channel \"Wii System Transfer Tool\" that works alongside \"Wii U Transfer Tool\" on a source Wii."
     }
   ],
   "Downloadable Channels": [
