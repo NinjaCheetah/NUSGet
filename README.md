@@ -2,7 +2,6 @@
 A modern and supercharged NUS downloader built with Python and Qt6. Powered by libWiiPy and libTWLPy. 
 
 [![Python application](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml/badge.svg)](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml)
-[![gitlocalized-badge](https://gitlocalize.com/repo/9731/whole_project/badge.svg)](https://gitlocalize.com/repo/9731?utm_source=badge)
 
 The name is a play on NuGet, the .NET package manager. Thank you [@Janni9009](https://github.com/Janni9009) for the name idea!
 
