@@ -400,7 +400,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS11-64",
-      "Danger": "Version 256 of IOS 11 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.0-2.1, do not install version 256, as the System Menu relies on IOS 11."
+      "Danger": "Version 256 of IOS 11 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.0-2.1, DO NOT install version 256, as the System Menu relies on IOS 11."
     },
     {
       "Name": "IOS 12",
@@ -465,7 +465,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS20-64",
-      "Danger": "Version 256 of IOS 20 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.2, do not install version 256, as the System Menu relies on IOS 20."
+      "Danger": "Version 256 of IOS 20 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.2, DO NOT install version 256, as the System Menu relies on IOS 20."
     },
     {
       "Name": "IOS 21",
@@ -502,7 +502,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS30-64",
-      "Danger": "Version 2816 of IOS 30 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.0-3.3, do not install version 2816, as the System Menu relies on IOS 30."
+      "Danger": "Version 2816 of IOS 30 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.0-3.3, DO NOT install version 2816, as the System Menu relies on IOS 30."
     },
     {
       "Name": "IOS 31",
@@ -575,7 +575,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS40-64",
-      "Danger": "Version 3072 of IOS 40 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, do not install version 3072, as the System Menu relies on IOS 40."
+      "Danger": "Version 3072 of IOS 40 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, DO NOT install version 3072, as the System Menu relies on IOS 40."
     },
     {
       "Name": "IOS 41",
@@ -630,7 +630,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS50-64",
-      "Danger": "Version 5120 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, do not install version 5120, as the System Menu relies on IOS 50."
+      "Danger": "Version 5120 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, DO NOT install version 5120, as the System Menu relies on IOS 50."
     },
     {
       "Name": "IOS 51",
@@ -650,7 +650,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS52-64",
-      "Danger": "Version 5888 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.5, do not install version 5888, as the System Menu relies on IOS 50."
+      "Danger": "Version 5888 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.5, DO NOT install version 5888, as the System Menu relies on IOS 50."
     },
     {
       "Name": "IOS 53",
@@ -714,7 +714,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS60-64",
-      "Danger": "Version 6400 of IOS 60 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.0 or 4.1, do not install version 6400, as the System Menu relies on IOS 60."
+      "Danger": "Version 6400 of IOS 60 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.0 or 4.1, DO NOT install version 6400, as the System Menu relies on IOS 60."
     },
     {
       "Name": "IOS 61",
@@ -742,7 +742,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS70-64",
-      "Danger": "Version 6912 of IOS 60 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.2, do not install version 6912, as the System Menu relies on IOS 70."
+      "Danger": "Version 6912 of IOS 60 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.2, DO NOT install version 6912, as the System Menu relies on IOS 70."
     },
     {
       "Name": "IOS 80",
@@ -752,7 +752,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS80-64",
-      "Danger": "IOS 80 is the IOS that the current System Menu, 4.3, relies on, and is required to load the System Menu. do not modify or remove this IOS unless you have BootMii installed as boot2 to recover from a brick."
+      "Danger": "IOS 80 is the IOS that the current System Menu, 4.3, relies on, and is required to load the System Menu. DO NOT modify or remove this IOS unless you have BootMii installed as boot2 to recover from a brick."
     },
     {
       "Name": "IOS 222",
