@@ -28,6 +28,7 @@ If you want to contribute to this project by translating, you can do that using 
 
 1. Fork this repository.
 2. Go to the folder resources/translations and search for the file "nusget_xx.ts", where xx stands for the 2 letters code of your language. If it's not there, create the file.
+
 2-1. **ONLY IF YOU JUST CREATED THE FILE:** Now open the file "nusget_en.ts" in the same folder, copy its contents, and paste them inside the new file.
 3. Google up Qt Linguist and download the latest version from their GitHub.
 4. Open linguist.exe from the zip file you just downloaded, and drag the file for your language inside the app.
