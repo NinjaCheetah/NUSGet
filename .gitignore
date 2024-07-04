@@ -27,6 +27,7 @@ main.dist/
 NUSGet.build/
 NUSGet.dist/
 NUSGet.onefile-build/
+NUSGet.bin
 .installed.cfg
 *.egg
 MANIFEST
@@ -174,3 +175,6 @@ remakewad.pl
 # Also awful macOS files
 *._*
 *.DS_Store
+
+# Compiled Qt files
+*.qm
