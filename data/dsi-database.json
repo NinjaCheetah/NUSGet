@@ -22,7 +22,7 @@
       },
       "Ticket": true,
       "TAD Name": "Launcher-NUS",
-      "Danger": "The Launcher (DSi Menu) is a critical part of the DSi's operation, and should **not** be modified unless you have Unlaunch installed."
+      "Danger": "The Launcher (DSi Menu) is a critical part of the DSi's operation, and should not be modified unless you have Unlaunch installed."
     },
     {
       "Name": "Version Data",
@@ -46,7 +46,7 @@
       },
       "Ticket": true,
       "TAD Name": "WiFi-Firmware-NUS",
-      "Danger": "The WiFi Firmware is the firmware that runs on the DSi's WiFi chip, and should **not** be modified. Your console WILL be bricked if this title is damaged or missing."
+      "Danger": "The WiFi Firmware is the firmware that runs on the DSi's WiFi chip, and should not be modified. Your console WILL be bricked if this title is damaged or missing."
     }
   ],
   "System Apps": [
