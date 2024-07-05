@@ -69,7 +69,7 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet&quot; i nedlastingsmap
     <message>
         <location filename="../../NUSGet.py" line="252"/>
         <source>Your TMD or Ticket may be damaged, or they may not correspond with the content being decrypted. If you have checked &quot;Use local files, if they exist&quot;, try disabling that option before trying the download again to fix potential issues with local data.</source>
-        <translation>TMDen eller Billetten kan være skadet, eller det kan hende at de ikke samsvarer med innholdet some dekryptertes. Hvis du har krysset av for &quot;Bruk lokale filer, hvis de finnes&quot;, kan du prøve å deaktivere dette alternativet før du prøver nedlastingen på nytt for å løse eventuelle problemer med lokale data.</translation>
+        <translation>TMDen eller Billetten kan være skadet, eller det kan hende at de ikke samsvarer med innholdet some dekrypteres. Hvis du har krysset av for &quot;Bruk lokale filer, hvis de finnes&quot;, kan du prøve å deaktivere dette alternativet før du prøver nedlastingen på nytt for å løse eventuelle problemer med lokale data.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="255"/>
@@ -79,7 +79,7 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet&quot; i nedlastingsmap
     <message>
         <location filename="../../NUSGet.py" line="256"/>
         <source>No Ticket is Available for the Requested Title!</source>
-        <translation>Ikke noe billett er tilgjengelig for den forespurte tittelen!</translation>
+        <translation>Ingen billett er tilgjengelig for den forespurte tittelen!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="259"/>
