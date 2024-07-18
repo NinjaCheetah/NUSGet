@@ -6,7 +6,7 @@ A modern and supercharged NUS downloader built with Python and Qt6. Powered by l
 The name is a play on NuGet, the .NET package manager. Thank you [@Janni9009](https://github.com/Janni9009) for the name idea!
 
 ## Features
-NUSDGet allows you to download any content from the Nintendo Update Servers. Free content (content with a Ticket freely available on the servers) can be decrypted or packed directly into an installable archive (WAD/TAD).
+NUSGet allows you to download any content from the Nintendo Update Servers. Free content (content with a Ticket freely available on the servers) can be decrypted or packed directly into an installable archive (WAD/TAD).
 
 NUSGet also offers the ability to create vWii WADs that can be installed from within vWii mode, since the content directly from the update servers is only designed to be installed from Wii U mode.
 
