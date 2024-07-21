@@ -32,7 +32,7 @@ jobs:
     - name: Build Package
       run: |
         pyside6-project build
-        nuitka3 --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py
+        python -m nuitka --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py
     - name: Prepare Package for Upload
       run: |
         mv NUSGet.bin ~/NUSGet
@@ -61,7 +61,7 @@ jobs:
       - name: Build Package
         run: |
           pyside6-project build
-          nuitka3 --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
+          python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
       - name: Prepare Package for Upload
         run: |
           mv NUSGet.app ~/NUSGet.app
@@ -92,7 +92,7 @@ jobs:
     - name: Build Package
       run: |
         pyside6-project build
-        nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
+        python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
     - name: Upload Package
       uses: actions/upload-artifact@v4.3.0
       with:

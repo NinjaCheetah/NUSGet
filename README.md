@@ -39,17 +39,17 @@ Then, use the command for your platform to build an executable with Nuitka:
 
 **Windows**
 ```
-nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
+python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
 ```
 
 **Linux**
 ```
-nuitka3 --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py
+python -m nuitka --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py
 ```
 
 **macOS**
 ```
-nuitka3 --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
+python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
 ```
 
 The result will be a single binary named `NUSGet` that contains everything required to run NUSGet. No dependencies are needed on the target system.
