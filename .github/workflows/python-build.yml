@@ -31,11 +31,10 @@ jobs:
         pip install -r requirements.txt
     - name: Build Package
       run: |
-        pyside6-project build
-        python -m nuitka --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py
+        make linux
     - name: Prepare Package for Upload
       run: |
-        mv NUSGet.bin ~/NUSGet
+        mv NUSGet ~/NUSGet
         cd ~
         tar cvf NUSGet.tar NUSGet
     - name: Upload Package

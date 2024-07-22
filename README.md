@@ -38,21 +38,35 @@ pip install -r requirements.txt
 Then, use the command for your platform to build an executable with Nuitka:
 
 **Windows**
-```
+```shell
 python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
 ```
 
 **Linux**
-```
-python -m nuitka --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py
+```shell
+python -m nuitka --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py -o NUSGet
 ```
 
 **macOS**
-```
+```shell
 python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
 ```
 
 The result will be a single binary named `NUSGet` that contains everything required to run NUSGet. No dependencies are needed on the target system.
+
+
+### For Linux Users:
+A Makefile has been included to both build and install NUSGet on Linux. This will automatically set up NUSGet under `/opt/` and install a .desktop file to `/usr/share/applications/` so you can use it like any other application.
+
+First, use make to build NUSGet (this automates the step above):
+```shell
+make linux
+```
+
+Then, run the install command with `sudo` (or your favorite alternative):
+```shell
+sudo make linux-install
+```
 
 
 ## Why this and not NUSD?
