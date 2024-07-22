@@ -18,7 +18,7 @@ The following features are available for all supported consoles:
 - "Pack installable archive (WAD/TAD)": Pack the encrypted contents, TMD, and Ticket into a WAD file that can be installed on a Wii or in Dolphin Emulator. Only supported for free titles.
 
 **For vWii titles only:**
-- "Pack for vWii mode instead of Wii U mode": Re-encrpyt the Title Key in a vWii title's Ticket before packing a WAD, so that the WAD can be installed from inside the vWii on a Wii U. **This also creates WADs that can be installed directly in Dolphin, allowing for running the vWii System Menu in Dolphin without a vWii NAND dump!**
+- "Re-encrypt title using the Wii Common Key": Re-encrypt the Title Key in a vWii title's Ticket before packing the WAD, so that the WAD can be installed via a normal WAD manager on the vWii, and can be extracted with legacy tools. **This also creates WADs that can be installed directly in Dolphin, allowing for running the vWii System Menu in Dolphin without a vWii NAND dump!**
 
 **For DSi titles only:**
 - "Pack installable archive (WAD/TAD)": Pack the encrypted contents, TMD, and Ticket into a TAD file that can be installed on a TAD or in a DSi-capable emulator. Only supported for free titles. For real hardware, these titles can be installed using [@rvtr](https://github.com/rvtr)'s handy [TAD Delivery Tool](https://github.com/rvtr/TDT).
@@ -29,7 +29,7 @@ The following features are available for all supported consoles:
 - **Linux:** Python 3.11
 - **macOS:** Python 3.11 (Requires macOS 10.9 or later, however macOS 11.0 or later may be required for library support)
 
-**Python 3.12 is not supported at this time.**
+**Python 3.12 may be supported now, however it is not tested at this time.**
 
 First, install the required dependencies:
 ```
@@ -52,7 +52,7 @@ python -m nuitka --show-progress  --include-data-dir=data=data --include-data-di
 python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
 ```
 
-The result will be a single binary named `NUSGet` that contains everything required to run NUSGet. No dependencies are needed on the target system.
+The result will be a single binary named `NUSGet` that contains everything required to run NUSGet. No dependencies are needed on the target system. On Windows and macOS, this will also embed the icon in the program.
 
 
 ### For Linux Users:

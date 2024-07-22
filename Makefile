@@ -11,7 +11,7 @@ linux-install:
 	install ./packaging/NUSGet.desktop /usr/share/applications
 
 clean:
-	rm NUSGet.bin
+	rm NUSGet
 	rm -rd NUSGet.build/
 	rm -rd NUSGet.dist/
 	rm -rd NUSGet.onefile-build/
