@@ -752,7 +752,7 @@
       },
       "Ticket": true,
       "WAD Name": "IOS80-64",
-      "Danger": "IOS 80 is the IOS that the current System Menu, 4.3, relies on, and is required to load the System Menu. Do not modify or remove this IOS unless you have BootMii installed as boot2 to recover from a brick."
+      "Danger": "IOS 80 is the IOS that the current System Menu, 4.3, relies on, and is required to load the System Menu. DO NOT modify or remove this IOS unless you have BootMii installed as boot2 to recover from a brick."
     },
     {
       "Name": "IOS 222",

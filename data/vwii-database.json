@@ -30,7 +30,7 @@
       },
       "Ticket": true,
       "WAD Name": "vWii-System-Menu",
-      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If you intend to modify it, you should have Preloader installed, or else you may not be able to use the vWii."
+      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If you intend to modify it, you should have Priiloader installed, or else you may not be able to use the vWii."
     }
   ],
   "System Channels": [
@@ -95,7 +95,7 @@
       },
       "Ticket": true,
       "WAD Name": "Wii-System-Transfer-WC-NUS",
-      "Danger": "Note: It is currently unknown how this channel works, but it is involved somehow in the Wii to vWii transfer process. It is recommended to not modify it. Also note that this is separate from the normal, non-hidden channel \"Wii System Transfer Tool\" that works alongside \"Wii U Transfer Tool\" on a source Wii."
+      "Danger": "Note: It is currently unknown how this channel works, but it is involved somehow in the Wii to vWii transfer process. It is recommended not to modify it. Also note that this is separate from the normal, non-hidden channel \"Wii System Transfer Tool\" that works alongside \"Wii U Transfer Tool\" on a source Wii."
     }
   ],
   "Downloadable Channels": [
