@@ -27,7 +27,7 @@ main.dist/
 NUSGet.build/
 NUSGet.dist/
 NUSGet.onefile-build/
-NUSGet.bin
+NUSGet
 .installed.cfg
 *.egg
 MANIFEST
