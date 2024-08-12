@@ -18,7 +18,7 @@ from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibra
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
-nusget_version = "1.1"
+nusget_version = "1.2.0"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -71,13 +71,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
         libtwlpy_version = "v" + version("libTWLPy")
-        log_message = self.tr(f"NUSGet v{nusget_version}\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
-                              f"{libwiipy_version}\nDSi support provided by libTWLPy {libtwlpy_version}\n\n"
-                              f"Select a title from the list on the left, or enter a Title ID to begin.\n\n"
-                              f"Titles marked with a checkmark are free and have a ticket available, and can"
-                              f" be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
-                              f"a ticket, and only their encrypted contents can be saved.\n\nTitles will be "
-                              f"downloaded to a folder named \"NUSGet\" inside your downloads folder.")
+        log_message = (app.translate("NUSGet v{nusget_version}\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
+                              "{libwiipy_version}\nDSi support provided by libTWLPy {libtwlpy_version}\n\n"
+                              "Select a title from the list on the left, or enter a Title ID to begin.\n\n"
+                              "Titles marked with a checkmark are free and have a ticket available, and can"
+                              " be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
+                              "a ticket, and only their encrypted contents can be saved.\n\nTitles will be "
+                              "downloaded to a folder named \"NUSGet\" inside your downloads folder.", "Welcome Text")
+                       .format(nusget_version=nusget_version, libwiipy_version=libwiipy_version,
+                               libtwlpy_version=libtwlpy_version))
         self.ui.log_text_browser.setText(log_message)
         # Add console entries to dropdown and attach on change signal.
         self.ui.console_select_dropdown.addItem("Wii")
@@ -233,34 +235,34 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
         msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
         if result == -1:
-            window_title = self.tr("Invalid Title ID")
-            title_text = self.tr("The Title ID you have entered is not in a valid format!")
-            body_text = self.tr("Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly "
-                                "formatted Title ID, or select one from the menu on the left.")
+            window_title = app.translate("Invalid Title ID", "Invalid TID Error Window Title")
+            title_text = app.translate("The Title ID you have entered is not in a valid format!", "Invalid TID Error Title")
+            body_text = app.translate("Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly "
+                                "formatted Title ID, or select one from the menu on the left.", "Invalid Title ID Error Body")
         elif result == -2:
-            window_title = self.tr("Title ID/Version Not Found")
-            title_text = self.tr("No title with the provided Title ID or version could be found!")
-            body_text = self.tr("Please make sure that you have entered a valid Title ID, or selected one from the "
+            window_title = app.translate("Title ID/Version Not Found", "Target Not Found Error Window Title")
+            title_text = app.translate("No title with the provided Title ID or version could be found!", "Target Not Found Error Title")
+            body_text = app.translate("Please make sure that you have entered a valid Title ID, or selected one from the "
                                 "title database, and that the provided version exists for the title you are attempting "
-                                "to download.")
+                                "to download.", "Target Not Found Error Body")
         elif result == -3:
-            window_title = self.tr("Content Decryption Failed")
-            title_text = self.tr("Content decryption was not successful! Decrypted contents could not be created.")
-            body_text = self.tr("Your TMD or Ticket may be damaged, or they may not correspond with the content being "
+            window_title = app.translate("Content Decryption Failed", "Decryption Error Window Title")
+            title_text = app.translate("Content decryption was not successful! Decrypted contents could not be created.", "Decryption Error Title")
+            body_text = app.translate("Your TMD or Ticket may be damaged, or they may not correspond with the content being "
                                 "decrypted. If you have checked \"Use local files, if they exist\", try disabling that "
-                                "option before trying the download again to fix potential issues with local data.")
+                                "option before trying the download again to fix potential issues with local data.", "Decryption Error Body")
         elif result == 1:
             msg_box.setIcon(QMessageBox.Icon.Warning)
-            window_title = self.tr("Ticket Not Available")
-            title_text = self.tr("No Ticket is Available for the Requested Title!")
-            body_text = self.tr("A ticket could not be downloaded for the requested title, but you have selected \"Pack"
+            window_title = app.translate("Ticket Not Available", "No Ticket Error Window Title")
+            title_text = app.translate("No Ticket is Available for the Requested Title!", "No Ticket Error Title")
+            body_text = app.translate("A ticket could not be downloaded for the requested title, but you have selected \"Pack"
                                 " installable archive\" or \"Create decrypted contents\". These options are not "
-                                "available for titles without a ticket. Only encrypted contents have been saved.")
+                                "available for titles without a ticket. Only encrypted contents have been saved.", "No Ticket Error Body")
         else:
-            window_title = self.tr("Unknown Error")
-            title_text = self.tr("An Unknown Error has Occurred!")
-            body_text = self.tr("Please try again. If this issue persists, please open a new issue on GitHub detailing"
-                                " what you were trying to do when this error occurred.")
+            window_title = app.translate("Unknown Error", "Unknown Error Window Title")
+            title_text = app.translate("An Unknown Error has Occurred!", "Unknown Error Title")
+            body_text = app.translate("Please try again. If this issue persists, please open a new issue on GitHub detailing"
+                                " what you were trying to do when this error occurred.", "Unknown Error Body")
         if result != 0:
             msg_box.setWindowTitle(window_title)
             msg_box.setText(title_text)
