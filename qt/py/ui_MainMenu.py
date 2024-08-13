@@ -323,7 +323,7 @@ class Ui_MainWindow(object):
 
         self.log_text_browser = QTextBrowser(self.centralwidget)
         self.log_text_browser.setObjectName(u"log_text_browser")
-        self.log_text_browser.setMinimumSize(QSize(0, 312))
+        self.log_text_browser.setMinimumSize(QSize(0, 247))
 
         self.vertical_layout_controls.addWidget(self.log_text_browser)
 
