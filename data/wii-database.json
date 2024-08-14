@@ -21,19 +21,6 @@
       "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. Most updated Wiis will already be running boot2v4, which is the only version of boot2 available on the NUS."
     },
     {
-      "Name": "EULA",
-      "TID": "0001000848414BXX",
-      "Versions": {
-        "USA/NTSC": [1, 2, 3],
-        "Europe/PAL": [1, 2, 3],
-        "Japan": [1, 2, 3],
-        "Korea": [1, 2, 3]
-      },
-      "Ticket": true,
-      "WAD Name": "EULA-NUS",
-      "Danger": "\"EULA\" is a hidden channel used to display the End User License Agreement that must be accepted to connect to WiiConnect24. Online services may not work correctly if this channel is damaged or missing."
-    },
-    {
       "Name": "MIOS",
       "TID": "0000000100000101",
       "Versions": {
@@ -42,19 +29,6 @@
       "Ticket": true,
       "WAD Name": "MIOS-NUS",
       "Danger": "MIOS is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if MIOS is damaged or missing."
-    },
-    {
-      "Name": "Region Select",
-      "TID": "0001000848414CXX",
-      "Versions": {
-        "USA/NTSC": [1, 2],
-        "Europe/PAL": [1, 2],
-        "Japan": [1, 2],
-        "Korea": [2]
-      },
-      "Ticket": true,
-      "WAD Name": "Region-Select-NUS",
-      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
     },
     {
       "Name": "System Menu",
@@ -132,6 +106,43 @@
       },
       "Ticket": true,
       "WAD Name": "Shopping-Channel-NUS"
+    }
+  ],
+  "Hidden Channels": [
+    {
+      "Name": "EULA",
+      "TID": "0001000848414BXX",
+      "Versions": {
+        "USA/NTSC": [1, 2, 3],
+        "Europe/PAL": [1, 2, 3],
+        "Japan": [1, 2, 3],
+        "Korea": [1, 2, 3]
+      },
+      "Ticket": true,
+      "WAD Name": "EULA-NUS",
+      "Danger": "\"EULA\" is a hidden channel used to display the End User License Agreement that must be accepted to connect to WiiConnect24. Online services may not work correctly if this channel is damaged or missing."
+    },
+    {
+      "Name": "Region Select",
+      "TID": "0001000848414CXX",
+      "Versions": {
+        "USA/NTSC": [1, 2],
+        "Europe/PAL": [1, 2],
+        "Japan": [1, 2],
+        "Korea": [2]
+      },
+      "Ticket": true,
+      "WAD Name": "Region-Select-NUS",
+      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
+    },
+    {
+      "Name": "Set Personal Data Channel",
+      "TID": "00010008484343XX",
+      "Versions": {
+        "Japan": [0, 1, 2]
+      },
+      "Ticket": true,
+      "WAD Name": "Set-Personal-Data-Channel-NUS"
     }
   ],
   "Downloadable Channels": [
@@ -272,15 +283,6 @@
       },
       "Ticket": true,
       "WAD Name": "Photo-Channel-1.0-Restore-Program-NUS"
-    },
-    {
-      "Name": "Set Personal Data Channel",
-      "TID": "00010008484343XX",
-      "Versions": {
-        "Japan": [0, 1, 2]
-      },
-      "Ticket": true,
-      "WAD Name": "Set-Personal-Data-Channel-NUS"
     },
     {
       "Name": "The Legend of Zelda: Skyward Sword Save Data Update Channel",

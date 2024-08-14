@@ -131,21 +131,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 category = item.parent().parent().parent().text(0)
             except AttributeError:
                 return
-            for tree in self.trees:
-                try:
-                    for title in tree[1][category]:
-                        # Check to see if the current title matches the selected one, and if it does, pass that info on.
-                        if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
-                            selected_title = title
-                            selected_version = item.text(0)
-                            selected_region = item.parent().text(0)
-                            self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
-                            self.load_title_data(selected_title, selected_version, selected_region)
-                except KeyError:
-                    pass
+            tree = self.trees[self.ui.platform_tabs.currentIndex()]
+            for title in tree[1][category]:
+                # Check to see if the current title matches the selected one, and if it does, pass that info on.
+                if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
+                    selected_title = title
+                    selected_version = item.text(0)
+                    selected_region = item.parent().text(0)
+                    self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
+                    self.load_title_data(selected_title, selected_version, selected_region)
 
     def update_log_text(self, new_text):
-        # This function primarily exists to be the handler for the progress signal emitted by the worker thread.
+        # This method primarily exists to be the handler for the progress signal emitted by the worker thread.
         self.log_text += new_text + "\n"
         self.ui.log_text_browser.setText(self.log_text)
         # Always auto-scroll to the bottom of the log.

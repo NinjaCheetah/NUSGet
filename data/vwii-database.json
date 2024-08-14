@@ -44,18 +44,6 @@
       "WAD Name": "Mii-Channel-NUS"
     },
     {
-      "Name": "Region Select",
-      "TID": "0007000848414CXX",
-      "Versions": {
-        "USA/NTSC": [2],
-        "Europe/PAL": [2],
-        "Japan": [2]
-      },
-      "Ticket": true,
-      "WAD Name": "Region-Select-NUS",
-      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset."
-    },
-    {
       "Name": "Shopping Channel",
       "TID": "00070002484142XX",
       "Versions": {
@@ -84,6 +72,20 @@
       },
       "Ticket": true,
       "WAD Name": "Wii-Electronic-Manual-NUS"
+    }
+  ],
+  "Hidden Channels": [
+        {
+      "Name": "Region Select",
+      "TID": "0007000848414CXX",
+      "Versions": {
+        "USA/NTSC": [2],
+        "Europe/PAL": [2],
+        "Japan": [2]
+      },
+      "Ticket": true,
+      "WAD Name": "Region-Select-NUS",
+      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset."
     },
     {
       "Name": "Wii System Transfer (WagonCompat)",
