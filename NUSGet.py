@@ -1,5 +1,6 @@
-# NUSGet.py, licensed under the MIT license
+# "NUSGet.py", licensed under the MIT license
 # Copyright 2024 NinjaCheetah
+
 import sys
 import os
 import json
@@ -7,16 +8,15 @@ import pathlib
 import platform
 from importlib.metadata import version
 
-import libWiiPy
-import libTWLPy
-
 from PySide6.QtGui import QIcon
-
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle,
                                QStyleFactory)
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
 from qt.py.ui_MainMenu import Ui_MainWindow
+
+from modules.download_wii import run_nus_download_wii
+from modules.download_dsi import run_nus_download_dsi
 
 nusget_version = "1.2.0"
 
@@ -32,9 +32,10 @@ class WorkerSignals(QObject):
 
 # Worker class used to thread the downloads.
 class Worker(QRunnable):
-    def __init__(self, fn, **kwargs):
+    def __init__(self, fn, *args, **kwargs):
         super(Worker, self).__init__()
         self.fn = fn
+        self.args = args
         self.kwargs = kwargs
         self.signals = WorkerSignals()
 
@@ -46,7 +47,7 @@ class Worker(QRunnable):
         # unlikely event that an unexpected error happens, it can only possibly be a ValueError, so handle that and
         # return code 1.
         try:
-            result = self.fn(**self.kwargs)
+            result = self.fn(*self.args, **self.kwargs)
         except ValueError:
             self.signals.result.emit(1)
         else:
@@ -62,6 +63,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.pack_archive_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
+        self.ui.tid_entry.textChanged.connect(self.tid_updated)
         # noinspection PyUnresolvedReferences
         self.ui.wii_title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
         # noinspection PyUnresolvedReferences
@@ -141,6 +143,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
                     self.load_title_data(selected_title, selected_version, selected_region)
 
+    def tid_updated(self):
+        tid = self.ui.tid_entry.text()
+        if len(tid) == 16:
+            if tid[:8] == "00000001" and int(tid[-2:], 16) > 2:
+                self.ui.patch_ios_chkbox.setEnabled(True)
+                return
+        self.ui.patch_ios_chkbox.setEnabled(False)
+
     def update_log_text(self, new_text):
         # This method primarily exists to be the handler for the progress signal emitted by the worker thread.
         self.log_text += new_text + "\n"
@@ -218,9 +228,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.log_text_browser.setText(self.log_text)
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
-            worker = Worker(self.run_nus_download_dsi)
+            worker = Worker(run_nus_download_dsi, out_folder, self.ui.tid_entry.text(),
+                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
+                            self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
         else:
-            worker = Worker(self.run_nus_download_wii)
+            worker = Worker(run_nus_download_wii, out_folder, self.ui.tid_entry.text(),
+                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
+                            self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
+                            self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked(),
+                            self.ui.archive_file_entry.text())
         worker.signals.result.connect(self.check_download_result)
         worker.signals.progress.connect(self.update_log_text)
         self.threadpool.start(worker)
@@ -280,283 +298,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # on the currently selected console, and saves on duplicate code.
         self.selected_console_changed()
 
-    def run_nus_download_wii(self, progress_callback):
-        # Actual NUS download function that runs in a separate thread.
-        tid = self.ui.tid_entry.text()
-        # Immediately knock out any invalidly formatted Title IDs.
-        if len(tid) != 16:
-            return -1
-        # An error here is acceptable, because it may just mean the box is empty. Or the version string is nonsense.
-        # Either way, just fall back on downloading the latest version of the title.
-        try:
-            title_version = int(self.ui.version_entry.text())
-        except ValueError:
-            title_version = None
-        # Set variables for these two options so that their state can be compared against the user's choices later.
-        pack_wad_enabled = self.ui.pack_archive_chkbox.isChecked()
-        decrypt_contents_enabled = self.ui.create_dec_chkbox.isChecked()
-        # Check whether we're going to be using the (faster) Wii U NUS or not.
-        wiiu_nus_enabled = self.ui.use_wiiu_nus_chkbox.isChecked()
-        # Create a new libWiiPy Title.
-        title = libWiiPy.title.Title()
-        # Make a directory for this title if it doesn't exist.
-        title_dir = pathlib.Path(os.path.join(out_folder, tid))
-        if not title_dir.is_dir():
-            title_dir.mkdir()
-        # Announce the title being downloaded, and the version if applicable.
-        if title_version is not None:
-            progress_callback.emit("Downloading title " + tid + " v" + str(title_version) + ", please wait...")
-        else:
-            progress_callback.emit("Downloading title " + tid + " vLatest, please wait...")
-        progress_callback.emit(" - Downloading and parsing TMD...")
-        # Download a specific TMD version if a version was specified, otherwise just download the latest TMD.
-        try:
-            if title_version is not None:
-                title.load_tmd(libWiiPy.title.download_tmd(tid, title_version, wiiu_endpoint=wiiu_nus_enabled))
-            else:
-                title.load_tmd(libWiiPy.title.download_tmd(tid, wiiu_endpoint=wiiu_nus_enabled))
-                title_version = title.tmd.title_version
-        # If libWiiPy returns an error, that means that either the TID or version doesn't exist, so return code -2.
-        except ValueError:
-            return -2
-        # Make a directory for this version if it doesn't exist.
-        version_dir = pathlib.Path(os.path.join(title_dir, str(title_version)))
-        if not version_dir.is_dir():
-            version_dir.mkdir()
-        # Write out the TMD to a file.
-        tmd_out = open(os.path.join(version_dir, "tmd." + str(title_version)), "wb")
-        tmd_out.write(title.tmd.dump())
-        tmd_out.close()
-        # Use a local ticket, if one exists and "use local files" is enabled.
-        if self.ui.use_local_chkbox.isChecked() is True and os.path.exists(os.path.join(version_dir, "tik")):
-            progress_callback.emit(" - Parsing local copy of Ticket...")
-            local_ticket = open(os.path.join(version_dir, "tik"), "rb")
-            title.load_ticket(local_ticket.read())
-        else:
-            progress_callback.emit(" - Downloading and parsing Ticket...")
-            try:
-                title.load_ticket(libWiiPy.title.download_ticket(tid, wiiu_endpoint=wiiu_nus_enabled))
-                ticket_out = open(os.path.join(version_dir, "tik"), "wb")
-                ticket_out.write(title.ticket.dump())
-                ticket_out.close()
-            except ValueError:
-                # If libWiiPy returns an error, then no ticket is available. Log this, and disable options requiring a
-                # ticket so that they aren't attempted later.
-                progress_callback.emit("  - No Ticket is available!")
-                pack_wad_enabled = False
-                decrypt_contents_enabled = False
-        # Load the content records from the TMD, and begin iterating over the records.
-        title.load_content_records()
-        content_list = []
-        for content in range(len(title.tmd.content_records)):
-            # Generate the correct file name by converting the content ID into hex, minus the 0x, and then appending
-            # that to the end of 000000. I refuse to believe there isn't a better way to do this here and in libWiiPy.
-            content_file_name = hex(title.tmd.content_records[content].content_id)[2:]
-            while len(content_file_name) < 8:
-                content_file_name = "0" + content_file_name
-            # Check for a local copy of the current content if "use local files" is enabled, and use it.
-            if self.ui.use_local_chkbox.isChecked() is True and os.path.exists(os.path.join(version_dir,
-                                                                                            content_file_name)):
-                progress_callback.emit(" - Using local copy of content " + str(content + 1) + " of " +
-                                       str(len(title.tmd.content_records)))
-                local_file = open(os.path.join(version_dir, content_file_name), "rb")
-                content_list.append(local_file.read())
-            else:
-                progress_callback.emit(" - Downloading content " + str(content + 1) + " of " +
-                                       str(len(title.tmd.content_records)) + " (Content ID: " +
-                                       str(title.tmd.content_records[content].content_id) + ", Size: " +
-                                       str(title.tmd.content_records[content].content_size) + " bytes)...")
-                content_list.append(libWiiPy.title.download_content(tid, title.tmd.content_records[content].content_id,
-                                                                    wiiu_endpoint=wiiu_nus_enabled))
-                progress_callback.emit("   - Done!")
-                # If keep encrypted contents is on, write out each content after its downloaded.
-                if self.ui.keep_enc_chkbox.isChecked() is True:
-                    enc_content_out = open(os.path.join(version_dir, content_file_name), "wb")
-                    enc_content_out.write(content_list[content])
-                    enc_content_out.close()
-        title.content.content_list = content_list
-        # If decrypt local contents is still true, decrypt each content and write out the decrypted file.
-        if decrypt_contents_enabled is True:
-            try:
-                for content in range(len(title.tmd.content_records)):
-                    progress_callback.emit(" - Decrypting content " + str(content + 1) + " of " +
-                                           str(len(title.tmd.content_records)) + " (Content ID: " +
-                                           str(title.tmd.content_records[content].content_id) + ")...")
-                    dec_content = title.get_content_by_index(content)
-                    content_file_name = hex(title.tmd.content_records[content].content_id)[2:]
-                    while len(content_file_name) < 8:
-                        content_file_name = "0" + content_file_name
-                    content_file_name = content_file_name + ".app"
-                    dec_content_out = open(os.path.join(version_dir, content_file_name), "wb")
-                    dec_content_out.write(dec_content)
-                    dec_content_out.close()
-            except ValueError:
-                # If libWiiPy throws an error during decryption, return code -3. This should only be possible if using
-                # local encrypted contents that have been altered at present.
-                return -3
-        # If pack WAD is still true, pack the TMD, ticket, and contents all into a WAD.
-        if pack_wad_enabled is True:
-            # If the option to pack for vWii mode instead of Wii U mode is enabled, then the Title Key needs to be
-            # re-encrypted with the common key instead of the vWii key, so that the title can be installed from within
-            # vWii mode. (vWii mode does not have access to the vWii key, only Wii U mode has that.)
-            if self.ui.pack_vwii_mode_chkbox.isChecked() is True and (tid[3] == "7" or tid[7] == "7"):
-                progress_callback.emit(" - Re-encrypting Title Key with the common key...")
-                title_key_dec = title.ticket.get_title_key()
-                title_key_common = libWiiPy.title.encrypt_title_key(title_key_dec, 0, title.tmd.title_id)
-                title.ticket.common_key_index = 0
-                title.ticket.title_key_enc = title_key_common
-            # Get the WAD certificate chain, courtesy of libWiiPy.
-            progress_callback.emit(" - Building certificate...")
-            title.wad.set_cert_data(libWiiPy.title.download_cert(wiiu_endpoint=wiiu_nus_enabled))
-            # Use a typed WAD name if there is one, and auto generate one based on the TID and version if there isn't.
-            progress_callback.emit("Packing WAD...")
-            if self.ui.archive_file_entry.text() != "":
-                wad_file_name = self.ui.archive_file_entry.text()
-                if wad_file_name[-4:] != ".wad":
-                    wad_file_name = wad_file_name + ".wad"
-            else:
-                wad_file_name = tid + "-v" + str(title_version) + ".wad"
-            # Have libWiiPy dump the WAD, and write that data out.
-            file = open(os.path.join(version_dir, wad_file_name), "wb")
-            file.write(title.dump_wad())
-            file.close()
-        progress_callback.emit("Download complete!")
-        # This is where the variables come in. If the state of these variables doesn't match the user's choice by this
-        # point, it means that they enabled decryption or WAD packing for a title that doesn't have a ticket. Return
-        # code 1 so that a warning popup is shown informing them of this.
-        if ((not pack_wad_enabled and self.ui.pack_archive_chkbox.isChecked()) or
-                (not decrypt_contents_enabled and self.ui.create_dec_chkbox.isChecked())):
-            return 1
-        return 0
-
-    def run_nus_download_dsi(self, progress_callback):
-        # Actual NUS download function that runs in a separate thread, but DSi flavored.
-        tid = self.ui.tid_entry.text()
-        # Immediately knock out any invalidly formatted Title IDs.
-        if len(tid) != 16:
-            return -1
-        # An error here is acceptable, because it may just mean the box is empty. Or the version string is nonsense.
-        # Either way, just fall back on downloading the latest version of the title.
-        try:
-            title_version = int(self.ui.version_entry.text())
-        except ValueError:
-            title_version = None
-        # Set variables for these two options so that their state can be compared against the user's choices later.
-        pack_tad_enabled = self.ui.pack_archive_chkbox.isChecked()
-        decrypt_contents_enabled = self.ui.create_dec_chkbox.isChecked()
-        # Create a new libTWLPy Title.
-        title = libTWLPy.Title()
-        # Make a directory for this title if it doesn't exist.
-        title_dir = pathlib.Path(os.path.join(out_folder, tid))
-        if not title_dir.is_dir():
-            title_dir.mkdir()
-        # Announce the title being downloaded, and the version if applicable.
-        if title_version is not None:
-            progress_callback.emit("Downloading title " + tid + " v" + str(title_version) + ", please wait...")
-        else:
-            progress_callback.emit("Downloading title " + tid + " vLatest, please wait...")
-        progress_callback.emit(" - Downloading and parsing TMD...")
-        # Download a specific TMD version if a version was specified, otherwise just download the latest TMD.
-        try:
-            if title_version is not None:
-                title.load_tmd(libTWLPy.download_tmd(tid, title_version))
-            else:
-                title.load_tmd(libTWLPy.download_tmd(tid))
-                title_version = title.tmd.title_version
-        # If libTWLPy returns an error, that means that either the TID or version doesn't exist, so return code -2.
-        except ValueError:
-            return -2
-        # Make a directory for this version if it doesn't exist.
-        version_dir = pathlib.Path(os.path.join(title_dir, str(title_version)))
-        if not version_dir.is_dir():
-            version_dir.mkdir()
-        # Write out the TMD to a file.
-        tmd_out = open(os.path.join(version_dir, "tmd." + str(title_version)), "wb")
-        tmd_out.write(title.tmd.dump())
-        tmd_out.close()
-        # Use a local ticket, if one exists and "use local files" is enabled.
-        if self.ui.use_local_chkbox.isChecked() is True and os.path.exists(os.path.join(version_dir, "tik")):
-            progress_callback.emit(" - Parsing local copy of Ticket...")
-            local_ticket = open(os.path.join(version_dir, "tik"), "rb")
-            title.load_ticket(local_ticket.read())
-        else:
-            progress_callback.emit(" - Downloading and parsing Ticket...")
-            try:
-                title.load_ticket(libTWLPy.download_ticket(tid))
-                ticket_out = open(os.path.join(version_dir, "tik"), "wb")
-                ticket_out.write(title.ticket.dump())
-                ticket_out.close()
-            except ValueError:
-                # If libTWLPy returns an error, then no ticket is available. Log this, and disable options requiring a
-                # ticket so that they aren't attempted later.
-                progress_callback.emit("  - No Ticket is available!")
-                pack_tad_enabled = False
-                decrypt_contents_enabled = False
-        # Load the content record from the TMD, and download the content it lists. DSi titles only have one content.
-        title.load_content_records()
-        content_file_name = hex(title.tmd.content_record.content_id)[2:]
-        while len(content_file_name) < 8:
-            content_file_name = "0" + content_file_name
-        # Check for a local copy of the current content if "use local files" is enabled, and use it.
-        if self.ui.use_local_chkbox.isChecked() is True and os.path.exists(os.path.join(version_dir,
-                                                                                        content_file_name)):
-            progress_callback.emit(" - Using local copy of content")
-            local_file = open(os.path.join(version_dir, content_file_name), "rb")
-            content = local_file.read()
-        else:
-            progress_callback.emit(" - Downloading content (Content ID: " + str(title.tmd.content_record.content_id) +
-                                   ", Size: " + str(title.tmd.content_record.content_size) + " bytes)...")
-            content = libTWLPy.download_content(tid, title.tmd.content_record.content_id)
-            progress_callback.emit("   - Done!")
-            # If keep encrypted contents is on, write out each content after its downloaded.
-            if self.ui.keep_enc_chkbox.isChecked() is True:
-                enc_content_out = open(os.path.join(version_dir, content_file_name), "wb")
-                enc_content_out.write(content)
-                enc_content_out.close()
-        title.content.content = content
-        # If decrypt local contents is still true, decrypt each content and write out the decrypted file.
-        if decrypt_contents_enabled is True:
-            try:
-                progress_callback.emit(" - Decrypting content (Content ID: " + str(title.tmd.content_record.content_id)
-                                       + ")...")
-                dec_content = title.get_content()
-                content_file_name = hex(title.tmd.content_record.content_id)[2:]
-                while len(content_file_name) < 8:
-                    content_file_name = "0" + content_file_name
-                content_file_name = content_file_name + ".app"
-                dec_content_out = open(os.path.join(version_dir, content_file_name), "wb")
-                dec_content_out.write(dec_content)
-                dec_content_out.close()
-            except ValueError:
-                # If libWiiPy throws an error during decryption, return code -3. This should only be possible if using
-                # local encrypted contents that have been altered at present.
-                return -3
-        # If pack TAD is still true, pack the TMD, ticket, and content into a TAD.
-        if pack_tad_enabled is True:
-            # Get the TAD certificate chain, courtesy of libTWLPy.
-            progress_callback.emit(" - Building certificate...")
-            title.tad.set_cert_data(libTWLPy.download_cert())
-            # Use a typed TAD name if there is one, and auto generate one based on the TID and version if there isn't.
-            progress_callback.emit("Packing TAD...")
-            if self.ui.archive_file_entry.text() != "":
-                tad_file_name = self.ui.archive_file_entry.text()
-                if tad_file_name[-4:] != ".tad":
-                    tad_file_name = tad_file_name + ".tad"
-            else:
-                tad_file_name = tid + "-v" + str(title_version) + ".tad"
-            # Have libTWLPy dump the TAD, and write that data out.
-            file = open(os.path.join(version_dir, tad_file_name), "wb")
-            file.write(title.dump_tad())
-            file.close()
-        progress_callback.emit("Download complete!")
-        # This is where the variables come in. If the state of these variables doesn't match the user's choice by this
-        # point, it means that they enabled decryption or TAD packing for a title that doesn't have a ticket. Return
-        # code 1 so that a warning popup is shown informing them of this.
-        if ((not pack_tad_enabled and self.ui.pack_archive_chkbox.isChecked()) or
-                (not decrypt_contents_enabled and self.ui.create_dec_chkbox.isChecked())):
-            return 1
-        return 0
-
     def pack_wad_chkbox_toggled(self):
         # Simple function to catch when the WAD/TAD checkbox is toggled and enable/disable the file name entry box
         # accordingly.
@@ -590,15 +331,15 @@ if __name__ == "__main__":
         sub_key = r'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
         downloads_guid = '{374DE290-123F-4565-9164-39C4925E467B}'
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, sub_key) as key:
-            location = winreg.QueryValueEx(key, downloads_guid)[0]
+            location = pathlib.Path(winreg.QueryValueEx(key, downloads_guid)[0])
     else:
-        location = os.path.join(os.path.expanduser('~'), 'Downloads')
+        location = pathlib.Path(os.path.expanduser('~')).joinpath('Downloads')
     # Build the path by combining the path to the Downloads photo with "NUSGet".
-    out_folder = os.path.join(location, "NUSGet")
+    out_folder = location.joinpath("NUSGet")
     # Create the "NUSGet" directory if it doesn't exist. In the future, this will be user-customizable, but this works
     # for now, and avoids the issues from when it used to use a directory next to the binary (mostly on macOS).
-    if not os.path.isdir(out_folder):
-        os.mkdir(out_folder)
+    if not out_folder.is_dir():
+        out_folder.mkdir()
 
     # Load the system plugins directory on Linux for system styles, if it exists. Try using Breeze if available, because
     # it looks nice, but fallback on kvantum if it isn't, since kvantum is likely to exist. If all else fails, fusion.
@@ -616,7 +357,7 @@ if __name__ == "__main__":
     if translator.load(QLocale.system(), 'qtbase', '_', path):
         app.installTranslator(translator)
     translator = QTranslator(app)
-    path = 'resources/translations'
+    path = os.path.join(os.path.dirname(__file__), "resources/translations")
     if translator.load(QLocale.system(), 'nusget', '_', path):
         app.installTranslator(translator)
 

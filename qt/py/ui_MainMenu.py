@@ -268,6 +268,27 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addLayout(self.use_wiiu_nus_row)
 
+        self.patch_ios_row = QHBoxLayout()
+        self.patch_ios_row.setObjectName(u"patch_ios_row")
+        self.patch_ios_chkbox = QCheckBox(self.centralwidget)
+        self.patch_ios_chkbox.setObjectName(u"patch_ios_chkbox")
+        self.patch_ios_chkbox.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.patch_ios_chkbox.sizePolicy().hasHeightForWidth())
+        self.patch_ios_chkbox.setSizePolicy(sizePolicy1)
+        self.patch_ios_chkbox.setText(u"")
+
+        self.patch_ios_row.addWidget(self.patch_ios_chkbox)
+
+        self.patch_ios_lbl = QLabel(self.centralwidget)
+        self.patch_ios_lbl.setObjectName(u"patch_ios_lbl")
+        self.patch_ios_lbl.setEnabled(True)
+        self.patch_ios_lbl.setWordWrap(True)
+
+        self.patch_ios_row.addWidget(self.patch_ios_lbl)
+
+
+        self.verticalLayout_7.addLayout(self.patch_ios_row)
+
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_7.addItem(self.verticalSpacer_2)
@@ -298,11 +319,12 @@ class Ui_MainWindow(object):
 
         self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_chkbox)
 
-        self.label_8 = QLabel(self.centralwidget)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setWordWrap(True)
+        self.pack_vwii_mode_lbl = QLabel(self.centralwidget)
+        self.pack_vwii_mode_lbl.setObjectName(u"pack_vwii_mode_lbl")
+        self.pack_vwii_mode_lbl.setEnabled(True)
+        self.pack_vwii_mode_lbl.setWordWrap(True)
 
-        self.pack_vwii_mode_row.addWidget(self.label_8)
+        self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_lbl)
 
 
         self.verticalLayout_8.addLayout(self.pack_vwii_mode_row)
@@ -365,8 +387,9 @@ class Ui_MainWindow(object):
         self.create_dec_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Create decrypted contents (*.app)", None))
         self.use_local_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use local files, if they exist", None))
         self.use_wiiu_nus_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use the Wii U NUS (faster, only effects Wii/vWii)", None))
+        self.patch_ios_lbl.setText(QCoreApplication.translate("MainWindow", u"Apply patches to IOS (Applies to WADs only)", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"vWii Title Settings", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Re-encrypt title using the Wii Common Key", None))
+        self.pack_vwii_mode_lbl.setText(QCoreApplication.translate("MainWindow", u"Re-encrypt title using the Wii Common Key", None))
         self.log_text_browser.setMarkdown("")
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
