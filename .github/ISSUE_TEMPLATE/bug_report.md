@@ -7,16 +7,20 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+### Describe the bug
 
 
-**To Reproduce**
+### Steps to Reproduce
 
 
-**Screenshots (optional)**
+### Screenshot(s) (if applicable)
 
 
-**Computer (please complete the following information):**
- - OS: 
- - NUSGet version:
- - Python version:
+### System information:
+ - **OS and version:**
+ - **NUSGet version:**
+
+If you're running the app from source, provide the below information:
+ - **Are you compiling NUSGet, or running the Python script directly?**
+ - **Python version:**
+ - **Installed libWiiPy version:**
