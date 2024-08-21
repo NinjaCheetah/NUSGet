@@ -112,6 +112,21 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../../NUSGet.py" line="232"/>
+        <source>No Output Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="233"/>
+        <source>You have not selected any format to output the data in!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="235"/>
+        <source>Please select at least one option for how you would like the download to be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../NUSGet.py" line="277"/>
         <source>Invalid Title ID</source>
         <translation>ID Titolo invalido</translation>

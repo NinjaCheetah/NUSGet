@@ -20,7 +20,7 @@ from modules.core import *
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.0.0"
+nusget_version = "1.2.0"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -229,10 +229,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.setIcon(QMessageBox.Icon.Critical)
             msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
             msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
-            msg_box.setWindowTitle("No Output Selected")
-            msg_box.setText("You have not selected any format to output the data in!")
-            msg_box.setInformativeText("Please select at least one option for how you would like the download to be "
-                                       "saved.")
+            msg_box.setWindowTitle(app.translate("MainWindow", "No Output Selected"))
+            msg_box.setText(app.translate("MainWindow", "You have not selected any format to output the data in!"))
+            msg_box.setInformativeText(app.translate("MainWindow", "Please select at least one option for how you would "
+                                                       "like the download to be saved."))
             msg_box.exec()
             return
         # Lock the UI prior to the download beginning to avoid spawning multiple threads or changing info part way in.
