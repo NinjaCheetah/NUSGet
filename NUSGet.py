@@ -6,6 +6,7 @@ import os
 import json
 import pathlib
 import platform
+import webbrowser
 from importlib.metadata import version
 
 from PySide6.QtGui import QIcon
@@ -15,6 +16,7 @@ from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibra
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
+from modules.core import *
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
@@ -26,7 +28,7 @@ regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": [
 
 # Signals needed for the worker used for threading the downloads.
 class WorkerSignals(QObject):
-    result = Signal(int)
+    result = Signal(object)
     progress = Signal(str)
 
 
@@ -59,7 +61,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.log_text = ""
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.pack_archive_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
@@ -73,7 +74,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
         libtwlpy_version = "v" + version("libTWLPy")
-        log_message = (app.translate("MainWindow", "NUSGet v{nusget_version}\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
+        self.log_text = (app.translate("MainWindow", "NUSGet v{nusget_version}\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
                               "{libwiipy_version}\nDSi support provided by libTWLPy {libtwlpy_version}\n\n"
                               "Select a title from the list on the left, or enter a Title ID to begin.\n\n"
                               "Titles marked with a checkmark are free and have a ticket available, and can"
@@ -82,7 +83,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                               "downloaded to a folder named \"NUSGet\" inside your downloads folder.")
                        .format(nusget_version=nusget_version, libwiipy_version=libwiipy_version,
                                libtwlpy_version=libtwlpy_version))
-        self.ui.log_text_browser.setText(log_message)
+        self.ui.log_text_browser.setText(self.log_text)
         # Add console entries to dropdown and attach on change signal.
         self.ui.console_select_dropdown.addItem("Wii")
         self.ui.console_select_dropdown.addItem("vWii")
@@ -123,6 +124,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tree[0].insertTopLevelItems(0, self.tree_categories)
             # Connect the double click signal for handling when titles are selected.
             tree[0].itemDoubleClicked.connect(self.onItemClicked)
+        # Do a quick check to see if there's a newer release available, and inform the user if there is.
+        worker = Worker(check_nusget_updates, nusget_version)
+        worker.signals.result.connect(self.prompt_for_update)
+        worker.signals.progress.connect(self.update_log_text)
+        self.threadpool.start(worker)
 
     @Slot(QTreeWidgetItem, int)
     def onItemClicked(self, item, col):
@@ -158,6 +164,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Always auto-scroll to the bottom of the log.
         scroll_bar = self.ui.log_text_browser.verticalScrollBar()
         scroll_bar.setValue(scroll_bar.maximum())
+
+    def prompt_for_update(self, new_version):
+        # This method is designed to display a message box informing the user that a new NUSGet version is available.
+        if new_version is not None:
+            msg_box = QMessageBox()
+            msg_box.setIcon(QMessageBox.Icon.Information)
+            msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+            msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
+            msg_box.setWindowTitle(app.translate("MainWindow", "NUSGet Update Available"))
+            msg_box.setText(app.translate("MainWindow", "There's a newer version of NUSGet available!"))
+            msg_box.setInformativeText(app.translate("MainWindow", "You're currently running v{nusget_version}, "
+                                                   "but v{new_version} is available on GitHub. Would you like to view"
+                                                   " the latest version?"
+                                                    .format(nusget_version=nusget_version, new_version=nusget_version)))
+            ret = msg_box.exec()
+            if ret == QMessageBox.StandardButton.Yes:
+                webbrowser.open("https://github.com/NinjaCheetah/NUSGet/releases/latest")
 
     def load_title_data(self, selected_title, selected_version, selected_region=None):
         # Use the information passed from the double click callback to prepare a title for downloading.

@@ -3,4 +3,5 @@ nuitka
 libWiiPy
 libTWLPy
 zstandard
+requests
 imageio
