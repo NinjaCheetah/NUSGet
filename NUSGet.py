@@ -20,7 +20,7 @@ from modules.core import *
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.2.0"
+nusget_version = "1.0.0"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -125,7 +125,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # Connect the double click signal for handling when titles are selected.
             tree[0].itemDoubleClicked.connect(self.onItemClicked)
         # Do a quick check to see if there's a newer release available, and inform the user if there is.
-        worker = Worker(check_nusget_updates, nusget_version)
+        worker = Worker(check_nusget_updates, app, nusget_version)
         worker.signals.result.connect(self.prompt_for_update)
         worker.signals.progress.connect(self.update_log_text)
         self.threadpool.start(worker)
@@ -177,7 +177,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.setInformativeText(app.translate("MainWindow", "You're currently running v{nusget_version}, "
                                                    "but v{new_version} is available on GitHub. Would you like to view"
                                                    " the latest version?"
-                                                    .format(nusget_version=nusget_version, new_version=nusget_version)))
+                                                    .format(nusget_version=nusget_version, new_version=new_version)))
             ret = msg_box.exec()
             if ret == QMessageBox.StandardButton.Yes:
                 webbrowser.open("https://github.com/NinjaCheetah/NUSGet/releases/latest")
