@@ -2,6 +2,21 @@
 # Copyright 2024 NinjaCheetah
 
 import requests
+from dataclasses import dataclass
+
+
+@dataclass
+class SelectedTitle:
+    # Class to store all components of a selected title to make tracking it easier.
+    tid: str
+    name: str
+    archive_name: str
+    version: str
+    ticket: bool
+    region: str
+    category: str
+    console: str
+    danger: str
 
 
 def check_nusget_updates(app, current_version: str, progress_callback=None) -> str | None:

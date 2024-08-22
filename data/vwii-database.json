@@ -7,8 +7,8 @@
         "World": [6, 7]
       },
       "Ticket": true,
-      "WAD Name": "BC-NAND-NUS",
-      "Danger": "BC-NAND is required for the Wii U to be able to boot any vWii titles. DO NOT modify it, or your Wii U will no longer be able to load the vWii."
+      "Archive Name": "BC-NAND",
+      "Danger": "BC-NAND is required for the Wii U to boot Wii titles. DO NOT modify it, or your Wii U will no longer be able to enter Wii mode."
     },
     {
       "Name": "BC-WFS",
@@ -17,8 +17,8 @@
         "World": [1]
       },
       "Ticket": true,
-      "WAD Name": "BC-WFS-NUS",
-      "Danger": "BC-WFS is required for the Wii U to be able to boot Dragon Quest X Online. While not generally essential, this is a system title and should not be modified."
+      "Archive Name": "BC-WFS",
+      "Danger": "BC-WFS is required for the Wii U to be able to boot Dragon Quest X Online. Do NOT modify it, or your Wii U may experience issues with Wii mode."
     },
     {
       "Name": "System Menu",
@@ -29,7 +29,7 @@
         "Japan": [512, 544, 608]
       },
       "Ticket": true,
-      "WAD Name": "vWii-System-Menu",
+      "Archive Name": "System-Menu",
       "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If you intend to modify it, you should have Preloader installed, or else you may not be able to use the vWii."
     }
   ],
@@ -41,7 +41,7 @@
         "World": [6]
       },
       "Ticket": true,
-      "WAD Name": "Mii-Channel-NUS"
+      "Archive Name": "Mii-Channel"
     },
     {
       "Name": "Shopping Channel",
@@ -50,7 +50,7 @@
         "World": [21]
       },
       "Ticket": true,
-      "WAD Name": "Shopping-Channel-NUS"
+      "Archive Name": "Shopping-Channel"
     },
     {
       "Name": "Return to Wii U Menu",
@@ -59,7 +59,7 @@
         "World": [0]
       },
       "Ticket": true,
-      "WAD Name": "Return-to-Wii-U-Menu-NUS",
+      "Archive Name": "Return-to-Wii-U-Menu",
       "Danger": "\"Return to Wii U Menu\" is the channel launched from the vWii menu to reboot your console back into Wii U mode. While it generally should not be modified, modifying or removing it will not prevent the vWii from working."
     },
     {
@@ -71,7 +71,7 @@
         "Japan": [0, 1, 2, 3, 5]
       },
       "Ticket": true,
-      "WAD Name": "Wii-Electronic-Manual-NUS"
+      "Archive Name": "Wii-Electronic-Manual"
     }
   ],
   "Hidden Channels": [
@@ -84,7 +84,7 @@
         "Japan": [2]
       },
       "Ticket": true,
-      "WAD Name": "Region-Select-NUS",
+      "Archive Name": "Region-Select",
       "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset."
     },
     {
@@ -96,7 +96,7 @@
         "Japan": [29, 31]
       },
       "Ticket": true,
-      "WAD Name": "Wii-System-Transfer-WC-NUS",
+      "Archive Name": "Wii-System-Transfer-WC",
       "Danger": "Note: It is currently unknown how this channel works, but it is involved somehow in the Wii to vWii transfer process. It is recommended to not modify it. Also note that this is separate from the normal, non-hidden channel \"Wii System Transfer Tool\" that works alongside \"Wii U Transfer Tool\" on a source Wii."
     }
   ],
@@ -110,7 +110,7 @@
         "Japan": [516]
       },
       "Ticket": false,
-      "WAD Name": "Wii-System-Transfer-Tool-WNP-NUS"
+      "Archive Name": "Wii-System-Transfer-Tool-WNP"
     }
   ],
   "IOS": [
@@ -121,7 +121,7 @@
         "World": [1290]
       },
       "Ticket": true,
-      "WAD Name": "IOS9-64-vWii"
+      "Archive Name": "IOS9"
     },
     {
       "Name": "IOS 12",
@@ -130,7 +130,7 @@
         "World": [782]
       },
       "Ticket": true,
-      "WAD Name": "IOS12-64-vWii"
+      "Archive Name": "IOS12"
     },
     {
       "Name": "IOS 13",
@@ -139,7 +139,7 @@
         "World": [1288]
       },
       "Ticket": true,
-      "WAD Name": "IOS13-64-vWii"
+      "Archive Name": "IOS13"
     },
     {
       "Name": "IOS 14",
@@ -148,7 +148,7 @@
         "World": [1288]
       },
       "Ticket": true,
-      "WAD Name": "IOS14-64-vWii"
+      "Archive Name": "IOS14"
     },
     {
       "Name": "IOS 15",
@@ -157,7 +157,7 @@
         "World": [1288]
       },
       "Ticket": true,
-      "WAD Name": "IOS15-64-vWii"
+      "Archive Name": "IOS15"
     },
     {
       "Name": "IOS 17",
@@ -166,7 +166,7 @@
         "World": [1288]
       },
       "Ticket": true,
-      "WAD Name": "IOS17-64-vWii"
+      "Archive Name": "IOS17"
     },
     {
       "Name": "IOS 21",
@@ -175,7 +175,7 @@
         "World": [1295]
       },
       "Ticket": true,
-      "WAD Name": "IOS21-64-vWii"
+      "Archive Name": "IOS21"
     },
     {
       "Name": "IOS 22",
@@ -184,7 +184,7 @@
         "World": [1550]
       },
       "Ticket": true,
-      "WAD Name": "IOS22-64-vWii"
+      "Archive Name": "IOS22"
     },
     {
       "Name": "IOS 28",
@@ -193,7 +193,7 @@
         "World": [2063]
       },
       "Ticket": true,
-      "WAD Name": "IOS28-64-vWii"
+      "Archive Name": "IOS28"
     },
     {
       "Name": "IOS 31",
@@ -202,7 +202,7 @@
         "World": [3864]
       },
       "Ticket": true,
-      "WAD Name": "IOS31-64-vWii"
+      "Archive Name": "IOS31"
     },
     {
       "Name": "IOS 33",
@@ -211,7 +211,7 @@
         "World": [3864]
       },
       "Ticket": true,
-      "WAD Name": "IOS33-64-vWii"
+      "Archive Name": "IOS33"
     },
     {
       "Name": "IOS 34",
@@ -220,7 +220,7 @@
         "World": [3864]
       },
       "Ticket": true,
-      "WAD Name": "IOS34-64-vWii"
+      "Archive Name": "IOS34"
     },
     {
       "Name": "IOS 35",
@@ -229,7 +229,7 @@
         "World": [3864]
       },
       "Ticket": true,
-      "WAD Name": "IOS35-64-vWii"
+      "Archive Name": "IOS35"
     },
     {
       "Name": "IOS 36",
@@ -238,7 +238,7 @@
         "World": [3864]
       },
       "Ticket": true,
-      "WAD Name": "IOS36-64-vWii"
+      "Archive Name": "IOS36"
     },
     {
       "Name": "IOS 37",
@@ -247,7 +247,7 @@
         "World": [5919]
       },
       "Ticket": true,
-      "WAD Name": "IOS37-64-vWii"
+      "Archive Name": "IOS37"
     },
     {
       "Name": "IOS 38",
@@ -256,7 +256,7 @@
         "World": [4380]
       },
       "Ticket": true,
-      "WAD Name": "IOS38-64-vWii"
+      "Archive Name": "IOS38"
     },
     {
       "Name": "IOS 41",
@@ -265,7 +265,7 @@
         "World": [3863]
       },
       "Ticket": true,
-      "WAD Name": "IOS41-64-vWii"
+      "Archive Name": "IOS41"
     },
     {
       "Name": "IOS 43",
@@ -274,7 +274,7 @@
         "World": [3863]
       },
       "Ticket": true,
-      "WAD Name": "IOS43-64-vWii"
+      "Archive Name": "IOS43"
     },
     {
       "Name": "IOS 45",
@@ -283,7 +283,7 @@
         "World": [3863]
       },
       "Ticket": true,
-      "WAD Name": "IOS45-64-vWii"
+      "Archive Name": "IOS45"
     },
     {
       "Name": "IOS 46",
@@ -292,7 +292,7 @@
         "World": [3863]
       },
       "Ticket": true,
-      "WAD Name": "IOS46-64-vWii"
+      "Archive Name": "IOS46"
     },
     {
       "Name": "IOS 48",
@@ -301,7 +301,7 @@
         "World": [4380]
       },
       "Ticket": true,
-      "WAD Name": "IOS48-64-vWii"
+      "Archive Name": "IOS48"
     },
     {
       "Name": "IOS 53",
@@ -310,7 +310,7 @@
         "World": [5919]
       },
       "Ticket": true,
-      "WAD Name": "IOS53-64-vWii"
+      "Archive Name": "IOS53"
     },
     {
       "Name": "IOS 55",
@@ -319,7 +319,7 @@
         "World": [5919]
       },
       "Ticket": true,
-      "WAD Name": "IOS55-64-vWii"
+      "Archive Name": "IOS55"
     },
     {
       "Name": "IOS 56",
@@ -328,7 +328,7 @@
         "World": [5918]
       },
       "Ticket": true,
-      "WAD Name": "IOS56-64-vWii"
+      "Archive Name": "IOS56"
     },
     {
       "Name": "IOS 57",
@@ -337,7 +337,7 @@
         "World": [6175]
       },
       "Ticket": true,
-      "WAD Name": "IOS57-64-vWii"
+      "Archive Name": "IOS57"
     },
     {
       "Name": "IOS 58",
@@ -346,7 +346,7 @@
         "World": [6432]
       },
       "Ticket": true,
-      "WAD Name": "IOS58-64-vWii"
+      "Archive Name": "IOS58"
     },
     {
       "Name": "IOS 59",
@@ -355,7 +355,7 @@
         "World": [7201, 8737, 9249]
       },
       "Ticket": true,
-      "WAD Name": "IOS59-64-vWii"
+      "Archive Name": "IOS59"
     },
     {
       "Name": "IOS 62",
@@ -364,7 +364,7 @@
         "World": [6430, 6686, 6942]
       },
       "Ticket": true,
-      "WAD Name": "IOS62-64-vWii"
+      "Archive Name": "IOS62"
     },
     {
       "Name": "IOS 80",
@@ -373,7 +373,7 @@
         "World": [7200]
       },
       "Ticket": true,
-      "WAD Name": "IOS80-64-vWii"
+      "Archive Name": "IOS80"
     }
   ]
 }

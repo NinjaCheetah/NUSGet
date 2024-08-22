@@ -7,7 +7,7 @@
         "World": [256, 512]
       },
       "Ticket": true,
-      "TAD Name": "Nintendo-DS-Cartridge-Whitelist-NUS"
+      "Archive Name": "Nintendo-DS-Cartridge-Whitelist"
     },
     {
       "Name": "Launcher (System Menu)",
@@ -21,7 +21,7 @@
         "Australia/NZ": [512, 768, 1024, 1280, 1536, 1792]
       },
       "Ticket": true,
-      "TAD Name": "Launcher-NUS",
+      "Archive Name": "Launcher",
       "Danger": "The Launcher (DSi Menu) is a critical part of the DSi's operation, and should not be modified unless you have Unlaunch installed."
     },
     {
@@ -36,7 +36,7 @@
         "Australia/NZ": [3, 4, 5, 6, 7, 8, 9]
       },
       "Ticket": true,
-      "TAD Name": "Version-Data-NUS"
+      "Archive Name": "Version-Data"
     },
     {
       "Name": "WiFi Firmware",
@@ -45,7 +45,7 @@
         "World": [256, 512]
       },
       "Ticket": true,
-      "TAD Name": "WiFi-Firmware-NUS",
+      "Archive Name": "WiFi-Firmware",
       "Danger": "The WiFi Firmware is the firmware that runs on the DSi's WiFi chip, and should not be modified. Your console WILL be bricked if this title is damaged or missing."
     }
   ],
@@ -57,7 +57,7 @@
         "World": [256]
       },
       "Ticket": true,
-      "TAD Name": "DS-Download-Play-NUS"
+      "Archive Name": "DS-Download-Play"
     },
     {
       "Name": "Flipnote Studio",
@@ -68,7 +68,7 @@
         "Japan": [512]
       },
       "Ticket": true,
-      "TAD Name": "Flipnote-Studio-NUS"
+      "Archive Name": "Flipnote-Studio"
     },
     {
       "Name": "Nintendo 3DS Transfer Tool",
@@ -81,7 +81,7 @@
         "Australia/NZ": [512, 768]
       },
       "Ticket": false,
-      "TAD Name": "Nintendo-3DS-Transfer-Tool-NUS"
+      "Archive Name": "Nintendo-3DS-Transfer-Tool"
     },
     {
       "Name": "Nintendo DSi Browser",
@@ -92,7 +92,7 @@
         "Japan": [768]
       },
       "Ticket": true,
-      "TAD Name": "Nintendo-DSi-Browser-NUS"
+      "Archive Name": "Nintendo-DSi-Browser"
     },
     {
       "Name": "Nintendo DSi Camera",
@@ -104,7 +104,7 @@
         "Australia/NZ": [768, 1024]
       },
       "Ticket": true,
-      "TAD Name": "Nintendo-DSi-Camera-NUS"
+      "Archive Name": "Nintendo-DSi-Camera"
     },
     {
       "Name": "Nintendo DSi Shop",
@@ -118,7 +118,7 @@
         "Australia/NZ": [1536, 1792, 2048, 2304, 2560, 2816, 3072]
       },
       "Ticket": true,
-      "TAD Name": "Nintendo-DSi-Shop-NUS"
+      "Archive Name": "Nintendo-DSi-Shop"
     },
     {
       "Name": "Nintendo DSi Sound",
@@ -130,7 +130,7 @@
         "Australia/NZ": [256, 512]
       },
       "Ticket": true,
-      "TAD Name": "Nintendo-DSi-Sound-NUS"
+      "Archive Name": "Nintendo-DSi-Sound"
     },
     {
       "Name": "Nintendo Zone",
@@ -142,7 +142,7 @@
         "Australia/NZ": [512, 768]
       },
       "Ticket": true,
-      "TAD Name": "Nintendo-DSi-Sound-NUS"
+      "Archive Name": "Nintendo-DSi-Sound"
     },
     {
       "Name": "System Settings",
@@ -156,7 +156,7 @@
         "Australia/NZ": [512, 768]
       },
       "Ticket": true,
-      "TAD Name": "System-Settings-NUS"
+      "Archive Name": "System-Settings"
     }
   ],
   "DSiWare": [

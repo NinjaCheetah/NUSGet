@@ -1,8 +1,8 @@
 # "NUSGet.py", licensed under the MIT license
 # Copyright 2024 NinjaCheetah
 
-import sys
 import os
+import sys
 import json
 import pathlib
 import platform
@@ -143,11 +143,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             for title in tree[1][category]:
                 # Check to see if the current title matches the selected one, and if it does, pass that info on.
                 if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
-                    selected_title = title
-                    selected_version = item.text(0)
-                    selected_region = item.parent().text(0)
                     self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
-                    self.load_title_data(selected_title, selected_version, selected_region)
+                    try:
+                        danger_text = title["Danger"]
+                    except KeyError:
+                        danger_text = ""
+                    selected_title = SelectedTitle(title["TID"], title["Name"], title["Archive Name"], item.text(0)[1:],
+                                                   title["Ticket"], item.parent().text(0), category,
+                                                   self.ui.console_select_dropdown.currentText(), danger_text)
+                    self.load_title_data(selected_title)
 
     def tid_updated(self):
         tid = self.ui.tid_entry.text()
@@ -182,43 +186,45 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if ret == QMessageBox.StandardButton.Yes:
                 webbrowser.open("https://github.com/NinjaCheetah/NUSGet/releases/latest")
 
-    def load_title_data(self, selected_title, selected_version, selected_region=None):
+    def load_title_data(self, selected_title: SelectedTitle):
         # Use the information passed from the double click callback to prepare a title for downloading.
-        selected_version = selected_version[1:]
         # If the last two characters are "XX", then this title has multiple regions, and each region uses its own
         # two-digit code. Use the region info passed to load the correct code.
-        if selected_title["TID"][-2:] == "XX":
+        if selected_title.tid[-2:] == "XX":
             global regions
-            region_code = regions[selected_region][0]
-            tid = selected_title["TID"][:-2] + region_code
+            region_code = regions[selected_title.region][0]
+            tid = selected_title.tid[:-2] + region_code
         else:
-            tid = selected_title["TID"]
+            tid = selected_title.tid
         # Load the TID and version into the entry boxes.
         self.ui.tid_entry.setText(tid)
-        self.ui.version_entry.setText(selected_version)
+        self.ui.version_entry.setText(selected_title.version)
         # Load the WAD name, assuming it exists. This shouldn't ever be able to fail as the database has a WAD name
         # for every single title, regardless of whether it can be packed or not.
         try:
+            archive_name = f"{selected_title.archive_name}-v{selected_title.version}"
+            if selected_title.region != "World":
+                archive_name += f"-{selected_title.region.split('/')[0]}"
             if self.ui.console_select_dropdown.currentText() == "DSi":
-                archive_name = selected_title["TAD Name"] + "-v" + selected_version + ".tad"
+                archive_name += ".tad"
+            elif self.ui.console_select_dropdown.currentText() == "vWii":
+                if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
+                    archive_name += "-vWii"
+                archive_name += ".wad"
             else:
-                archive_name = selected_title["WAD Name"] + "-v" + selected_version + ".wad"
+                if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
+                    archive_name += "-Wii"
+                archive_name += ".wad"
             self.ui.archive_file_entry.setText(archive_name)
         except KeyError:
             pass
-        # Same idea for the danger string, however this only exists for certain titles and will frequently be an error.
-        danger_text = ""
-        try:
-            danger_text = selected_title["Danger"]
-        except KeyError:
-            pass
+        danger_text = selected_title.danger
         # Add warning text to the log if the selected title has no ticket.
-        if selected_title["Ticket"] is False:
+        if selected_title.ticket is False:
             danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be decrypted"
                                          " or packed into a WAD/TAD.")
         # Print log info about the selected title and version.
-        self.log_text = (tid + " - " + selected_title["Name"] + "\n" + "Version: " + selected_version + "\n\n" +
-                         danger_text + "\n")
+        self.log_text = f"{tid} - {selected_title.name}\nVersion: {selected_title.version}\n\n{danger_text}\n"
         self.ui.log_text_browser.setText(self.log_text)
 
     def download_btn_pressed(self):
