@@ -202,7 +202,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Load the WAD name, assuming it exists. This shouldn't ever be able to fail as the database has a WAD name
         # for every single title, regardless of whether it can be packed or not.
         try:
-            archive_name = f"{selected_title.archive_name}-v{selected_title.version}"
+            archive_name = f"{selected_title.archive_name}"
+            if selected_title.category != "System" and selected_title.category != "IOS":
+                archive_name += f"-{str(bytes.fromhex(tid).decode())[-4:]}"
+            archive_name += f"-v{selected_title.version}"
             if selected_title.region != "World":
                 archive_name += f"-{selected_title.region.split('/')[0]}"
             if self.ui.console_select_dropdown.currentText() == "DSi":

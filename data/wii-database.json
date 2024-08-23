@@ -338,7 +338,8 @@
       "Versions": {
         "USA/NTSC": [1, 256, 512],
         "Europe/PAL": [1, 256, 512],
-        "Japan": [1, 256, 512]
+        "Japan": [1, 256, 512],
+        "Korea": [512]
       },
       "Ticket": true,
       "Archive Name": "Wii-Speak-Channel"
