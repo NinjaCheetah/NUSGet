@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainMenu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.2
+## Created by: Qt User Interface Compiler version 6.8.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -145,10 +145,20 @@ class Ui_MainWindow(object):
 
         self.vertical_layout_controls.addLayout(self.horizontal_layout_title_entry)
 
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.download_btn = QPushButton(self.centralwidget)
         self.download_btn.setObjectName(u"download_btn")
 
-        self.vertical_layout_controls.addWidget(self.download_btn)
+        self.horizontalLayout.addWidget(self.download_btn)
+
+        self.script_btn = QPushButton(self.centralwidget)
+        self.script_btn.setObjectName(u"script_btn")
+
+        self.horizontalLayout.addWidget(self.script_btn)
+
+
+        self.vertical_layout_controls.addLayout(self.horizontalLayout)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
@@ -380,6 +390,7 @@ class Ui_MainWindow(object):
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Console:", None))
         self.console_select_dropdown.setCurrentText("")
         self.download_btn.setText(QCoreApplication.translate("MainWindow", u"Start Download", None))
+        self.script_btn.setText(QCoreApplication.translate("MainWindow", u"Run Script", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"General Settings", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Pack installable archive (WAD/TAD)", None))
         self.archive_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))

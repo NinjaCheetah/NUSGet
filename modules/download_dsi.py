@@ -3,6 +3,7 @@
 
 import os
 import pathlib
+from typing import List, Tuple
 
 import libTWLPy
 
@@ -116,7 +117,7 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
         title.tad.set_cert_data(libTWLPy.download_cert())
         # Use a typed TAD name if there is one, and auto generate one based on the TID and version if there isn't.
         progress_callback.emit("Packing TAD...")
-        if tad_file_name != "":
+        if tad_file_name != "" and tad_file_name is not None:
             if tad_file_name[-4:] != ".tad":
                 tad_file_name = tad_file_name + ".tad"
         else:
@@ -131,4 +132,14 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
     # code 1 so that a warning popup is shown informing them of this.
     if (not pack_tad_enabled and pack_tad_chkbox) or (not decrypt_contents_enabled and decrypt_contents_chkbox):
         return 1
+    return 0
+
+def run_nus_download_dsi_batch(out_folder: pathlib.Path, titles: List[Tuple[str, str]], pack_tad_chkbox: bool, keep_enc_chkbox: bool,
+                               decrypt_contents_chkbox: bool, use_local_chkbox: bool, progress_callback=None):
+    for title in titles:
+        result = run_nus_download_dsi(out_folder, title[0], title[1], pack_tad_chkbox, keep_enc_chkbox, decrypt_contents_chkbox, use_local_chkbox, None, progress_callback)
+        if result != 0:
+            return result
+        
+    progress_callback.emit(f"Batch download finished.")
     return 0

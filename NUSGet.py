@@ -11,14 +11,14 @@ from importlib.metadata import version
 
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle,
-                               QStyleFactory)
+                               QStyleFactory, QFileDialog)
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
 from modules.core import *
-from modules.download_wii import run_nus_download_wii
-from modules.download_dsi import run_nus_download_dsi
+from modules.download_wii import run_nus_download_wii, run_nus_download_wii_batch
+from modules.download_dsi import run_nus_download_dsi, run_nus_download_dsi_batch
 
 nusget_version = "1.2.0"
 
@@ -63,6 +63,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.setupUi(self)
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
+        self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.pack_archive_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
         # noinspection PyUnresolvedReferences
@@ -248,6 +249,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.tid_entry.setEnabled(False)
         self.ui.version_entry.setEnabled(False)
         self.ui.download_btn.setEnabled(False)
+        self.ui.script_btn.setEnabled(False)
         self.ui.pack_archive_chkbox.setEnabled(False)
         self.ui.keep_enc_chkbox.setEnabled(False)
         self.ui.create_dec_chkbox.setEnabled(False)
@@ -318,6 +320,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.tid_entry.setEnabled(True)
         self.ui.version_entry.setEnabled(True)
         self.ui.download_btn.setEnabled(True)
+        self.ui.script_btn.setEnabled(True)
         self.ui.pack_archive_chkbox.setEnabled(True)
         self.ui.keep_enc_chkbox.setEnabled(True)
         self.ui.create_dec_chkbox.setEnabled(True)
@@ -346,6 +349,64 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.pack_vwii_mode_chkbox.setEnabled(False)
         elif self.ui.console_select_dropdown.currentText() == "DSi":
             self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+
+    def script_btn_pressed(self):
+        file_name = QFileDialog.getOpenFileName(self, caption=app.translate("MainWindow", "Open NUS script"), filter=app.translate("MainWindow", "NUS Scripts (*.nus *.txt)"), options=QFileDialog.Option.ReadOnly)
+        if len(file_name[0]) == 0:
+            return
+
+        try:
+            file = open(file_name[0], "r")
+        except:
+            QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Failed to open the script."), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+            return
+        
+        content = file.readlines()
+
+        titles = []
+        for title in content:
+            decoded = title.replace("\n", "").split(" ", 1)
+            if len(decoded[0]) != 16 or len(decoded[1]) != 4:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "This script is invalid."), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
+
+            try:
+                version = int(decoded[1], 16)
+            except:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "This script is invalid."), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+
+            titles.append((decoded[0], str(version)))
+
+        self.ui.tid_entry.setEnabled(False)
+        self.ui.version_entry.setEnabled(False)
+        self.ui.download_btn.setEnabled(False)
+        self.ui.script_btn.setEnabled(False)
+        self.ui.pack_archive_chkbox.setEnabled(False)
+        self.ui.keep_enc_chkbox.setEnabled(False)
+        self.ui.create_dec_chkbox.setEnabled(False)
+        self.ui.use_local_chkbox.setEnabled(False)
+        self.ui.use_wiiu_nus_chkbox.setEnabled(False)
+        self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+        self.ui.archive_file_entry.setEnabled(False)
+        self.ui.console_select_dropdown.setEnabled(False)
+        self.log_text = ""
+        self.ui.log_text_browser.setText(self.log_text)
+
+        self.update_log_text(f"Found {len(titles)} titles, starting batch download.")
+
+        if self.ui.console_select_dropdown.currentText() == "DSi":
+            worker = Worker(run_nus_download_dsi_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
+                            self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
+        else:
+            worker = Worker(run_nus_download_wii_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
+                            self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
+                            self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked())
+
+        worker.signals.result.connect(self.check_download_result)
+        worker.signals.progress.connect(self.update_log_text)
+        self.threadpool.start(worker)
 
 
 if __name__ == "__main__":
