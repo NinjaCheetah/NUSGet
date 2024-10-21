@@ -6,21 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1010</width>
-    <height>625</height>
+    <width>1077</width>
+    <height>784</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>1010</width>
-    <height>625</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1010</width>
-    <height>625</height>
-   </size>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -468,7 +462,7 @@
              <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Policy::Ignored</enum>
+             <enum>QSizePolicy::Policy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -565,7 +559,7 @@
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Policy::Preferred</enum>
+             <enum>QSizePolicy::Policy::MinimumExpanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -608,8 +602,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1010</width>
-     <height>30</height>
+     <width>1077</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>

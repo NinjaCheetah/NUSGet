@@ -125,6 +125,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tree[0].insertTopLevelItems(0, self.tree_categories)
             # Connect the double click signal for handling when titles are selected.
             tree[0].itemDoubleClicked.connect(self.onItemClicked)
+
+        # Prevent resizing, Qt makes us look stupid here
+        self.setFixedSize(self.size())
+
         # Do a quick check to see if there's a newer release available, and inform the user if there is.
         worker = Worker(check_nusget_updates, app, nusget_version)
         worker.signals.result.connect(self.prompt_for_update)
