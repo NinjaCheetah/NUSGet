@@ -111,7 +111,7 @@ class Ui_MainWindow(object):
 
         self.vertical_layout_controls = QVBoxLayout()
         self.vertical_layout_controls.setObjectName(u"vertical_layout_controls")
-        self.vertical_layout_controls.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.vertical_layout_controls.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.horizontal_layout_title_entry = QHBoxLayout()
         self.horizontal_layout_title_entry.setObjectName(u"horizontal_layout_title_entry")
         self.tid_entry = QLineEdit(self.centralwidget)
@@ -149,11 +149,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.download_btn = QPushButton(self.centralwidget)
         self.download_btn.setObjectName(u"download_btn")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.download_btn.sizePolicy().hasHeightForWidth())
+        self.download_btn.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout.addWidget(self.download_btn)
 
         self.script_btn = QPushButton(self.centralwidget)
         self.script_btn.setObjectName(u"script_btn")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.script_btn.sizePolicy().hasHeightForWidth())
+        self.script_btn.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout.addWidget(self.script_btn)
 
@@ -163,7 +173,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setSpacing(10)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setSizeConstraint(QLayout.SizeConstraint.SetNoConstraint)
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setFont(font)
@@ -174,11 +186,11 @@ class Ui_MainWindow(object):
         self.pack_archive_row.setObjectName(u"pack_archive_row")
         self.pack_archive_chkbox = QCheckBox(self.centralwidget)
         self.pack_archive_chkbox.setObjectName(u"pack_archive_chkbox")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.pack_archive_chkbox.sizePolicy().hasHeightForWidth())
-        self.pack_archive_chkbox.setSizePolicy(sizePolicy1)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.pack_archive_chkbox.sizePolicy().hasHeightForWidth())
+        self.pack_archive_chkbox.setSizePolicy(sizePolicy3)
         self.pack_archive_chkbox.setText(u"")
 
         self.pack_archive_row.addWidget(self.pack_archive_chkbox)
@@ -202,8 +214,8 @@ class Ui_MainWindow(object):
         self.keep_enc_row.setObjectName(u"keep_enc_row")
         self.keep_enc_chkbox = QCheckBox(self.centralwidget)
         self.keep_enc_chkbox.setObjectName(u"keep_enc_chkbox")
-        sizePolicy1.setHeightForWidth(self.keep_enc_chkbox.sizePolicy().hasHeightForWidth())
-        self.keep_enc_chkbox.setSizePolicy(sizePolicy1)
+        sizePolicy3.setHeightForWidth(self.keep_enc_chkbox.sizePolicy().hasHeightForWidth())
+        self.keep_enc_chkbox.setSizePolicy(sizePolicy3)
         self.keep_enc_chkbox.setText(u"")
         self.keep_enc_chkbox.setChecked(True)
 
@@ -222,8 +234,8 @@ class Ui_MainWindow(object):
         self.create_dec_row.setObjectName(u"create_dec_row")
         self.create_dec_chkbox = QCheckBox(self.centralwidget)
         self.create_dec_chkbox.setObjectName(u"create_dec_chkbox")
-        sizePolicy1.setHeightForWidth(self.create_dec_chkbox.sizePolicy().hasHeightForWidth())
-        self.create_dec_chkbox.setSizePolicy(sizePolicy1)
+        sizePolicy3.setHeightForWidth(self.create_dec_chkbox.sizePolicy().hasHeightForWidth())
+        self.create_dec_chkbox.setSizePolicy(sizePolicy3)
         self.create_dec_chkbox.setText(u"")
 
         self.create_dec_row.addWidget(self.create_dec_chkbox)
@@ -242,8 +254,8 @@ class Ui_MainWindow(object):
         self.use_local_chkbox = QCheckBox(self.centralwidget)
         self.use_local_chkbox.setObjectName(u"use_local_chkbox")
         self.use_local_chkbox.setEnabled(True)
-        sizePolicy1.setHeightForWidth(self.use_local_chkbox.sizePolicy().hasHeightForWidth())
-        self.use_local_chkbox.setSizePolicy(sizePolicy1)
+        sizePolicy3.setHeightForWidth(self.use_local_chkbox.sizePolicy().hasHeightForWidth())
+        self.use_local_chkbox.setSizePolicy(sizePolicy3)
         self.use_local_chkbox.setText(u"")
 
         self.use_local_row.addWidget(self.use_local_chkbox)
@@ -261,9 +273,12 @@ class Ui_MainWindow(object):
         self.use_wiiu_nus_row.setObjectName(u"use_wiiu_nus_row")
         self.use_wiiu_nus_chkbox = QCheckBox(self.centralwidget)
         self.use_wiiu_nus_chkbox.setObjectName(u"use_wiiu_nus_chkbox")
-        sizePolicy1.setHeightForWidth(self.use_wiiu_nus_chkbox.sizePolicy().hasHeightForWidth())
-        self.use_wiiu_nus_chkbox.setSizePolicy(sizePolicy1)
-        self.use_wiiu_nus_chkbox.setLayoutDirection(Qt.LeftToRight)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.use_wiiu_nus_chkbox.sizePolicy().hasHeightForWidth())
+        self.use_wiiu_nus_chkbox.setSizePolicy(sizePolicy4)
+        self.use_wiiu_nus_chkbox.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.use_wiiu_nus_chkbox.setText(u"")
         self.use_wiiu_nus_chkbox.setChecked(True)
 
@@ -283,8 +298,8 @@ class Ui_MainWindow(object):
         self.patch_ios_chkbox = QCheckBox(self.centralwidget)
         self.patch_ios_chkbox.setObjectName(u"patch_ios_chkbox")
         self.patch_ios_chkbox.setEnabled(False)
-        sizePolicy1.setHeightForWidth(self.patch_ios_chkbox.sizePolicy().hasHeightForWidth())
-        self.patch_ios_chkbox.setSizePolicy(sizePolicy1)
+        sizePolicy3.setHeightForWidth(self.patch_ios_chkbox.sizePolicy().hasHeightForWidth())
+        self.patch_ios_chkbox.setSizePolicy(sizePolicy3)
         self.patch_ios_chkbox.setText(u"")
 
         self.patch_ios_row.addWidget(self.patch_ios_chkbox)
@@ -299,11 +314,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addLayout(self.patch_ios_row)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Ignored)
 
         self.verticalLayout_7.addItem(self.verticalSpacer_2)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_7.addItem(self.horizontalSpacer)
 
@@ -323,8 +338,8 @@ class Ui_MainWindow(object):
         self.pack_vwii_mode_chkbox = QCheckBox(self.centralwidget)
         self.pack_vwii_mode_chkbox.setObjectName(u"pack_vwii_mode_chkbox")
         self.pack_vwii_mode_chkbox.setEnabled(False)
-        sizePolicy1.setHeightForWidth(self.pack_vwii_mode_chkbox.sizePolicy().hasHeightForWidth())
-        self.pack_vwii_mode_chkbox.setSizePolicy(sizePolicy1)
+        sizePolicy3.setHeightForWidth(self.pack_vwii_mode_chkbox.sizePolicy().hasHeightForWidth())
+        self.pack_vwii_mode_chkbox.setSizePolicy(sizePolicy3)
         self.pack_vwii_mode_chkbox.setText(u"")
 
         self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_chkbox)
@@ -343,7 +358,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addItem(self.verticalSpacer)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_8.addItem(self.horizontalSpacer_2)
 

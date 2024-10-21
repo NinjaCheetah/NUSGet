@@ -167,11 +167,11 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
         return 1
     return 0
 
-def run_nus_download_wii_batch(out_folder: pathlib.Path, titles: List[Tuple[str, str]], pack_wad_chkbox: bool, keep_enc_chkbox: bool,
+def run_nus_download_wii_batch(out_folder: pathlib.Path, titles: List[Tuple[str, str, str]], pack_wad_chkbox: bool, keep_enc_chkbox: bool,
                                decrypt_contents_chkbox: bool, wiiu_nus_chkbox: bool, use_local_chkbox: bool,
                                repack_vwii_chkbox: bool, patch_ios: bool, progress_callback=None):
     for title in titles:
-        result = run_nus_download_wii(out_folder, title[0], title[1], pack_wad_chkbox, keep_enc_chkbox, decrypt_contents_chkbox, wiiu_nus_chkbox, use_local_chkbox, repack_vwii_chkbox, patch_ios, None, progress_callback)
+        result = run_nus_download_wii(out_folder, title[0], title[1], pack_wad_chkbox, keep_enc_chkbox, decrypt_contents_chkbox, wiiu_nus_chkbox, use_local_chkbox, repack_vwii_chkbox, patch_ios, f"{title[2]}-{title[1]}.wad", progress_callback)
         if result != 0:
             return result
         

@@ -134,10 +134,10 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
         return 1
     return 0
 
-def run_nus_download_dsi_batch(out_folder: pathlib.Path, titles: List[Tuple[str, str]], pack_tad_chkbox: bool, keep_enc_chkbox: bool,
+def run_nus_download_dsi_batch(out_folder: pathlib.Path, titles: List[Tuple[str, str, str]], pack_tad_chkbox: bool, keep_enc_chkbox: bool,
                                decrypt_contents_chkbox: bool, use_local_chkbox: bool, progress_callback=None):
     for title in titles:
-        result = run_nus_download_dsi(out_folder, title[0], title[1], pack_tad_chkbox, keep_enc_chkbox, decrypt_contents_chkbox, use_local_chkbox, None, progress_callback)
+        result = run_nus_download_dsi(out_folder, title[0], title[1], pack_tad_chkbox, keep_enc_chkbox, decrypt_contents_chkbox, use_local_chkbox, f"{title[2]}-{title[1]}.tad", progress_callback)
         if result != 0:
             return result
         

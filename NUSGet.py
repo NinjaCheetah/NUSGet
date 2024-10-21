@@ -231,21 +231,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.log_text = f"{tid} - {selected_title.name}\nVersion: {selected_title.version}\n\n{danger_text}\n"
         self.ui.log_text_browser.setText(self.log_text)
 
-    def download_btn_pressed(self):
-        # Throw an error and make a message box appear if you haven't selected any options to output the title.
-        if (self.ui.pack_archive_chkbox.isChecked() is False and self.ui.keep_enc_chkbox.isChecked() is False and
-                self.ui.create_dec_chkbox.isChecked() is False):
-            msg_box = QMessageBox()
-            msg_box.setIcon(QMessageBox.Icon.Critical)
-            msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
-            msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
-            msg_box.setWindowTitle(app.translate("MainWindow", "No Output Selected"))
-            msg_box.setText(app.translate("MainWindow", "You have not selected any format to output the data in!"))
-            msg_box.setInformativeText(app.translate("MainWindow", "Please select at least one option for how you would "
-                                                       "like the download to be saved."))
-            msg_box.exec()
-            return
+    def lock_ui_for_download(self):
         # Lock the UI prior to the download beginning to avoid spawning multiple threads or changing info part way in.
+        # Also resets the log.
         self.ui.tid_entry.setEnabled(False)
         self.ui.version_entry.setEnabled(False)
         self.ui.download_btn.setEnabled(False)
@@ -260,6 +248,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.console_select_dropdown.setEnabled(False)
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
+
+    def download_btn_pressed(self):
+        # Throw an error and make a message box appear if you haven't selected any options to output the title.
+        if (self.ui.pack_archive_chkbox.isChecked() is False and self.ui.keep_enc_chkbox.isChecked() is False and
+                self.ui.create_dec_chkbox.isChecked() is False):
+            msg_box = QMessageBox()
+            msg_box.setIcon(QMessageBox.Icon.Critical)
+            msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+            msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+            msg_box.setWindowTitle(app.translate("MainWindow", "No Output Selected"))
+            msg_box.setText(app.translate("MainWindow", "You have not selected any format to output the data in!"))
+            msg_box.setInformativeText(app.translate("MainWindow", "Please select at least one option for how you would "
+                                                       "like the download to be saved."))
+            msg_box.exec()
+            return
+        
+        self.lock_ui_for_download()
+
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
             worker = Worker(run_nus_download_dsi, out_folder, self.ui.tid_entry.text(),
@@ -363,34 +369,72 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         content = file.readlines()
 
+        # Decoding NUS Scripts
+        # NUS Scripts are plaintext UTF-8 files that list a title per line, terminated with newlines.
+        # Every title is its u64 TID, a space and its u16 version, *both* written in hexadecimal.
+        # NUS itself expects versions as decimal notation, so they need to be decoded first, but TIDs are always written in hexadecimal notation.
+
         titles = []
-        for title in content:
+
+        for index, title in enumerate(content):
             decoded = title.replace("\n", "").split(" ", 1)
-            if len(decoded[0]) != 16 or len(decoded[1]) != 4:
-                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "This script is invalid."), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+            if len(decoded[0]) != 16:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The TID for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
                 return
+            elif len(decoded[1]) != 4:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
+            
+            tid = decoded[0]
 
             try:
                 version = int(decoded[1], 16)
             except:
-                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "This script is invalid."), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
 
-            titles.append((decoded[0], str(version)))
+            title = None
+            for category in self.trees[self.ui.platform_tabs.currentIndex()][1]:
+                for title_ in self.trees[self.ui.platform_tabs.currentIndex()][1][category]:
+                    # The last two digits are either identifying the title type (e.g IOS slot, BC type, etc) or a region code; in case of the latter, skip the region here to match it
+                    if not ((title_["TID"][-2:] == "XX" and title_["TID"][:-2] == tid[:-2]) or title_["TID"] == tid):
+                        continue
 
-        self.ui.tid_entry.setEnabled(False)
-        self.ui.version_entry.setEnabled(False)
-        self.ui.download_btn.setEnabled(False)
-        self.ui.script_btn.setEnabled(False)
-        self.ui.pack_archive_chkbox.setEnabled(False)
-        self.ui.keep_enc_chkbox.setEnabled(False)
-        self.ui.create_dec_chkbox.setEnabled(False)
-        self.ui.use_local_chkbox.setEnabled(False)
-        self.ui.use_wiiu_nus_chkbox.setEnabled(False)
-        self.ui.pack_vwii_mode_chkbox.setEnabled(False)
-        self.ui.archive_file_entry.setEnabled(False)
-        self.ui.console_select_dropdown.setEnabled(False)
-        self.log_text = ""
-        self.ui.log_text_browser.setText(self.log_text)
+                    region = None
+                    found_ver = False
+                    if title_["TID"][-2:] == "XX":
+                        global regions
+                        for region_ in regions:
+                            for code in regions[region_]:
+                                if code == tid[:-2]:
+                                    region = region_
+                                    break
+
+                        if region is None:
+                            QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Title #%n belongs to an unknown region.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                            return
+                    else:
+                        region = "World"
+                        
+                    for db_version in title_["Versions"][region]:
+                        if db_version == version:
+                            found_ver = True
+                            break
+
+                    if not found_ver:
+                        QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n could not be discovered in the database.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                        return
+
+                    title = title_
+                    break
+            
+            if title == None:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Title #%n could not be discovered in the database.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
+
+            titles.append((title["TID"], str(version), title["Archive Name"]))
+
+        self.lock_ui_for_download()
 
         self.update_log_text(f"Found {len(titles)} titles, starting batch download.")
 
