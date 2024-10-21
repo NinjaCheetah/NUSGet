@@ -400,26 +400,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     if not ((title_["TID"][-2:] == "XX" and title_["TID"][:-2] == tid[:-2]) or title_["TID"] == tid):
                         continue
 
-                    region = None
                     found_ver = False
-                    if title_["TID"][-2:] == "XX":
-                        global regions
-                        for region_ in regions:
-                            for code in regions[region_]:
-                                if code == tid[:-2]:
-                                    region = region_
-                                    break
-
-                        if region is None:
-                            QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Title #%n belongs to an unknown region.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
-                            return
-                    else:
-                        region = "World"
-                        
-                    for db_version in title_["Versions"][region]:
-                        if db_version == version:
-                            found_ver = True
-                            break
+                    for region in title_["Versions"]:
+                        for db_version in title_["Versions"][region]:
+                            if db_version == version:
+                                found_ver = True
+                                break
 
                     if not found_ver:
                         QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n could not be discovered in the database.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
