@@ -3,6 +3,7 @@
 
 import os
 import pathlib
+from typing import List, Tuple
 
 import libWiiPy
 
@@ -138,7 +139,7 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
         title.wad.set_cert_data(libWiiPy.title.download_cert(wiiu_endpoint=wiiu_nus_enabled))
         # Use a typed WAD name if there is one, and auto generate one based on the TID and version if there isn't.
         progress_callback.emit(" - Packing WAD...")
-        if wad_file_name != "":
+        if wad_file_name != "" and wad_file_name is not None:
             if wad_file_name[-4:] != ".wad":
                 wad_file_name = wad_file_name + ".wad"
         else:
@@ -164,4 +165,15 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
     # code 1 so that a warning popup is shown informing them of this.
     if (not pack_wad_enabled and pack_wad_chkbox) or (not decrypt_contents_enabled and decrypt_contents_chkbox):
         return 1
+    return 0
+
+def run_nus_download_wii_batch(out_folder: pathlib.Path, titles: List[Tuple[str, str, str]], pack_wad_chkbox: bool, keep_enc_chkbox: bool,
+                               decrypt_contents_chkbox: bool, wiiu_nus_chkbox: bool, use_local_chkbox: bool,
+                               repack_vwii_chkbox: bool, patch_ios: bool, progress_callback=None):
+    for title in titles:
+        result = run_nus_download_wii(out_folder, title[0], title[1], pack_wad_chkbox, keep_enc_chkbox, decrypt_contents_chkbox, wiiu_nus_chkbox, use_local_chkbox, repack_vwii_chkbox, patch_ios, f"{title[2]}-{title[1]}.wad", progress_callback)
+        if result != 0:
+            return result
+        
+    progress_callback.emit(f"Batch download finished.")
     return 0

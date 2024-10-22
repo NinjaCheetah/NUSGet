@@ -11,14 +11,14 @@ from importlib.metadata import version
 
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle,
-                               QStyleFactory)
+                               QStyleFactory, QFileDialog)
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
 from modules.core import *
-from modules.download_wii import run_nus_download_wii
-from modules.download_dsi import run_nus_download_dsi
+from modules.download_wii import run_nus_download_wii, run_nus_download_wii_batch
+from modules.download_dsi import run_nus_download_dsi, run_nus_download_dsi_batch
 
 nusget_version = "1.2.0"
 
@@ -63,6 +63,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.setupUi(self)
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
+        self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.pack_archive_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
         # noinspection PyUnresolvedReferences
@@ -124,6 +125,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tree[0].insertTopLevelItems(0, self.tree_categories)
             # Connect the double click signal for handling when titles are selected.
             tree[0].itemDoubleClicked.connect(self.onItemClicked)
+
+        # Prevent resizing, Qt makes us look stupid here
+        self.setFixedSize(self.size())
+
         # Do a quick check to see if there's a newer release available, and inform the user if there is.
         worker = Worker(check_nusget_updates, app, nusget_version)
         worker.signals.result.connect(self.prompt_for_update)
@@ -230,6 +235,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.log_text = f"{tid} - {selected_title.name}\nVersion: {selected_title.version}\n\n{danger_text}\n"
         self.ui.log_text_browser.setText(self.log_text)
 
+    def lock_ui_for_download(self):
+        # Lock the UI prior to the download beginning to avoid spawning multiple threads or changing info part way in.
+        # Also resets the log.
+        self.ui.tid_entry.setEnabled(False)
+        self.ui.version_entry.setEnabled(False)
+        self.ui.download_btn.setEnabled(False)
+        self.ui.script_btn.setEnabled(False)
+        self.ui.pack_archive_chkbox.setEnabled(False)
+        self.ui.keep_enc_chkbox.setEnabled(False)
+        self.ui.create_dec_chkbox.setEnabled(False)
+        self.ui.use_local_chkbox.setEnabled(False)
+        self.ui.use_wiiu_nus_chkbox.setEnabled(False)
+        self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+        self.ui.archive_file_entry.setEnabled(False)
+        self.ui.console_select_dropdown.setEnabled(False)
+        self.log_text = ""
+        self.ui.log_text_browser.setText(self.log_text)
+
     def download_btn_pressed(self):
         # Throw an error and make a message box appear if you haven't selected any options to output the title.
         if (self.ui.pack_archive_chkbox.isChecked() is False and self.ui.keep_enc_chkbox.isChecked() is False and
@@ -244,20 +267,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                                        "like the download to be saved."))
             msg_box.exec()
             return
-        # Lock the UI prior to the download beginning to avoid spawning multiple threads or changing info part way in.
-        self.ui.tid_entry.setEnabled(False)
-        self.ui.version_entry.setEnabled(False)
-        self.ui.download_btn.setEnabled(False)
-        self.ui.pack_archive_chkbox.setEnabled(False)
-        self.ui.keep_enc_chkbox.setEnabled(False)
-        self.ui.create_dec_chkbox.setEnabled(False)
-        self.ui.use_local_chkbox.setEnabled(False)
-        self.ui.use_wiiu_nus_chkbox.setEnabled(False)
-        self.ui.pack_vwii_mode_chkbox.setEnabled(False)
-        self.ui.archive_file_entry.setEnabled(False)
-        self.ui.console_select_dropdown.setEnabled(False)
-        self.log_text = ""
-        self.ui.log_text_browser.setText(self.log_text)
+        
+        self.lock_ui_for_download()
+
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
             worker = Worker(run_nus_download_dsi, out_folder, self.ui.tid_entry.text(),
@@ -318,6 +330,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.tid_entry.setEnabled(True)
         self.ui.version_entry.setEnabled(True)
         self.ui.download_btn.setEnabled(True)
+        self.ui.script_btn.setEnabled(True)
         self.ui.pack_archive_chkbox.setEnabled(True)
         self.ui.keep_enc_chkbox.setEnabled(True)
         self.ui.create_dec_chkbox.setEnabled(True)
@@ -346,6 +359,88 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.pack_vwii_mode_chkbox.setEnabled(False)
         elif self.ui.console_select_dropdown.currentText() == "DSi":
             self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+
+    def script_btn_pressed(self):
+        file_name = QFileDialog.getOpenFileName(self, caption=app.translate("MainWindow", "Open NUS script"), filter=app.translate("MainWindow", "NUS Scripts (*.nus *.txt)"), options=QFileDialog.Option.ReadOnly)
+        if len(file_name[0]) == 0:
+            return
+
+        try:
+            file = open(file_name[0], "r")
+        except:
+            QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Failed to open the script."), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+            return
+        
+        content = file.readlines()
+
+        # Decoding NUS Scripts
+        # NUS Scripts are plaintext UTF-8 files that list a title per line, terminated with newlines.
+        # Every title is its u64 TID, a space and its u16 version, *both* written in hexadecimal.
+        # NUS itself expects versions as decimal notation, so they need to be decoded first, but TIDs are always written in hexadecimal notation.
+
+        titles = []
+
+        for index, title in enumerate(content):
+            decoded = title.replace("\n", "").split(" ", 1)
+            if len(decoded[0]) != 16:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The TID for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
+            elif len(decoded[1]) != 4:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
+            
+            tid = decoded[0]
+
+            try:
+                version = int(decoded[1], 16)
+            except:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
+
+            title = None
+            for category in self.trees[self.ui.platform_tabs.currentIndex()][1]:
+                for title_ in self.trees[self.ui.platform_tabs.currentIndex()][1][category]:
+                    # The last two digits are either identifying the title type (e.g IOS slot, BC type, etc) or a region code; in case of the latter, skip the region here to match it
+                    if not ((title_["TID"][-2:] == "XX" and title_["TID"][:-2] == tid[:-2]) or title_["TID"] == tid):
+                        continue
+
+                    found_ver = False
+                    for region in title_["Versions"]:
+                        for db_version in title_["Versions"][region]:
+                            if db_version == version:
+                                found_ver = True
+                                break
+
+                    if not found_ver:
+                        QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n could not be discovered in the database.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                        return
+
+                    title = title_
+                    break
+            
+            if title == None:
+                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Title #%n could not be discovered in the database.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                return
+
+            titles.append((title["TID"], str(version), title["Archive Name"]))
+
+        self.lock_ui_for_download()
+
+        self.update_log_text(f"Found {len(titles)} titles, starting batch download.")
+
+        if self.ui.console_select_dropdown.currentText() == "DSi":
+            worker = Worker(run_nus_download_dsi_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
+                            self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
+        else:
+            worker = Worker(run_nus_download_wii_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
+                            self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
+                            self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked())
+
+        worker.signals.result.connect(self.check_download_result)
+        worker.signals.progress.connect(self.update_log_text)
+        self.threadpool.start(worker)
 
 
 if __name__ == "__main__":
