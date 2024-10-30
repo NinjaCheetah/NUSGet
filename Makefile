@@ -1,7 +1,7 @@
 CC=python -m nuitka
 
 linux:
-	pyside6-project build
+	python build_translations.py
 	$(CC) --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py -o NUSGet
 
 linux-install:
