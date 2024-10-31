@@ -220,11 +220,13 @@ Die neuste Version von NUSGet ist bereits aktiv.</translation>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="181"/>
         <source>v</source>
-        <translation>=</translation>
+        <translatorcomment>Since vNNNNN is a common way of referring to versions across the Wii both by Nintendo and modders, we keep it identical</translatorcomment>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="194"/>
         <source>Version</source>
+        <translatorcomment>The same word is used in German</translatorcomment>
         <translation></translation>
     </message>
     <message>
