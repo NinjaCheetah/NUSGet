@@ -38,7 +38,7 @@ jobs:
         cd ~
         tar cvf NUSGet.tar NUSGet
     - name: Upload Package
-      uses: actions/upload-artifact@v4.3.0
+      uses: actions/upload-artifact@v4
       with:
         path: ~/NUSGet.tar
         name: NUSGet-linux-bin
@@ -67,7 +67,7 @@ jobs:
           cd ~
           tar cvf NUSGet.tar NUSGet.app
       - name: Upload Package
-        uses: actions/upload-artifact@v4.3.0
+        uses: actions/upload-artifact@v4
         with:
           path: ~/NUSGet.tar
           name: NUSGet-macos-bin
@@ -93,8 +93,13 @@ jobs:
         python build_translations.py
         python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
     - name: Upload Package
-      uses: actions/upload-artifact@v4.3.0
+      uses: actions/upload-artifact@v4
+      with:
+        path: D:\a\NUSGet\NUSGet\NUSGet.dist
+        name: NUSGet-windows-bin
+    - name: Upload Onefile Package
+      uses: actions/upload-artifact@v4
       with:
         path: D:\a\NUSGet\NUSGet\NUSGet.exe
-        name: NUSGet-windows-bin
+        name: NUSGet-windows-onefile-bin
         
