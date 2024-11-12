@@ -56,7 +56,7 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="250"/>
         <source>Run Script</source>
-        <translation type="unfinished"></translation>
+        <translation>Avvia Script</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="277"/>
@@ -113,7 +113,14 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -130,17 +137,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../NUSGet.py" line="264"/>
         <source>No Output Selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessun output selezionato</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="265"/>
         <source>You have not selected any format to output the data in!</source>
-        <translation type="unfinished"></translation>
+        <translation>Non hai selezionato alcun formato in cui esportare i dati!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="267"/>
         <source>Please select at least one option for how you would like the download to be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per favore scegli almeno un opzione per come vorresti che fosse salvato il download.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="298"/>
@@ -220,12 +227,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../NUSGet.py" line="364"/>
         <source>Open NUS script</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri script NUS</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="364"/>
         <source>NUS Scripts (*.nus *.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrpit NUS (*.nus *.txt)</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="371"/>
@@ -235,12 +242,12 @@ p, li { white-space: pre-wrap; }
         <location filename="../../NUSGet.py" line="415"/>
         <location filename="../../NUSGet.py" line="422"/>
         <source>Script Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore script</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="371"/>
         <source>Failed to open the script.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire lo script.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="85"/>
@@ -267,38 +274,38 @@ I titoli verranno scaricati nella cartella &quot;NUSGet&quot; all&apos;interno d
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="519"/>
         <source>Apply patches to IOS (Applies to WADs only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Applica patch agli IOS (Solo per le WAD)</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="184"/>
         <source>NUSGet Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiornamento di NUSGet disponibile</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="185"/>
         <source>There&apos;s a newer version of NUSGet available!</source>
-        <translation type="unfinished"></translation>
+        <translation>Una nuova versione di NUSGet è disponibile!</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="26"/>
         <source>
 
 Could not check for updates.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile trovare eventuali aggiornamenti.</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="34"/>
         <source>
 
 There&apos;s a newer version of NUSGet available!</source>
-        <translation type="unfinished"></translation>
+        <translation>Una nuova versione di NUSGet è disponibile!</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="36"/>
         <source>
 
 You&apos;re running the latest release of NUSGet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stai utilizzando l&apos;ultima versione di NUSGet.</translation>
     </message>
 </context>
 </TS>
