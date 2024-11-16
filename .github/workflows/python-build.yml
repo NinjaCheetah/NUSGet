@@ -21,10 +21,10 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install ccache for Nuitka
       run: sudo apt update && sudo apt install -y ccache libicu70
-    - name: Set up Python 3.11
+    - name: Set up Python 3.12
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: "3.12"
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
@@ -43,16 +43,16 @@ jobs:
         path: ~/NUSGet.tar
         name: NUSGet-linux-bin
 
-  build-macos:
+  build-macos-x86:
 
     runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.11
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -60,7 +60,7 @@ jobs:
       - name: Build Package
         run: |
           python build_translations.py
-          python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
+          python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png --macos-target-arch=x86_64
       - name: Prepare Package for Upload
         run: |
           mv NUSGet.app ~/NUSGet.app
@@ -70,7 +70,36 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: ~/NUSGet.tar
-          name: NUSGet-macos-bin
+          name: NUSGet-macos-x86-bin
+
+  build-macos-arm64:
+
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Build Package
+        run: |
+          python build_translations.py
+          python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png --macos-target-arch=arm64
+      - name: Prepare Package for Upload
+        run: |
+          mv NUSGet.app ~/NUSGet.app
+          cd ~
+          tar cvf NUSGet.tar NUSGet.app
+      - name: Upload Package
+        uses: actions/upload-artifact@v4
+        with:
+          path: ~/NUSGet.tar
+          name: NUSGet-macos-arm64-bin
 
   build-windows:
 
@@ -80,10 +109,10 @@ jobs:
     - uses: actions/checkout@v4
     - name: Enable Developer Command Prompt
       uses: ilammy/msvc-dev-cmd@v1.13.0
-    - name: Set up Python 3.11
+    - name: Set up Python 3.12
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: "3.12"
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
