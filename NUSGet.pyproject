@@ -9,6 +9,7 @@
         "./resources/translations/nusget_fr.ts",
         "./resources/translations/nusget_it.ts",
         "./resources/translations/nusget_de.ts",
-        "./resources/translations/nusget_ro.ts"
+        "./resources/translations/nusget_ro.ts",
+        "./resources/translations/nusget_ko.ts"
     ]
 }
