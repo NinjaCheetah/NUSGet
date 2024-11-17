@@ -33,48 +33,43 @@ For basic usage on all platforms, you can download the latest release for your o
 
 ## Building
 ### System Requirements
-- **Windows:** Python 3.11 (Requires Windows 8.1 or later)
-- **Linux:** Python 3.11
-- **macOS:** Python 3.11 (Requires macOS 10.9 or later, however macOS 11.0 or later may be required for library support)
+- **Windows:** Python 3.12 (Requires Windows 8.1 or later)
+- **Linux:** Python 3.12
+- **macOS:** Python 3.12 (Requires macOS 10.9 or later, however macOS 11.0 or later may be required for library support)
 
-**Python 3.12 may be supported now, however it is not tested at this time.**
-
-First, install the required dependencies:
-```
-pip install -r requirements.txt
-```
-Then, use the command for your platform to build an executable with Nuitka:
-
-**Windows**
+First, make sure you're inside a venv, and then install the required dependencies:
 ```shell
-python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
+pip install --upgrade -r requirements.txt
 ```
+After that, follow the directions for your platform.
 
-**Linux**
+### Linux and macOS
+A Makefile is available to build NUSGet on Linux and macOS. **On Linux**, this will give you an executable named `NUSGet` in the root of the project directory. **On macOS**, you'll instead get an application bundle named `NUSGet.app`.
 ```shell
-python -m nuitka --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py -o NUSGet
+make all
 ```
 
-**macOS**
+Optionally, **on Linux**, you can install NUSGet so that it's available system-wide. This will install it into `/opt/NUSGet/`.
 ```shell
-python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png
+sudo make install
 ```
+On macOS, you can instead put the application bundle in `/Applications/` just like any other program.
 
-The result will be a single binary named `NUSGet` that contains everything required to run NUSGet. No dependencies are needed on the target system. On Windows and macOS, this will also embed the icon in the program.
-
-
-### For Linux Users:
-A Makefile has been included to both build and install NUSGet on Linux. This will automatically set up NUSGet under `/opt/` and install a .desktop file to `/usr/share/applications/` so you can use it like any other application.
-
-First, use make to build NUSGet (this automates the step above):
+### Windows
+On Windows, you can use the PowerShell script `Build.ps1` in place of the Makefile. This will give you an executable named `NUSGet.exe` in the root of the project directory.
 ```shell
-make linux
+.\Build.ps1
 ```
 
-Then, run the install command with `sudo` (or your favorite alternative):
-```shell
-sudo make linux-install
-```
+## Translations
+A huge thanks to all the wonderful translators who've helped make NUSGet available to more people!
+ - **German:** [@yeah-its-gloria](https://github.com/yeah-its-gloria)
+ - **Italian:** [@LNLenost](https://github.com/LNLenost)
+ - **Korean:** [@DDinghoya](https://github.com/DDinghoya)
+ - **Norwegian:** [@Rolfie](https://github.com/rolfiee)
+ - **Romanian:** [@NotImplementedLife](https://github.com/NotImplementedLife)
+
+If your language isn't present or is out of date, and you'd like to contribute, you can check out [TRANSLATING.md](https://github.com/NinjaCheetah/NUSGet/blob/main/TRANSLATING.md) for directions on how to translate NUSGet.
 
 
 ## Why this and not NUSD?

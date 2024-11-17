@@ -1,6 +1,23 @@
 # "NUSGet.py", licensed under the MIT license
 # Copyright 2024 NinjaCheetah
 
+# Nuitka options. These determine compilation settings based on the current OS.
+# nuitka-project-if: {OS} == "Darwin":
+#    nuitka-project: --standalone
+#    nuitka-project: --macos-create-app-bundle
+#    nuitka-project: --macos-app-icon={MAIN_DIRECTORY}/resources/icon.png
+# nuitka-project-if: {OS} == "Windows":
+#    nuitka-project: --onefile
+#    nuitka-project: --windows-icon-from-ico={MAIN_DIRECTORY}/resources/icon.png
+#    nuitka-project: --windows-console-mode=disable
+# nuitka-project-else:
+#    nuitka-project: --onefile
+
+# These are standard options that are needed on all platforms.
+# nuitka-project: --plugin-enable=pyside6
+# nuitka-project: --include-data-dir={MAIN_DIRECTORY}/data=data
+# nuitka-project: --include-data-dir={MAIN_DIRECTORY}/resources=resources
+
 import os
 import sys
 import json

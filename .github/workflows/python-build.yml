@@ -1,5 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+# This workflow will install Python dependencies and then build NUSGet for all platforms
 
 name: Python application
 
@@ -30,8 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build Package
-      run: |
-        make linux
+      run: make all
     - name: Prepare Package for Upload
       run: |
         mv NUSGet ~/NUSGet
@@ -41,7 +39,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         path: ~/NUSGet.tar
-        name: NUSGet-linux-bin
+        name: NUSGet-Linux-bin
 
   build-macos-x86:
 
@@ -58,9 +56,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Build Package
-        run: |
-          python build_translations.py
-          python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png --macos-target-arch=x86_64
+        run: ARCH_FLAGS=--macos-target-arch=x86_64 make all
       - name: Prepare Package for Upload
         run: |
           mv NUSGet.app ~/NUSGet.app
@@ -70,7 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: ~/NUSGet.tar
-          name: NUSGet-macos-x86-bin
+          name: NUSGet-macOS-x86_64-bin
 
   build-macos-arm64:
 
@@ -87,9 +83,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Build Package
-        run: |
-          python build_translations.py
-          python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --standalone --plugin-enable=pyside6 NUSGet.py --macos-create-app-bundle --macos-app-icon=resources/icon.png --macos-target-arch=arm64
+        run: ARCH_FLAGS=--macos-target-arch=arm64 make all
       - name: Prepare Package for Upload
         run: |
           mv NUSGet.app ~/NUSGet.app
@@ -99,7 +93,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: ~/NUSGet.tar
-          name: NUSGet-macos-arm64-bin
+          name: NUSGet-macOS-arm64-bin
 
   build-windows:
 
@@ -118,17 +112,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build Package
-      run: |
-        python build_translations.py
-        python -m nuitka --show-progress --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --windows-icon-from-ico=resources/icon.png --plugin-enable=pyside6 NUSGet.py --windows-console-mode=disable
+      run: .\Build.ps1
     - name: Upload Package
       uses: actions/upload-artifact@v4
       with:
         path: D:\a\NUSGet\NUSGet\NUSGet.dist
-        name: NUSGet-windows-bin
+        name: NUSGet-Windows-bin
     - name: Upload Onefile Package
       uses: actions/upload-artifact@v4
       with:
         path: D:\a\NUSGet\NUSGet\NUSGet.exe
-        name: NUSGet-windows-onefile-bin
-        
+        name: NUSGet-Windows-onefile-bin

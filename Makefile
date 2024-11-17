@@ -1,10 +1,11 @@
 CC=python -m nuitka
+ARCH_FLAGS?=
 
-linux:
+all:
 	python build_translations.py
-	$(CC) --show-progress  --include-data-dir=data=data --include-data-dir=resources=resources --assume-yes-for-downloads --onefile --plugin-enable=pyside6 NUSGet.py -o NUSGet
+	$(CC) --show-progress --assume-yes-for-downloads NUSGet.py $(ARCH_FLAGS) -o NUSGet
 
-linux-install:
+install:
 	install -d /opt/NUSGet
 	install NUSGet /opt/NUSGet/
 	install ./packaging/icon.png /opt/NUSGet/NUSGet.png
