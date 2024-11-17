@@ -10,7 +10,7 @@
 #    nuitka-project: --onefile
 #    nuitka-project: --windows-icon-from-ico={MAIN_DIRECTORY}/resources/icon.png
 #    nuitka-project: --windows-console-mode=disable
-# nuitka-project-else:
+# nuitka-project-if: {OS} in ("Linux", "FreeBSD", "OpenBSD"):
 #    nuitka-project: --onefile
 
 # These are standard options that are needed on all platforms.
