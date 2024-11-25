@@ -129,7 +129,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         new_region.setText(0, region)
                         for title_version in title["Versions"][region]:
                             new_version = QTreeWidgetItem()
-                            # Added public display versions (4.3U etc)
+                            # Added public display versions (4.3U, 4.3J, etc)
                             # messy code can absolutely be cleaned up!!
                             strVersion = str(title_version)
                             public_versions = title.get("Public Versions", {})
