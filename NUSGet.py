@@ -129,7 +129,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         new_region.setText(0, region)
                         for title_version in title["Versions"][region]:
                             new_version = QTreeWidgetItem()
-                            new_version.setText(0, "v" + str(title_version))
+                            # Added public display versions (4.3U etc)
+                            # messy code can absolutely be cleaned up!!
+                            strVersion = str(title_version)
+                            public_versions = title.get("Public Versions", {})
+                            if strVersion in public_versions:
+                                public_version = " (" + public_versions[strVersion] + ")"
+                            else:
+                                public_version = ""
+                            # changed to strVersion here
+                            new_version.setText(0, "v" + strVersion + public_version)
                             new_region.addChild(new_version)
                         new_title.addChild(new_region)
                     # Set an indicator icon to show if a ticket is offered for this title or not.
