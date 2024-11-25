@@ -134,7 +134,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             strVersion = str(title_version)
                             public_versions = title.get("Public Versions", {})
                             if strVersion in public_versions:
-                                public_version = " (" + public_versions[strVersion] + ")"
+                                public_version = " (" + public_versions[strVersion] + ")" # add ()
                             else:
                                 public_version = ""
                             # changed to strVersion here
