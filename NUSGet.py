@@ -38,6 +38,7 @@ from modules.download_wii import run_nus_download_wii, run_nus_download_wii_batc
 from modules.download_dsi import run_nus_download_dsi, run_nus_download_dsi_batch
 
 nusget_version = "1.2.0"
+current_selected_version = ""
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -138,6 +139,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             else:
                                 public_version = ""
                             # changed to strVersion here
+                            #current_selected_version = strVersion
                             new_version.setText(0, "v" + strVersion + public_version)
                             new_region.addChild(new_version)
                         new_title.addChild(new_region)
@@ -182,7 +184,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     selected_title = SelectedTitle(title["TID"], title["Name"], title["Archive Name"], item.text(0)[1:],
                                                    title["Ticket"], item.parent().text(0), category,
                                                    self.ui.console_select_dropdown.currentText(), danger_text)
-                    self.load_title_data(selected_title)
+                    self.load_title_data(selected_title, selected_title.version.split(" ", 1)[0])
 
     def tid_updated(self):
         tid = self.ui.tid_entry.text()
@@ -217,10 +219,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if ret == QMessageBox.StandardButton.Yes:
                 webbrowser.open("https://github.com/NinjaCheetah/NUSGet/releases/latest")
 
-    def load_title_data(self, selected_title: SelectedTitle):
+    def load_title_data(self, selected_title: SelectedTitle, real_version):
         # Use the information passed from the double click callback to prepare a title for downloading.
         # If the last two characters are "XX", then this title has multiple regions, and each region uses its own
         # two-digit code. Use the region info passed to load the correct code.
+        global current_selected_version
+        current_selected_version = real_version
         if selected_title.tid[-2:] == "XX":
             global regions
             region_code = regions[selected_title.region][0]
@@ -229,14 +233,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tid = selected_title.tid
         # Load the TID and version into the entry boxes.
         self.ui.tid_entry.setText(tid)
-        self.ui.version_entry.setText(selected_title.version)
+        self.ui.version_entry.setText(real_version)
         # Load the WAD name, assuming it exists. This shouldn't ever be able to fail as the database has a WAD name
         # for every single title, regardless of whether it can be packed or not.
         try:
             archive_name = f"{selected_title.archive_name}"
             if selected_title.category != "System" and selected_title.category != "IOS":
                 archive_name += f"-{str(bytes.fromhex(tid).decode())[-4:]}"
-            archive_name += f"-v{selected_title.version}"
+            archive_name += f"-v{real_version}"
             if selected_title.region != "World":
                 archive_name += f"-{selected_title.region.split('/')[0]}"
             if self.ui.console_select_dropdown.currentText() == "DSi":
@@ -258,7 +262,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be decrypted"
                                          " or packed into a WAD/TAD.")
         # Print log info about the selected title and version.
-        self.log_text = f"{tid} - {selected_title.name}\nVersion: {selected_title.version}\n\n{danger_text}\n"
+        self.log_text = f"{tid} - {selected_title.name}\nVersion: {real_version}\n\n{danger_text}\n"
         self.ui.log_text_browser.setText(self.log_text)
 
     def lock_ui_for_download(self):
@@ -299,12 +303,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
             worker = Worker(run_nus_download_dsi, out_folder, self.ui.tid_entry.text(),
-                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
+                            current_selected_version, self.ui.pack_archive_chkbox.isChecked(),
                             self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
                             self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
         else:
             worker = Worker(run_nus_download_wii, out_folder, self.ui.tid_entry.text(),
-                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
+                            # don't use self.ui.version_entry.text(), use current_selected_version
+                            current_selected_version, self.ui.pack_archive_chkbox.isChecked(),
                             self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
                             self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
                             self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked(),
