@@ -11,6 +11,7 @@ import libWiiPy
 def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_wad_chkbox: bool, keep_enc_chkbox: bool,
                          decrypt_contents_chkbox: bool, wiiu_nus_chkbox: bool, use_local_chkbox: bool,
                          repack_vwii_chkbox: bool, patch_ios: bool, wad_file_name: str, progress_callback=None):
+    #print(version)
     # Actual NUS download function that runs in a separate thread.
     # Immediately knock out any invalidly formatted Title IDs.
     if len(tid) != 16:
