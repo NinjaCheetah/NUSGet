@@ -37,7 +37,7 @@ from modules.core import *
 from modules.download_wii import run_nus_download_wii, run_nus_download_wii_batch
 from modules.download_dsi import run_nus_download_dsi, run_nus_download_dsi_batch
 
-nusget_version = "1.2.0"
+nusget_version = "1.3.0"
 current_selected_version = ""
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
@@ -123,24 +123,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 # Iterate over each title in the current category.
                 for title in tree[1][key]:
                     new_title = QTreeWidgetItem()
-                    new_title.setText(0, title["TID"] + " - " + title["Name"])
+                    new_title.setText(0, f"{title['TID']} - {title['Name']}")
                     # Build the list of regions and what versions are offered for each region.
                     for region in title["Versions"]:
                         new_region = QTreeWidgetItem()
                         new_region.setText(0, region)
                         for title_version in title["Versions"][region]:
                             new_version = QTreeWidgetItem()
-                            # Added public display versions (4.3U, 4.3J, etc)
+                            # Added public display versions (4.3U, 4.3J, etc.)
                             # messy code can absolutely be cleaned up!!
-                            strVersion = str(title_version)
+                            version_str = str(title_version)
                             public_versions = title.get("Public Versions", {})
-                            if strVersion in public_versions:
-                                public_version = " (" + public_versions[strVersion] + ")" # add ()
-                            else:
-                                public_version = ""
+                            public_version = ""
+                            if version_str in public_versions:
+                                public_version = f" ({public_versions[version_str]})"
                             # changed to strVersion here
                             #current_selected_version = strVersion
-                            new_version.setText(0, "v" + strVersion + public_version)
+                            new_version.setText(0, f"v{version_str}{public_version}")
                             new_region.addChild(new_version)
                         new_title.addChild(new_region)
                     # Set an indicator icon to show if a ticket is offered for this title or not.
@@ -175,7 +174,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tree = self.trees[self.ui.platform_tabs.currentIndex()]
             for title in tree[1][category]:
                 # Check to see if the current title matches the selected one, and if it does, pass that info on.
-                if item.parent().parent().text(0) == (title["TID"] + " - " + title["Name"]):
+                if item.parent().parent().text(0) == f"{title['TID']} - {title['Name']}":
                     self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
                     try:
                         danger_text = title["Danger"]
@@ -392,68 +391,76 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.pack_vwii_mode_chkbox.setEnabled(False)
 
     def script_btn_pressed(self):
-        file_name = QFileDialog.getOpenFileName(self, caption=app.translate("MainWindow", "Open NUS script"), filter=app.translate("MainWindow", "NUS Scripts (*.nus *.txt)"), options=QFileDialog.Option.ReadOnly)
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Icon.Critical)
+        msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+        msg_box.setWindowTitle(app.translate("MainWindow", "Script Download Failed"))
+        file_name = QFileDialog.getOpenFileName(self, caption=app.translate("MainWindow", "Open NUS script"),
+                                                filter=app.translate("MainWindow", "NUS Scripts (*.nus *.txt)"),
+                                                options=QFileDialog.Option.ReadOnly)
         if len(file_name[0]) == 0:
             return
-
         try:
-            file = open(file_name[0], "r")
-        except:
-            QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Failed to open the script."), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+            content = open(file_name[0], "r").readlines()
+        except os.error:
+            msg_box.setText(app.translate("MainWindow", "The script could not be opened."))
+            msg_box.exec()
             return
-        
-        content = file.readlines()
 
-        # Decoding NUS Scripts
         # NUS Scripts are plaintext UTF-8 files that list a title per line, terminated with newlines.
         # Every title is its u64 TID, a space and its u16 version, *both* written in hexadecimal.
-        # NUS itself expects versions as decimal notation, so they need to be decoded first, but TIDs are always written in hexadecimal notation.
-
+        # NUS itself expects versions as decimal notation, so they need to be decoded first, but TIDs are always written
+        # in hexadecimal notation.
         titles = []
-
         for index, title in enumerate(content):
             decoded = title.replace("\n", "").split(" ", 1)
             if len(decoded[0]) != 16:
-                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The TID for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                msg_box.setText(app.translate("MainWindow", "The TID for title #%n is not valid.", "", index + 1))
+                msg_box.exec()
                 return
             elif len(decoded[1]) != 4:
-                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                msg_box.setText(app.translate("MainWindow", "The version for title #%n is not valid.", "", index + 1))
+                msg_box.exec()
                 return
             
             tid = decoded[0]
 
             try:
-                version = int(decoded[1], 16)
-            except:
-                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n is not valid.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                target_version = int(decoded[1], 16)
+            except ValueError:
+                msg_box.setText(app.translate("MainWindow", "The version for title #%n is not valid.", "", index + 1))
+                msg_box.exec()
                 return
 
             title = None
             for category in self.trees[self.ui.platform_tabs.currentIndex()][1]:
                 for title_ in self.trees[self.ui.platform_tabs.currentIndex()][1][category]:
-                    # The last two digits are either identifying the title type (e.g IOS slot, BC type, etc) or a region code; in case of the latter, skip the region here to match it
+                    # The last two digits are either identifying the title type (IOS slot, BC type, etc.) or a region code; in case of the latter, skip the region here to match it
                     if not ((title_["TID"][-2:] == "XX" and title_["TID"][:-2] == tid[:-2]) or title_["TID"] == tid):
                         continue
 
                     found_ver = False
                     for region in title_["Versions"]:
                         for db_version in title_["Versions"][region]:
-                            if db_version == version:
+                            if db_version == target_version:
                                 found_ver = True
                                 break
 
                     if not found_ver:
-                        QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "The version for title #%n could not be discovered in the database.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+                        msg_box.setText(app.translate("MainWindow", "The version for title #%n could not be discovered in the database.", "", index + 1))
+                        msg_box.exec()
                         return
 
                     title = title_
                     break
             
-            if title == None:
-                QMessageBox.critical(self, app.translate("MainWindow", "Script Failure"), app.translate("MainWindow", "Title #%n could not be discovered in the database.", "", index+1), buttons=QMessageBox.StandardButton.Ok, defaultButton=QMessageBox.StandardButton.Ok)
+            if title is None:
+                msg_box.setText(app.translate("MainWindow", "Title #%n could not be discovered in the database.", "", index + 1))
+                msg_box.exec()
                 return
 
-            titles.append((title["TID"], str(version), title["Archive Name"]))
+            titles.append((title["TID"], str(target_version), title["Archive Name"]))
 
         self.lock_ui_for_download()
 

@@ -4,7 +4,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../NUSGet.py" line="85"/>
+        <location filename="../../NUSGet.py" line="103"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -29,131 +29,126 @@ Titel, welche mit einem Häkchen markiert sind, sind frei verfügbar und haben e
 Titel werden in einem &quot;NUSGet&quot; Ordner innerhalb des Downloads-Ordners gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="184"/>
+        <location filename="../../NUSGet.py" line="211"/>
         <source>NUSGet Update Available</source>
         <translation>NUSGet-Update verfügbar</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="185"/>
+        <location filename="../../NUSGet.py" line="212"/>
         <source>There&apos;s a newer version of NUSGet available!</source>
         <translation>Eine neuere Version von NUSGet ist verfügbar.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="264"/>
+        <location filename="../../NUSGet.py" line="293"/>
         <source>No Output Selected</source>
         <translatorcomment>Changed from &quot;output&quot; to &quot;packaging&quot; for clarity</translatorcomment>
         <translation>Keine Verpackmethode ausgewählt</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="265"/>
+        <location filename="../../NUSGet.py" line="294"/>
         <source>You have not selected any format to output the data in!</source>
         <translation>Es wurde keine Methode zum Verpacken der Inhalte ausgewählt.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="267"/>
+        <location filename="../../NUSGet.py" line="296"/>
         <source>Please select at least one option for how you would like the download to be saved.</source>
         <translatorcomment>Explicitly mentions options for clarity</translatorcomment>
         <translation>Es muss mindestens &quot;verschlüsselte Inhalte speichern&quot;, &quot;entschlüsselte Inhalte speichern&quot; oder &quot;Verpacke als WAD/TAD&quot; ausgewählt worden sein.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="298"/>
+        <location filename="../../NUSGet.py" line="328"/>
         <source>Invalid Title ID</source>
         <translation>Fehlerhafte Title-ID</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="299"/>
+        <location filename="../../NUSGet.py" line="329"/>
         <source>The Title ID you have entered is not in a valid format!</source>
         <translation>Die eingegebene Title-ID ist nicht korrekt.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="301"/>
+        <location filename="../../NUSGet.py" line="331"/>
         <source>Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly formatted Title ID, or select one from the menu on the left.</source>
         <translation>Die Title-ID muss mindestens 16 alphanumerische Zeichen enthalten.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="303"/>
+        <location filename="../../NUSGet.py" line="333"/>
         <source>Title ID/Version Not Found</source>
         <translation>Title-ID/Version nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="304"/>
+        <location filename="../../NUSGet.py" line="334"/>
         <source>No title with the provided Title ID or version could be found!</source>
         <translatorcomment>The title was moved into the body, and the title was made less of a mouthful, for ease of translation</translatorcomment>
         <translation>Es konnte kein Titel mit der gegebenen Title-ID oder Version gefunden werden.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="306"/>
+        <location filename="../../NUSGet.py" line="336"/>
         <source>Please make sure that you have entered a valid Title ID, or selected one from the title database, and that the provided version exists for the title you are attempting to download.</source>
         <translation>Die Title-ID könnte möglicherweise fehlerhaft sein.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="308"/>
+        <location filename="../../NUSGet.py" line="338"/>
         <source>Content Decryption Failed</source>
         <translation>Entschlüsselung fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="309"/>
+        <location filename="../../NUSGet.py" line="339"/>
         <source>Content decryption was not successful! Decrypted contents could not be created.</source>
         <translation>Die Inhalte des Titels konnten nicht korrekt entschlüsselt werden.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="312"/>
+        <location filename="../../NUSGet.py" line="342"/>
         <source>Your TMD or Ticket may be damaged, or they may not correspond with the content being decrypted. If you have checked &quot;Use local files, if they exist&quot;, try disabling that option before trying the download again to fix potential issues with local data.</source>
         <translation>Die gespeicherte TMD oder das Ticket könnten möglicherweise fehlerhaft sein. &quot;Lokale Dateien nutzen&quot; kann ausgeschaltet werden, um diese erneut herunterzuladen.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="315"/>
+        <location filename="../../NUSGet.py" line="345"/>
         <source>Ticket Not Available</source>
         <translation>Ticket nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="316"/>
+        <location filename="../../NUSGet.py" line="346"/>
         <source>No Ticket is Available for the Requested Title!</source>
         <translation>Kein Ticket konnte für den geforderten Titel gefunden werden.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="319"/>
+        <location filename="../../NUSGet.py" line="349"/>
         <source>A ticket could not be downloaded for the requested title, but you have selected &quot;Pack installable archive&quot; or &quot;Create decrypted contents&quot;. These options are not available for titles without a ticket. Only encrypted contents have been saved.</source>
         <translation>Es wurden nur verschlüsselte Inhalte gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="321"/>
+        <location filename="../../NUSGet.py" line="351"/>
         <source>Unknown Error</source>
         <translation>Unbekannter Fehler</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="322"/>
+        <location filename="../../NUSGet.py" line="352"/>
         <source>An Unknown Error has Occurred!</source>
         <translation>Ein unbekannter Fehler ist aufgetreten.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="324"/>
+        <location filename="../../NUSGet.py" line="354"/>
         <source>Please try again. If this issue persists, please open a new issue on GitHub detailing what you were trying to do when this error occurred.</source>
         <translation>Versuchen Sie es erneut. Sofern das Problem bestehen bleibt, können Sie ein Issue auf GitHub öffnen, um den Fehler zu berichten.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="364"/>
+        <location filename="../../NUSGet.py" line="399"/>
         <source>Open NUS script</source>
         <translatorcomment>Translating the file type is pointless, since it&apos;s not an actual &quot;script&quot;</translatorcomment>
         <translation>NUS-Script öffnen</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="364"/>
+        <location filename="../../NUSGet.py" line="400"/>
         <source>NUS Scripts (*.nus *.txt)</source>
         <translation>NUS Script (*.nus *.txt)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="371"/>
-        <location filename="../../NUSGet.py" line="386"/>
-        <location filename="../../NUSGet.py" line="389"/>
-        <location filename="../../NUSGet.py" line="397"/>
-        <location filename="../../NUSGet.py" line="415"/>
-        <location filename="../../NUSGet.py" line="422"/>
+        <location filename="../../NUSGet.py" line="398"/>
         <source>Script Failure</source>
         <translation>Script-Fehler</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="371"/>
+        <location filename="../../NUSGet.py" line="407"/>
         <source>Failed to open the script.</source>
         <translation>Konnte das NUS-Script nicht öffnen.</translation>
     </message>
