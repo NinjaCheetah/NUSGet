@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainMenu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -18,8 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QHBoxLayout,
     QHeaderView, QLabel, QLayout, QLineEdit,
     QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QSpacerItem, QTabWidget, QTextBrowser, QTreeWidget,
-    QTreeWidgetItem, QVBoxLayout, QWidget)
+    QSpacerItem, QTabWidget, QTextBrowser, QTreeView,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -56,16 +56,8 @@ class Ui_MainWindow(object):
         self.wii_tab.setObjectName(u"wii_tab")
         self.verticalLayout_2 = QVBoxLayout(self.wii_tab)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.wii_title_tree = QTreeWidget(self.wii_tab)
-        __qtreewidgetitem = QTreeWidgetItem()
-        __qtreewidgetitem.setText(0, u"1");
-        self.wii_title_tree.setHeaderItem(__qtreewidgetitem)
+        self.wii_title_tree = QTreeView(self.wii_tab)
         self.wii_title_tree.setObjectName(u"wii_title_tree")
-        self.wii_title_tree.setColumnCount(1)
-        self.wii_title_tree.header().setVisible(False)
-        self.wii_title_tree.header().setMinimumSectionSize(49)
-        self.wii_title_tree.header().setDefaultSectionSize(100)
-        self.wii_title_tree.header().setStretchLastSection(False)
 
         self.verticalLayout_2.addWidget(self.wii_title_tree)
 
@@ -74,16 +66,8 @@ class Ui_MainWindow(object):
         self.vwii_tab.setObjectName(u"vwii_tab")
         self.verticalLayout_4 = QVBoxLayout(self.vwii_tab)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.vwii_title_tree = QTreeWidget(self.vwii_tab)
-        __qtreewidgetitem1 = QTreeWidgetItem()
-        __qtreewidgetitem1.setText(0, u"1");
-        self.vwii_title_tree.setHeaderItem(__qtreewidgetitem1)
+        self.vwii_title_tree = QTreeView(self.vwii_tab)
         self.vwii_title_tree.setObjectName(u"vwii_title_tree")
-        self.vwii_title_tree.setColumnCount(1)
-        self.vwii_title_tree.header().setVisible(False)
-        self.vwii_title_tree.header().setMinimumSectionSize(49)
-        self.vwii_title_tree.header().setDefaultSectionSize(100)
-        self.vwii_title_tree.header().setStretchLastSection(False)
 
         self.verticalLayout_4.addWidget(self.vwii_title_tree)
 
@@ -92,14 +76,8 @@ class Ui_MainWindow(object):
         self.dsi_tab.setObjectName(u"dsi_tab")
         self.verticalLayout = QVBoxLayout(self.dsi_tab)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.dsi_title_tree = QTreeWidget(self.dsi_tab)
-        __qtreewidgetitem2 = QTreeWidgetItem()
-        __qtreewidgetitem2.setText(0, u"1");
-        self.dsi_title_tree.setHeaderItem(__qtreewidgetitem2)
+        self.dsi_title_tree = QTreeView(self.dsi_tab)
         self.dsi_title_tree.setObjectName(u"dsi_title_tree")
-        self.dsi_title_tree.setHeaderHidden(True)
-        self.dsi_title_tree.header().setMinimumSectionSize(49)
-        self.dsi_title_tree.header().setStretchLastSection(False)
 
         self.verticalLayout.addWidget(self.dsi_title_tree)
 

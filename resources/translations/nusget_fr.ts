@@ -4,7 +4,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../NUSGet.py" line="103"/>
+        <location filename="../../NUSGet.py" line="96"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -18,123 +18,123 @@ Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="211"/>
+        <location filename="../../NUSGet.py" line="156"/>
         <source>NUSGet Update Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="212"/>
+        <location filename="../../NUSGet.py" line="157"/>
         <source>There&apos;s a newer version of NUSGet available!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="293"/>
+        <location filename="../../NUSGet.py" line="233"/>
         <source>No Output Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="294"/>
+        <location filename="../../NUSGet.py" line="234"/>
         <source>You have not selected any format to output the data in!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="296"/>
+        <location filename="../../NUSGet.py" line="236"/>
         <source>Please select at least one option for how you would like the download to be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="328"/>
+        <location filename="../../NUSGet.py" line="267"/>
         <source>Invalid Title ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="329"/>
+        <location filename="../../NUSGet.py" line="268"/>
         <source>The Title ID you have entered is not in a valid format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="331"/>
+        <location filename="../../NUSGet.py" line="270"/>
         <source>Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly formatted Title ID, or select one from the menu on the left.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="333"/>
+        <location filename="../../NUSGet.py" line="272"/>
         <source>Title ID/Version Not Found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="334"/>
+        <location filename="../../NUSGet.py" line="273"/>
         <source>No title with the provided Title ID or version could be found!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="336"/>
+        <location filename="../../NUSGet.py" line="275"/>
         <source>Please make sure that you have entered a valid Title ID, or selected one from the title database, and that the provided version exists for the title you are attempting to download.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="338"/>
+        <location filename="../../NUSGet.py" line="277"/>
         <source>Content Decryption Failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="339"/>
+        <location filename="../../NUSGet.py" line="278"/>
         <source>Content decryption was not successful! Decrypted contents could not be created.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="342"/>
+        <location filename="../../NUSGet.py" line="281"/>
         <source>Your TMD or Ticket may be damaged, or they may not correspond with the content being decrypted. If you have checked &quot;Use local files, if they exist&quot;, try disabling that option before trying the download again to fix potential issues with local data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="345"/>
+        <location filename="../../NUSGet.py" line="284"/>
         <source>Ticket Not Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="346"/>
+        <location filename="../../NUSGet.py" line="285"/>
         <source>No Ticket is Available for the Requested Title!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="349"/>
+        <location filename="../../NUSGet.py" line="288"/>
         <source>A ticket could not be downloaded for the requested title, but you have selected &quot;Pack installable archive&quot; or &quot;Create decrypted contents&quot;. These options are not available for titles without a ticket. Only encrypted contents have been saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="351"/>
+        <location filename="../../NUSGet.py" line="290"/>
         <source>Unknown Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="352"/>
+        <location filename="../../NUSGet.py" line="291"/>
         <source>An Unknown Error has Occurred!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="354"/>
+        <location filename="../../NUSGet.py" line="293"/>
         <source>Please try again. If this issue persists, please open a new issue on GitHub detailing what you were trying to do when this error occurred.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="399"/>
+        <location filename="../../NUSGet.py" line="337"/>
+        <source>Script Download Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="338"/>
         <source>Open NUS script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="400"/>
+        <location filename="../../NUSGet.py" line="339"/>
         <source>NUS Scripts (*.nus *.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="398"/>
-        <source>Script Failure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../NUSGet.py" line="407"/>
-        <source>Failed to open the script.</source>
+        <location filename="../../NUSGet.py" line="346"/>
+        <source>The script could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -153,97 +153,97 @@ Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="103"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="82"/>
         <source>vWii</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="134"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="92"/>
         <source>DSi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="174"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="117"/>
         <source>Title ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="181"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="124"/>
         <source>v</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="194"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="137"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="201"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="144"/>
         <source>Console:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="237"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="180"/>
         <source>Start Download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="250"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="193"/>
         <source>Run Script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="277"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="220"/>
         <source>General Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="308"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="251"/>
         <source>Pack installable archive (WAD/TAD)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="323"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="266"/>
         <source>File Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="357"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="300"/>
         <source>Keep encrypted contents</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="393"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="336"/>
         <source>Create decrypted contents (*.app)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="432"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="375"/>
         <source>Use local files, if they exist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="477"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="420"/>
         <source>Use the Wii U NUS (faster, only effects Wii/vWii)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="519"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="462"/>
         <source>Apply patches to IOS (Applies to WADs only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="575"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="518"/>
         <source>vWii Title Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="609"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="552"/>
         <source>Re-encrypt title using the Wii Common Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="666"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="609"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -255,21 +255,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../modules/core.py" line="26"/>
+        <location filename="../../modules/core.py" line="25"/>
         <source>
 
 Could not check for updates.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../modules/core.py" line="34"/>
+        <location filename="../../modules/core.py" line="33"/>
         <source>
 
 There&apos;s a newer version of NUSGet available!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../modules/core.py" line="36"/>
+        <location filename="../../modules/core.py" line="35"/>
         <source>
 
 You&apos;re running the latest release of NUSGet.</source>

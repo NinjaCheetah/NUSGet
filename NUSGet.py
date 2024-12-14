@@ -27,18 +27,17 @@ import webbrowser
 from importlib.metadata import version
 
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTreeWidgetItem, QHeaderView, QStyle,
-                               QStyleFactory, QFileDialog)
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QStyleFactory, QFileDialog
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
 from qt.py.ui_MainMenu import Ui_MainWindow
 
 from modules.core import *
+from modules.tree import NUSGetTreeModel
 from modules.download_wii import run_nus_download_wii, run_nus_download_wii_batch
 from modules.download_dsi import run_nus_download_dsi, run_nus_download_dsi_batch
 
 nusget_version = "1.3.0"
-current_selected_version = ""
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -84,12 +83,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.pack_archive_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
-        # noinspection PyUnresolvedReferences
-        self.ui.wii_title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
-        # noinspection PyUnresolvedReferences
-        self.ui.vwii_title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
-        # noinspection PyUnresolvedReferences
-        self.ui.dsi_title_tree.header().setSectionResizeMode(QHeaderView.ResizeToContents)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
         libtwlpy_version = "v" + version("libTWLPy")
@@ -108,82 +101,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.console_select_dropdown.addItem("vWii")
         self.ui.console_select_dropdown.addItem("DSi")
         self.ui.console_select_dropdown.currentIndexChanged.connect(self.selected_console_changed)
-        # Title tree building code.
-        wii_tree = self.ui.wii_title_tree
-        vwii_tree = self.ui.vwii_title_tree
-        dsi_tree = self.ui.dsi_title_tree
-        self.trees = [[wii_tree, wii_database], [vwii_tree, vwii_database], [dsi_tree, dsi_database]]
-        for tree in self.trees:
-            self.tree_categories = []
-            global regions
-            # Iterate over each category in the database file.
-            for key in tree[1]:
-                new_category = QTreeWidgetItem()
-                new_category.setText(0, key)
-                # Iterate over each title in the current category.
-                for title in tree[1][key]:
-                    new_title = QTreeWidgetItem()
-                    new_title.setText(0, f"{title['TID']} - {title['Name']}")
-                    # Build the list of regions and what versions are offered for each region.
-                    for region in title["Versions"]:
-                        new_region = QTreeWidgetItem()
-                        new_region.setText(0, region)
-                        for title_version in title["Versions"][region]:
-                            new_version = QTreeWidgetItem()
-                            # Added public display versions (4.3U, 4.3J, etc.)
-                            # messy code can absolutely be cleaned up!!
-                            version_str = str(title_version)
-                            public_versions = title.get("Public Versions", {})
-                            public_version = ""
-                            if version_str in public_versions:
-                                public_version = f" ({public_versions[version_str]})"
-                            # changed to strVersion here
-                            #current_selected_version = strVersion
-                            new_version.setText(0, f"v{version_str}{public_version}")
-                            new_region.addChild(new_version)
-                        new_title.addChild(new_region)
-                    # Set an indicator icon to show if a ticket is offered for this title or not.
-                    if title["Ticket"] is True:
-                        new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogApplyButton))
-                    else:
-                        new_title.setIcon(0, self.style().standardIcon(QStyle.StandardPixmap.SP_DialogCancelButton))
-                    new_category.addChild(new_title)
-                self.tree_categories.append(new_category)
-            tree[0].insertTopLevelItems(0, self.tree_categories)
-            # Connect the double click signal for handling when titles are selected.
-            tree[0].itemDoubleClicked.connect(self.onItemClicked)
-
-        # Prevent resizing, Qt makes us look stupid here
+        # Title tree loading code. Now powered by Models:tm:
+        wii_model = NUSGetTreeModel(wii_database, root_name="Wii Titles")
+        vwii_model = NUSGetTreeModel(vwii_database, root_name="vWii Titles")
+        dsi_model = NUSGetTreeModel(dsi_database, root_name="DSi Titles")
+        self.ui.wii_title_tree.setModel(wii_model)
+        self.ui.wii_title_tree.doubleClicked.connect(self.title_double_clicked)
+        self.ui.vwii_title_tree.setModel(vwii_model)
+        self.ui.vwii_title_tree.doubleClicked.connect(self.title_double_clicked)
+        self.ui.dsi_title_tree.setModel(dsi_model)
+        self.ui.dsi_title_tree.doubleClicked.connect(self.title_double_clicked)
+        # Prevent resizing.
         self.setFixedSize(self.size())
-
         # Do a quick check to see if there's a newer release available, and inform the user if there is.
         worker = Worker(check_nusget_updates, app, nusget_version)
         worker.signals.result.connect(self.prompt_for_update)
         worker.signals.progress.connect(self.update_log_text)
         self.threadpool.start(worker)
 
-    @Slot(QTreeWidgetItem, int)
-    def onItemClicked(self, item, col):
+    def title_double_clicked(self, index):
         if self.ui.download_btn.isEnabled() is True:
-            # Check to make sure that this is a version and nothing higher. If you've doubled clicked on anything other
-            # than a version, this returns an AttributeError and the click can be ignored.
-            try:
-                category = item.parent().parent().parent().text(0)
-            except AttributeError:
-                return
-            tree = self.trees[self.ui.platform_tabs.currentIndex()]
-            for title in tree[1][category]:
-                # Check to see if the current title matches the selected one, and if it does, pass that info on.
-                if item.parent().parent().text(0) == f"{title['TID']} - {title['Name']}":
-                    self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
-                    try:
-                        danger_text = title["Danger"]
-                    except KeyError:
-                        danger_text = ""
-                    selected_title = SelectedTitle(title["TID"], title["Name"], title["Archive Name"], item.text(0)[1:],
-                                                   title["Ticket"], item.parent().text(0), category,
-                                                   self.ui.console_select_dropdown.currentText(), danger_text)
-                    self.load_title_data(selected_title, selected_title.version.split(" ", 1)[0])
+            title = index.internalPointer().metadata
+            if title is not None:
+                self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
+                selected_title = TitleData(title.tid, title.name, title.archive_name, title.version, title.ticket,
+                                           title.region, title.category, title.danger)
+                self.load_title_data(selected_title)
 
     def tid_updated(self):
         tid = self.ui.tid_entry.text()
@@ -218,12 +161,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if ret == QMessageBox.StandardButton.Yes:
                 webbrowser.open("https://github.com/NinjaCheetah/NUSGet/releases/latest")
 
-    def load_title_data(self, selected_title: SelectedTitle, real_version):
+    def load_title_data(self, selected_title: TitleData):
         # Use the information passed from the double click callback to prepare a title for downloading.
         # If the last two characters are "XX", then this title has multiple regions, and each region uses its own
         # two-digit code. Use the region info passed to load the correct code.
-        global current_selected_version
-        current_selected_version = real_version
         if selected_title.tid[-2:] == "XX":
             global regions
             region_code = regions[selected_title.region][0]
@@ -232,36 +173,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tid = selected_title.tid
         # Load the TID and version into the entry boxes.
         self.ui.tid_entry.setText(tid)
-        self.ui.version_entry.setText(real_version)
+        self.ui.version_entry.setText(str(selected_title.version))
         # Load the WAD name, assuming it exists. This shouldn't ever be able to fail as the database has a WAD name
         # for every single title, regardless of whether it can be packed or not.
-        try:
-            archive_name = f"{selected_title.archive_name}"
-            if selected_title.category != "System" and selected_title.category != "IOS":
-                archive_name += f"-{str(bytes.fromhex(tid).decode())[-4:]}"
-            archive_name += f"-v{real_version}"
-            if selected_title.region != "World":
-                archive_name += f"-{selected_title.region.split('/')[0]}"
-            if self.ui.console_select_dropdown.currentText() == "DSi":
-                archive_name += ".tad"
-            elif self.ui.console_select_dropdown.currentText() == "vWii":
-                if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
-                    archive_name += "-vWii"
-                archive_name += ".wad"
-            else:
-                if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
-                    archive_name += "-Wii"
-                archive_name += ".wad"
-            self.ui.archive_file_entry.setText(archive_name)
-        except KeyError:
-            pass
+        archive_name = selected_title.archive_name
+        if selected_title.category != "System" and selected_title.category != "IOS":
+            archive_name += f"-{str(bytes.fromhex(tid).decode())[-4:]}"
+        archive_name += f"-v{selected_title.version}"
+        if selected_title.region != "World":
+            archive_name += f"-{selected_title.region.split('/')[0]}"
+        if self.ui.console_select_dropdown.currentText() == "DSi":
+            archive_name += ".tad"
+        elif self.ui.console_select_dropdown.currentText() == "vWii":
+            if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
+                archive_name += "-vWii"
+            archive_name += ".wad"
+        else:
+            if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
+                archive_name += "-Wii"
+            archive_name += ".wad"
+        self.ui.archive_file_entry.setText(archive_name)
         danger_text = selected_title.danger
         # Add warning text to the log if the selected title has no ticket.
         if selected_title.ticket is False:
             danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be decrypted"
                                          " or packed into a WAD/TAD.")
         # Print log info about the selected title and version.
-        self.log_text = f"{tid} - {selected_title.name}\nVersion: {real_version}\n\n{danger_text}\n"
+        self.log_text = f"{tid} - {selected_title.name}\nVersion: {selected_title.version}\n\n{danger_text}\n"
         self.ui.log_text_browser.setText(self.log_text)
 
     def lock_ui_for_download(self):
@@ -302,13 +240,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
             worker = Worker(run_nus_download_dsi, out_folder, self.ui.tid_entry.text(),
-                            current_selected_version, self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
                             self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
                             self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
         else:
             worker = Worker(run_nus_download_wii, out_folder, self.ui.tid_entry.text(),
-                            # don't use self.ui.version_entry.text(), use current_selected_version
-                            current_selected_version, self.ui.pack_archive_chkbox.isChecked(),
+                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
                             self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
                             self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
                             self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked(),

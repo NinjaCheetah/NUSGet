@@ -73,28 +73,7 @@
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QTreeWidget" name="wii_title_tree">
-            <property name="columnCount">
-             <number>1</number>
-            </property>
-            <attribute name="headerVisible">
-             <bool>false</bool>
-            </attribute>
-            <attribute name="headerMinimumSectionSize">
-             <number>49</number>
-            </attribute>
-            <attribute name="headerDefaultSectionSize">
-             <number>100</number>
-            </attribute>
-            <attribute name="headerStretchLastSection">
-             <bool>false</bool>
-            </attribute>
-            <column>
-             <property name="text">
-              <string notr="true">1</string>
-             </property>
-            </column>
-           </widget>
+           <widget class="QTreeView" name="wii_title_tree"/>
           </item>
          </layout>
         </widget>
@@ -104,28 +83,7 @@
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QTreeWidget" name="vwii_title_tree">
-            <property name="columnCount">
-             <number>1</number>
-            </property>
-            <attribute name="headerVisible">
-             <bool>false</bool>
-            </attribute>
-            <attribute name="headerMinimumSectionSize">
-             <number>49</number>
-            </attribute>
-            <attribute name="headerDefaultSectionSize">
-             <number>100</number>
-            </attribute>
-            <attribute name="headerStretchLastSection">
-             <bool>false</bool>
-            </attribute>
-            <column>
-             <property name="text">
-              <string notr="true">1</string>
-             </property>
-            </column>
-           </widget>
+           <widget class="QTreeView" name="vwii_title_tree"/>
           </item>
          </layout>
         </widget>
@@ -135,22 +93,7 @@
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QTreeWidget" name="dsi_title_tree">
-            <property name="headerHidden">
-             <bool>true</bool>
-            </property>
-            <attribute name="headerMinimumSectionSize">
-             <number>49</number>
-            </attribute>
-            <attribute name="headerStretchLastSection">
-             <bool>false</bool>
-            </attribute>
-            <column>
-             <property name="text">
-              <string notr="true">1</string>
-             </property>
-            </column>
-           </widget>
+           <widget class="QTreeView" name="dsi_title_tree"/>
           </item>
          </layout>
         </widget>

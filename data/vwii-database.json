@@ -30,7 +30,18 @@
       },
       "Ticket": true,
       "Archive Name": "System-Menu",
-      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If you intend to modify it, you should have Preloader installed, or else you may not be able to use the vWii."
+      "Danger": "The System Menu is a critical part of the vWii's operation, and should not be modified. If you intend to modify it, you should have Preloader installed, or else you may not be able to use the vWii.",
+      "Public Versions": {
+          "512": "4.3J - Wii U v1.0.0J",
+          "513": "4.3U - Wii U v1.0.0U",
+          "514": "4.3E - Wii U v1.0.0E",
+          "544": "4.3J - Wii U v4.0.0J",
+          "545": "4.3U - Wii U v4.0.0U",
+          "546": "4.3E - Wii U v4.0.0E",
+          "608": "4.3J - Wii U v5.2.0J",
+          "609": "4.3U - Wii U v5.2.0U",
+          "610": "4.3E - Wii U v5.2.0E"
+      }
     }
   ],
   "System Channels": [

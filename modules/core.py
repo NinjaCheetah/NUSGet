@@ -6,8 +6,8 @@ from dataclasses import dataclass
 
 
 @dataclass
-class SelectedTitle:
-    # Class to store all components of a selected title to make tracking it easier.
+class TitleData:
+    # Class to store all data for a Title.
     tid: str
     name: str
     archive_name: str
@@ -15,7 +15,6 @@ class SelectedTitle:
     ticket: bool
     region: str
     category: str
-    console: str
     danger: str
 
 
