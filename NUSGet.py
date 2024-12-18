@@ -34,8 +34,9 @@ from qt.py.ui_MainMenu import Ui_MainWindow
 
 from modules.core import *
 from modules.tree import NUSGetTreeModel
-from modules.download_wii import run_nus_download_wii, run_nus_download_wii_batch
-from modules.download_dsi import run_nus_download_dsi, run_nus_download_dsi_batch
+from modules.download_batch import run_nus_download_batch
+from modules.download_wii import run_nus_download_wii
+from modules.download_dsi import run_nus_download_dsi
 
 nusget_version = "1.3.0"
 
@@ -333,86 +334,75 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
         msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
         msg_box.setWindowTitle(app.translate("MainWindow", "Script Download Failed"))
-        file_name = QFileDialog.getOpenFileName(self, caption=app.translate("MainWindow", "Open NUS script"),
-                                                filter=app.translate("MainWindow", "NUS Scripts (*.nus *.txt)"),
+        file_name = QFileDialog.getOpenFileName(self, caption=app.translate("MainWindow", "Open NUS Script"),
+                                                filter=app.translate("MainWindow", "NUS Scripts (*.nus *.json)"),
                                                 options=QFileDialog.Option.ReadOnly)
+        # The old plaintext script format is no longer supported in NUSGet v1.3.0 and later. This script parsing code
+        # is for the new JSON script format, which is much easier to use and is cleaner.
         if len(file_name[0]) == 0:
             return
         try:
-            content = open(file_name[0], "r").readlines()
-        except os.error:
-            msg_box.setText(app.translate("MainWindow", "The script could not be opened."))
+            with open(file_name[0]) as script_file:
+                script_data = json.load(script_file)
+        except json.JSONDecodeError as e:
+            msg_box.setText(app.translate("MainWindow", "An error occurred while parsing the script file!"))
+            msg_box.setInformativeText(app.translate("MainWindow", f"Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again."))
             msg_box.exec()
             return
-
-        # NUS Scripts are plaintext UTF-8 files that list a title per line, terminated with newlines.
-        # Every title is its u64 TID, a space and its u16 version, *both* written in hexadecimal.
-        # NUS itself expects versions as decimal notation, so they need to be decoded first, but TIDs are always written
-        # in hexadecimal notation.
+        # Build a list of the titles we need to download.
         titles = []
-        for index, title in enumerate(content):
-            decoded = title.replace("\n", "").split(" ", 1)
-            if len(decoded[0]) != 16:
-                msg_box.setText(app.translate("MainWindow", "The TID for title #%n is not valid.", "", index + 1))
-                msg_box.exec()
-                return
-            elif len(decoded[1]) != 4:
-                msg_box.setText(app.translate("MainWindow", "The version for title #%n is not valid.", "", index + 1))
-                msg_box.exec()
-                return
-            
-            tid = decoded[0]
-
+        for title in script_data:
             try:
-                target_version = int(decoded[1], 16)
-            except ValueError:
-                msg_box.setText(app.translate("MainWindow", "The version for title #%n is not valid.", "", index + 1))
+                tid = title["Title ID"]
+            except KeyError:
+                msg_box.setText(app.translate("MainWindow", "An error occurred while parsing Title IDs!"))
+                msg_box.setInformativeText(app.translate("MainWindow", f"The title at index {script_data.index(title)} does not have a Title ID!"))
                 msg_box.exec()
                 return
-
-            title = None
-            for category in self.trees[self.ui.platform_tabs.currentIndex()][1]:
-                for title_ in self.trees[self.ui.platform_tabs.currentIndex()][1][category]:
-                    # The last two digits are either identifying the title type (IOS slot, BC type, etc.) or a region code; in case of the latter, skip the region here to match it
-                    if not ((title_["TID"][-2:] == "XX" and title_["TID"][:-2] == tid[:-2]) or title_["TID"] == tid):
-                        continue
-
-                    found_ver = False
-                    for region in title_["Versions"]:
-                        for db_version in title_["Versions"][region]:
-                            if db_version == target_version:
-                                found_ver = True
+            # No version key is acceptable, just treat it as latest.
+            try:
+                title_version = int(title["Version"])
+            except KeyError:
+                title_version = -1
+            # If no console was specified, assume Wii.
+            try:
+                console = title["Console"]
+            except KeyError:
+                console = "Wii"
+            # Look up the title, and load the archive name for it if one can be found.
+            archive_name = ""
+            if console == "vWii":
+                target_database = vwii_database
+            elif console == "DSi":
+                target_database = dsi_database
+            else:
+                target_database = wii_database
+            for category in target_database:
+                for t in target_database[category]:
+                    if t["TID"][-2:] == "XX":
+                        for r in regions:
+                            if f"{t['TID'][:-2]}{regions[r][0]}" == tid:
+                                try:
+                                    archive_name = t["Archive Name"]
+                                    break
+                                except KeyError:
+                                    archive_name = ""
+                                    break
+                    else:
+                        if t["TID"] == tid:
+                            try:
+                                archive_name = t["Archive Name"]
                                 break
-
-                    if not found_ver:
-                        msg_box.setText(app.translate("MainWindow", "The version for title #%n could not be discovered in the database.", "", index + 1))
-                        msg_box.exec()
-                        return
-
-                    title = title_
-                    break
-            
-            if title is None:
-                msg_box.setText(app.translate("MainWindow", "Title #%n could not be discovered in the database.", "", index + 1))
-                msg_box.exec()
-                return
-
-            titles.append((title["TID"], str(target_version), title["Archive Name"]))
-
+                            except KeyError:
+                                archive_name = ""
+                                break
+            print(archive_name)
+            titles.append(BatchTitleData(tid, title_version, console, archive_name))
         self.lock_ui_for_download()
-
-        self.update_log_text(f"Found {len(titles)} titles, starting batch download.")
-
-        if self.ui.console_select_dropdown.currentText() == "DSi":
-            worker = Worker(run_nus_download_dsi_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
-                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
-                            self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
-        else:
-            worker = Worker(run_nus_download_wii_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
-                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
-                            self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
-                            self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked())
-
+        worker = Worker(run_nus_download_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
+                        self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
+                        self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
+                        self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked())
         worker.signals.result.connect(self.check_download_result)
         worker.signals.progress.connect(self.update_log_text)
         self.threadpool.start(worker)

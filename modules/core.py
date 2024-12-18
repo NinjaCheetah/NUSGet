@@ -18,6 +18,15 @@ class TitleData:
     danger: str
 
 
+@dataclass
+class BatchTitleData:
+    # Class to store all data for a Title in a batch operation.
+    tid: str
+    version: int
+    console: str
+    archive_name: str
+
+
 def check_nusget_updates(app, current_version: str, progress_callback=None) -> str | None:
     # Simple function to make a request to the GitHub API and then check if the latest available version is newer.
     gh_api_request = requests.get(url="https://api.github.com/repos/NinjaCheetah/NUSGet/releases/latest", stream=True)
