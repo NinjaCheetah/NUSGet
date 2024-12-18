@@ -396,7 +396,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             except KeyError:
                                 archive_name = ""
                                 break
-            print(archive_name)
             titles.append(BatchTitleData(tid, title_version, console, archive_name))
         self.lock_ui_for_download()
         worker = Worker(run_nus_download_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),

@@ -859,5 +859,17 @@
       },
       "Ticket": false
     }
+  ],
+  "Virtual Console - NES": [
+    {
+      "Name": "Super Mario Bros.",
+      "TID": "00010001464147XX",
+      "Versions": {
+        "USA/NTSC": [2],
+        "Europe/PAL": [2],
+        "Japan": [2]
+      },
+      "Ticket": false
+    }
   ]
 }

@@ -60,7 +60,9 @@ class NUSGetTreeModel(QAbstractItemModel):
                                 tid_item.add_child(region_item)
                                 for version in version_list:
                                     danger = entry.get("Danger") if entry.get("Danger") is not None else ""
-                                    metadata = TitleData(entry.get("TID"), entry.get("Name"), entry.get("Archive Name"),
+                                    archive_name = (entry.get("Archive Name") if entry.get("Archive Name") is not None
+                                                    else entry.get("Name").replace(" ", "-"))
+                                    metadata = TitleData(entry.get("TID"), entry.get("Name"), archive_name,
                                                          version, entry.get("Ticket"), region, key, danger)
                                     public_versions = entry.get("Public Versions")
                                     if public_versions is not None:
@@ -97,11 +99,11 @@ class NUSGetTreeModel(QAbstractItemModel):
         if role == Qt.DecorationRole and index.column() == 0:
             # Check for icons based on the "Ticket" metadata only at the TID level
             if item.parent and item.parent.data_at(0) == "System":
-                if item.metadata and "Ticket" in item.metadata:
-                    if item.metadata["Ticket"]:
-                        return QIcon.fromTheme("dialog-ok")  # Checkmark icon
+                if item.metadata and item.metadata.ticket:
+                    if item.metadata.ticket:
+                        return QIcon.fromTheme("dialog-ok")
                     else:
-                        return QIcon.fromTheme("dialog-cancel")  # X icon
+                        return QIcon.fromTheme("dialog-cancel")
         return None
 
     def headerData(self, section, orientation, role=Qt.DisplayRole):
