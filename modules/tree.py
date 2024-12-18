@@ -11,7 +11,7 @@ class TreeItem:
         self.data = data
         self.parent = parent
         self.children = []
-        self.metadata = metadata  # Store hidden metadata
+        self.metadata = metadata
 
     def add_child(self, item):
         self.children.append(item)
@@ -53,7 +53,7 @@ class NUSGetTreeModel(QAbstractItemModel):
                         name = entry.get("Name")
                         versions = entry.get("Versions", {})
                         if tid:
-                            tid_item = TreeItem([f"{tid} - {name}", ""], key_item)
+                            tid_item = TreeItem([f"{tid} - {name}", ""], key_item, entry.get("Ticket"))
                             key_item.add_child(tid_item)
                             for region, version_list in versions.items():
                                 region_item = TreeItem([region, ""], tid_item)
@@ -98,12 +98,11 @@ class NUSGetTreeModel(QAbstractItemModel):
 
         if role == Qt.DecorationRole and index.column() == 0:
             # Check for icons based on the "Ticket" metadata only at the TID level
-            if item.parent and item.parent.data_at(0) == "System":
-                if item.metadata and item.metadata.ticket:
-                    if item.metadata.ticket:
-                        return QIcon.fromTheme("dialog-ok")
-                    else:
-                        return QIcon.fromTheme("dialog-cancel")
+            if item.metadata is not None and isinstance(item.metadata, bool):
+                if item.metadata is True:
+                    return QIcon.fromTheme("dialog-ok")
+                else:
+                    return QIcon.fromTheme("dialog-cancel")
         return None
 
     def headerData(self, section, orientation, role=Qt.DisplayRole):
