@@ -203,7 +203,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.log_text = f"{tid} - {selected_title.name}\nVersion: {selected_title.version}\n\n{danger_text}\n"
         self.ui.log_text_browser.setText(self.log_text)
 
-    def lock_ui_for_download(self):
+    def lock_ui(self):
         # Lock the UI prior to the download beginning to avoid spawning multiple threads or changing info part way in.
         # Also resets the log.
         self.ui.tid_entry.setEnabled(False)
@@ -221,6 +221,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
 
+    def unlock_ui(self):
+        # Unlock the UI again after the current download finishes.
+        self.ui.tid_entry.setEnabled(True)
+        self.ui.version_entry.setEnabled(True)
+        self.ui.download_btn.setEnabled(True)
+        self.ui.script_btn.setEnabled(True)
+        self.ui.pack_archive_chkbox.setEnabled(True)
+        self.ui.keep_enc_chkbox.setEnabled(True)
+        self.ui.create_dec_chkbox.setEnabled(True)
+        self.ui.use_local_chkbox.setEnabled(True)
+        self.ui.use_wiiu_nus_chkbox.setEnabled(True)
+        self.ui.console_select_dropdown.setEnabled(True)
+        if self.ui.pack_archive_chkbox.isChecked() is True:
+            self.ui.archive_file_entry.setEnabled(True)
+
     def download_btn_pressed(self):
         # Throw an error and make a message box appear if you haven't selected any options to output the title.
         if (self.ui.pack_archive_chkbox.isChecked() is False and self.ui.keep_enc_chkbox.isChecked() is False and
@@ -235,9 +250,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                                        "like the download to be saved."))
             msg_box.exec()
             return
-        
-        self.lock_ui_for_download()
-
+        self.lock_ui()
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
             worker = Worker(run_nus_download_dsi, out_folder, self.ui.tid_entry.text(),
@@ -294,22 +307,45 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.setText(title_text)
             msg_box.setInformativeText(body_text)
             msg_box.exec()
-        # Now that the thread has closed, unlock the UI to allow for the next download.
-        self.ui.tid_entry.setEnabled(True)
-        self.ui.version_entry.setEnabled(True)
-        self.ui.download_btn.setEnabled(True)
-        self.ui.script_btn.setEnabled(True)
-        self.ui.pack_archive_chkbox.setEnabled(True)
-        self.ui.keep_enc_chkbox.setEnabled(True)
-        self.ui.create_dec_chkbox.setEnabled(True)
-        self.ui.use_local_chkbox.setEnabled(True)
-        self.ui.use_wiiu_nus_chkbox.setEnabled(True)
-        self.ui.console_select_dropdown.setEnabled(True)
-        if self.ui.pack_archive_chkbox.isChecked() is True:
-            self.ui.archive_file_entry.setEnabled(True)
+        self.unlock_ui()
         # Call the dropdown callback because this will automagically handle setting console-specific settings based
         # on the currently selected console, and saves on duplicate code.
         self.selected_console_changed()
+
+    def check_batch_result(self, result: BatchResults):
+        if result.code != 0:
+            print(result.warning_titles)
+            print(result.failed_titles)
+            msg_box = QMessageBox()
+            if result.failed_titles:
+                msg_box.setIcon(QMessageBox.Icon.Critical)
+            else:
+                msg_box.setIcon(QMessageBox.Icon.Warning)
+            msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+            msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+            msg_box.setWindowTitle("Script Issues Occurred")
+            msg_box.setText("Some issues occurred while running the download script.")
+            msg_box.setInformativeText("Check the log for more details about what issues were encountered.")
+            msg_box.exec()
+            self.log_text = ""
+            if result.failed_titles:
+                self.update_log_text(app.translate("MainWindow",
+                                                   "The following titles could not be downloaded due to an error. "
+                                                   "Please ensure that the Title ID and version listed in the script "
+                                                   "are valid."))
+                for title in result.failed_titles:
+                    self.update_log_text(f"   - {title}")
+            if result.warning_titles:
+                if result.failed_titles:
+                    self.update_log_text("")
+                self.update_log_text(app.translate("MainWindow",
+                                                   "You enabled \"Create decrypted contents\" or \"Pack installable "
+                                                   "archive\", but the following titles in the script do not have "
+                                                   "tickets available. If enabled, encrypted contents were still "
+                                                   "downloaded."))
+                for title in result.warning_titles:
+                    self.update_log_text(f"   - {title}")
+        self.unlock_ui()
 
     def pack_wad_chkbox_toggled(self):
         # Simple function to catch when the WAD/TAD checkbox is toggled and enable/disable the file name entry box
@@ -397,12 +433,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                 archive_name = ""
                                 break
             titles.append(BatchTitleData(tid, title_version, console, archive_name))
-        self.lock_ui_for_download()
+        self.lock_ui()
         worker = Worker(run_nus_download_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
                         self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
                         self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
                         self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked())
-        worker.signals.result.connect(self.check_download_result)
+        worker.signals.result.connect(self.check_batch_result)
         worker.signals.progress.connect(self.update_log_text)
         self.threadpool.start(worker)
 

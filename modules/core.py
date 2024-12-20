@@ -3,6 +3,7 @@
 
 import requests
 from dataclasses import dataclass
+from typing import List
 
 
 @dataclass
@@ -25,6 +26,14 @@ class BatchTitleData:
     version: int
     console: str
     archive_name: str
+
+
+@dataclass
+class BatchResults:
+    # Class to store the results of a batch download.
+    code: int
+    warning_titles: List[str]
+    failed_titles: List[str]
 
 
 def check_nusget_updates(app, current_version: str, progress_callback=None) -> str | None:
