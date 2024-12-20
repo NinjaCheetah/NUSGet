@@ -13,6 +13,7 @@ NUSGet also offers the ability to create vWii WADs that can be installed from wi
 The following features are available for all supported consoles:
 - Downloading encrypted contents (files like `00000000`, `00000001`, etc.) directly from the update servers for any title.
 - Creating decrypted contents (*.app files) from the encrypted contents on the servers. Only supported for free titles.
+- Scripting support, allowing you to perform batch downloads of any titles for the Wii, vWii, or DSi in one script. (See `example-script.json` for an example of the scripting format.)
 
 **For Wii and vWii titles only:**
 - "Pack installable archive (WAD/TAD)": Pack the encrypted contents, TMD, and Ticket into a WAD file that can be installed on a Wii or in Dolphin Emulator. Only supported for free titles.

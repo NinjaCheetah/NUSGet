@@ -323,9 +323,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 msg_box.setIcon(QMessageBox.Icon.Warning)
             msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
             msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
-            msg_box.setWindowTitle("Script Issues Occurred")
-            msg_box.setText("Some issues occurred while running the download script.")
-            msg_box.setInformativeText("Check the log for more details about what issues were encountered.")
+            msg_box.setWindowTitle(app.translate("MainWindow", "Script Issues Occurred"))
+            msg_box.setText(app.translate("MainWindow", "Some issues occurred while running the download script."))
+            msg_box.setInformativeText(
+                app.translate("MainWindow", "Check the log for more details about what issues were encountered."))
             msg_box.exec()
             self.log_text = ""
             if result.failed_titles:
