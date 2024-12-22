@@ -33,7 +33,7 @@ from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibra
 from qt.py.ui_MainMenu import Ui_MainWindow
 
 from modules.core import *
-from modules.tree import NUSGetTreeModel
+from modules.tree import NUSGetTreeModel, TIDFilterProxyModel
 from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
@@ -106,12 +106,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         wii_model = NUSGetTreeModel(wii_database, root_name="Wii Titles")
         vwii_model = NUSGetTreeModel(vwii_database, root_name="vWii Titles")
         dsi_model = NUSGetTreeModel(dsi_database, root_name="DSi Titles")
-        self.ui.wii_title_tree.setModel(wii_model)
-        self.ui.wii_title_tree.doubleClicked.connect(self.title_double_clicked)
-        self.ui.vwii_title_tree.setModel(vwii_model)
-        self.ui.vwii_title_tree.doubleClicked.connect(self.title_double_clicked)
-        self.ui.dsi_title_tree.setModel(dsi_model)
-        self.ui.dsi_title_tree.doubleClicked.connect(self.title_double_clicked)
+        self.tree_models = [wii_model, vwii_model, dsi_model]
+        self.trees = [self.ui.wii_title_tree, self.ui.vwii_title_tree, self.ui.dsi_title_tree]
+        # Build proxy models required for searching
+        self.proxy_models = [TIDFilterProxyModel(self.ui.wii_title_tree), TIDFilterProxyModel(self.ui.vwii_title_tree),
+                             TIDFilterProxyModel(self.ui.dsi_title_tree)]
+        for model in range(len(self.proxy_models)):
+            self.proxy_models[model].setSourceModel(self.tree_models[model])
+            self.proxy_models[model].setFilterKeyColumn(0)
+        self.ui.tree_filter_input.textChanged.connect(lambda: self.filter_text_updated(self.ui.platform_tabs.currentIndex()))
+        self.ui.tree_filter_reset_btn.clicked.connect(lambda: self.ui.tree_filter_input.setText(""))
+        for tree in range(len(self.trees)):
+            self.trees[tree].setModel(self.proxy_models[tree])
+            self.trees[tree].doubleClicked.connect(self.title_double_clicked)
+            self.trees[tree].expanded.connect(lambda: self.resize_tree(self.ui.platform_tabs.currentIndex()))
+            self.trees[tree].collapsed.connect(lambda: self.resize_tree(self.ui.platform_tabs.currentIndex()))
         # Prevent resizing.
         self.setFixedSize(self.size())
         # Do a quick check to see if there's a newer release available, and inform the user if there is.
@@ -122,12 +131,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def title_double_clicked(self, index):
         if self.ui.download_btn.isEnabled() is True:
-            title = index.internalPointer().metadata
+            # Need to map the proxy index to the source index because we're using a proxy model for searching. If we
+            # don't, this for some reason isn't handled by PySide and causes a segfault.
+            source_index = self.proxy_models[self.ui.platform_tabs.currentIndex()].mapToSource(index)
+            title = source_index.internalPointer().metadata
             if title is not None:
                 self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
                 selected_title = TitleData(title.tid, title.name, title.archive_name, title.version, title.ticket,
                                            title.region, title.category, title.danger)
                 self.load_title_data(selected_title)
+
+    def filter_text_updated(self, target: int):
+        text = self.ui.tree_filter_input.text()
+        if text != "":
+            self.trees[target].expandToDepth(0)
+        else:
+            self.trees[target].collapseAll()
+        self.proxy_models[target].setFilterRegularExpression(text)
+        self.trees[target].resizeColumnToContents(0)
+
+    def resize_tree(self, target: int):
+        text = self.ui.tree_filter_input.text()
+        if text == "":
+            tree = self.trees[target]
+            tree.resizeColumnToContents(0)
 
     def tid_updated(self):
         tid = self.ui.tid_entry.text()

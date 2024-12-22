@@ -2,7 +2,7 @@
 # Copyright 2024 NinjaCheetah
 
 from modules.core import TitleData
-from PySide6.QtCore import QAbstractItemModel, QModelIndex, Qt
+from PySide6.QtCore import QAbstractItemModel, QModelIndex, Qt, QSortFilterProxyModel
 from PySide6.QtGui import QIcon
 
 
@@ -135,3 +135,29 @@ class NUSGetTreeModel(QAbstractItemModel):
             return QModelIndex()
 
         return self.createIndex(parent_item.row(), 0, parent_item)
+
+class TIDFilterProxyModel(QSortFilterProxyModel):
+    def filterAcceptsRow(self, source_row, source_parent):
+        source_model = self.sourceModel()
+        index = source_model.index(source_row, 0, source_parent)
+        item = index.internalPointer()
+
+        filter_text = self.filterRegularExpression().pattern().lower()
+        # If the item matches what the user searched for.
+        if item and filter_text in item.data_at(0).lower():
+            return True
+        # Check if children match, though I don't think this matters because the children of a title will always just
+        # be regions.
+        for i in range(source_model.rowCount(index)):
+            if self.filterAcceptsRow(i, index):
+                return True
+        # Keep the regions and versions under those for any titles that matched, so you can actually download from the
+        # search results.
+        parent_item = index.parent().internalPointer() if index.parent().isValid() else None
+        if parent_item and filter_text in parent_item.data_at(0).lower():
+            return True
+        else:
+            grandparent_item = index.parent().parent().internalPointer() if index.parent().parent().isValid() else None
+            if grandparent_item and filter_text in grandparent_item.data_at(0).lower():
+                return True
+        return False
