@@ -853,21 +853,10840 @@
       "Name": "Brain Challenge",
       "TID": "00010001573243XX",
       "Versions": {
-        "USA/NTSC": [1],
-        "Europe/PAL": [1],
-        "Japan": [1]
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Let's Catch",
+      "TID": "0001000157324BXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Drill Sergeant Mindstrong",
+      "TID": "00010001573254XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "@SIMPLE Series Vol. 4: The Misshitsu kara no Dasshutsu",
+      "TID": "00010001573334XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "3\u00b0C",
+      "TID": "00010001573344XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Three Musketeers: One For All!",
+      "TID": "0001000157334DXX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "F\u00b7O\u00b7R\u00b7T\u00b7U\u00b7N\u00b7E: Hoshi no Furi Sosogu Oka",
+      "TID": "00010001573432XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "ShadowPlay",
+      "TID": "00010001573438XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shika Gari",
+      "TID": "0001000157344BXX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shikakui Atama wo Maru Kusuru: Mainichi Minna no Challenge Hen",
+      "TID": "0001000157344FXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Spaceball Revolution",
+      "TID": "00010001573454XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "5 Spots Party",
+      "TID": "00010001573534XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Eco Shooter: Plant 530",
+      "TID": "00010001573642XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Jintori Action! Taikokenchi: Karakuri Shiro no Nazo",
+      "TID": "00010001573832XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "BIT.TRIP CORE",
+      "TID": "00010001573843XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mebius Drive",
+      "TID": "00010001573844XX",
+      "Versions": {
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hachiwan Diver Wii",
+      "TID": "00010001573849XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ouchi de Mugen Puchi Puchi",
+      "TID": "00010001573850XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Battle Poker",
+      "TID": "00010001573858XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Evasive Space",
+      "TID": "00010001573949XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Copter Crisis",
+      "TID": "0001000157394CXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Magnetica Twist",
+      "TID": "00010001574132XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Asobu Made in Ore",
+      "TID": "00010001574134XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Toribash",
+      "TID": "00010001574137XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          5
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ant Nation",
+      "TID": "0001000157414EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Harapeko Aomushi no ABC",
+      "TID": "0001000157414FXX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yakuman Wii",
+      "TID": "00010001574151XX",
+      "Versions": {
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tsuushin Taikyoku: Igo Dojo 2700Mon",
+      "TID": "00010001574152XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tsuushin Taikyoku: Hayazashi Shougi 3",
+      "TID": "00010001574153XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tsuushin Taikyoku: World Chess",
+      "TID": "00010001574155XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Amazing Brain Train!",
+      "TID": "0001000157415AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Strong Bad 4: Dangeresque 3",
+      "TID": "00010001574232XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Strong Bad 5: 8Bit Is Enough",
+      "TID": "00010001574233XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wild West Guns",
+      "TID": "00010001574234XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Block Breaker Deluxe",
+      "TID": "00010001574235XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "TV Show King",
+      "TID": "00010001574236XX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Midnight Pool",
+      "TID": "00010001574237XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Midnight Bowling",
+      "TID": "00010001574238XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bakutan",
+      "TID": "00010001574241XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Snowboard Riot",
+      "TID": "00010001574242XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Frat Party Games: Pong Toss",
+      "TID": "00010001574245XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bang Attack",
+      "TID": "00010001574247XX",
+      "Versions": {
+        "Europe/PAL": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Boingz",
+      "TID": "00010001574249XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Harvest Moon: My Little Shop",
+      "TID": "0001000157424AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Arkanoid Plus",
+      "TID": "0001000157424BXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bubble Bobble Plus!",
+      "TID": "0001000157424CXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "My Pok\u00e9mon Ranch",
+      "TID": "0001000157424DXX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          258
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bonsai Barber",
+      "TID": "0001000157424EXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gravitronix",
+      "TID": "0001000157424FXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pl\u00e4ttchen: Twist 'n' Paint",
+      "TID": "00010001574250XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          7
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Star Soldier R",
+      "TID": "00010001574251XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "POP",
+      "TID": "00010001574253XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          5
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "SPOGS Racing",
+      "TID": "00010001574256XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Critter Roundup",
+      "TID": "00010001574257XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Strong Bad 1: Homestar Ruiner",
+      "TID": "00010001574258XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Strong Bad 2: Strong Badia the Free",
+      "TID": "00010001574259XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Strong Bad 3: Baddest of the Bands",
+      "TID": "0001000157425AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Crystal Defenders R2",
+      "TID": "00010001574332XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chronos Twins Dx",
+      "TID": "00010001574336XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Crystal Defenders R1",
+      "TID": "00010001574349XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cocoto Platform Jumper",
+      "TID": "0001000157434AXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tokyo City Nights",
+      "TID": "0001000157434EXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cocoto Fishing Master",
+      "TID": "0001000157434FXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Christmas Clix",
+      "TID": "00010001574350XX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Carnival King",
+      "TID": "00010001574352XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cue Sports: Pool Revolution",
+      "TID": "00010001574353XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "321, Rattle Battle!",
+      "TID": "00010001574355XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "ColorZ",
+      "TID": "0001000157435AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "@SIMPLE Series Vol. 2: The Number Puzzle Neo",
+      "TID": "00010001574432XX",
+      "Versions": {
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Castlevania: The Adventure ReBirth",
+      "TID": "00010001574439XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Darts Wii",
+      "TID": "00010001574441XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Derby Dog",
+      "TID": "00010001574442XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Defend Your Castle",
+      "TID": "00010001574446XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Art Style: ROTOHEX",
+      "TID": "00010001574448XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          512
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "@SIMPLE series Vol. 1: The Block Kuzushi Neo",
+      "TID": "00010001574449XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dr. Mario Online Rx",
+      "TID": "0001000157444DXX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Discipline",
+      "TID": "0001000157444EXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Driift Mania",
+      "TID": "0001000157444FXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dr. Mario Online Rx: Friend Battle Demo",
+      "TID": "00010001574450XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mr. Driller W",
+      "TID": "00010001574452XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon Master Spell Caster",
+      "TID": "00010001574453XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          6
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "SEA FARM: Iruka to Watashi Showtime",
+      "TID": "00010001574536XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alien Crush Returns",
+      "TID": "00010001574539XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Eduardo the Samurai Toaster",
+      "TID": "00010001574544XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "\"Aha! I Got It!\" Escape Game",
+      "TID": "0001000157454DXX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Equilibrio",
+      "TID": "00010001574551XX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ],
+        "Europe/PAL": [
+          7
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "My Aquarium",
+      "TID": "00010001574552XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "PictureBook Games: PopUp Pursuit",
+      "TID": "00010001574554XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Peakvox Escape Virus",
+      "TID": "00010001574556XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          8
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy Crystal Chronicles: My Life as a Darklord",
+      "TID": "00010001574632XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy IV: The After Years",
+      "TID": "00010001574634XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Card Games",
+      "TID": "00010001574635XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          9
+        ],
+        "Japan": [
+          257
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fast Draw Showdown",
+      "TID": "00010001574641XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sandy Beach",
+      "TID": "00010001574642XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy Crystal Chronicles: My Life as a King",
+      "TID": "00010001574643XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fun! Fun! Minigolf",
+      "TID": "00010001574646XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          7
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Frogger Returns",
+      "TID": "00010001574647XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Reel Fishing Challenge",
+      "TID": "00010001574649XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Kart",
+      "TID": "0001000157464BXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family & Friends Party",
+      "TID": "0001000157464DXX",
+      "Versions": {
+        "USA/NTSC": [
+          257
+        ],
+        "Europe/PAL": [
+          258
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hirameki Card Battle: Mekuruka",
+      "TID": "00010001574650XX",
+      "Versions": {
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Minna no Theater Wii",
+      "TID": "00010001574653XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fish'em All!",
+      "TID": "00010001574654XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sugarbunnies Wii: Welcome to Bunnies' Field",
+      "TID": "00010001574732XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gradius ReBirth",
+      "TID": "00010001574744XX",
+      "Versions": {
+        "USA/NTSC": [
+          257
+        ],
+        "Europe/PAL": [
+          257
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Game Sound Station",
+      "TID": "0001000157474DXX",
+      "Versions": {
+        "Japan": [
+          5
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "World of Goo",
+      "TID": "0001000157474FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Phoenix Wright : Ace Attorney",
+      "TID": "00010001574753XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Aero Guitar",
+      "TID": "00010001574755XX",
+      "Versions": {
+        "Japan": [
+          258
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Groovin' Blocks",
+      "TID": "00010001574756XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "GyroStarr",
+      "TID": "00010001574759XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Home Sweet Home",
+      "TID": "00010001574833XX",
+      "Versions": {
+        "USA/NTSC": [
+          12
+        ],
+        "Europe/PAL": [
+          9
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Heracles: Chariot Racing",
+      "TID": "00010001574845XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Full Blast Hitchhike",
+      "TID": "00010001574848XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hockey Allstar Shootout",
+      "TID": "0001000157484FXX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sexy Poker",
+      "TID": "00010001574850XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Heron : Steam Machine",
+      "TID": "00010001574852XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ghost Mansion Party",
+      "TID": "00010001574855XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "High Voltage Hot Rod Show",
+      "TID": "00010001574856XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Helix",
+      "TID": "00010001574858XX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bittos+",
+      "TID": "00010001574942XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "NyxQuest: Kindred Spirits",
+      "TID": "00010001574943XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          257
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tales of Monkey Island: Chapter 3",
+      "TID": "00010001574945XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Incoming!",
+      "TID": "00010001574947XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tales of Monkey Island: Chapter 1",
+      "TID": "0001000157494CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Incredible Maze",
+      "TID": "0001000157494EXX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tales of Monkey Island: Chapter 2",
+      "TID": "00010001574953XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "\"Aha! I Found It!\" Hidden Object Game",
+      "TID": "00010001574954XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Space Invaders Get Even",
+      "TID": "00010001574956XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tales of Monkey Island: Chapter 4",
+      "TID": "00010001574959XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Jinsei Game",
+      "TID": "00010001574A47XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Jungle Speed",
+      "TID": "00010001574A53XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kappakun no Ota to Shimikai",
+      "TID": "00010001574B32XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kappakun to 3 Biki no Koneko",
+      "TID": "00010001574B33XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Minna de Asobou: Koinu de Kururin",
+      "TID": "00010001574B39XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "You, Me, and the Cubes",
+      "TID": "00010001574B42XX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pirates: The Key of Dreams",
+      "TID": "00010001574B44XX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Raku Raku Kinen Appli Wii",
+      "TID": "00010001574B45XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Big Kahuna Party",
+      "TID": "00010001574B48XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Party Fun Pirate",
+      "TID": "00010001574B4BXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kappakun to Mori no Nakamatachi",
+      "TID": "00010001574B50XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kentei TV Wii",
+      "TID": "00010001574B51XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Karate Phants: Gloves of Glory",
+      "TID": "00010001574B52XX",
+      "Versions": {
+        "Europe/PAL": [
+          5
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Contra ReBirth",
+      "TID": "00010001574B54XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Learning with The PooYoos: Episode 1",
+      "TID": "00010001574C45XX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "HB Arcade Cards",
+      "TID": "00010001574C47XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Rikachan's Fashion House",
+      "TID": "00010001574C4BXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Little Tournament Over Yonder",
+      "TID": "00010001574C4CXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "LostWinds: Winter of the Melodias",
+      "TID": "00010001574C4FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          257
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "LONPOS",
+      "TID": "00010001574C50XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "LIT",
+      "TID": "00010001574C54XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "LostWinds",
+      "TID": "00010001574C57XX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bomberman Blast",
+      "TID": "00010001574D38XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Happy Hammerin'",
+      "TID": "00010001574D39XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Maboshi's Arcade",
+      "TID": "00010001574D42XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          512
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "MadStone",
+      "TID": "00010001574D44XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mart Racer",
+      "TID": "00010001574D47XX",
+      "Versions": {
+        "USA/NTSC": [
+          8
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Major League Eating: The Game",
+      "TID": "00010001574D4CXX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ],
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Muscle March",
+      "TID": "00010001574D4DXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Moki Moki",
+      "TID": "00010001574D4FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kotoba no Puzzle: Mojipittan Wii",
+      "TID": "00010001574D50XX",
+      "Versions": {
+        "Japan": [
+          257
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Penguins & Friends: Hey! That's My Fish!",
+      "TID": "00010001574E45XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Niki  Rock 'n' Ball",
+      "TID": "00010001574E4BXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sugu Suro Duo: New Pulsar R&V",
+      "TID": "00010001574E50XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "NEVES Plus",
+      "TID": "00010001574E56XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "NEVES Plus Returns",
+      "TID": "00010001574E57XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Pirate Party",
+      "TID": "00010001574F36XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          9
+        ],
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Glide Hockey",
+      "TID": "00010001574F41XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Art Style: ORBIENT",
+      "TID": "00010001574F42XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Order!",
+      "TID": "00010001574F44XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Oekaki Logic",
+      "TID": "00010001574F45XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Mini Golf",
+      "TID": "00010001574F47XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          10
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Karaoke Joysound Wii",
+      "TID": "00010001574F4BXX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Slot Car Racing",
+      "TID": "00010001574F53XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Overturn: Mecha Wars",
+      "TID": "00010001574F54XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          6
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bit Boy!!",
+      "TID": "00010001574F59XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kodomo Kyooiku Terebi Wii Aiue Oomuzu",
+      "TID": "00010001574F5AXX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Potpourrii",
+      "TID": "00010001575032XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pokers Wii",
+      "TID": "00010001575039XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pok\u00e9mon Mystery Dungeon: Ikuzo! Arashi no Boukendan",
+      "TID": "00010001575041XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pub Darts",
+      "TID": "00010001575042XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          5
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Doc Louis's PunchOut!!",
+      "TID": "00010001575043XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chindouchou!! Pole no Daibouken",
+      "TID": "00010001575044XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pok\u00e9mon Mystery Dungeon: Susume! Honoo no Boukendan",
+      "TID": "00010001575046XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pok\u00e9mon Mystery Dungeon: Mezase! Hikari no Boukendan",
+      "TID": "00010001575048XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pit Crew Panic!",
+      "TID": "00010001575049XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Texas Hold'em Poker",
+      "TID": "0001000157504BXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Planet Pachinko",
+      "TID": "0001000157504CXX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ponjan Wii",
+      "TID": "0001000157504EXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Popple to Mahou no Crayon",
+      "TID": "0001000157504FXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Table Tennis",
+      "TID": "00010001575050XX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Prot\u00f6thea",
+      "TID": "00010001575051XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Art Style: CUBELLO",
+      "TID": "00010001575052XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pok\u00e9mon Rumble",
+      "TID": "00010001575053XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "BustaMove Plus!",
+      "TID": "00010001575055XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Minna de Tobikome! Penguin Diving: Hooper Looper",
+      "TID": "00010001575058XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bruiser and Scratch",
+      "TID": "0001000157505AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kentoshi: Furi Furi Boxing",
+      "TID": "00010001575134XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man 9",
+      "TID": "00010001575239XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Word Searcher",
+      "TID": "00010001575244XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Rainbow Islands: Towering Adventure",
+      "TID": "00010001575249XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man 10",
+      "TID": "00010001575258XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Saikyou Ginsei Igo",
+      "TID": "00010001575332XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Silver Star Chess",
+      "TID": "00010001575333XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Saikyou Ginsei Mahjongg",
+      "TID": "00010001575334XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Saikyou Ginsei Gomoku Narabe",
+      "TID": "00010001575335XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Silver Star Reversi",
+      "TID": "00010001575336XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Minna de Taisen Puzzle: Shanghai Wii",
+      "TID": "00010001575338XX",
+      "Versions": {
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sudoku Challenge!",
+      "TID": "00010001575339XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Onslaught",
+      "TID": "00010001575341XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sorcery Blade",
+      "TID": "00010001575342XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Out of Galaxy: Gin no Koushika",
+      "TID": "00010001575343XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Princess Ai Monogatari",
+      "TID": "00010001575345XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pop 'Em, Drop 'Em SameGame",
+      "TID": "00010001575347XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Saikyou Ginsei Shougi",
+      "TID": "00010001575349XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shadow Walker: Boy of Shadow, Fairy of Light",
+      "TID": "0001000157534CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Eat! Fat! FIGHT!",
+      "TID": "0001000157534DXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tenshi no Solitaire",
+      "TID": "00010001575354XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shootanto: Evolutionary Mayhem",
+      "TID": "00010001575355XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          512
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Swords & Soldiers",
+      "TID": "00010001575357XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Target Toss Pro: Bags",
+      "TID": "00010001575432XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tomena Sanner Wii",
+      "TID": "00010001575433XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hajiite! Block Rush",
+      "TID": "00010001575438XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fantastic Tambourine",
+      "TID": "00010001575442XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tomy Drive Shutsudou! Kinkyuu Sharyou Hen",
+      "TID": "00010001575444XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tiki Towers",
+      "TID": "00010001575449XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Adventure Island: The Beginning",
+      "TID": "0001000157544DXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Family Tennis",
+      "TID": "0001000157544EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tetris Party",
+      "TID": "00010001575450XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "BIT.TRIP BEAT",
+      "TID": "00010001575452XX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Toki Tori",
+      "TID": "00010001575454XX",
+      "Versions": {
+        "USA/NTSC": [
+          7
+        ],
+        "Europe/PAL": [
+          8
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Texas Hold'em Tournament",
+      "TID": "00010001575458XX",
+      "Versions": {
+        "USA/NTSC": [
+          257
+        ],
+        "Europe/PAL": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wii de Ultra Hand",
+      "TID": "00010001575548XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Unou Kids: Okigaru Unou Training",
+      "TID": "0001000157554BXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "UNO",
+      "TID": "0001000157554EXX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "BIT.TRIP VOID",
+      "TID": "00010001575642XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "V.I.P. Casino: Blackjack",
+      "TID": "00010001575643XX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kodomo Kyoiku Terebi Wii: Aiue Ochan",
+      "TID": "00010001575644XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Water Warfare",
+      "TID": "0001000157564BXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Rock N\u2019 Roll Climber",
+      "TID": "0001000157564FXX",
+      "Versions": {
+        "USA/NTSC": [
+          257
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          512
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Excitebike: World Rally",
+      "TID": "00010001575752XX",
+      "Versions": {
+        "USA/NTSC": [
+          512
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yomi Kikase Asobi Wii",
+      "TID": "0001000157594BXX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yummy Yummy Cooking Jam",
+      "TID": "0001000157594DXX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "My Zoo",
+      "TID": "00010001575A48XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "@SIMPLE Series Vol. 5: The Judo",
+      "TID": "00010001575A4AXX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "@SIMPLE Series Vol. 3: The Mahjongg",
+      "TID": "00010001575A4DXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "BIT.TRIP RUNNER",
+      "TID": "00010001575255XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+    "WiiWare - Demos": [
+    {
+      "Name": "Pok\u00e9mon Rumble",
+      "TID": "00010001584841XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy Crystal Chronicles: My Life as a Darklord",
+      "TID": "00010001584843XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "NyxQuest: Kindred Spirits",
+      "TID": "00010001584844XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          258
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "BIT.TRIP BEAT",
+      "TID": "00010001584845XX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "World of Goo",
+      "TID": "00010001584846XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - Virtual Console Arcade": [
+    {
+      "Name": "Space Harrier",
+      "TID": "00010001453632XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shinobi",
+      "TID": "00010001453633XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dig Dug",
+      "TID": "00010001453637XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Galaga",
+      "TID": "00010001453638XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Baraduke",
+      "TID": "00010001453639XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Moon Cresta",
+      "TID": "00010001453641XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Galaxian",
+      "TID": "00010001453646XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Face Off",
+      "TID": "00010001453648XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bakutotsu Kijuutei: Baraduke II",
+      "TID": "0001000145364AXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chouzetsu Rinjin: Berabow Man",
+      "TID": "0001000145364BXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tecmo Bowl",
+      "TID": "0001000145364DXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Solomon's Key",
+      "TID": "0001000145364EXX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bomb Jack",
+      "TID": "0001000145364FXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Gaiden",
+      "TID": "00010001453650XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Rygar",
+      "TID": "00010001453651XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Zaxxon",
+      "TID": "00010001453656XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Golden Axe",
+      "TID": "00010001453657XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Altered Beast",
+      "TID": "00010001453658XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Space Invaders",
+      "TID": "00010001453659XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Star Force",
+      "TID": "0001000145365AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Star Blade",
+      "TID": "00010001453732XX",
+      "Versions": {
+        "Japan": [
+          257
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mappy",
+      "TID": "00010001453733XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cosmo Gang the Puzzle",
+      "TID": "00010001453734XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Emeraldia",
+      "TID": "00010001453736XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Return Of Ishtar",
+      "TID": "00010001453737XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Solvalou",
+      "TID": "00010001453738XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gaplus",
+      "TID": "00010001453739XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Grobda",
+      "TID": "00010001453741XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dig Dug II",
+      "TID": "00010001453742XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bosconian",
+      "TID": "00010001453743XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon Buster",
+      "TID": "00010001453745XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon Saber",
+      "TID": "00010001453746XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon Spirit",
+      "TID": "00010001453747XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Xevious",
+      "TID": "00010001453748XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Finest Hour",
+      "TID": "00010001453749XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Knuckle Heads",
+      "TID": "0001000145374AXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "PacMania",
+      "TID": "0001000145374BXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cosmo Gang the Video",
+      "TID": "0001000145374CXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Phelios",
+      "TID": "0001000145374DXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Rolling Thunder",
+      "TID": "0001000145374EXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Burning Force",
+      "TID": "0001000145374FXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Marvel Land",
+      "TID": "00010001453750XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Galaga '88",
+      "TID": "00010001453751XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wonder Momo",
+      "TID": "00010001453752XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Assault",
+      "TID": "00010001453753XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hopping Mappy",
+      "TID": "00010001453754XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Splatterhouse",
+      "TID": "00010001453755XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cyber Sled",
+      "TID": "00010001453756XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Numan Athletics",
+      "TID": "00010001453757XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Youkai Douchuuki",
+      "TID": "00010001453758XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sky Kid",
+      "TID": "00010001453759XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Tower of Druaga",
+      "TID": "0001000145375AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - Commodore 64": [
+    {
+      "Name": "Last Ninja 2: Back with a Vengeance",
+      "TID": "00010001433933XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Nebulus (Tower Toppler)",
+      "TID": "00010001433934XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Impossible Mission",
+      "TID": "00010001433935XX",
+      "Versions": {
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Summer Games II",
+      "TID": "00010001433936XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "California Games",
+      "TID": "00010001433937XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Paradroid",
+      "TID": "00010001433938XX",
+      "Versions": {
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Uridium",
+      "TID": "00010001433939XX",
+      "Versions": {
+        "Europe/PAL": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Winter Games",
+      "TID": "00010001433945XX",
+      "Versions": {
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mayhem in Monsterland",
+      "TID": "00010001433947XX",
+      "Versions": {
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Boulder Dash",
+      "TID": "00010001433948XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cybernoid: The Fighting Machine",
+      "TID": "00010001433949XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pitstop II",
+      "TID": "0001000143394DXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Jumpman",
+      "TID": "00010001433951XX",
+      "Versions": {
+        "Europe/PAL": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "International Karate +",
+      "TID": "00010001433952XX",
+      "Versions": {
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Impossible Mission II",
+      "TID": "00010001433953XX",
+      "Versions": {
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Last Ninja",
+      "TID": "00010001433958XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "International Karate",
+      "TID": "00010001433959XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "World Games",
+      "TID": "0001000143395AXX",
+      "Versions": {
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - MSX": [
+    {
+      "Name": "Eggy",
+      "TID": "00010001584141XX",
+      "Versions": {
+        "Japan": [
+          5
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Aleste",
+      "TID": "00010001584142XX",
+      "Versions": {
+        "Japan": [
+          6
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yie Ar KungFu II",
+      "TID": "00010001584144XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Space Manbow",
+      "TID": "00010001584145XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Metal Gear",
+      "TID": "00010001584146XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Road Fighter",
+      "TID": "00010001584147XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yumetairiku Adventure",
+      "TID": "00010001584148XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Quarth",
+      "TID": "00010001584149XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Parodius: Tako wa Chikyu wo Suku",
+      "TID": "0001000158414BXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Contra",
+      "TID": "0001000158414CXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Majou Densetsu",
+      "TID": "0001000158414DXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gradius 2",
+      "TID": "0001000158414EXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Metal Gear 2: Solid Snake",
+      "TID": "00010001584150XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Salamander",
+      "TID": "00010001584151XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - NeoGeo": [
+    {
+      "Name": "Metal Slug 2",
+      "TID": "00010001454132XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ironclad",
+      "TID": "00010001454138XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fatal Fury: King of Fighters",
+      "TID": "00010001454141XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "World Heroes",
+      "TID": "00010001454142XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Magician Lord",
+      "TID": "00010001454143XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Art of Fighting",
+      "TID": "00010001454144XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Samurai Shodown",
+      "TID": "00010001454145XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Blue's Journey",
+      "TID": "00010001454146XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The King of Fighters '94",
+      "TID": "00010001454147XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Baseball Stars 2",
+      "TID": "00010001454148XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Top Hunter: Roddy & Cathy",
+      "TID": "00010001454149XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Metal Slug",
+      "TID": "0001000145414AXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Burning Fight",
+      "TID": "0001000145414BXX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Art of Fighting 2",
+      "TID": "0001000145414CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Combat",
+      "TID": "0001000145414DXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fatal Fury 2",
+      "TID": "0001000145414EXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "King of the Monsters",
+      "TID": "0001000145414FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Commando",
+      "TID": "00010001454150XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Neo Turf Masters",
+      "TID": "00010001454152XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Samurai Shodown II",
+      "TID": "00010001454153XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The King of Fighters '95",
+      "TID": "00010001454156XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fatal Fury Special",
+      "TID": "00010001454157XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
       },
       "Ticket": false
     }
   ],
   "Virtual Console - NES": [
     {
+      "Name": "Exerion",
+      "TID": "00010001464132XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Devil World",
+      "TID": "00010001464134XX",
+      "Versions": {
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fire Emblem: Ankoku Ryuu to Hikari no Tsurugi",
+      "TID": "00010001464135XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Donkey Kong Jr. Math",
+      "TID": "00010001464136XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yoshi",
+      "TID": "00010001464137XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kirby's Adventure",
+      "TID": "00010001464138XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Zelda II: The Adventure of Link",
+      "TID": "00010001464139XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Donkey Kong",
+      "TID": "00010001464141XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Donkey Kong Jr.",
+      "TID": "00010001464142XX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pinball",
+      "TID": "00010001464143XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gomoku Narabe Renju",
+      "TID": "00010001464144XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mario Bros.",
+      "TID": "00010001464146XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
       "Name": "Super Mario Bros.",
       "TID": "00010001464147XX",
       "Versions": {
-        "USA/NTSC": [2],
-        "Europe/PAL": [2],
-        "Japan": [2]
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tennis",
+      "TID": "00010001464148XX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Soccer",
+      "TID": "00010001464149XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ice Hockey",
+      "TID": "0001000146414AXX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Legend of Zelda",
+      "TID": "0001000146414BXX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Baseball",
+      "TID": "0001000146414CXX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wario's Woods",
+      "TID": "0001000146414DXX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Urban Champion",
+      "TID": "0001000146414EXX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Solomon's Key",
+      "TID": "0001000146414FXX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "NES Open Tournament Golf",
+      "TID": "00010001464150XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja JaJaMarukun",
+      "TID": "00010001464151XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gradius",
+      "TID": "00010001464152XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Xevious",
+      "TID": "00010001464153XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Legend of Kage",
+      "TID": "00010001464154XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tecmo Bowl",
+      "TID": "00010001464156XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Elevator Action",
+      "TID": "00010001464157XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "PacMan",
+      "TID": "00010001464158XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ikki",
+      "TID": "00010001464159XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Field Combat",
+      "TID": "00010001464159XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Mario Brothers: The Lost Levels",
+      "TID": "00010001464232XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Valkyrie no Boken: Toki no Kagi Densetsu",
+      "TID": "00010001464233XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Lunar Pool",
+      "TID": "00010001464234XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Zanac",
+      "TID": "00010001464235XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Front Line",
+      "TID": "00010001464236XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Nuts & Milk",
+      "TID": "00010001464237XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Challenger",
+      "TID": "00010001464238XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pooyan",
+      "TID": "00010001464239XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Smash Table Tennis",
+      "TID": "00010001464241XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mach Rider",
+      "TID": "00010001464242XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Excitebike",
+      "TID": "00010001464243XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kid Icarus",
+      "TID": "00010001464244XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ice Climber",
+      "TID": "00010001464245XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Castlevania",
+      "TID": "00010001464248XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "PunchOut!! Featuring Mr. Dream",
+      "TID": "00010001464249XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mighty Bomb Jack",
+      "TID": "0001000146424AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Teenage Mutant Ninja Turtles",
+      "TID": "0001000146424BXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Lode Runner",
+      "TID": "0001000146424CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Gaiden",
+      "TID": "0001000146424EXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gradius II: Gofer no Yabou",
+      "TID": "0001000146424FXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Druaga no Tou",
+      "TID": "00010001464251XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Galaga",
+      "TID": "00010001464252XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Milon's Secret Castle",
+      "TID": "00010001464253XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Adventures of Lolo",
+      "TID": "00010001464255XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tsuppari Ozumo",
+      "TID": "00010001464256XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Joy Mech Fight",
+      "TID": "00010001464257XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Mario Bros. 2",
+      "TID": "00010001464259XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Metroid",
+      "TID": "0001000146425AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hanjuku Hero",
+      "TID": "00010001464332XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bubble Bobble",
+      "TID": "00010001464333XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chack'n Pop",
+      "TID": "00010001464334XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ganbare Goemon! Karakuri Dochu",
+      "TID": "00010001464335XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "StarTropics",
+      "TID": "00010001464336XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "NES Play Action Football",
+      "TID": "00010001464337XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Castlevania II: Simon's Quest",
+      "TID": "00010001464338XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Metal Slader Glory",
+      "TID": "00010001464339XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Star Soldier",
+      "TID": "00010001464341XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Esper Dream",
+      "TID": "00010001464345XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yie Ar KungFu",
+      "TID": "00010001464346XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "TwinBee",
+      "TID": "00010001464347XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Flappy",
+      "TID": "00010001464348XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Volguard II",
+      "TID": "00010001464349XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kekkyoku Nankyoku Daiboken",
+      "TID": "0001000146434EXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Battle City",
+      "TID": "0001000146434FXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Balloon Fight",
+      "TID": "00010001464350XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Gaiden II: The Dark Sword of Chaos",
+      "TID": "00010001464351XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Adventure Island",
+      "TID": "00010001464352XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super C/Probotector II: Return of the Evil Forces",
+      "TID": "00010001464353XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man",
+      "TID": "00010001464354XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Volleyball",
+      "TID": "00010001464355XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wrecking Crew",
+      "TID": "00010001464356XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Mario Bros. 3",
+      "TID": "00010001464357XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "King's Knight",
+      "TID": "0001000146435AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Double Dragon",
+      "TID": "00010001464432XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Adventures of Lolo 2",
+      "TID": "00010001464436XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man 3",
+      "TID": "00010001464437XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Spelunker",
+      "TID": "00010001464441XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Famicom Mukashibanashi: Shin Onigashima",
+      "TID": "00010001464442XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Star Luster",
+      "TID": "00010001464443XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mappy",
+      "TID": "00010001464445XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bases Loaded",
+      "TID": "00010001464446XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ghosts 'n Goblins",
+      "TID": "00010001464447XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bokosuka Wars",
+      "TID": "00010001464449XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Gaiden III: The Ancient Ship of Doom",
+      "TID": "0001000146444CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man 2",
+      "TID": "0001000146444EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Operation Wolf",
+      "TID": "0001000146444FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Blades of Steel",
+      "TID": "00010001464450XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Double Dribble",
+      "TID": "00010001464451XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Skate or Die!",
+      "TID": "00010001464452XX",
+      "Versions": {
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Famicom Tantei Club: Kieta Koukeisha",
+      "TID": "00010001464453XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Renegade",
+      "TID": "00010001464454XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Dodgeball",
+      "TID": "00010001464455XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "River City Ransom/Street Gangs",
+      "TID": "00010001464456XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Downtown Special: Kuniokun no Jidaigeki dayo Zennin Shuugou!",
+      "TID": "00010001464457XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Double Dragon II: The Revenge",
+      "TID": "00010001464458XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fire Emblem Gaiden",
+      "TID": "00010001464459XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Downtown Nekketsu Koushinkyoku: Soreyuke Daiundoukai",
+      "TID": "0001000146445AXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninjakun: Majou no Boken",
+      "TID": "00010001464536XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninjakun: Ashura no Shou",
+      "TID": "00010001464537XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ike Ike! Nekketsu Hockey Bu: Subette Koronde Dairanto",
+      "TID": "00010001464539XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sky Kid",
+      "TID": "00010001464543XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dig Dug",
+      "TID": "00010001464544XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tantei Jinguji Saburo: Shinjuku Chuo K\u014den Satsujin Jiken",
+      "TID": "00010001464545XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "City Connection",
+      "TID": "00010001464549XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Nazo no Murasamejou",
+      "TID": "0001000146454AXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Transformers: Convoy no Nazo",
+      "TID": "0001000146454CXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bio Miracle Bokutte Upa",
+      "TID": "0001000146454DXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Life Force",
+      "TID": "0001000146454EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Getsufuuma Den",
+      "TID": "00010001464550XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Castlevania III: Dracula's Curse",
+      "TID": "00010001464551XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Zoda's Revenge: StarTropics 2",
+      "TID": "00010001464552XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Clu Clu Land",
+      "TID": "00010001464553XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Donkey Kong 3",
+      "TID": "00010001464555XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Atlantis no Nazo",
+      "TID": "00010001464556XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon Buster",
+      "TID": "00010001464557XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wagan Land",
+      "TID": "00010001464558XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy",
+      "TID": "00010001464641XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy II",
+      "TID": "00010001464642XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Crash 'N The Boys: Street Challange",
+      "TID": "00010001464644XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "A Boy and His Blob: Trouble on Blobolonia",
+      "TID": "00010001464645XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy III",
+      "TID": "00010001464646XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "SD Gundam World  Gachapon Senshi: Scramble Wars",
+      "TID": "00010001464647XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Championship Lode Runner",
+      "TID": "0001000146464BXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Princess Tomato in the Salad Kingdom",
+      "TID": "0001000146464CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Blaster Master",
+      "TID": "0001000146464DXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man 4",
+      "TID": "0001000146464EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shadow of the Ninja",
+      "TID": "00010001464651XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Faxandu",
+      "TID": "00010001464652XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Adventure Island II",
+      "TID": "00010001464655XX",
+      "Versions": {
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "S.C.A.T.",
+      "TID": "00010001464656XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man 5",
+      "TID": "00010001464659XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - Nintendo 64": [
+    {
+      "Name": "Bomberman Hero",
+      "TID": "000100014E4133XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Mario 64",
+      "TID": "000100014E4141XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mario Kart 64",
+      "TID": "000100014E4142XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Legend of Zelda: Ocarina of Time",
+      "TID": "000100014E4143XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Star Fox: Lylat Wars",
+      "TID": "000100014E4144XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Paper Mario 64",
+      "TID": "000100014E4145XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "FZero X",
+      "TID": "000100014E4146XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Yoshi's Story",
+      "TID": "000100014E4148XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wave Race 64",
+      "TID": "000100014E4149XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sin and Punishment",
+      "TID": "000100014E414AXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pok\u00e9mon Snap",
+      "TID": "000100014E414BXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Smash Bros.",
+      "TID": "000100014E414CXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kirby 64: The Crystal Shards",
+      "TID": "000100014E414DXX",
+      "Versions": {
+        "USA/NTSC": [
+          256
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pok\u00e9mon Puzzle League",
+      "TID": "000100014E414EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "1080\u00b0 Snowboarding",
+      "TID": "000100014E414FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Custom Robo V2",
+      "TID": "000100014E4150XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Legend of Zelda: Majora's Mask",
+      "TID": "000100014E4152XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cruis'n USA",
+      "TID": "000100014E4153XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mario Tennis",
+      "TID": "000100014E4154XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mario Golf",
+      "TID": "000100014E4155XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ogre Battle 64: Person of Lordly Caliber",
+      "TID": "000100014E4159XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mario Party 2",
+      "TID": "000100014E415AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - Sega Genesis": [
+    {
+      "Name": "Dyna Brothers",
+      "TID": "000100014D4132XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Puyo Puyo 2",
+      "TID": "000100014D4133XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bahamut Senki",
+      "TID": "000100014D4134XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "RentAHero",
+      "TID": "000100014D4135XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Streets of Rage 2",
+      "TID": "000100014D4136XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shining in the Darkness",
+      "TID": "000100014D4137XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ecco the Dolphin II: The Tides of Time",
+      "TID": "000100014D4138XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Hybrid Front",
+      "TID": "000100014D4139XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Altered Beast",
+      "TID": "000100014D4141XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Columns",
+      "TID": "000100014D4142XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dr. Robotnik's Mean Bean Machine",
+      "TID": "000100014D4143XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ecco the Dolphin",
+      "TID": "000100014D4144XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Golden Axe",
+      "TID": "000100014D4145XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gunstar Heroes",
+      "TID": "000100014D4146XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ristar",
+      "TID": "000100014D4147XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic the Hedgehog",
+      "TID": "000100014D4148XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Space Harrier II",
+      "TID": "000100014D4149XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "ToeJam & Earl",
+      "TID": "000100014D414AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shadow Dancer: The Secret of the Shinobi",
+      "TID": "000100014D414BXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bonanza Bros.",
+      "TID": "000100014D414CXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sword of Vermilion",
+      "TID": "000100014D414DXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gain Ground",
+      "TID": "000100014D414EXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "BioHazard Battle",
+      "TID": "000100014D414FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Comix Zone",
+      "TID": "000100014D4150XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Streets of Rage",
+      "TID": "000100014D4151XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Beyond Oasis (The Story of Thor)",
+      "TID": "000100014D4152XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Vectorman",
+      "TID": "000100014D4153XX",
+      "Versions": {
+        "USA/NTSC": [
+          4
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic Spinball",
+      "TID": "000100014D4154XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Puzzle & Action: TantoR",
+      "TID": "000100014D4155XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wonder Boy in Monster World",
+      "TID": "000100014D4156XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Virtua Fighter 2",
+      "TID": "000100014D4157XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alex Kidd in the Enchanted Castle",
+      "TID": "000100014D4158XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alien Storm",
+      "TID": "000100014D4159XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "ToeJam & Earl in Panic on Funkotron",
+      "TID": "000100014D415AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Langrisser",
+      "TID": "000100014D4232XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Monster World IV",
+      "TID": "000100014D4233XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Party Quiz Mega Q",
+      "TID": "000100014D4234XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Langrisser II",
+      "TID": "000100014D4235XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shining Force II: Ancient Sealing",
+      "TID": "000100014D4236XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Turrican",
+      "TID": "000100014D4237XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Phantasy Star II",
+      "TID": "000100014D4238XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pepen ga Pengo",
+      "TID": "000100014D4239XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pulseman",
+      "TID": "000100014D4241XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic the Hedgehog 2",
+      "TID": "000100014D4242XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kid Chameleon",
+      "TID": "000100014D4243XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Golden Axe II",
+      "TID": "000100014D4244XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shining Force",
+      "TID": "000100014D4245XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shinobi III: Return of the Ninja Master",
+      "TID": "000100014D4246XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dynamite Headdy",
+      "TID": "000100014D4247XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Puzzle & Action: Ichi TantoR",
+      "TID": "000100014D4248XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Landstalker: The Treasures of King Nole",
+      "TID": "000100014D4249XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ghouls 'n Ghosts",
+      "TID": "000100014D424AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Crack Down",
+      "TID": "000100014D424BXX",
+      "Versions": {
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "ESWAT: City Under Siege",
+      "TID": "000100014D424CXX",
+      "Versions": {
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic the Hedgehog 3",
+      "TID": "000100014D424DXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chelnov",
+      "TID": "000100014D424EXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Golden Axe III",
+      "TID": "000100014D424FXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Thunder Blade",
+      "TID": "000100014D4250XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Streets of Rage 3",
+      "TID": "000100014D4251XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Rolling Thunder 2",
+      "TID": "000100014D4252XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dyna Brothers 2 Special",
+      "TID": "000100014D4253XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alien Soldier",
+      "TID": "000100014D4254XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic 3D Blast (Flickies' Island)",
+      "TID": "000100014D4255XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Assault Suits Leynos (Target Earth)",
+      "TID": "000100014D4256XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Columns III: Revenge of Columns",
+      "TID": "000100014D4257XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ecco Jr.",
+      "TID": "000100014D4258XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Light Crusader",
+      "TID": "000100014D4259XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Eternal Champions",
+      "TID": "000100014D425AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Earthworm Jim 2",
+      "TID": "000100014D4332XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gley Lancer",
+      "TID": "000100014D4341XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Powerball",
+      "TID": "000100014D4342XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Phantasy Star III: Generations of Doom",
+      "TID": "000100014D4343XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic & Knuckles",
+      "TID": "000100014D4344XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Fantasy Zone",
+      "TID": "000100014D4345XX",
+      "Versions": {
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Phelios",
+      "TID": "000100014D4346XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Forgotten Worlds",
+      "TID": "000100014D4347XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "M.U.S.H.A.",
+      "TID": "000100014D4348XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gynoug",
+      "TID": "000100014D4349XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Splatterhouse 2",
+      "TID": "000100014D434AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Phantasy Star IV: The End of the Millennium",
+      "TID": "000100014D434BXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Street Fighter II: Special Champion Edition",
+      "TID": "000100014D434CXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sorcerian",
+      "TID": "000100014D434FXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Earthworm Jim",
+      "TID": "000100014D4350XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Boogerman: A Pick and Flick Adventure",
+      "TID": "000100014D4351XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "MERCS: Wolf of the Battlefield",
+      "TID": "000100014D4352XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wonder Boy III: Monster Lair",
+      "TID": "000100014D4353XX",
+      "Versions": {
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Clay Fighter",
+      "TID": "000100014D4354XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Pitfall: The Mayan Adventure",
+      "TID": "000100014D4356XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Galaxy Force II",
+      "TID": "000100014D4357XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Revenge of Shinobi",
+      "TID": "000100014D4359XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shanghai II: Dragon's Eye",
+      "TID": "000100014D435AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - Sega Master System": [
+    {
+      "Name": "Hokuto no Ken (Black Belt)",
+      "TID": "000100014C4141XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fantasy Zone",
+      "TID": "000100014C4142XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wonder Boy",
+      "TID": "000100014C4143XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Phantasy Star",
+      "TID": "000100014C4144XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alex Kidd in Miracle World",
+      "TID": "000100014C4145XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Secret Command",
+      "TID": "000100014C4146XX",
+      "Versions": {
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic the Hedgehog",
+      "TID": "000100014C4147XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Space Harrier",
+      "TID": "000100014C4148XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Enduro Racer",
+      "TID": "000100014C4149XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic the Hedgehog 2",
+      "TID": "000100014C414AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wonder Boy in Monster Land",
+      "TID": "000100014C414BXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fantasy Zone II: The Tears of OpaOpa",
+      "TID": "000100014C414CXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sonic Chaos",
+      "TID": "000100014C414DXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alex Kidd: The Lost Stars",
+      "TID": "000100014C414EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "RType",
+      "TID": "000100014C414FXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wonder Boy III : The Dragon's Trap",
+      "TID": "000100014C4150XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alex Kidd in Shinobi World",
+      "TID": "000100014C4151XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - SNES": [
+    {
+      "Name": "Kamaitachi no Yoru",
+      "TID": "000100014A4132XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shin Megami Tensei",
+      "TID": "000100014A4133XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Ghouls 'n Ghosts",
+      "TID": "000100014A4134XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hercules no Eiko III: Kamigami no Chinmoku",
+      "TID": "000100014A4135XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Zombies Ate My Neighbors",
+      "TID": "000100014A4136XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "ActRaiser",
+      "TID": "000100014A4137XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fight",
+      "TID": "000100014A4138XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Mario World",
+      "TID": "000100014A4141XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mario's Super Picross",
+      "TID": "000100014A4142XX",
+      "Versions": {
+        "Japan": [
+          8
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "FZero",
+      "TID": "000100014A4143XX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Legend of Zelda: A Link to the Past",
+      "TID": "000100014A4144XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          5
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Donkey Kong Country",
+      "TID": "000100014A4145XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "SimCity",
+      "TID": "000100014A4146XX",
+      "Versions": {
+        "USA/NTSC": [
+          6
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          8
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fire Emblem: Monsho no Nazo",
+      "TID": "000100014A4147XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "RType III: The Third Lightning",
+      "TID": "000100014A4148XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Castlevania IV",
+      "TID": "000100014A4149XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Street Fighter II: The World Warrior",
+      "TID": "000100014A414AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          4
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Contra III: The Alien Wars",
+      "TID": "000100014A414CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          256
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gradius III",
+      "TID": "000100014A414DXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fire Emblem: Seisen no Keifu",
+      "TID": "000100014A4150XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Famicom Bunko: Hajimari no Mori",
+      "TID": "000100014A4155XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Metroid",
+      "TID": "000100014A4156XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Romance of the Three Kingdoms IV: Wall of Fire",
+      "TID": "000100014A4157XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Legend of the Mystical Ninja",
+      "TID": "000100014A415AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Harvest Moon",
+      "TID": "000100014A4233XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Gussun Oyoyo",
+      "TID": "000100014A4235XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Treasure Hunter G",
+      "TID": "000100014A4236XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Front Mission Series: Gun Hazard",
+      "TID": "000100014A4237XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gakkou de atta Kowai Hanashi",
+      "TID": "000100014A4239XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Metal Marines",
+      "TID": "000100014A4241XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Street Fighter II: The New Challengers",
+      "TID": "000100014A4242XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kirby's Dream Course",
+      "TID": "000100014A4243XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Donkey Kong Country 2: Diddy's Kong Quest",
+      "TID": "000100014A4244XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Magical Drop",
+      "TID": "000100014A4245XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Otogirisou",
+      "TID": "000100014A4246XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mystery Dungeon: Shiren the Wanderer",
+      "TID": "000100014A4247XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Hercules no Eiko IV: Kamigami kara no Okurimono",
+      "TID": "000100014A4248XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Street Fighter II Turbo: Hyper Fighting",
+      "TID": "000100014A4249XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Breath of Fire II",
+      "TID": "000100014A424BXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "PacAttack",
+      "TID": "000100014A424CXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Darius Twin",
+      "TID": "000100014A424EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Panel de Pon",
+      "TID": "000100014A424FXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+      "TID": "000100014A4250XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kirby's Avalanche",
+      "TID": "000100014A4251XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Vegas Stakes",
+      "TID": "000100014A4252XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Axelay",
+      "TID": "000100014A4253XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Turrican",
+      "TID": "000100014A4254XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Turrican 2",
+      "TID": "000100014A4255XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Der Langrisser",
+      "TID": "000100014A4256XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cybernator",
+      "TID": "000100014A4257XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super RType",
+      "TID": "000100014A4259XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bahamut Lagoon",
+      "TID": "000100014A4333XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Indiana Jones' Greatest Adventure",
+      "TID": "000100014A4334XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Romancing SaGa",
+      "TID": "000100014A4335XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Romancing SaGa 2",
+      "TID": "000100014A4336XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Combatribes",
+      "TID": "000100014A4337XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy II",
+      "TID": "000100014A4338XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "DoReMi Fantasy: Milon's DokiDoki Adventure",
+      "TID": "000100014A4341XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Mario RPG: Legend of the Seven Stars",
+      "TID": "000100014A4342XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kirby Super Star",
+      "TID": "000100014A4343XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kirby's Dream Land 3",
+      "TID": "000100014A4344XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fire Emblem: Thracia 776",
+      "TID": "000100014A4345XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ganbare Goemon 2: Kiteretsu Shogun Magginesu",
+      "TID": "000100014A4347XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Famicom Tantei Club Part II: Ushiro ni Tatsu Shojo",
+      "TID": "000100014A4349XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super PunchOut!!",
+      "TID": "000100014A434AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Space Invaders: The Original Game",
+      "TID": "000100014A434BXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Secret of Mana",
+      "TID": "000100014A434CXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Wagan Land",
+      "TID": "000100014A434DXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ogre Battle: The March of the Black Queen",
+      "TID": "000100014A4354XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Tactics Ogre: Let Us Cling Together",
+      "TID": "000100014A4355XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "PilotWings",
+      "TID": "000100014A4356XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Mario Kart",
+      "TID": "000100014A4357XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Nobunaga's Ambition",
+      "TID": "000100014A4358XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "New Horizons",
+      "TID": "000100014A4359XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Genghis Khan II: Clan of the Gray Wolf",
+      "TID": "000100014A435AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super E.D.F.: Earth Defense Force",
+      "TID": "000100014A4433XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Rival Turf!",
+      "TID": "000100014A4434XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Brawl Brothers",
+      "TID": "000100014A4435XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Ignition Factor",
+      "TID": "000100014A4436XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Adventure Island",
+      "TID": "000100014A4437XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Adventure Island II",
+      "TID": "000100014A4438XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Bonk",
+      "TID": "000100014A4439XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy III",
+      "TID": "000100014A4441XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Street Fighter Alpha 2",
+      "TID": "000100014A4443XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fight 2",
+      "TID": "000100014A4444XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fight 3",
+      "TID": "000100014A4445XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Sutte Hakkun",
+      "TID": "000100014A4446XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Star Wars",
+      "TID": "000100014A4449XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Star Wars: The Empire Strikes Back",
+      "TID": "000100014A444AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Star Wars: Return of the Jedi",
+      "TID": "000100014A444CXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kirby no Kirakira Kizzu",
+      "TID": "000100014A444DXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ghoul Patrol",
+      "TID": "000100014A444EXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Wild Guns",
+      "TID": "000100014A4456XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Aero the AcroBat",
+      "TID": "000100014A4457XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Aero the AcroBat 2",
+      "TID": "000100014A4458XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Fantasy Mystic Quest",
+      "TID": "000100014A445AXX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Natsume Championship Wrestling",
+      "TID": "000100014A4541XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Mega Man X",
+      "TID": "000100014A4542XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chrono Trigger",
+      "TID": "000100014A4543XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - TurboGrafx-16": [
+    {
+      "Name": "Salamander",
+      "TID": "00010001504133XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Parasol Stars",
+      "TID": "00010001504134XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bloody Wolf",
+      "TID": "00010001504136XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Alien Crush",
+      "TID": "00010001504137XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ordyne",
+      "TID": "00010001504138XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Splatterhouse",
+      "TID": "00010001504139XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bomberman '93",
+      "TID": "00010001504141XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bonk's Adventure",
+      "TID": "00010001504142XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dungeon Explorer",
+      "TID": "00010001504143XX",
+      "Versions": {
+        "USA/NTSC": [
+          5
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "RType",
+      "TID": "00010001504144XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Star Soldier",
+      "TID": "00010001504145XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Victory Run",
+      "TID": "00010001504146XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bomberman'94",
+      "TID": "00010001504147XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Battle Lode Runner",
+      "TID": "00010001504148XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "New Adventure Island",
+      "TID": "00010001504149XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon's Curse",
+      "TID": "0001000150414BXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Soldier Blade",
+      "TID": "0001000150414CXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Neutopia",
+      "TID": "0001000150414DXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Military Madness",
+      "TID": "0001000150414EXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Final Soldier",
+      "TID": "0001000150414FXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "RType II Part II",
+      "TID": "00010001504150XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gradius",
+      "TID": "00010001504151XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Detania!! Twinbee",
+      "TID": "00010001504152XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cadash",
+      "TID": "00010001504153XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "KiKi KaiKai",
+      "TID": "00010001504154XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Vigilante",
+      "TID": "00010001504156XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Galaga '90",
+      "TID": "00010001504157XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Valkyrie no Densetsu",
+      "TID": "00010001504159XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Neutopia II",
+      "TID": "00010001504232XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Devil's Crush",
+      "TID": "00010001504233XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Ryuukenden",
+      "TID": "00010001504235XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cratermaze",
+      "TID": "00010001504236XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Blazing Lazers",
+      "TID": "00010001504238XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "World Sports Competition",
+      "TID": "00010001504239XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          4
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon Spirit",
+      "TID": "00010001504241XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Double Dungeons",
+      "TID": "00010001504244XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Moto Roader",
+      "TID": "00010001504245XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bonk's Revenge",
+      "TID": "00010001504248XX",
+      "Versions": {
+        "USA/NTSC": [
+          3
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bonk 3: Bonk's Big Adventure",
+      "TID": "00010001504249XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Samurai Ghost",
+      "TID": "0001000150424AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Legend of Hero Tonma",
+      "TID": "0001000150424DXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ninja Spirit",
+      "TID": "0001000150424EXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chew Man Fu",
+      "TID": "00010001504253XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "China Warrior",
+      "TID": "00010001504254XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Bravoman",
+      "TID": "00010001504255XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Air Zonk",
+      "TID": "00010001504257XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          3
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Shockman",
+      "TID": "00010001504258XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "J.J. & Jeff",
+      "TID": "0001000150425AXX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Chase H.Q.",
+      "TID": "00010001504332XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Silent Debuggers",
+      "TID": "00010001504341XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dead Moon",
+      "TID": "00010001504342XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          3
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Appare! Gate Ball",
+      "TID": "00010001504344XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Power Golf",
+      "TID": "00010001504345XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Drop Off",
+      "TID": "00010001504348XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Psychosis",
+      "TID": "0001000150434FXX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Break In",
+      "TID": "00010001504352XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Digital Champ Battle Boxing",
+      "TID": "00010001504353XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "World Class Baseball",
+      "TID": "00010001504356XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Image Fight",
+      "TID": "00010001504357XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Nekketsu Koko Dodgeball Bu: PC Bangai Hen",
+      "TID": "00010001504441XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dai Makaimura",
+      "TID": "00010001504443XX",
+      "Versions": {
+        "Japan": [
+          256
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Volfied",
+      "TID": "00010001504444XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Jigoku Meguri",
+      "TID": "00010001504446XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Street Fighter II': Champion Edition",
+      "TID": "0001000150444AXX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    }
+  ],
+  "Virtual Console - TurboGrafx-CD": [
+    {
+      "Name": "Nekketsu Koko Dodgeball Bu: CD Soccer Hen",
+      "TID": "00010001514132XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "SimEarth: The Living Planet",
+      "TID": "00010001514133XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Darius",
+      "TID": "00010001514134XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Darius II",
+      "TID": "00010001514136XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kaze no Densetsu Xanadu",
+      "TID": "00010001514137XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Spriggan Mark 2: ReTerraform Project",
+      "TID": "00010001514138XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Kaze no Densetsu Xanadu II",
+      "TID": "00010001514139XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Super Air Zonk: RockabillyParadise",
+      "TID": "00010001514141XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ys: Book I & II",
+      "TID": "00010001514142XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Cho Aniki",
+      "TID": "00010001514143XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gradius II: Gofer no Yabou",
+      "TID": "00010001514144XX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Dynastic Hero",
+      "TID": "00010001514146XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Gate of Thunder",
+      "TID": "00010001514147XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Image Fight II",
+      "TID": "0001000151414AXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Ai Cho Aniki",
+      "TID": "0001000151414BXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "The Atlas: Renaissance Voyager",
+      "TID": "0001000151414CXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Neo Nectaris",
+      "TID": "0001000151414EXX",
+      "Versions": {
+        "Japan": [
+          2
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dungeon Explorer II",
+      "TID": "0001000151414FXX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Castlevania: Rondo of Blood",
+      "TID": "00010001514150XX",
+      "Versions": {
+        "Japan": [
+          257
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Dragon Slayer: Eiyuu Densetsu",
+      "TID": "00010001514151XX",
+      "Versions": {
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Lords of Thunder",
+      "TID": "00010001514153XX",
+      "Versions": {
+        "USA/NTSC": [
+          2
+        ],
+        "Europe/PAL": [
+          2
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Riot Zone",
+      "TID": "00010001514154XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Monster Lair",
+      "TID": "00010001514155XX",
+      "Versions": {
+        "USA/NTSC": [
+          1
+        ],
+        "Europe/PAL": [
+          1
+        ],
+        "Japan": [
+          1
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Star Parodier",
+      "TID": "00010001514157XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Martial Champion",
+      "TID": "00010001514158XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Seirei Senshi Spriggan",
+      "TID": "00010001514159XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "L\u30fbDis",
+      "TID": "00010001514241XX",
+      "Versions": {
+        "Japan": [
+          0
+        ]
+      },
+      "Ticket": false
+    },
+    {
+      "Name": "Fighting Street",
+      "TID": "00010001514242XX",
+      "Versions": {
+        "USA/NTSC": [
+          0
+        ],
+        "Europe/PAL": [
+          0
+        ],
+        "Japan": [
+          256
+        ]
       },
       "Ticket": false
     }
