@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=NUSGet
-Exec=/opt/NUSGet/NUSGet %U
+Exec=/opt/NUSGet/NUSGet.bin %U
 Terminal=false
 Type=Application
 Icon=/opt/NUSGet/NUSGet.png

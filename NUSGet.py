@@ -341,8 +341,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def check_batch_result(self, result: BatchResults):
         if result.code != 0:
-            print(result.warning_titles)
-            print(result.failed_titles)
             msg_box = QMessageBox()
             if result.failed_titles:
                 msg_box.setIcon(QMessageBox.Icon.Critical)
