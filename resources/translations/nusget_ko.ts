@@ -6,7 +6,7 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="26"/>
         <source>MainWindow</source>
-        <translation>메인윈도우</translation>
+        <translation>메인 윈도우</translation>
     </message>
     <message>
         <source>Available Titles</source>
@@ -15,12 +15,12 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="46"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>검색</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="59"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>지우기</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="90"/>
@@ -236,62 +236,62 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../NUSGet.py" line="353"/>
         <source>Script Issues Occurred</source>
-        <translation type="unfinished"></translation>
+        <translation>스크립트 문제가 발생함</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="354"/>
         <source>Some issues occurred while running the download script.</source>
-        <translation type="unfinished"></translation>
+        <translation>다운로드 스크립트를 실행하는 동안 몇 가지 문제가 발생했습니다.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="356"/>
         <source>Check the log for more details about what issues were encountered.</source>
-        <translation type="unfinished"></translation>
+        <translation>발생한 문제에 대한 자세한 내용은 로그를 확인하세요.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="363"/>
         <source>The following titles could not be downloaded due to an error. Please ensure that the Title ID and version listed in the script are valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>다음 제목은 오류로 인해 다운로드할 수 없습니다. 스크립트에 나열된 타이틀 ID와 버전이 유효한지 확인하세요.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="373"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;암호 해독된 콘텐츠 만들기&quot; 또는 &quot;설치 가능한 아카이브 압축&quot;을 활성화했지만 스크립트의 다음 타이틀에는 사용 가능한 티켓이 없습니다. 활성화된 경우 암호화된 콘텐츠가 여전히 다운로드되었습니다.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="400"/>
         <source>Script Download Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>스크립트 다운로드 실패함</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="401"/>
         <source>Open NUS Script</source>
-        <translation type="unfinished"></translation>
+        <translation>NUS 스크립트 열기</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="402"/>
         <source>NUS Scripts (*.nus *.json)</source>
-        <translation type="unfinished"></translation>
+        <translation>NUS 스크립트 (*.nus *.json)</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="412"/>
         <source>An error occurred while parsing the script file!</source>
-        <translation type="unfinished"></translation>
+        <translation>스크립트 파일을 구문 분석하는 동안 오류가 발생했습니다!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="413"/>
         <source>Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>{e.lineno} 줄, {e.colno} 열에서 오류가 발생했습니다. 스크립트를 다시 확인하고 다시 시도하세요.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="422"/>
         <source>An error occurred while parsing Title IDs!</source>
-        <translation type="unfinished"></translation>
+        <translation>타이틀 ID를 구문 분석하는 동안 오류가 발생했습니다!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="423"/>
         <source>The title at index {script_data.index(title)} does not have a Title ID!</source>
-        <translation type="unfinished"></translation>
+        <translation>{script_data.index(title)} 인덱스의 타이틀에 타이틀 ID가 없습니다!</translation>
     </message>
     <message>
         <source>Open NUS script</source>
