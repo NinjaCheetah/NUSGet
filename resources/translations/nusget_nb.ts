@@ -15,12 +15,12 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="46"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Søk</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="59"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Klar</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="90"/>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="211"/>
         <source>Run Script</source>
-        <translation type="unfinished"></translation>
+        <translation>Kjøre Skript</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="238"/>
@@ -122,7 +122,14 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -162,17 +169,17 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet&quot; i nedlastingsmap
     <message>
         <location filename="../../NUSGet.py" line="274"/>
         <source>No Output Selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen Utgang Valgt</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="275"/>
         <source>You have not selected any format to output the data in!</source>
-        <translation type="unfinished"></translation>
+        <translation>Du ikke har valgt noe format å lagre dataene i!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="277"/>
         <source>Please select at least one option for how you would like the download to be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg minst ett valg for hvordan du vil at nedlastingen skal lagres.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="306"/>
@@ -202,7 +209,7 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet&quot; i nedlastingsmap
     <message>
         <location filename="../../NUSGet.py" line="314"/>
         <source>Please make sure that you have entered a valid Title ID, or selected one from the title database, and that the provided version exists for the title you are attempting to download.</source>
-        <translation>Vennligst kontroller at du har oppgitt en gyldig Tittel ID, eller valgt en fra titteldatabasen, og at den angitte versjonen finnes for tittelen du forsøker å laste ned.</translation>
+        <translation>Sjekk at du har oppgitt en gyldig Tittel ID, eller valgt en fra titteldatabasen, og at den angitte versjonen finnes for tittelen du forsøker å laste ned.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="316"/>
@@ -247,103 +254,109 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet&quot; i nedlastingsmap
     <message>
         <location filename="../../NUSGet.py" line="332"/>
         <source>Please try again. If this issue persists, please open a new issue on GitHub detailing what you were trying to do when this error occurred.</source>
-        <translation>Vennligst prøv igjen. Hvis dette problemet vedvarer, åpne et nytt issue på GitHub med detaljer om hva du prøvde å gjøre da denne feilen oppstod.</translation>
+        <translation>Prøv igjen. Hvis dette problemet vedvarer, åpne et nytt issue på GitHub med detaljer om hva du prøvde å gjøre da denne feilen oppstod.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="351"/>
+        <location filename="../../NUSGet.py" line="353"/>
         <source>Script Issues Occurred</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../NUSGet.py" line="352"/>
-        <source>Some issues occurred while running the download script.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriptfeil Oppstod</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="354"/>
+        <source>Some issues occurred while running the download script.</source>
+        <translation>Noen feil oppstod under kjøring av nedlastingsskriptet.</translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="356"/>
         <source>Check the log for more details about what issues were encountered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjekk loggen for mer informasjon om feilene som har oppstått.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="361"/>
+        <location filename="../../NUSGet.py" line="363"/>
         <source>The following titles could not be downloaded due to an error. Please ensure that the Title ID and version listed in the script are valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Følgende titler kunne ikke lastes ned på grunn av en feil. Sjekk at Tittel IDen og versjon som er oppført i skriptet er gyldige.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="371"/>
+        <location filename="../../NUSGet.py" line="373"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../NUSGet.py" line="398"/>
-        <source>Script Download Failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../NUSGet.py" line="399"/>
-        <source>Open NUS Script</source>
-        <translation type="unfinished"></translation>
+        <translation>Du aktiverte &quot;Opprett dekryptert innhold&quot; eller &quot;Pakk installerbart archive&quot;, men følgende titler i skriptet har ikke tilgjengelige billetter. Hvis aktivert, ble kryptert innhold fortsatt lastet ned.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="400"/>
+        <source>Script Download Failed</source>
+        <translation>Skriptnedlasting Mislyktes</translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="401"/>
+        <source>Open NUS Script</source>
+        <translation>Åpne NUS Skript</translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="402"/>
         <source>NUS Scripts (*.nus *.json)</source>
-        <translation type="unfinished"></translation>
+        <translation>NUS Skript (*.nus *.json)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="410"/>
+        <location filename="../../NUSGet.py" line="412"/>
         <source>An error occurred while parsing the script file!</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppstod en feil under parsing av skriptfilen!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="411"/>
+        <location filename="../../NUSGet.py" line="413"/>
         <source>Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="420"/>
+        <location filename="../../NUSGet.py" line="422"/>
         <source>An error occurred while parsing Title IDs!</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppstod en feil under parsing av Tittel IDer!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="421"/>
+        <location filename="../../NUSGet.py" line="423"/>
         <source>The title at index {script_data.index(title)} does not have a Title ID!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tittelen ved indeks {script_data.index(title)} har ikke en Tittel ID!</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="480"/>
         <source>Apply patches to IOS (Applies to WADs only)</source>
-        <translation type="unfinished"></translation>
+        <translation>Påfør patcher på IOS (gjelder kun WADer)</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="182"/>
         <source>NUSGet Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet Oppdatering Tilgjengelig</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="183"/>
         <source>There&apos;s a newer version of NUSGet available!</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finnes en nyere versjon av NUSGet tilgjengelig!</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="43"/>
         <source>
 
 Could not check for updates.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Kunne ikke sjekke for oppdateringer.</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="51"/>
         <source>
 
 There&apos;s a newer version of NUSGet available!</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Det finnes en nyere versjon av NUSGet tilgjengelig!</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="53"/>
         <source>
 
 You&apos;re running the latest release of NUSGet.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Du kjører den nyeste versjonen av NUSGet.</translation>
     </message>
 </context>
 </TS>
