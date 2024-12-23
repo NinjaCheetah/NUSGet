@@ -14,7 +14,7 @@ Select a title from the list on the left, or enter a Title ID to begin.
 
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
-Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downloads folder.</source>
+Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

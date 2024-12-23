@@ -93,7 +93,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                               "Titles marked with a checkmark are free and have a ticket available, and can"
                               " be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
                               "a ticket, and only their encrypted contents can be saved.\n\nTitles will be "
-                              "downloaded to a folder named \"NUSGet\" inside your downloads folder.")
+                              "downloaded to a folder named \"NUSGet Downloads\" inside your downloads folder.")
                        .format(nusget_version=nusget_version, libwiipy_version=libwiipy_version,
                                libtwlpy_version=libtwlpy_version))
         self.ui.log_text_browser.setText(self.log_text)
@@ -488,9 +488,9 @@ if __name__ == "__main__":
     else:
         location = pathlib.Path(os.path.expanduser('~')).joinpath('Downloads')
     # Build the path by combining the path to the Downloads photo with "NUSGet".
-    out_folder = location.joinpath("NUSGet")
-    # Create the "NUSGet" directory if it doesn't exist. In the future, this will be user-customizable, but this works
-    # for now, and avoids the issues from when it used to use a directory next to the binary (mostly on macOS).
+    out_folder = location.joinpath("NUSGet Downloads")
+    # Create the "NUSGet Downloads" directory if it doesn't exist. In the future, this will be user-customizable, but
+    # this works for now, and avoids using a directory next to the binary (mostly an issue on macOS/Linux).
     if not out_folder.is_dir():
         out_folder.mkdir()
 

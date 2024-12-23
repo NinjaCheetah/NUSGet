@@ -4,7 +4,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../NUSGet.py" line="97"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -17,7 +16,7 @@ Titles marked with a checkmark are free and have a ticket available, and can be 
 Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downloads folder.</source>
         <translatorcomment>&quot;Downloads&quot; in German copies of Windows and macOS isn&apos;t translated
 Specified that the tickets for titles with a checkmark are publicly available, for clarity in the translation</translatorcomment>
-        <translation>NUSGet v{nusget_version}
+        <translation type="vanished">NUSGet v{nusget_version}
 Entwickelt von NinjaCheetah
 Nutzt libWiiPy {libwiipy_version}
 Unterstützung für DSi bereitgestelt durch libTWLPy {libtwlpy_version}
@@ -29,6 +28,31 @@ Titel, welche mit einem Häkchen markiert sind, sind frei verfügbar und haben e
 Titel werden in einem &quot;NUSGet&quot; Ordner innerhalb des Downloads-Ordners gespeichert.</translation>
     </message>
     <message>
+        <location filename="../../NUSGet.py" line="97"/>
+        <source>NUSGet v{nusget_version}
+Developed by NinjaCheetah
+Powered by libWiiPy {libwiipy_version}
+DSi support provided by libTWLPy {libtwlpy_version}
+
+Select a title from the list on the left, or enter a Title ID to begin.
+
+Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
+
+Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
+        <translatorcomment>&quot;Downloads&quot; in German copies of Windows and macOS isn&apos;t translated
+Specified that the tickets for titles with a checkmark are publicly available, for clarity in the translation</translatorcomment>
+        <translation>NUSGet v{nusget_version}
+Entwickelt von NinjaCheetah
+Nutzt libWiiPy {libwiipy_version}
+Unterstützung für DSi bereitgestelt durch libTWLPy {libtwlpy_version}
+
+Wähle einen Titel aus der Liste auf der linken Seite oder gebe eine Title-ID ein, um zu beginnen.
+
+Titel, welche mit einem Häkchen markiert sind, sind frei verfügbar und haben ein öffentliches Ticket, und können daher entschlüsselt und/oder in eine WAD/TAD verpackt werden. Titel mit einem Kreuz haben kein öffentlich verfügbares Ticket und können nicht entschlüsselt oder verpackt werden.
+
+Titel werden in einem &quot;NUSGet Downloads&quot; Ordner innerhalb des Downloads-Ordners gespeichert.</translation>
+    </message>
+    <message>
         <location filename="../../NUSGet.py" line="182"/>
         <source>NUSGet Update Available</source>
         <translation>NUSGet-Update verfügbar</translation>
@@ -36,7 +60,7 @@ Titel werden in einem &quot;NUSGet&quot; Ordner innerhalb des Downloads-Ordners 
     <message>
         <location filename="../../NUSGet.py" line="183"/>
         <source>There&apos;s a newer version of NUSGet available!</source>
-        <translation>Eine neuere Version von NUSGet ist verfügbar.</translation>
+        <translation type="unfinished">Eine neuere Version von NUSGet ist verfügbar.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="274"/>

@@ -4,7 +4,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../NUSGet.py" line="97"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -15,7 +14,7 @@ Select a title from the list on the left, or enter a Title ID to begin.
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downloads folder.</source>
-        <translation>NUSGet v{nusget_version}
+        <translation type="vanished">NUSGet v{nusget_version}
 Dezvoltat de NinjaCheetah
 Operat de libWiiPy {libwiipy_version}
 Suport pentru DSi oferit de libTWLPy {libtwlpy_version}
@@ -25,6 +24,29 @@ Selectează un titlu din lista din stânga, sau introdu un Title ID pentru a în
 Titlurile marcate cu bifă sunt gratuite și au un tichet disponibil și pot fi decriptate și/sau incluse într-un WAD sau TAD. Titlurile cu un X nu au tichet, și pot fi salvate doar în formă encriptată.
 
 Titlurile vor fi descărcate într-un folder numit „NUSGet” în fișierul dvs. de download.</translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="97"/>
+        <source>NUSGet v{nusget_version}
+Developed by NinjaCheetah
+Powered by libWiiPy {libwiipy_version}
+DSi support provided by libTWLPy {libtwlpy_version}
+
+Select a title from the list on the left, or enter a Title ID to begin.
+
+Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
+
+Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
+        <translation>NUSGet v{nusget_version}
+Dezvoltat de NinjaCheetah
+Operat de libWiiPy {libwiipy_version}
+Suport pentru DSi oferit de libTWLPy {libtwlpy_version}
+
+Selectează un titlu din lista din stânga, sau introdu un Title ID pentru a începe.
+
+Titlurile marcate cu bifă sunt gratuite și au un tichet disponibil și pot fi decriptate și/sau incluse într-un WAD sau TAD. Titlurile cu un X nu au tichet, și pot fi salvate doar în formă encriptată.
+
+Titlurile vor fi descărcate într-un folder numit „NUSGet Downloads” în fișierul dvs. de download.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="182"/>

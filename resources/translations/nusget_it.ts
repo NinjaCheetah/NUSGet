@@ -144,6 +144,20 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../../NUSGet.py" line="97"/>
+        <source>NUSGet v{nusget_version}
+Developed by NinjaCheetah
+Powered by libWiiPy {libwiipy_version}
+DSi support provided by libTWLPy {libtwlpy_version}
+
+Select a title from the list on the left, or enter a Title ID to begin.
+
+Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
+
+Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../NUSGet.py" line="274"/>
         <source>No Output Selected</source>
         <translation>Nessun output selezionato</translation>
@@ -310,7 +324,6 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Impossibile aprire lo script.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="97"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -321,7 +334,7 @@ Select a title from the list on the left, or enter a Title ID to begin.
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downloads folder.</source>
-        <translation>NUSGet v{nusget_version}
+        <translation type="vanished">NUSGet v{nusget_version}
 Sviluppato da NinjaCheetah
 Funzionante con libWiiPy {libwiipy_version}
 

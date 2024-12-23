@@ -144,6 +144,29 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../../NUSGet.py" line="97"/>
+        <source>NUSGet v{nusget_version}
+Developed by NinjaCheetah
+Powered by libWiiPy {libwiipy_version}
+DSi support provided by libTWLPy {libtwlpy_version}
+
+Select a title from the list on the left, or enter a Title ID to begin.
+
+Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
+
+Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
+        <translation>NUSGet v{nusget_version}
+개발자 : NinjaCheetah
+libWiiPy {libwiipy_version}에서 제공
+DSi 지원 : libTWLPy {libtwlpy_version}에서 제공
+
+왼쪽 목록에서 타이틀을 선택하거나 타이틀 ID를 입력하여 시작하세요.
+
+체크 표시가 있는 타이틀은 무료이며 티켓을 사용할 수 있으며, WAD 또는 TAD에 복호화 및/또는 패킹할 수 있습니다. X가 있는 타이틀은 티켓이 없으며 암호화된 콘텐츠만 저장할 수 있습니다.
+
+타이틀은 다운로드 폴더 내의 &quot;NUSGet Downloads&quot;이라는 폴더에 다운로드됩니다.</translation>
+    </message>
+    <message>
         <location filename="../../NUSGet.py" line="274"/>
         <source>No Output Selected</source>
         <translation>선택된 출력 없음</translation>
@@ -310,7 +333,6 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">스크립트를 열 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="97"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -321,7 +343,7 @@ Select a title from the list on the left, or enter a Title ID to begin.
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downloads folder.</source>
-        <translation>NUSGet v{nusget_version}
+        <translation type="vanished">NUSGet v{nusget_version}
 개발자 : NinjaCheetah
 libWiiPy {libwiipy_version}에서 제공
 DSi 지원 : libTWLPy {libtwlpy_version}에서 제공
@@ -372,7 +394,7 @@ NUSBet의 새로운 버전이 나왔습니다!</translation>
 You&apos;re running the latest release of NUSGet.</source>
         <translation>
 
-NUSBet의 최신 릴리스를 실행하고 있습니다.</translation>
+NUSGet의 최신 릴리스를 실행하고 있습니다.</translation>
     </message>
 </context>
 </TS>

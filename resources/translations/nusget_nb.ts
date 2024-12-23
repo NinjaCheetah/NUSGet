@@ -144,7 +144,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="97"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -155,7 +154,7 @@ Select a title from the list on the left, or enter a Title ID to begin.
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 Titles will be downloaded to a folder named &quot;NUSGet&quot; inside your downloads folder.</source>
-        <translation>NUSGet v{nusget_version}
+        <translation type="vanished">NUSGet v{nusget_version}
 Utviklet av NinjaCheetah
 Drevet av libWiiPy {libwiipy_version}
 DSi støtte levert av libTWLPy {libtwlpy_version}
@@ -165,6 +164,29 @@ Velg en tittel fra listen til venstre, eller skriv inn en Tittel ID for å begyn
 Titler merket med en hake er fri og har en billett tilgjengelig, og kan dekrypteres og/eller pakkes inn i en WAD eller TAD. Titler med en X ikke har en billett, og bare det krypterte innholdet kan lagres.
 
 Titler er lastes ned til en mappe med navnet &quot;NUSGet&quot; i nedlastingsmappen din.</translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="97"/>
+        <source>NUSGet v{nusget_version}
+Developed by NinjaCheetah
+Powered by libWiiPy {libwiipy_version}
+DSi support provided by libTWLPy {libtwlpy_version}
+
+Select a title from the list on the left, or enter a Title ID to begin.
+
+Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
+
+Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
+        <translation>NUSGet v{nusget_version}
+Utviklet av NinjaCheetah
+Drevet av libWiiPy {libwiipy_version}
+DSi støtte levert av libTWLPy {libtwlpy_version}
+
+Velg en tittel fra listen til venstre, eller skriv inn en Tittel ID for å begynne.
+
+Titler merket med en hake er fri og har en billett tilgjengelig, og kan dekrypteres og/eller pakkes inn i en WAD eller TAD. Titler med en X ikke har en billett, og bare det krypterte innholdet kan lagres.
+
+Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedlastingsmappen din.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="274"/>
@@ -257,62 +279,62 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet&quot; i nedlastingsmap
         <translation>Prøv igjen. Hvis dette problemet vedvarer, åpne et nytt issue på GitHub med detaljer om hva du prøvde å gjøre da denne feilen oppstod.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="353"/>
+        <location filename="../../NUSGet.py" line="351"/>
         <source>Script Issues Occurred</source>
         <translation>Skriptfeil Oppstod</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="354"/>
+        <location filename="../../NUSGet.py" line="352"/>
         <source>Some issues occurred while running the download script.</source>
         <translation>Noen feil oppstod under kjøring av nedlastingsskriptet.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="356"/>
+        <location filename="../../NUSGet.py" line="354"/>
         <source>Check the log for more details about what issues were encountered.</source>
         <translation>Sjekk loggen for mer informasjon om feilene som har oppstått.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="363"/>
+        <location filename="../../NUSGet.py" line="361"/>
         <source>The following titles could not be downloaded due to an error. Please ensure that the Title ID and version listed in the script are valid.</source>
         <translation>Følgende titler kunne ikke lastes ned på grunn av en feil. Sjekk at Tittel IDen og versjon som er oppført i skriptet er gyldige.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="373"/>
+        <location filename="../../NUSGet.py" line="371"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
         <translation>Du aktiverte &quot;Opprett dekryptert innhold&quot; eller &quot;Pakk installerbart archive&quot;, men følgende titler i skriptet har ikke tilgjengelige billetter. Hvis aktivert, ble kryptert innhold fortsatt lastet ned.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="400"/>
+        <location filename="../../NUSGet.py" line="398"/>
         <source>Script Download Failed</source>
         <translation>Skriptnedlasting Mislyktes</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="401"/>
+        <location filename="../../NUSGet.py" line="399"/>
         <source>Open NUS Script</source>
         <translation>Åpne NUS Skript</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="402"/>
+        <location filename="../../NUSGet.py" line="400"/>
         <source>NUS Scripts (*.nus *.json)</source>
         <translation>NUS Skript (*.nus *.json)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="412"/>
+        <location filename="../../NUSGet.py" line="410"/>
         <source>An error occurred while parsing the script file!</source>
         <translation>Det oppstod en feil under parsing av skriptfilen!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="413"/>
+        <location filename="../../NUSGet.py" line="411"/>
         <source>Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="422"/>
+        <location filename="../../NUSGet.py" line="420"/>
         <source>An error occurred while parsing Title IDs!</source>
         <translation>Det oppstod en feil under parsing av Tittel IDer!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="423"/>
+        <location filename="../../NUSGet.py" line="421"/>
         <source>The title at index {script_data.index(title)} does not have a Title ID!</source>
         <translation>Tittelen ved indeks {script_data.index(title)} har ikke en Tittel ID!</translation>
     </message>
