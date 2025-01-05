@@ -1,9 +1,11 @@
 # "modules/core.py", licensed under the MIT license
-# Copyright 2024 NinjaCheetah
+# Copyright 2024-2025 NinjaCheetah
 
 import requests
 from dataclasses import dataclass
 from typing import List
+
+from PySide6.QtCore import Qt as _Qt
 
 
 @dataclass
@@ -34,6 +36,13 @@ class BatchResults:
     code: int
     warning_titles: List[str]
     failed_titles: List[str]
+
+
+def connect_label_to_checkbox(label, checkbox):
+    def toggle_checkbox(event):
+        if checkbox.isEnabled() and event.button() == _Qt.LeftButton:
+            checkbox.toggle()
+    label.mousePressEvent = toggle_checkbox
 
 
 def check_nusget_updates(app, current_version: str, progress_callback=None) -> str | None:

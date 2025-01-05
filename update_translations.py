@@ -1,5 +1,5 @@
 # "update_translations.py", licensed under the MIT license
-# Copyright 2024 NinjaCheetah
+# Copyright 2024-2025 NinjaCheetah
 # This script exists to work around an issue in PySide6 where the "pyside6-project lupdate" command doesn't work as
 # expected, as it struggles to parse the paths in the .pyproject file. This does what it's meant to do for it.
 

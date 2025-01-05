@@ -1,5 +1,5 @@
 # "NUSGet.py", licensed under the MIT license
-# Copyright 2024 NinjaCheetah
+# Copyright 2024-2025 NinjaCheetah
 
 # Nuitka options. These determine compilation settings based on the current OS.
 # nuitka-project-if: {OS} == "Darwin":
@@ -82,7 +82,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
-        self.ui.pack_archive_chkbox.clicked.connect(self.pack_wad_chkbox_toggled)
+        self.ui.pack_archive_chkbox.toggled.connect(
+            lambda: self.ui.archive_file_entry.setEnabled(self.ui.pack_archive_chkbox.isChecked()))
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
@@ -123,6 +124,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.trees[tree].collapsed.connect(lambda: self.resize_tree(self.ui.platform_tabs.currentIndex()))
         # Prevent resizing.
         self.setFixedSize(self.size())
+        # These connections allow for clicking the checkbox labels to toggle the checkboxes, if they're enabled. This is
+        # required because checkboxes can't word wrap, so regular labels must be used in their place.
+        connect_label_to_checkbox(self.ui.pack_archive_chkbox_lbl, self.ui.pack_archive_chkbox)
+        connect_label_to_checkbox(self.ui.keep_enc_chkbox_lbl, self.ui.keep_enc_chkbox)
+        connect_label_to_checkbox(self.ui.create_dec_chkbox_lbl, self.ui.create_dec_chkbox)
+        connect_label_to_checkbox(self.ui.use_local_chkbox_lbl, self.ui.use_local_chkbox)
+        connect_label_to_checkbox(self.ui.use_wiiu_nus_chkbox_lbl, self.ui.use_wiiu_nus_chkbox)
+        connect_label_to_checkbox(self.ui.patch_ios_chkbox_lbl, self.ui.patch_ios_chkbox)
+        connect_label_to_checkbox(self.ui.pack_vwii_mode_chkbox_lbl, self.ui.pack_vwii_mode_chkbox)
         # Do a quick check to see if there's a newer release available, and inform the user if there is.
         worker = Worker(check_nusget_updates, app, nusget_version)
         worker.signals.result.connect(self.prompt_for_update)
@@ -241,6 +251,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.keep_enc_chkbox.setEnabled(False)
         self.ui.create_dec_chkbox.setEnabled(False)
         self.ui.use_local_chkbox.setEnabled(False)
+        self.ui.patch_ios_chkbox.setEnabled(False)
         self.ui.use_wiiu_nus_chkbox.setEnabled(False)
         self.ui.pack_vwii_mode_chkbox.setEnabled(False)
         self.ui.archive_file_entry.setEnabled(False)
@@ -258,6 +269,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.keep_enc_chkbox.setEnabled(True)
         self.ui.create_dec_chkbox.setEnabled(True)
         self.ui.use_local_chkbox.setEnabled(True)
+        self.ui.patch_ios_chkbox.setEnabled(True)
         self.ui.use_wiiu_nus_chkbox.setEnabled(True)
         self.ui.console_select_dropdown.setEnabled(True)
         if self.ui.pack_archive_chkbox.isChecked() is True:
@@ -372,14 +384,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 for title in result.warning_titles:
                     self.update_log_text(f"   - {title}")
         self.unlock_ui()
-
-    def pack_wad_chkbox_toggled(self):
-        # Simple function to catch when the WAD/TAD checkbox is toggled and enable/disable the file name entry box
-        # accordingly.
-        if self.ui.pack_archive_chkbox.isChecked() is True:
-            self.ui.archive_file_entry.setEnabled(True)
-        else:
-            self.ui.archive_file_entry.setEnabled(False)
 
     def selected_console_changed(self):
         # Callback function to enable or disable console-specific settings based on the selected console.

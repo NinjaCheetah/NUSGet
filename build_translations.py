@@ -1,5 +1,5 @@
 # "build_translations.py", licensed under the MIT license
-# Copyright 2024 NinjaCheetah
+# Copyright 2024-2025 NinjaCheetah
 # This script exists to work around an issue in PySide6 where the "pyside6-project build" command incorrectly places
 # translation files in the root of the project directory while building.
 

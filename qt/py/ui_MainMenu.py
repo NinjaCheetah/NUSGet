@@ -189,16 +189,16 @@ class Ui_MainWindow(object):
 
         self.pack_archive_row.addWidget(self.pack_archive_chkbox)
 
-        self.label_7 = QLabel(self.centralwidget)
-        self.label_7.setObjectName(u"label_7")
+        self.pack_archive_chkbox_lbl = QLabel(self.centralwidget)
+        self.pack_archive_chkbox_lbl.setObjectName(u"pack_archive_chkbox_lbl")
         sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.MinimumExpanding)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
-        self.label_7.setSizePolicy(sizePolicy4)
-        self.label_7.setWordWrap(True)
+        sizePolicy4.setHeightForWidth(self.pack_archive_chkbox_lbl.sizePolicy().hasHeightForWidth())
+        self.pack_archive_chkbox_lbl.setSizePolicy(sizePolicy4)
+        self.pack_archive_chkbox_lbl.setWordWrap(True)
 
-        self.pack_archive_row.addWidget(self.label_7)
+        self.pack_archive_row.addWidget(self.pack_archive_chkbox_lbl)
 
 
         self.verticalLayout_7.addLayout(self.pack_archive_row)
@@ -221,13 +221,13 @@ class Ui_MainWindow(object):
 
         self.keep_enc_row.addWidget(self.keep_enc_chkbox)
 
-        self.label_6 = QLabel(self.centralwidget)
-        self.label_6.setObjectName(u"label_6")
-        sizePolicy4.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
-        self.label_6.setSizePolicy(sizePolicy4)
-        self.label_6.setWordWrap(True)
+        self.keep_enc_chkbox_lbl = QLabel(self.centralwidget)
+        self.keep_enc_chkbox_lbl.setObjectName(u"keep_enc_chkbox_lbl")
+        sizePolicy4.setHeightForWidth(self.keep_enc_chkbox_lbl.sizePolicy().hasHeightForWidth())
+        self.keep_enc_chkbox_lbl.setSizePolicy(sizePolicy4)
+        self.keep_enc_chkbox_lbl.setWordWrap(True)
 
-        self.keep_enc_row.addWidget(self.label_6)
+        self.keep_enc_row.addWidget(self.keep_enc_chkbox_lbl)
 
 
         self.verticalLayout_7.addLayout(self.keep_enc_row)
@@ -314,14 +314,14 @@ class Ui_MainWindow(object):
 
         self.patch_ios_row.addWidget(self.patch_ios_chkbox)
 
-        self.patch_ios_lbl = QLabel(self.centralwidget)
-        self.patch_ios_lbl.setObjectName(u"patch_ios_lbl")
-        self.patch_ios_lbl.setEnabled(True)
-        sizePolicy4.setHeightForWidth(self.patch_ios_lbl.sizePolicy().hasHeightForWidth())
-        self.patch_ios_lbl.setSizePolicy(sizePolicy4)
-        self.patch_ios_lbl.setWordWrap(True)
+        self.patch_ios_chkbox_lbl = QLabel(self.centralwidget)
+        self.patch_ios_chkbox_lbl.setObjectName(u"patch_ios_chkbox_lbl")
+        self.patch_ios_chkbox_lbl.setEnabled(True)
+        sizePolicy4.setHeightForWidth(self.patch_ios_chkbox_lbl.sizePolicy().hasHeightForWidth())
+        self.patch_ios_chkbox_lbl.setSizePolicy(sizePolicy4)
+        self.patch_ios_chkbox_lbl.setWordWrap(True)
 
-        self.patch_ios_row.addWidget(self.patch_ios_lbl)
+        self.patch_ios_row.addWidget(self.patch_ios_chkbox_lbl)
 
 
         self.verticalLayout_7.addLayout(self.patch_ios_row)
@@ -357,17 +357,17 @@ class Ui_MainWindow(object):
 
         self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_chkbox)
 
-        self.pack_vwii_mode_lbl = QLabel(self.centralwidget)
-        self.pack_vwii_mode_lbl.setObjectName(u"pack_vwii_mode_lbl")
-        self.pack_vwii_mode_lbl.setEnabled(True)
+        self.pack_vwii_mode_chkbox_lbl = QLabel(self.centralwidget)
+        self.pack_vwii_mode_chkbox_lbl.setObjectName(u"pack_vwii_mode_chkbox_lbl")
+        self.pack_vwii_mode_chkbox_lbl.setEnabled(True)
         sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy5.setHorizontalStretch(0)
         sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.pack_vwii_mode_lbl.sizePolicy().hasHeightForWidth())
-        self.pack_vwii_mode_lbl.setSizePolicy(sizePolicy5)
-        self.pack_vwii_mode_lbl.setWordWrap(True)
+        sizePolicy5.setHeightForWidth(self.pack_vwii_mode_chkbox_lbl.sizePolicy().hasHeightForWidth())
+        self.pack_vwii_mode_chkbox_lbl.setSizePolicy(sizePolicy5)
+        self.pack_vwii_mode_chkbox_lbl.setWordWrap(True)
 
-        self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_lbl)
+        self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_chkbox_lbl)
 
 
         self.verticalLayout_8.addLayout(self.pack_vwii_mode_row)
@@ -426,15 +426,15 @@ class Ui_MainWindow(object):
         self.download_btn.setText(QCoreApplication.translate("MainWindow", u"Start Download", None))
         self.script_btn.setText(QCoreApplication.translate("MainWindow", u"Run Script", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"General Settings", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Pack installable archive (WAD/TAD)", None))
+        self.pack_archive_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Pack installable archive (WAD/TAD)", None))
         self.archive_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Keep encrypted contents", None))
+        self.keep_enc_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Keep encrypted contents", None))
         self.create_dec_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Create decrypted contents (*.app)", None))
         self.use_local_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use local files, if they exist", None))
         self.use_wiiu_nus_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use the Wii U NUS (faster, only effects Wii/vWii)", None))
-        self.patch_ios_lbl.setText(QCoreApplication.translate("MainWindow", u"Apply patches to IOS (Applies to WADs only)", None))
+        self.patch_ios_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Apply patches to IOS (Applies to WADs only)", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"vWii Title Settings", None))
-        self.pack_vwii_mode_lbl.setText(QCoreApplication.translate("MainWindow", u"Re-encrypt title using the Wii Common Key", None))
+        self.pack_vwii_mode_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Re-encrypt title using the Wii Common Key", None))
         self.log_text_browser.setMarkdown("")
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
