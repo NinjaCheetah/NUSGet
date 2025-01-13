@@ -15,12 +15,12 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="46"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="59"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulisci</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="90"/>
@@ -155,7 +155,16 @@ Select a title from the list on the left, or enter a Title ID to begin.
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet v{nusget_version}
+Developed by NinjaCheetah
+Powered by libWiiPy {libwiipy_version}
+DSi support provided by libTWLPy {libtwlpy_version}
+
+Select a title from the list on the left, or enter a Title ID to begin.
+
+Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
+
+Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="274"/>
@@ -250,62 +259,62 @@ Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside 
     <message>
         <location filename="../../NUSGet.py" line="351"/>
         <source>Script Issues Occurred</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore script</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="352"/>
         <source>Some issues occurred while running the download script.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ci sono stati degli errori con lo script di download.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="354"/>
         <source>Check the log for more details about what issues were encountered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Guarda i log per più dettagli sull&apos;errore.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="361"/>
         <source>The following titles could not be downloaded due to an error. Please ensure that the Title ID and version listed in the script are valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>I seguenti titoli non sono stati scaricati a causa di un errore. Controlla che l&apos;ID Titolo e la versione nello script siano validi.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="371"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="398"/>
         <source>Script Download Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Download script fallito</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="399"/>
         <source>Open NUS Script</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri script NUS</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="400"/>
         <source>NUS Scripts (*.nus *.json)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrpit NUS (*.nus *.txt)</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="410"/>
         <source>An error occurred while parsing the script file!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ci sono stati degli errori con lo script di download!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="411"/>
         <source>Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="420"/>
         <source>An error occurred while parsing Title IDs!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ci sono stati degli errori con GLI id tITOLO!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="421"/>
         <source>The title at index {script_data.index(title)} does not have a Title ID!</source>
-        <translation type="unfinished"></translation>
+        <translation>The title at index {script_data.index(title)} does not have a Title ID!</translation>
     </message>
     <message>
         <source>Open NUS script</source>
