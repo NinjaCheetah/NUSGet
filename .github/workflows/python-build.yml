@@ -19,7 +19,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install ccache for Nuitka
-      run: sudo apt update && sudo apt install -y ccache libicu70
+      run: |
+        sudo apt update && \
+        sudo apt install -y ccache patchelf
     - name: Set up Python 3.12
       uses: actions/setup-python@v5
       with:
