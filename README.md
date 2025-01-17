@@ -1,10 +1,15 @@
-# NUSGet
-A modern and supercharged NUS downloader built with Python and Qt6. Powered by libWiiPy and libTWLPy. 
+<div align="center">
+ <img src="https://github.com/user-attachments/assets/156eb949-93aa-4453-b7a0-99b784ec0c8c" alt="The icon for NUSGet" width=256 height=256>
+ <h1>NUSGet</h1>
+ <p>A modern and supercharged NUS downloader built with Python and Qt6.</p>
+ <p>Powered by libWiiPy and libTWLPy.</p>
+ <a href="https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml">
+  <img src="https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml/badge.svg">
+ </a>
+</div>
 
-[![Python application](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml/badge.svg)](https://github.com/NinjaCheetah/NUSGet/actions/workflows/python-build.yml)
-
-The name is a play on NuGet, the .NET package manager. Thank you [@Janni9009](https://github.com/Janni9009) for the name idea!
-
+![Linux Screenshot](https://github.com/user-attachments/assets/f9e0e6c4-6a04-4c2b-bffd-7a1dc58671ff)
+ 
 ## Features
 NUSGet allows you to download any content from the Nintendo Update Servers. Free content (content with a Ticket freely available on the servers) can be decrypted or packed directly into an installable archive (WAD/TAD).
 
@@ -73,7 +78,7 @@ A huge thanks to all the wonderful translators who've helped make NUSGet availab
 If your language isn't present or is out of date, and you'd like to contribute, you can check out [TRANSLATING.md](https://github.com/NinjaCheetah/NUSGet/blob/main/TRANSLATING.md) for directions on how to translate NUSGet.
 
 
-## Why this and not NUSD?
-NUS Downloader (Nintendo Update Server Downloader), is an old tool for downloading titles from the Nintendo Update Servers for the Wii and DSi. Originally released in 2009, and effectively last updated in 2011, it stills works today, however it definitely shows its age, and is in need of a refresh. One of the major shortcomings of NUSD is that it only supports Windows, as most of the tools for the Wii from that era are written in C# and use the .NET Framework, especially since they tend to rely on the C# library libWiiSharp. NUSD also has far more limited support for DSi titles, and no support whatsoever for vWii titles.
+## Additional Thanks
+The name is a play on NuGet, the .NET package manager. Thank you [@Janni9009](https://github.com/Janni9009) for the name idea!
 
-With my introduction of [libWiiPy](https://github.com/NinjaCheetah/libWiiPy), there's now a work-in-progress Python library designed to eventually have feature parity with libWiiSharp. At this point in time, the library is featured enough that every piece of libWiiSharp that NUSD relied on is now available in libWiiPy, so I decided to put that to use and create a replacement for it. NUSGet offers nearly all the same features as NUSD (currently there is no support for the DSi servers or for scripting), but is built on top of a modern library with a modern graphical framework, that being Qt6. A major benefit of this rewrite is that its fully cross-platform, and is natively compiled for Windows, Linux, and macOS.
+Thanks to all those who contributed to libWiiSharp and NUSD, without which this project would not exist.
