@@ -502,11 +502,21 @@ if __name__ == "__main__":
     # it looks nice, but fallback on kvantum if it isn't, since kvantum is likely to exist. If all else fails, fusion.
     if platform.system() == "Linux":
         if os.path.isdir("/usr/lib/qt6/plugins"):
-            app.addLibraryPath("/usr/lib/qt6/plugins")
-            if "Breeze" in QStyleFactory.keys():
-                app.setStyle("Breeze")
-            elif "kvantum" in QStyleFactory.keys():
-                app.setStyle("kvantum")
+            import subprocess
+            try:
+                # This CANNOT be the best way to get the system Qt version, but it's what I came up with for now.
+                result = subprocess.run(['/usr/lib/qt6/bin/qtdiag'], stdout=subprocess.PIPE)
+                result_str = result.stdout.decode("utf-8").split("\n")[0]
+                sys_qt_ver = result_str.split(" ")[1].split(".")
+                pyside_qt_ver = version("PySide6").split(".")
+                if sys_qt_ver[0:2] == pyside_qt_ver[0:2]:
+                    app.addLibraryPath("/usr/lib/qt6/plugins")
+                if "Breeze" in QStyleFactory.keys():
+                    app.setStyle("Breeze")
+                elif "kvantum" in QStyleFactory.keys():
+                    app.setStyle("kvantum")
+            except Exception as e:
+                print(e)
 
     # Load qtbase translations, and then apps-specific translations.
     path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
