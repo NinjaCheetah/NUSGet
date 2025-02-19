@@ -2,7 +2,6 @@
 # Copyright 2024-2025 NinjaCheetah
 
 import pathlib
-from typing import List, Tuple
 
 import libWiiPy
 
@@ -112,7 +111,7 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
             title.ticket.title_key_enc = title_key_common
         # Get the WAD certificate chain, courtesy of libWiiPy.
         progress_callback.emit(" - Building certificate...")
-        title.wad.set_cert_data(libWiiPy.title.download_cert(wiiu_endpoint=wiiu_nus_enabled))
+        title.load_cert_chain(libWiiPy.title.download_cert_chain(wiiu_endpoint=wiiu_nus_enabled))
         # Use a typed WAD name if there is one, and auto generate one based on the TID and version if there isn't.
         progress_callback.emit(" - Packing WAD...")
         if wad_file_name != "" and wad_file_name is not None:

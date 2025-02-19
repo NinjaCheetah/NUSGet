@@ -2,7 +2,6 @@
 # Copyright 2024-2025 NinjaCheetah
 
 import pathlib
-from typing import List, Tuple
 
 import libTWLPy
 
