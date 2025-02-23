@@ -234,15 +234,15 @@
       "Archive Name": "Digicam-Print-Channel"
     },
     {
-      "Name": "Everyone Votes Channel",
+      "Name": "Everybody Votes Channel",
       "TID": "0001000148414AXX",
       "Versions": {
-        "USA/NTSC": [1, 2, 3],
-        "Europe/PAL": [1, 2, 3],
-        "Japan": [1, 2, 3]
+        "USA/NTSC": [1, 2, 3, 512],
+        "Europe/PAL": [1, 2, 3, 512],
+        "Japan": [1, 2, 3, 512]
       },
       "Ticket": false,
-      "Archive Name": "Everyone-Votes-Channel"
+      "Archive Name": "Everybody-Votes-Channel"
     },
     {
       "Name": "Hulu Plus",
