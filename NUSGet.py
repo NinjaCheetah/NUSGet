@@ -147,7 +147,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             title = source_index.internalPointer().metadata
             if title is not None:
                 self.ui.console_select_dropdown.setCurrentIndex(self.ui.platform_tabs.currentIndex())
-                selected_title = TitleData(title.tid, title.name, title.archive_name, title.version, title.ticket,
+                selected_title = TitleData(title.tid, title.name, title.version, title.ticket,
                                            title.region, title.category, title.danger)
                 self.load_title_data(selected_title)
 
@@ -212,23 +212,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Load the TID and version into the entry boxes.
         self.ui.tid_entry.setText(tid)
         self.ui.version_entry.setText(str(selected_title.version))
-        # Load the WAD name, assuming it exists. This shouldn't ever be able to fail as the database has a WAD name
-        # for every single title, regardless of whether it can be packed or not.
-        archive_name = selected_title.archive_name
-        if selected_title.category != "System" and selected_title.category != "IOS":
+        # Create the WAD name by deriving it from the title name (basically just replace " " with "-").
+        archive_name = selected_title.name.replace(" ", "-")
+        if selected_title.category not in ["System", "IOS"]:
             archive_name += f"-{str(bytes.fromhex(tid).decode())[-4:]}"
         archive_name += f"-v{selected_title.version}"
         if selected_title.region != "World":
             archive_name += f"-{selected_title.region.split('/')[0]}"
         if self.ui.console_select_dropdown.currentText() == "DSi":
             archive_name += ".tad"
-        elif self.ui.console_select_dropdown.currentText() == "vWii":
-            if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
-                archive_name += "-vWii"
-            archive_name += ".wad"
         else:
-            if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
-                archive_name += "-Wii"
+            if self.ui.console_select_dropdown.currentText() == "vWii":
+                if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
+                    archive_name += "-vWii"
+            else:
+                if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
+                    archive_name += "-Wii"
             archive_name += ".wad"
         self.ui.archive_file_entry.setText(archive_name)
         danger_text = selected_title.danger
@@ -449,7 +448,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         for r in regions:
                             if f"{t['TID'][:-2]}{regions[r][0]}" == tid:
                                 try:
-                                    archive_name = t["Archive Name"]
+                                    archive_name = t["Name"].replace(" ", "-")
                                     break
                                 except KeyError:
                                     archive_name = ""
@@ -457,7 +456,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     else:
                         if t["TID"] == tid:
                             try:
-                                archive_name = t["Archive Name"]
+                                archive_name = t["Name"].replace(" ", "-")
                                 break
                             except KeyError:
                                 archive_name = ""

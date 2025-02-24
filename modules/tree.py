@@ -60,10 +60,8 @@ class NUSGetTreeModel(QAbstractItemModel):
                                 tid_item.add_child(region_item)
                                 for version in version_list:
                                     danger = entry.get("Danger") if entry.get("Danger") is not None else ""
-                                    archive_name = (entry.get("Archive Name") if entry.get("Archive Name") is not None
-                                                    else entry.get("Name").replace(" ", "-"))
-                                    metadata = TitleData(entry.get("TID"), entry.get("Name"), archive_name,
-                                                         version, entry.get("Ticket"), region, key, danger)
+                                    metadata = TitleData(entry.get("TID"), entry.get("Name"), version,
+                                                         entry.get("Ticket"), region, key, danger)
                                     public_versions = entry.get("Public Versions")
                                     if public_versions is not None:
                                         try:

@@ -7,7 +7,6 @@
         "World": [2, 4, 5, 6]
       },
       "Ticket": true,
-      "Archive Name": "BC",
       "Danger": "BC is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if BC is damaged or missing."
     },
     {
@@ -17,7 +16,6 @@
         "World": [4]
       },
       "Ticket": true,
-      "Archive Name": "boot2",
       "Danger": "boot2 is a critical part of the Wii's boot process, and should not be modified. Most updated Wiis will already be running boot2v4, which is the only version of boot2 available on the NUS."
     },
     {
@@ -27,7 +25,6 @@
         "World": [4, 5, 8, 9, 10]
       },
       "Ticket": true,
-      "Archive Name": "MIOS",
       "Danger": "MIOS is required for the Wii's backwards compatibility with the GameCube. GameCube games will not run properly if MIOS is damaged or missing."
     },
     {
@@ -80,7 +77,6 @@
           "518": "4.3K"
       },
       "Ticket": true,
-      "Archive Name": "System-Menu",
       "Danger": "The System Menu is a critical part of the Wii's operation, and should not be modified without proper brick prevention in place. You should have BootMii installed as boot2 if possible, and if not, Priiloader installed before making changes to the System Menu."
     }
   ],
@@ -94,8 +90,7 @@
         "Europe/PAL": [6, 7],
         "Japan": [6, 7]
       },
-      "Ticket": true,
-      "Archive Name": "Forecast-Channel"
+      "Ticket": true
     },
     {
       "Name": "Mii Channel",
@@ -103,8 +98,7 @@
       "Versions": {
         "World": [2, 3, 4, 5, 6]
       },
-      "Ticket": true,
-      "Archive Name": "Mii-Channel"
+      "Ticket": true
     },
     {
       "Name": "News Channel",
@@ -115,8 +109,7 @@
         "Europe/PAL": [6, 7],
         "Japan": [6, 7]
       },
-      "Ticket": true,
-      "Archive Name": "News-Channel"
+      "Ticket": true
     },
     {
       "Name": "Photo Channel",
@@ -124,8 +117,7 @@
       "Versions": {
         "World": [1, 2]
       },
-      "Ticket": true,
-      "Archive Name": "Photo-Channel"
+      "Ticket": true
     },
     {
       "Name": "Photo Channel 1.1",
@@ -134,8 +126,7 @@
         "World": [1, 2, 3],
         "Korea": [3]
       },
-      "Ticket": true,
-      "Archive Name": "Photo-Channel-1.1"
+      "Ticket": true
     },
     {
       "Name": "Shopping Channel",
@@ -144,8 +135,7 @@
         "World": [3, 4, 5, 6, 7, 8, 10, 13, 16, 17, 18, 19, 20, 21],
         "Korea": [3, 4, 5, 6, 7, 8, 10, 13, 14, 16, 17, 18, 19, 20, 21]
       },
-      "Ticket": true,
-      "Archive Name": "Shopping-Channel"
+      "Ticket": true
     }
   ],
   "Hidden Channels": [
@@ -159,7 +149,6 @@
         "Korea": [1, 2, 3]
       },
       "Ticket": true,
-      "Archive Name": "EULA",
       "Danger": "\"EULA\" is a hidden channel used to display the End User License Agreement that must be accepted to connect to WiiConnect24. Online services may not work correctly if this channel is damaged or missing."
     },
     {
@@ -172,7 +161,6 @@
         "Korea": [2]
       },
       "Ticket": true,
-      "Archive Name": "Region-Select",
       "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
     },
     {
@@ -181,8 +169,7 @@
       "Versions": {
         "Japan": [0, 1, 2]
       },
-      "Ticket": true,
-      "Archive Name": "Set-Personal-Data-Channel"
+      "Ticket": true
     }
   ],
   "Downloadable Channels": [
@@ -192,8 +179,7 @@
       "Versions": {
         "USA/NTSC": [1280]
       },
-      "Ticket": false,
-      "Archive Name": "Amazon-Instant-Video"
+      "Ticket": false
     },
     {
       "Name": "BBC iPlayer Channel",
@@ -201,8 +187,7 @@
       "Versions": {
         "Europe/PAL": [768]
       },
-      "Ticket": false,
-      "Archive Name": "BBC-iPlayer-Channel"
+      "Ticket": false
     },
     {
       "Name": "Check Mii Out Channel",
@@ -212,8 +197,7 @@
         "Europe/PAL": [1, 3, 512],
         "Japan": [1, 3, 512]
       },
-      "Ticket": false,
-      "Archive Name": "Check-Mii-Out-Channel"
+      "Ticket": false
     },
     {
       "Name": "Demae Channel",
@@ -221,8 +205,7 @@
       "Versions": {
         "Japan": [512]
       },
-      "Ticket": true,
-      "Archive Name": "Demae-Channel"
+      "Ticket": true
     },
     {
       "Name": "Digicam Print Channel",
@@ -230,8 +213,7 @@
       "Versions": {
         "Japan": [1024]
       },
-      "Ticket": true,
-      "Archive Name": "Digicam-Print-Channel"
+      "Ticket": true
     },
     {
       "Name": "Everybody Votes Channel",
@@ -241,8 +223,7 @@
         "Europe/PAL": [1, 2, 3, 512],
         "Japan": [1, 2, 3, 512]
       },
-      "Ticket": false,
-      "Archive Name": "Everybody-Votes-Channel"
+      "Ticket": false
     },
     {
       "Name": "Hulu Plus",
@@ -251,8 +232,7 @@
         "USA/NTSC": [1283],
         "Japan": [1024]
       },
-      "Ticket": false,
-      "Archive Name": "Hulu-Plus"
+      "Ticket": false
     },
     {
       "Name": "Internet Channel",
@@ -262,8 +242,7 @@
         "Europe/PAL": [1, 3, 257, 512, 1024],
         "Japan": [1, 3, 257, 512, 1024]
       },
-      "Ticket": true,
-      "Archive Name": "Internet-Channel"
+      "Ticket": true
     },
     {
       "Name": "Jam With The Band Live Channel",
@@ -272,8 +251,7 @@
         "Europe/PAL": [2],
         "Japan": [2]
       },
-      "Ticket": false,
-      "Archive Name": "Jam-With-The-Band-Live-Channel"
+      "Ticket": false
     },
     {
       "Name": "Kirby TV Channel",
@@ -281,8 +259,7 @@
       "Versions": {
         "Europe/PAL": [257]
       },
-      "Ticket": false,
-      "Archive Name": "Kirby-TV-Channel"
+      "Ticket": false
     },
     {
       "Name": "Metroid Prime 3 Preview",
@@ -291,8 +268,7 @@
         "Europe/PAL": [1, 2],
         "Japan": [1, 2]
       },
-      "Ticket": false,
-      "Archive Name": "Metroid-Prime-3-Preview"
+      "Ticket": false
     },
     {
       "Name": "Netflix Channel",
@@ -301,8 +277,7 @@
         "USA/NTSC": [2049],
         "Europe/PAL": [2049]
       },
-      "Ticket": false,
-      "Archive Name": "Netflix-Channel"
+      "Ticket": false
     },
     {
       "Name": "Nintendo Channel",
@@ -312,8 +287,7 @@
         "Europe/PAL": [1792],
         "Japan": [1792]
       },
-      "Ticket": false,
-      "Archive Name": "Nintendo-Channel"
+      "Ticket": false
     },
     {
       "Name": "Photo Channel 1.0 Restore Program",
@@ -321,8 +295,7 @@
       "Versions": {
         "Japan": [0]
       },
-      "Ticket": true,
-      "Archive Name": "Photo-Channel-1.0-Restore-Program"
+      "Ticket": true
     },
     {
       "Name": "The Legend of Zelda: Skyward Sword Save Data Update Channel",
@@ -332,8 +305,7 @@
         "Europe/PAL": [0],
         "Japan": [1]
       },
-      "Ticket": false,
-      "Archive Name": "Skyward-Sword-Save-Data-Update-Channel"
+      "Ticket": false
     },
     {
       "Name": "Today and Tomorrow Channel",
@@ -342,17 +314,15 @@
         "Europe/PAL": [1],
         "Japan": [1]
       },
-      "Ticket": true,
-      "Archive Name": "Today-and-Tomorrow-Channel"
+      "Ticket": true
     },
     {
-      "Name": "TV Friend Channel / G-Guide for Wii",
+      "Name": "TV Friend Channel/G-Guide for Wii",
       "TID": "0001000148424EXX",
       "Versions": {
         "Japan": [1]
       },
-      "Ticket": true,
-      "Archive Name": "TV-Friend-Channel"
+      "Ticket": true
     },
     {
       "Name": "USB Memory Repair Program",
@@ -360,17 +330,15 @@
       "Versions": {
         "Japan": [12]
       },
-      "Ticket": false,
-      "Archive Name": "USB-Repair-Program"
+      "Ticket": false
     },
     {
-      "Name": "Wii no Ma Channel",
+      "Name": "Wii Room",
       "TID": "00010001484349XX",
       "Versions": {
-        "Japan": [0]
+        "Japan": [0, 512, 770, 1025]
       },
-      "Ticket": true,
-      "Archive Name": "Wii-no-Ma-Channel"
+      "Ticket": true
     },
     {
       "Name": "Wii Speak Channel",
@@ -381,8 +349,7 @@
         "Japan": [1, 256, 512],
         "Korea": [512]
       },
-      "Ticket": true,
-      "Archive Name": "Wii-Speak-Channel"
+      "Ticket": true
     },
     {
       "Name": "Wii U Transfer Tool",
@@ -392,8 +359,7 @@
         "Europe/PAL": [516],
         "Japan": [516]
       },
-      "Ticket": false,
-      "Archive Name": "Wii-U-Transfer-Tool"
+      "Ticket": false
     },
     {
       "Name": "YouTube",
@@ -402,8 +368,7 @@
         "USA/NTSC": [1536],
         "Japan": [768]
       },
-      "Ticket": false,
-      "Archive Name": "YouTube"
+      "Ticket": false
     }
   ],
   "IOS": [
@@ -414,7 +379,6 @@
         "World": [65280]
       },
       "Ticket": true,
-      "Archive Name": "IOS4",
       "Danger": "This IOS is a stub, and no longer offers any functionality. It cannot be used to run any code."
     },
     {
@@ -423,8 +387,7 @@
       "Versions": {
         "World": [520, 521, 778, 1034]
       },
-      "Ticket": true,
-      "Archive Name": "IOS9"
+      "Ticket": true
     },
     {
       "Name": "IOS 10",
@@ -432,8 +395,7 @@
       "Versions": {
         "World": [768]
       },
-      "Ticket": true,
-      "Archive Name": "IOS10"
+      "Ticket": true
     },
     {
       "Name": "IOS 11",
@@ -442,7 +404,6 @@
         "World": [10, 256]
       },
       "Ticket": true,
-      "Archive Name": "IOS11",
       "Danger": "Version 256 of IOS 11 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.0-2.1, DO NOT install version 256, as the System Menu relies on IOS 11."
     },
     {
@@ -451,8 +412,7 @@
       "Versions": {
         "World": [6, 11, 12, 269, 525, 526]
       },
-      "Ticket": true,
-      "Archive Name": "IOS12"
+      "Ticket": true
     },
     {
       "Name": "IOS 13",
@@ -460,8 +420,7 @@
       "Versions": {
         "World": [10, 15, 16, 273, 1031, 1032]
       },
-      "Ticket": true,
-      "Archive Name": "IOS13"
+      "Ticket": true
     },
     {
       "Name": "IOS 14",
@@ -469,8 +428,7 @@
       "Versions": {
         "World": [262, 263, 520, 1031, 1032]
       },
-      "Ticket": true,
-      "Archive Name": "IOS14"
+      "Ticket": true
     },
     {
       "Name": "IOS 15",
@@ -478,8 +436,7 @@
       "Versions": {
         "World": [257, 258, 259, 260, 265, 266, 523, 1031, 1032]
       },
-      "Ticket": true,
-      "Archive Name": "IOS15"
+      "Ticket": true
     },
     {
       "Name": "IOS 16",
@@ -488,7 +445,6 @@
         "World": [512]
       },
       "Ticket": true,
-      "Archive Name": "IOS16",
       "Danger": "This IOS is a stub, and no longer offers any functionality. It cannot be used to run any code."
     },
     {
@@ -497,8 +453,7 @@
       "Versions": {
         "World": [512, 517, 518, 775, 1031, 1032]
       },
-      "Ticket": true,
-      "Archive Name": "IOS17"
+      "Ticket": true
     },
     {
       "Name": "IOS 20",
@@ -507,7 +462,6 @@
         "World": [12, 256]
       },
       "Ticket": true,
-      "Archive Name": "IOS20",
       "Danger": "Version 256 of IOS 20 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 2.2, DO NOT install version 256, as the System Menu relies on IOS 20."
     },
     {
@@ -516,8 +470,7 @@
       "Versions": {
         "World": [514, 515, 516, 517, 522, 525, 782, 1038, 1039]
       },
-      "Ticket": true,
-      "Archive Name": "IOS21"
+      "Ticket": true
     },
     {
       "Name": "IOS 22",
@@ -525,8 +478,7 @@
       "Versions": {
         "World": [777, 780, 1037, 1293, 1294]
       },
-      "Ticket": true,
-      "Archive Name": "IOS22"
+      "Ticket": true
     },
     {
       "Name": "IOS 28",
@@ -534,8 +486,7 @@
       "Versions": {
         "World": [1292, 1293, 1550, 1806, 1807]
       },
-      "Ticket": true,
-      "Archive Name": "IOS28"
+      "Ticket": true
     },
     {
       "Name": "IOS 30",
@@ -544,7 +495,6 @@
         "World": [1037, 1039, 1040, 2576, 2816]
       },
       "Ticket": true,
-      "Archive Name": "IOS30",
       "Danger": "Version 2816 of IOS 30 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.0-3.3, DO NOT install version 2816, as the System Menu relies on IOS 30."
     },
     {
@@ -553,8 +503,7 @@
       "Versions": {
         "World": [1037, 1039, 1040, 2576, 3088, 3092, 3349, 3607, 3608]
       },
-      "Ticket": true,
-      "Archive Name": "IOS31"
+      "Ticket": true
     },
     {
       "Name": "IOS 33",
@@ -562,8 +511,7 @@
       "Versions": {
         "World": [1040, 2832, 2834, 3091, 3607, 3608]
       },
-      "Ticket": true,
-      "Archive Name": "IOS33"
+      "Ticket": true
     },
     {
       "Name": "IOS 34",
@@ -571,8 +519,7 @@
       "Versions": {
         "World": [1039, 3087, 3091, 3348, 3607, 3608]
       },
-      "Ticket": true,
-      "Archive Name": "IOS34"
+      "Ticket": true
     },
     {
       "Name": "IOS 35",
@@ -580,8 +527,7 @@
       "Versions": {
         "World": [1040, 3088, 3092, 3349, 3607, 3608]
       },
-      "Ticket": true,
-      "Archive Name": "IOS35"
+      "Ticket": true
     },
     {
       "Name": "IOS 36",
@@ -589,8 +535,7 @@
       "Versions": {
         "World": [1042, 3090, 3094, 3351, 3607, 3608]
       },
-      "Ticket": true,
-      "Archive Name": "IOS36"
+      "Ticket": true
     },
     {
       "Name": "IOS 37",
@@ -598,8 +543,7 @@
       "Versions": {
         "World": [2070, 3609, 3612, 3869, 5662, 5663]
       },
-      "Ticket": true,
-      "Archive Name": "IOS37"
+      "Ticket": true
     },
     {
       "Name": "IOS 38",
@@ -607,8 +551,7 @@
       "Versions": {
         "World": [3610, 3867, 4123, 4124]
       },
-      "Ticket": true,
-      "Archive Name": "IOS38"
+      "Ticket": true
     },
     {
       "Name": "IOS 40",
@@ -617,7 +560,6 @@
         "World": [3072]
       },
       "Ticket": true,
-      "Archive Name": "IOS40",
       "Danger": "Version 3072 of IOS 40 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, DO NOT install version 3072, as the System Menu relies on IOS 40."
     },
     {
@@ -626,8 +568,7 @@
       "Versions": {
         "World": [2835, 3091, 3348, 3606, 3607]
       },
-      "Ticket": true,
-      "Archive Name": "IOS41"
+      "Ticket": true
     },
     {
       "Name": "IOS 43",
@@ -635,8 +576,7 @@
       "Versions": {
         "World": [2835, 3091, 3348, 3606, 3607]
       },
-      "Ticket": true,
-      "Archive Name": "IOS43"
+      "Ticket": true
     },
     {
       "Name": "IOS 45",
@@ -644,8 +584,7 @@
       "Versions": {
         "World": [2835, 3091, 3348, 3606, 3607]
       },
-      "Ticket": true,
-      "Archive Name": "IOS45"
+      "Ticket": true
     },
     {
       "Name": "IOS 46",
@@ -653,8 +592,7 @@
       "Versions": {
         "World": [2837, 3093, 3350, 3606, 3607]
       },
-      "Ticket": true,
-      "Archive Name": "IOS46"
+      "Ticket": true
     },
     {
       "Name": "IOS 48",
@@ -662,8 +600,7 @@
       "Versions": {
         "World": [4123, 4124]
       },
-      "Ticket": true,
-      "Archive Name": "IOS48"
+      "Ticket": true
     },
     {
       "Name": "IOS 50",
@@ -672,7 +609,6 @@
         "World": [4889, 5120]
       },
       "Ticket": true,
-      "Archive Name": "IOS50",
       "Danger": "Version 5120 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.3K, DO NOT install version 5120, as the System Menu relies on IOS 50."
     },
     {
@@ -682,7 +618,6 @@
         "World": [4633, 4864]
       },
       "Ticket": true,
-      "Archive Name": "IOS51",
       "Danger": "Version 4864 of IOS 51 is a stub, and no longer offers any functionality. It cannot be used to run any code."
     },
     {
@@ -692,7 +627,6 @@
         "World": [5661, 5888]
       },
       "Ticket": true,
-      "Archive Name": "IOS52",
       "Danger": "Version 5888 of IOS 50 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 3.5, DO NOT install version 5888, as the System Menu relies on IOS 50."
     },
     {
@@ -701,8 +635,7 @@
       "Versions": {
         "World": [4113, 5149, 5406, 5662, 5663]
       },
-      "Ticket": true,
-      "Archive Name": "IOS53"
+      "Ticket": true
     },
     {
       "Name": "IOS 55",
@@ -710,8 +643,7 @@
       "Versions": {
         "World": [4633, 5149, 5406, 5662, 5663]
       },
-      "Ticket": true,
-      "Archive Name": "IOS55"
+      "Ticket": true
     },
     {
       "Name": "IOS 56",
@@ -719,8 +651,7 @@
       "Versions": {
         "World": [4890, 5405, 5661, 5662]
       },
-      "Ticket": true,
-      "Archive Name": "IOS56"
+      "Ticket": true
     },
     {
       "Name": "IOS 57",
@@ -728,8 +659,7 @@
       "Versions": {
         "World": [5404, 5661, 5918, 5919]
       },
-      "Ticket": true,
-      "Archive Name": "IOS57"
+      "Ticket": true
     },
     {
       "Name": "IOS 58",
@@ -737,8 +667,7 @@
       "Versions": {
         "World": [6175, 6176]
       },
-      "Ticket": true,
-      "Archive Name": "IOS58"
+      "Ticket": true
     },
     {
       "Name": "IOS 59",
@@ -746,8 +675,7 @@
       "Versions": {
         "World": [8737, 9249]
       },
-      "Ticket": true,
-      "Archive Name": "IOS59"
+      "Ticket": true
     },
     {
       "Name": "IOS 60",
@@ -756,7 +684,6 @@
         "World": [6174, 6400]
       },
       "Ticket": true,
-      "Archive Name": "IOS60",
       "Danger": "Version 6400 of IOS 60 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.0 or 4.1, DO NOT install version 6400, as the System Menu relies on IOS 60."
     },
     {
@@ -765,8 +692,7 @@
       "Versions": {
         "World": [4890, 5405, 5661, 5662]
       },
-      "Ticket": true,
-      "Archive Name": "IOS61"
+      "Ticket": true
     },
     {
       "Name": "IOS 62",
@@ -774,8 +700,7 @@
       "Versions": {
         "World": [6430]
       },
-      "Ticket": true,
-      "Archive Name": "IOS62"
+      "Ticket": true
     },
     {
       "Name": "IOS 70",
@@ -784,7 +709,6 @@
         "World": [6687,6912]
       },
       "Ticket": true,
-      "Archive Name": "IOS70",
       "Danger": "Version 6912 of IOS 70 is a stub, and no longer offers any functionality. It cannot be used to run any code. If you're using System Menu 4.2, DO NOT install version 6912, as the System Menu relies on IOS 70."
     },
     {
@@ -794,7 +718,6 @@
         "World": [6943, 6944]
       },
       "Ticket": true,
-      "Archive Name": "IOS80",
       "Danger": "IOS 80 is the IOS that the final System Menu, 4.3, relies on, and is required to load the System Menu. Do not modify or remove this IOS unless you have BootMii installed as boot2 to recover from a brick."
     },
     {
@@ -804,7 +727,6 @@
         "World": [65280]
       },
       "Ticket": true,
-      "Archive Name": "IOS222",
       "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
     },
     {
@@ -814,7 +736,6 @@
         "World": [65280]
       },
       "Ticket": true,
-      "Archive Name": "IOS223",
       "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
     },
     {
@@ -824,7 +745,6 @@
         "World": [65280]
       },
       "Ticket": true,
-      "Archive Name": "IOS249",
       "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
     },
     {
@@ -834,7 +754,6 @@
         "World": [65280]
       },
       "Ticket": true,
-      "Archive Name": "IOS250",
       "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
     },
     {
@@ -844,7 +763,6 @@
         "World": [2, 3, 260, 65280]
       },
       "Ticket": true,
-      "Archive Name": "IOS254",
       "Danger": "This IOS is a stub, and offers no functionality. It cannot be used to run any code."
     }
   ],

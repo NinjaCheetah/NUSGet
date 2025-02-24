@@ -13,7 +13,6 @@ class TitleData:
     # Class to store all data for a Title.
     tid: str
     name: str
-    archive_name: str
     version: str
     ticket: bool
     region: str
