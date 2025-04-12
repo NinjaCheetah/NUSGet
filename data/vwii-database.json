@@ -88,7 +88,7 @@
         "Japan": [2]
       },
       "Ticket": true,
-      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset."
+      "Danger": "\"Region Select\" is a hidden channel used by WiiConnect24 services such as Everybody Votes Channel, for the user regions."
     },
     {
       "Name": "Wii System Transfer (WagonCompat)",
