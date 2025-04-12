@@ -161,7 +161,7 @@
         "Korea": [2]
       },
       "Ticket": true,
-      "Danger": "\"Region Select\" is a hidden channel used during the Wii's initial setup. If this title is damaged or missing, you will not be able to set up your Wii again after a factory reset. This title will need to be reinstalled to fix your console."
+      "Danger": "\"Region Select\" is a hidden channel used by WiiConnect24 services such as Everybody Votes Channel, for the user regions."
     },
     {
       "Name": "Set Personal Data Channel",
