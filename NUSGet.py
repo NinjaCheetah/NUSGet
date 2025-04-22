@@ -18,10 +18,7 @@
 # nuitka-project: --include-data-dir={MAIN_DIRECTORY}/data=data
 # nuitka-project: --include-data-dir={MAIN_DIRECTORY}/resources=resources
 
-import os
 import sys
-import json
-import pathlib
 import platform
 import webbrowser
 from importlib.metadata import version
@@ -84,6 +81,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.pack_archive_chkbox.toggled.connect(
             lambda: self.ui.archive_file_entry.setEnabled(self.ui.pack_archive_chkbox.isChecked()))
+        try:
+            self.ui.auto_update_chkbox.setChecked(config_data["auto_update"])
+        except KeyError:
+            update_setting(config_data, "auto_update", self.ui.auto_update_chkbox.isChecked())
+        self.ui.auto_update_chkbox.toggled.connect(
+            lambda: update_setting(config_data, "auto_update", self.ui.auto_update_chkbox.isChecked()))
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
@@ -133,11 +136,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         connect_label_to_checkbox(self.ui.use_wiiu_nus_chkbox_lbl, self.ui.use_wiiu_nus_chkbox)
         connect_label_to_checkbox(self.ui.patch_ios_chkbox_lbl, self.ui.patch_ios_chkbox)
         connect_label_to_checkbox(self.ui.pack_vwii_mode_chkbox_lbl, self.ui.pack_vwii_mode_chkbox)
-        # Do a quick check to see if there's a newer release available, and inform the user if there is.
-        worker = Worker(check_nusget_updates, app, nusget_version)
-        worker.signals.result.connect(self.prompt_for_update)
-        worker.signals.progress.connect(self.update_log_text)
-        self.threadpool.start(worker)
+        connect_label_to_checkbox(self.ui.auto_update_chkbox_lbl, self.ui.auto_update_chkbox)
+        try:
+            auto_update = config_data["auto_update"]
+        except KeyError:
+            auto_update = True
+            config_data["auto_update"] = True
+            save_config(config_data)
+        if auto_update:
+            # Do a quick check to see if there's a newer release available if auto-updates are enabled.
+            worker = Worker(check_nusget_updates, app, nusget_version)
+            worker.signals.result.connect(self.prompt_for_update)
+            worker.signals.progress.connect(self.update_log_text)
+            self.threadpool.start(worker)
 
     def title_double_clicked(self, index):
         if self.ui.download_btn.isEnabled() is True:
@@ -496,6 +507,15 @@ if __name__ == "__main__":
     # this works for now, and avoids using a directory next to the binary (mostly an issue on macOS/Linux).
     if not out_folder.is_dir():
         out_folder.mkdir()
+
+    # Load the config path and then the configuration data, if it exists. If not, then we should initialize it and write
+    # it out.
+    config_file = get_config_file()
+    if config_file.exists():
+        config_data = json.load(open(config_file))
+    else:
+        config_data = {"auto_update": True}
+        save_config(config_data)
 
     # Load the system plugins directory on Linux for system styles, if it exists. Try using Breeze if available, because
     # it looks nice, but fallback on kvantum if it isn't, since kvantum is likely to exist. If all else fails, fusion.

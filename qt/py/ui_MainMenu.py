@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainMenu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -372,6 +372,29 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addLayout(self.pack_vwii_mode_row)
 
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setFont(font)
+
+        self.verticalLayout_8.addWidget(self.label_2)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.auto_update_chkbox = QCheckBox(self.centralwidget)
+        self.auto_update_chkbox.setObjectName(u"auto_update_chkbox")
+        sizePolicy1.setHeightForWidth(self.auto_update_chkbox.sizePolicy().hasHeightForWidth())
+        self.auto_update_chkbox.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_2.addWidget(self.auto_update_chkbox)
+
+        self.auto_update_chkbox_lbl = QLabel(self.centralwidget)
+        self.auto_update_chkbox_lbl.setObjectName(u"auto_update_chkbox_lbl")
+
+        self.horizontalLayout_2.addWidget(self.auto_update_chkbox_lbl)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_2)
+
         self.verticalSpacer = QSpacerItem(20, 50, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.MinimumExpanding)
 
         self.verticalLayout_8.addItem(self.verticalSpacer)
@@ -435,6 +458,9 @@ class Ui_MainWindow(object):
         self.patch_ios_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Apply patches to IOS (Applies to WADs only)", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"vWii Title Settings", None))
         self.pack_vwii_mode_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Re-encrypt title using the Wii Common Key", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"App Settings", None))
+        self.auto_update_chkbox.setText("")
+        self.auto_update_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Check for updates on startup", None))
         self.log_text_browser.setMarkdown("")
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"

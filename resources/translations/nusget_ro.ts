@@ -26,7 +26,7 @@ Titlurile marcate cu bifă sunt gratuite și au un tichet disponibil și pot fi 
 Titlurile vor fi descărcate într-un folder numit „NUSGet” în fișierul dvs. de download.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="98"/>
+        <location filename="../../NUSGet.py" line="101"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -49,162 +49,162 @@ Titlurile marcate cu bifă sunt gratuite și au un tichet disponibil și pot fi 
 Titlurile vor fi descărcate într-un folder numit „NUSGet Downloads” în fișierul dvs. de download.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="192"/>
+        <location filename="../../NUSGet.py" line="203"/>
         <source>NUSGet Update Available</source>
         <translation>Actualizare NUSGet disponibilă</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="193"/>
+        <location filename="../../NUSGet.py" line="204"/>
         <source>There&apos;s a newer version of NUSGet available!</source>
         <translation>O nouă versiune NUSGet este disponibilă!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="286"/>
+        <location filename="../../NUSGet.py" line="296"/>
         <source>No Output Selected</source>
         <translation>Nu s-a selectat un output</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="287"/>
+        <location filename="../../NUSGet.py" line="297"/>
         <source>You have not selected any format to output the data in!</source>
         <translation>Nu ați selectat niciun format de ieșire!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="289"/>
+        <location filename="../../NUSGet.py" line="299"/>
         <source>Please select at least one option for how you would like the download to be saved.</source>
         <translation>Vă rugăm să selectați cel puțin o opțiune pentru modul în care doriți să salvați datele descărcate.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="318"/>
+        <location filename="../../NUSGet.py" line="328"/>
         <source>Invalid Title ID</source>
         <translation>Title ID invalid</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="319"/>
+        <location filename="../../NUSGet.py" line="329"/>
         <source>The Title ID you have entered is not in a valid format!</source>
         <translation>Title ID pe care l-ați introdus este invalid!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="321"/>
+        <location filename="../../NUSGet.py" line="331"/>
         <source>Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly formatted Title ID, or select one from the menu on the left.</source>
         <translation>Title ID-urile trebuie să conțină exact 16 cifre și/sau litere. Vă rugăm introduceți un Title ID corect, sau selectați unul din meniul din stânga.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="323"/>
+        <location filename="../../NUSGet.py" line="333"/>
         <source>Title ID/Version Not Found</source>
         <translation>Title ID/Versiunea nu a fost găsită</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="324"/>
+        <location filename="../../NUSGet.py" line="334"/>
         <source>No title with the provided Title ID or version could be found!</source>
         <translation>Niciun titlu care să corespundă cu Title ID-ul sau cu versiunea introdusă nu a fost găsit!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="326"/>
+        <location filename="../../NUSGet.py" line="336"/>
         <source>Please make sure that you have entered a valid Title ID, or selected one from the title database, and that the provided version exists for the title you are attempting to download.</source>
         <translation>Vă rugăm să vă asigurați că ați introdus un Title ID valid sau ați selectat unul din baza de date cu titluri, și că versiunea introdusă există pentru titlul pe care încercați să îl descărcați.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="328"/>
+        <location filename="../../NUSGet.py" line="338"/>
         <source>Content Decryption Failed</source>
         <translation>Decriptarea conținutului a eșuat</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="329"/>
+        <location filename="../../NUSGet.py" line="339"/>
         <source>Content decryption was not successful! Decrypted contents could not be created.</source>
         <translation>Decriptarea conținutului nu a reușit. Nu s-a putut crea conținutul decriptat.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="332"/>
+        <location filename="../../NUSGet.py" line="342"/>
         <source>Your TMD or Ticket may be damaged, or they may not correspond with the content being decrypted. If you have checked &quot;Use local files, if they exist&quot;, try disabling that option before trying the download again to fix potential issues with local data.</source>
         <translation>TMD-ul sau Ticket-ul dvs. sunt corupte, sau nu corespund cu conținutul de decriptat. Dacă ați bifat „Folosiți fișiere locale, dacă există”, încercați să debifați această opțiune înainte de a descărca din nou pentru a rezolva potențiale probleme cu datele existente  local.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="335"/>
+        <location filename="../../NUSGet.py" line="345"/>
         <source>Ticket Not Available</source>
         <translation>Ticket-ul nu este valabil</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="336"/>
+        <location filename="../../NUSGet.py" line="346"/>
         <source>No Ticket is Available for the Requested Title!</source>
         <translation>Niciun Ticket nu este valabil pentru titlul dorit!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="339"/>
+        <location filename="../../NUSGet.py" line="349"/>
         <source>A ticket could not be downloaded for the requested title, but you have selected &quot;Pack installable archive&quot; or &quot;Create decrypted contents&quot;. These options are not available for titles without a ticket. Only encrypted contents have been saved.</source>
         <translation>Nu se poate descărca un tichet pentru titlul cerut, dar ați selectat „Împachetați arhiva instalabilă” sau „Creați conținut decriptat”. Aceste opțiuni nu sunt valabile pentru titluri fărătichet. Doar conținuturile criptate au fost salvate.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="341"/>
+        <location filename="../../NUSGet.py" line="351"/>
         <source>Unknown Error</source>
         <translation>Eroare necunoscută</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="342"/>
+        <location filename="../../NUSGet.py" line="352"/>
         <source>An Unknown Error has Occurred!</source>
         <translation>S-a produs o eroare necunoscută!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="344"/>
+        <location filename="../../NUSGet.py" line="354"/>
         <source>Please try again. If this issue persists, please open a new issue on GitHub detailing what you were trying to do when this error occurred.</source>
         <translation>Vă rugăm încercați din nou. Dacă problema persistă, vă rugăm să deschideți un issue pe GitHub în care să explicați ce ați încercat să faceți atunci când această eroare a apărut.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="363"/>
+        <location filename="../../NUSGet.py" line="373"/>
         <source>Script Issues Occurred</source>
         <translation>Au apărut probleme cu scriptul</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="364"/>
+        <location filename="../../NUSGet.py" line="374"/>
         <source>Some issues occurred while running the download script.</source>
         <translation>Au apărut câteva probleme la rularea scriptului descărcat.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="366"/>
+        <location filename="../../NUSGet.py" line="376"/>
         <source>Check the log for more details about what issues were encountered.</source>
         <translation>Verificați logurile pentru mai multe detalii despre problemele întâmpinate.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="373"/>
+        <location filename="../../NUSGet.py" line="383"/>
         <source>The following titles could not be downloaded due to an error. Please ensure that the Title ID and version listed in the script are valid.</source>
         <translation>Următoarele titluri nu au putut fi descărcate din cauza unei erori. Vă rugăm să vă asigurați că Title ID și versiunea listate în script sunt valide.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="383"/>
+        <location filename="../../NUSGet.py" line="393"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
         <translation>Ați activat „Creare conținut decriptat” sau „Împachetați arhiva instalabilă”, dar următoarele titluri în script nu au tichete valabile.În acest caz, conținuturile encriptate au fost oricum descărcate.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="402"/>
+        <location filename="../../NUSGet.py" line="412"/>
         <source>Script Download Failed</source>
         <translation>Descărcarea scriptului a eșuat</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="403"/>
+        <location filename="../../NUSGet.py" line="413"/>
         <source>Open NUS Script</source>
         <translation>Deschideți script NUS</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="404"/>
+        <location filename="../../NUSGet.py" line="414"/>
         <source>NUS Scripts (*.nus *.json)</source>
         <translation>Scripturi NUS (*.nus *.json)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="414"/>
+        <location filename="../../NUSGet.py" line="424"/>
         <source>An error occurred while parsing the script file!</source>
         <translation>A apărut o eroare la parssarea acestui fișier script!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="415"/>
+        <location filename="../../NUSGet.py" line="425"/>
         <source>Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again.</source>
         <translation>S-a produs o eroare la linia {e.lineno}, coloana {e.colno}. Vă rugăm verificați scriptul și încercați din nou.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="424"/>
+        <location filename="../../NUSGet.py" line="434"/>
         <source>An error occurred while parsing Title IDs!</source>
         <translation>A apărut o eroare la procesarea Title ID-urilor!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="425"/>
+        <location filename="../../NUSGet.py" line="435"/>
         <source>The title at index {script_data.index(title)} does not have a Title ID!</source>
         <translation>Titlul la poziția {script_data.index(title)} nu are un Title ID!</translation>
     </message>
@@ -335,7 +335,17 @@ Titlurile vor fi descărcate într-un folder numit „NUSGet Downloads” în fi
         <translation>Re-encriptați titlul folosind cheia comună Wii</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="627"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="587"/>
+        <source>App Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="609"/>
+        <source>Check for updates on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="663"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -347,7 +357,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../../modules/core.py" line="52"/>
+        <location filename="../../modules/core.py" line="54"/>
         <source>
 
 Could not check for updates.</source>
@@ -356,7 +366,7 @@ Could not check for updates.</source>
 Nu s-a putut verifica dacă există actualizări.</translation>
     </message>
     <message>
-        <location filename="../../modules/core.py" line="60"/>
+        <location filename="../../modules/core.py" line="62"/>
         <source>
 
 There&apos;s a newer version of NUSGet available!</source>
@@ -365,7 +375,7 @@ There&apos;s a newer version of NUSGet available!</source>
 O nouă versiune de NUSGet este valabilă!</translation>
     </message>
     <message>
-        <location filename="../../modules/core.py" line="62"/>
+        <location filename="../../modules/core.py" line="64"/>
         <source>
 
 You&apos;re running the latest release of NUSGet.</source>
