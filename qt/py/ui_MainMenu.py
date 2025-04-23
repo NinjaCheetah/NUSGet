@@ -186,6 +186,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.pack_archive_chkbox.sizePolicy().hasHeightForWidth())
         self.pack_archive_chkbox.setSizePolicy(sizePolicy1)
         self.pack_archive_chkbox.setText(u"")
+        self.pack_archive_chkbox.setChecked(True)
 
         self.pack_archive_row.addWidget(self.pack_archive_chkbox)
 
@@ -205,7 +206,7 @@ class Ui_MainWindow(object):
 
         self.archive_file_entry = QLineEdit(self.centralwidget)
         self.archive_file_entry.setObjectName(u"archive_file_entry")
-        self.archive_file_entry.setEnabled(False)
+        self.archive_file_entry.setEnabled(True)
 
         self.verticalLayout_7.addWidget(self.archive_file_entry)
 
@@ -378,22 +379,56 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.label_2)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.auto_update_row = QHBoxLayout()
+        self.auto_update_row.setObjectName(u"auto_update_row")
         self.auto_update_chkbox = QCheckBox(self.centralwidget)
         self.auto_update_chkbox.setObjectName(u"auto_update_chkbox")
         sizePolicy1.setHeightForWidth(self.auto_update_chkbox.sizePolicy().hasHeightForWidth())
         self.auto_update_chkbox.setSizePolicy(sizePolicy1)
 
-        self.horizontalLayout_2.addWidget(self.auto_update_chkbox)
+        self.auto_update_row.addWidget(self.auto_update_chkbox)
 
         self.auto_update_chkbox_lbl = QLabel(self.centralwidget)
         self.auto_update_chkbox_lbl.setObjectName(u"auto_update_chkbox_lbl")
 
-        self.horizontalLayout_2.addWidget(self.auto_update_chkbox_lbl)
+        self.auto_update_row.addWidget(self.auto_update_chkbox_lbl)
 
 
-        self.verticalLayout_8.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_8.addLayout(self.auto_update_row)
+
+        self.custom_out_dir_row = QHBoxLayout()
+        self.custom_out_dir_row.setObjectName(u"custom_out_dir_row")
+        self.custom_out_dir_chkbox = QCheckBox(self.centralwidget)
+        self.custom_out_dir_chkbox.setObjectName(u"custom_out_dir_chkbox")
+        sizePolicy1.setHeightForWidth(self.custom_out_dir_chkbox.sizePolicy().hasHeightForWidth())
+        self.custom_out_dir_chkbox.setSizePolicy(sizePolicy1)
+
+        self.custom_out_dir_row.addWidget(self.custom_out_dir_chkbox)
+
+        self.custom_out_dir_chkbox_lbl = QLabel(self.centralwidget)
+        self.custom_out_dir_chkbox_lbl.setObjectName(u"custom_out_dir_chkbox_lbl")
+
+        self.custom_out_dir_row.addWidget(self.custom_out_dir_chkbox_lbl)
+
+
+        self.verticalLayout_8.addLayout(self.custom_out_dir_row)
+
+        self.custom_out_dir_entry_row = QHBoxLayout()
+        self.custom_out_dir_entry_row.setObjectName(u"custom_out_dir_entry_row")
+        self.custom_out_dir_entry = QLineEdit(self.centralwidget)
+        self.custom_out_dir_entry.setObjectName(u"custom_out_dir_entry")
+        self.custom_out_dir_entry.setEnabled(False)
+
+        self.custom_out_dir_entry_row.addWidget(self.custom_out_dir_entry)
+
+        self.custom_out_dir_btn = QPushButton(self.centralwidget)
+        self.custom_out_dir_btn.setObjectName(u"custom_out_dir_btn")
+        self.custom_out_dir_btn.setEnabled(False)
+
+        self.custom_out_dir_entry_row.addWidget(self.custom_out_dir_btn)
+
+
+        self.verticalLayout_8.addLayout(self.custom_out_dir_entry_row)
 
         self.verticalSpacer = QSpacerItem(20, 50, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.MinimumExpanding)
 
@@ -421,7 +456,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1010, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1010, 21))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -461,6 +496,10 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"App Settings", None))
         self.auto_update_chkbox.setText("")
         self.auto_update_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Check for updates on startup", None))
+        self.custom_out_dir_chkbox.setText("")
+        self.custom_out_dir_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use a custom download directory", None))
+        self.custom_out_dir_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Output Path", None))
+        self.custom_out_dir_btn.setText(QCoreApplication.translate("MainWindow", u"Open...", None))
         self.log_text_browser.setMarkdown("")
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -468,7 +507,7 @@ class Ui_MainWindow(object):
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
     # retranslateUi
 

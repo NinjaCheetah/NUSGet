@@ -79,15 +79,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
+        self.ui.custom_out_dir_btn.clicked.connect(self.choose_output_dir)
         self.ui.pack_archive_chkbox.toggled.connect(
-            lambda: self.ui.archive_file_entry.setEnabled(self.ui.pack_archive_chkbox.isChecked()))
+            lambda: connect_is_enabled_to_checkbox([self.ui.archive_file_entry], self.ui.pack_archive_chkbox))
+        self.ui.custom_out_dir_chkbox.toggled.connect(
+            lambda: connect_is_enabled_to_checkbox([self.ui.custom_out_dir_entry, self.ui.custom_out_dir_btn],
+                                                   self.ui.custom_out_dir_chkbox))
+        self.ui.custom_out_dir_chkbox.toggled.connect(
+            lambda: update_setting(config_data, "use_out_path", self.ui.custom_out_dir_chkbox.isChecked()))
+        # Load auto-update settings, and initialize them if they don't exist.
         try:
             self.ui.auto_update_chkbox.setChecked(config_data["auto_update"])
         except KeyError:
             update_setting(config_data, "auto_update", self.ui.auto_update_chkbox.isChecked())
         self.ui.auto_update_chkbox.toggled.connect(
             lambda: update_setting(config_data, "auto_update", self.ui.auto_update_chkbox.isChecked()))
+        # Load custom output directory if one is saved and it is valid. Only enable the checkbox to actually use the
+        # custom dir if use_out_path is set to true.
+        try:
+            out_dir = pathlib.Path(config_data["out_path"])
+            if out_dir.exists() and out_dir.is_dir():
+                self.ui.custom_out_dir_entry.setText(str(out_dir))
+                if config_data["use_out_path"]:
+                    self.ui.custom_out_dir_chkbox.setChecked(True)
+        except KeyError:
+            pass
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
+        self.ui.custom_out_dir_entry.textChanged.connect(self.custom_output_dir_changed)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
         libwiipy_version = "v" + version("libWiiPy")
         libtwlpy_version = "v" + version("libTWLPy")
@@ -96,7 +114,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                               "Select a title from the list on the left, or enter a Title ID to begin.\n\n"
                               "Titles marked with a checkmark are free and have a ticket available, and can"
                               " be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
-                              "a ticket, and only their encrypted contents can be saved.\n\nTitles will be "
+                              "a ticket, and only their encrypted contents can be saved.\n\nBy default, titles will be "
                               "downloaded to a folder named \"NUSGet Downloads\" inside your downloads folder.")
                        .format(nusget_version=nusget_version, libwiipy_version=libwiipy_version,
                                libtwlpy_version=libtwlpy_version))
@@ -137,6 +155,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         connect_label_to_checkbox(self.ui.patch_ios_chkbox_lbl, self.ui.patch_ios_chkbox)
         connect_label_to_checkbox(self.ui.pack_vwii_mode_chkbox_lbl, self.ui.pack_vwii_mode_chkbox)
         connect_label_to_checkbox(self.ui.auto_update_chkbox_lbl, self.ui.auto_update_chkbox)
+        connect_label_to_checkbox(self.ui.custom_out_dir_chkbox_lbl, self.ui.custom_out_dir_chkbox)
         try:
             auto_update = config_data["auto_update"]
         except KeyError:
@@ -266,6 +285,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.pack_vwii_mode_chkbox.setEnabled(False)
         self.ui.archive_file_entry.setEnabled(False)
         self.ui.console_select_dropdown.setEnabled(False)
+        self.ui.auto_update_chkbox.setEnabled(False)
+        self.ui.custom_out_dir_chkbox.setEnabled(False)
+        self.ui.custom_out_dir_entry.setEnabled(False)
+        self.ui.custom_out_dir_btn.setEnabled(False)
         self.log_text = ""
         self.ui.log_text_browser.setText(self.log_text)
 
@@ -284,6 +307,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.console_select_dropdown.setEnabled(True)
         if self.ui.pack_archive_chkbox.isChecked() is True:
             self.ui.archive_file_entry.setEnabled(True)
+        self.ui.auto_update_chkbox.setEnabled(True)
+        self.ui.custom_out_dir_chkbox.setEnabled(True)
+        if self.ui.custom_out_dir_chkbox.isChecked() is True:
+            self.ui.custom_out_dir_entry.setEnabled(True)
+            self.ui.custom_out_dir_btn.setEnabled(True)
 
     def download_btn_pressed(self):
         # Throw an error and make a message box appear if you haven't selected any options to output the title.
@@ -300,14 +328,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.exec()
             return
         self.lock_ui()
+        # Check for a custom output directory, and ensure that it's valid. If it is, then use that.
+        if self.ui.custom_out_dir_chkbox.isChecked() and self.ui.custom_out_dir_entry.text() != "":
+            out_path = pathlib.Path(self.ui.custom_out_dir_entry.text())
+            if not out_path.exists() or not out_path.is_dir():
+                msg_box = QMessageBox()
+                msg_box.setIcon(QMessageBox.Icon.Critical)
+                msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+                msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+                msg_box.setWindowTitle(app.translate("MainWindow", "Invalid Download Directory"))
+                msg_box.setText(app.translate("MainWindow", "The specified download directory does not exist!"))
+                msg_box.setInformativeText(app.translate("MainWindow",
+                                                         "Please make sure the specified download directory exists,"
+                                                         " and that you have permission to access it."))
+                msg_box.exec()
+                return
+        else:
+            out_path = out_folder
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
-            worker = Worker(run_nus_download_dsi, out_folder, self.ui.tid_entry.text(),
+            worker = Worker(run_nus_download_dsi, out_path, self.ui.tid_entry.text(),
                             self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
                             self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
                             self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
         else:
-            worker = Worker(run_nus_download_wii, out_folder, self.ui.tid_entry.text(),
+            worker = Worker(run_nus_download_wii, out_path, self.ui.tid_entry.text(),
                             self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
                             self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
                             self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
@@ -482,6 +527,40 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         worker.signals.progress.connect(self.update_log_text)
         self.threadpool.start(worker)
 
+    def choose_output_dir(self):
+        # Use this handy convenience method to prompt the user to select a directory. Then we just need to validate
+        # that the directory does indeed exist and is a directory, and we can save it as the output directory.
+        selected_dir = QFileDialog.getExistingDirectory(self, app.translate("MainWindow", "Open Directory"),
+                    "", QFileDialog.ShowDirsOnly | QFileDialog.DontResolveSymlinks)
+        out_path = pathlib.Path(selected_dir)
+        if not out_path.exists() or not out_path.is_dir():
+            msg_box = QMessageBox()
+            msg_box.setIcon(QMessageBox.Icon.Critical)
+            msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+            msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+            msg_box.setWindowTitle(app.translate("MainWindow", "Invalid Download Directory"))
+            msg_box.setText(app.translate("MainWindow", "The specified download directory does not exist!"))
+            msg_box.setInformativeText(app.translate("MainWindow",
+                                                     "Please make sure the download directory you want to use exists, and "
+                                                     "that you have permission to access it."))
+            msg_box.exec()
+            return
+        self.ui.custom_out_dir_entry.setText(str(out_path))
+        config_data["out_path"] = str(out_path.absolute())
+        save_config(config_data)
+
+    def custom_output_dir_changed(self):
+        # Callback method for when the custom output dir is changed manually. Check if the current path exists, and
+        # save it if it does.
+        if self.ui.custom_out_dir_entry.text() == "":
+            config_data["out_path"] = ""
+            save_config(config_data)
+            return
+        out_path = pathlib.Path(self.ui.custom_out_dir_entry.text())
+        if out_path.exists() and out_path.is_dir():
+            config_data["out_path"] = str(out_path.absolute())
+            save_config(config_data)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -500,6 +579,8 @@ if __name__ == "__main__":
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, sub_key) as key:
             location = pathlib.Path(winreg.QueryValueEx(key, downloads_guid)[0])
     else:
+        # Silence a false linter warning about redeclaration, since this is actually only ever assigned once.
+        # noinspection PyRedeclaration
         location = pathlib.Path(os.path.expanduser('~')).joinpath('Downloads')
     # Build the path by combining the path to the Downloads photo with "NUSGet".
     out_folder = location.joinpath("NUSGet Downloads")
@@ -512,9 +593,9 @@ if __name__ == "__main__":
     # it out.
     config_file = get_config_file()
     if config_file.exists():
-        config_data = json.load(open(config_file))
+        config_data: dict = json.load(open(config_file))
     else:
-        config_data = {"auto_update": True}
+        config_data: dict = {"auto_update": True}
         save_config(config_data)
 
     # Load the system plugins directory on Linux for system styles, if it exists. Try using Breeze if available, because
@@ -536,8 +617,11 @@ if __name__ == "__main__":
                     app.setStyle("kvantum")
             except Exception as e:
                 print(e)
+    # The macOS Qt theme sucks, so let's avoid using it.
+    elif platform.system() == "Darwin":
+        app.setStyle("fusion")
 
-    # Load qtbase translations, and then apps-specific translations.
+    # Load base Qt translations, and then app-specific translations.
     path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
     translator = QTranslator(app)
     if translator.load(QLocale.system(), 'qtbase', '_', path):
