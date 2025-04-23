@@ -85,8 +85,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.custom_out_dir_chkbox.toggled.connect(
             lambda: connect_is_enabled_to_checkbox([self.ui.custom_out_dir_entry, self.ui.custom_out_dir_btn],
                                                    self.ui.custom_out_dir_chkbox))
-        self.ui.custom_out_dir_chkbox.toggled.connect(
-            lambda: update_setting(config_data, "use_out_path", self.ui.custom_out_dir_chkbox.isChecked()))
         # Load auto-update settings, and initialize them if they don't exist.
         try:
             self.ui.auto_update_chkbox.setChecked(config_data["auto_update"])
@@ -104,6 +102,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.ui.custom_out_dir_chkbox.setChecked(True)
         except KeyError:
             pass
+        # Register this callback after the previous check to avoid an extra config write.
+        self.ui.custom_out_dir_chkbox.toggled.connect(
+            lambda: update_setting(config_data, "use_out_path", self.ui.custom_out_dir_chkbox.isChecked()))
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
         self.ui.custom_out_dir_entry.textChanged.connect(self.custom_output_dir_changed)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
@@ -532,6 +533,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # that the directory does indeed exist and is a directory, and we can save it as the output directory.
         selected_dir = QFileDialog.getExistingDirectory(self, app.translate("MainWindow", "Open Directory"),
                     "", QFileDialog.ShowDirsOnly | QFileDialog.DontResolveSymlinks)
+        if selected_dir == "":
+            return
         out_path = pathlib.Path(selected_dir)
         if not out_path.exists() or not out_path.is_dir():
             msg_box = QMessageBox()

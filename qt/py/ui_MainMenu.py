@@ -499,7 +499,7 @@ class Ui_MainWindow(object):
         self.custom_out_dir_chkbox.setText("")
         self.custom_out_dir_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use a custom download directory", None))
         self.custom_out_dir_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Output Path", None))
-        self.custom_out_dir_btn.setText(QCoreApplication.translate("MainWindow", u"Open...", None))
+        self.custom_out_dir_btn.setText(QCoreApplication.translate("MainWindow", u"Select...", None))
         self.log_text_browser.setMarkdown("")
         self.log_text_browser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
