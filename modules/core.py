@@ -1,5 +1,5 @@
 # "modules/core.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah
+# Copyright 2024-2025 NinjaCheetah & Contributors
 
 import os
 import json

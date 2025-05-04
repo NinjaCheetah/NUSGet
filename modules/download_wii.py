@@ -1,5 +1,5 @@
 # "modules/download_wii.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah
+# Copyright 2024-2025 NinjaCheetah & Contributors
 
 import pathlib
 

@@ -2,6 +2,46 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
+    <name>AboutNUSGet</name>
+    <message>
+        <location filename="../../qt/ui/AboutNUSGet.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/AboutNUSGet.ui" line="63"/>
+        <source>About NUSGet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/AboutNUSGet.ui" line="75"/>
+        <source>Placeholder Version String</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/AboutNUSGet.ui" line="82"/>
+        <source>Copyright (c) 2024-2025 NinjaCheetah &amp; Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/AboutNUSGet.ui" line="92"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.AppleSystemUIFont&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Translations&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;German (Deutsch): &lt;a href=&quot;https://github.com/yeah-its-gloria&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#3586ff;&quot;&gt;yeah-its-gloria&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Italian (Italiano): &lt;a href=&quot;https://github.com/LNLenost&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#3586ff;&quot;&gt;LNLenost&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Korean (한국어): &lt;a href=&quot;https://github.com/DDinghoya&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#3586ff;&quot;&gt;DDinghoya&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Norwegian (Norsk): &lt;a href=&quot;https://github.com/rolfiee&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#3586ff;&quot;&gt;rolfiee&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Romanian (Română): &lt;a href=&quot;https://github.com/NotImplementedLife&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#3586ff;&quot;&gt;NotImplementedLife&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="26"/>
@@ -124,17 +164,32 @@
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="636"/>
-        <source>Use custom download directory</source>
+        <source>Use a custom download directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="660"/>
+        <source>Select...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="740"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="753"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="761"/>
+        <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="650"/>
         <source>Output Path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="660"/>
-        <source>Open...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -180,7 +235,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="115"/>
         <source>NUSGet v{nusget_version}
 Developed by NinjaCheetah
 Powered by libWiiPy {libwiipy_version}
@@ -191,7 +245,7 @@ Select a title from the list on the left, or enter a Title ID to begin.
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 Titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
-        <translation>NUSGet v{nusget_version}
+        <translation type="vanished">NUSGet v{nusget_version}
 개발자 : NinjaCheetah
 libWiiPy {libwiipy_version}에서 제공
 DSi 지원 : libTWLPy {libtwlpy_version}에서 제공
@@ -203,179 +257,193 @@ DSi 지원 : libTWLPy {libtwlpy_version}에서 제공
 타이틀은 다운로드 폴더 내의 &quot;NUSGet Downloads&quot;이라는 폴더에 다운로드됩니다.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="320"/>
+        <location filename="../../NUSGet.py" line="124"/>
+        <source>NUSGet v{nusget_version}
+Developed by NinjaCheetah
+Powered by libWiiPy {libwiipy_version}
+DSi support provided by libTWLPy {libtwlpy_version}
+
+Select a title from the list on the left, or enter a Title ID to begin.
+
+Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
+
+By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="329"/>
         <source>No Output Selected</source>
         <translation>선택된 출력 없음</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="321"/>
+        <location filename="../../NUSGet.py" line="330"/>
         <source>You have not selected any format to output the data in!</source>
         <translation>데이터를 출력할 형식을 선택하지 않았습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="323"/>
+        <location filename="../../NUSGet.py" line="332"/>
         <source>Please select at least one option for how you would like the download to be saved.</source>
         <translation>다운로드를 저장할 방법을 하나 이상 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="335"/>
-        <location filename="../../NUSGet.py" line="537"/>
+        <location filename="../../NUSGet.py" line="344"/>
+        <location filename="../../NUSGet.py" line="548"/>
         <source>Invalid Download Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="336"/>
-        <location filename="../../NUSGet.py" line="538"/>
+        <location filename="../../NUSGet.py" line="345"/>
+        <location filename="../../NUSGet.py" line="549"/>
         <source>The specified download directory does not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="339"/>
+        <location filename="../../NUSGet.py" line="348"/>
         <source>Please make sure the specified download directory exists, and that you have permission to access it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="369"/>
+        <location filename="../../NUSGet.py" line="378"/>
         <source>Invalid Title ID</source>
         <translation>잘못된 제목 ID</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="370"/>
+        <location filename="../../NUSGet.py" line="379"/>
         <source>The Title ID you have entered is not in a valid format!</source>
         <translation>입력한 타이틀 ID의 형식이 올바르지 않습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="372"/>
+        <location filename="../../NUSGet.py" line="381"/>
         <source>Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly formatted Title ID, or select one from the menu on the left.</source>
         <translation>타이틀 ID는 숫자와 문자로 구성된 16자리 문자열이어야 합니다. 올바르게 포맷된 타이틀 ID를 입력하거나 왼쪽 메뉴에서 하나를 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="374"/>
+        <location filename="../../NUSGet.py" line="383"/>
         <source>Title ID/Version Not Found</source>
         <translation>타이틀 ID/버전을 찾을 수 없음</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="375"/>
+        <location filename="../../NUSGet.py" line="384"/>
         <source>No title with the provided Title ID or version could be found!</source>
         <translation>제공된 타이틀 ID 또는 버전으로 제목을 찾을 수 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="377"/>
+        <location filename="../../NUSGet.py" line="386"/>
         <source>Please make sure that you have entered a valid Title ID, or selected one from the title database, and that the provided version exists for the title you are attempting to download.</source>
         <translation>유효한 타이틀 ID를 입력했는지 또는 타이틀 데이터베이스에서 선택했는지, 그리고 다운로드하려는 타이틀에 대해 제공된 버전이 있는지 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="379"/>
+        <location filename="../../NUSGet.py" line="388"/>
         <source>Content Decryption Failed</source>
         <translation>콘텐츠 복호화 실패</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="380"/>
+        <location filename="../../NUSGet.py" line="389"/>
         <source>Content decryption was not successful! Decrypted contents could not be created.</source>
         <translation>콘텐츠 복호화가 성공하지 못했습니다! 복호화된 콘텐츠를 만들 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="383"/>
+        <location filename="../../NUSGet.py" line="392"/>
         <source>Your TMD or Ticket may be damaged, or they may not correspond with the content being decrypted. If you have checked &quot;Use local files, if they exist&quot;, try disabling that option before trying the download again to fix potential issues with local data.</source>
         <translation>TMD 또는 티켓이 손상되었거나 복호화되는 콘텐츠와 일치하지 않을 수 있습니다. &quot;로컬 파일이 있으면 사용&quot;을 체크한 경우, 로컬 데이터와 관련된 잠재적인 문제를 해결하기 위해 다시 다운로드를 시도하기 전에 해당 옵션을 비활성화해 보세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="386"/>
+        <location filename="../../NUSGet.py" line="395"/>
         <source>Ticket Not Available</source>
         <translation>사용 가능한 티켓이 아님</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="387"/>
+        <location filename="../../NUSGet.py" line="396"/>
         <source>No Ticket is Available for the Requested Title!</source>
         <translation>요청한 타이틀에 대한 티켓이 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="390"/>
+        <location filename="../../NUSGet.py" line="399"/>
         <source>A ticket could not be downloaded for the requested title, but you have selected &quot;Pack installable archive&quot; or &quot;Create decrypted contents&quot;. These options are not available for titles without a ticket. Only encrypted contents have been saved.</source>
         <translation>요청한 타이틀에 대한 티켓을 다운로드할 수 없지만 &quot;설치 가능한 아카이브 팩&quot; 또는 &quot;암호 해독된 콘텐츠 생성&quot;을 선택했습니다. 이러한 옵션은 티켓이 없는 타이틀에는 사용할 수 없습니다. 암호화된 콘텐츠만 저장되었습니다.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="392"/>
+        <location filename="../../NUSGet.py" line="401"/>
         <source>Unknown Error</source>
         <translation>알 수 없는 오류</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="393"/>
+        <location filename="../../NUSGet.py" line="402"/>
         <source>An Unknown Error has Occurred!</source>
         <translation>알 수 없는 오류가 발생했습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="395"/>
+        <location filename="../../NUSGet.py" line="404"/>
         <source>Please try again. If this issue persists, please open a new issue on GitHub detailing what you were trying to do when this error occurred.</source>
         <translation>다시 시도하세요. 이 문제가 지속되면 GitHub에서 새 이슈를 열어 이 오류가 발생했을 때 무엇을 하려고 했는지 자세히 설명하세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="414"/>
+        <location filename="../../NUSGet.py" line="423"/>
         <source>Script Issues Occurred</source>
         <translation>스크립트 문제가 발생함</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="415"/>
+        <location filename="../../NUSGet.py" line="424"/>
         <source>Some issues occurred while running the download script.</source>
         <translation>다운로드 스크립트를 실행하는 동안 몇 가지 문제가 발생했습니다.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="417"/>
+        <location filename="../../NUSGet.py" line="426"/>
         <source>Check the log for more details about what issues were encountered.</source>
         <translation>발생한 문제에 대한 자세한 내용은 로그를 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="424"/>
+        <location filename="../../NUSGet.py" line="433"/>
         <source>The following titles could not be downloaded due to an error. Please ensure that the Title ID and version listed in the script are valid.</source>
         <translation>다음 제목은 오류로 인해 다운로드할 수 없습니다. 스크립트에 나열된 타이틀 ID와 버전이 유효한지 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="434"/>
+        <location filename="../../NUSGet.py" line="443"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
         <translation>&quot;암호 해독된 콘텐츠 만들기&quot; 또는 &quot;설치 가능한 아카이브 압축&quot;을 활성화했지만 스크립트의 다음 타이틀에는 사용 가능한 티켓이 없습니다. 활성화된 경우 암호화된 콘텐츠가 여전히 다운로드되었습니다.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="453"/>
+        <location filename="../../NUSGet.py" line="462"/>
         <source>Script Download Failed</source>
         <translation>스크립트 다운로드 실패함</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="454"/>
+        <location filename="../../NUSGet.py" line="463"/>
         <source>Open NUS Script</source>
         <translation>NUS 스크립트 열기</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="455"/>
+        <location filename="../../NUSGet.py" line="464"/>
         <source>NUS Scripts (*.nus *.json)</source>
         <translation>NUS 스크립트 (*.nus *.json)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="465"/>
+        <location filename="../../NUSGet.py" line="474"/>
         <source>An error occurred while parsing the script file!</source>
         <translation>스크립트 파일을 구문 분석하는 동안 오류가 발생했습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="466"/>
+        <location filename="../../NUSGet.py" line="475"/>
         <source>Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again.</source>
         <translation>{e.lineno} 줄, {e.colno} 열에서 오류가 발생했습니다. 스크립트를 다시 확인하고 다시 시도하세요.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="475"/>
+        <location filename="../../NUSGet.py" line="484"/>
         <source>An error occurred while parsing Title IDs!</source>
         <translation>타이틀 ID를 구문 분석하는 동안 오류가 발생했습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="476"/>
+        <location filename="../../NUSGet.py" line="485"/>
         <source>The title at index {script_data.index(title)} does not have a Title ID!</source>
         <translation>{script_data.index(title)} 인덱스의 타이틀에 타이틀 ID가 없습니다!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="529"/>
+        <location filename="../../NUSGet.py" line="538"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="541"/>
+        <location filename="../../NUSGet.py" line="552"/>
         <source>Please make sure the download directory you want to use exists, and that you have permission to access it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -423,12 +491,12 @@ DSi 지원 : libTWLPy {libtwlpy_version}에서 제공
         <translation>IOS에 패치 적용 (WAD에만 적용)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="218"/>
+        <location filename="../../NUSGet.py" line="227"/>
         <source>NUSGet Update Available</source>
         <translation>NUSGet 업데이트 가능</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="219"/>
+        <location filename="../../NUSGet.py" line="228"/>
         <source>There&apos;s a newer version of NUSGet available!</source>
         <translation>NUSBet의 새로운 버전이 나왔습니다!</translation>
     </message>

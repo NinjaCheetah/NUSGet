@@ -3,6 +3,7 @@
         "NUSGet.py",
         "./modules/core.py",
         "./qt/ui/MainMenu.ui",
+        "./qt/ui/AboutNUSGet.ui",
         "./resources/translations/nusget_es.ts",
         "./resources/translations/nusget_no.ts",
         "./resources/translations/nusget_nb.ts",

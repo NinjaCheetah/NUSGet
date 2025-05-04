@@ -1,5 +1,5 @@
 # "NUSGet.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah
+# Copyright 2024-2025 NinjaCheetah and Contributors
 
 # Nuitka options. These determine compilation settings based on the current OS.
 # nuitka-project-if: {OS} == "Darwin":
@@ -27,6 +27,7 @@ from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QStyleFactory, QFileDialog
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
+from qt.py.ui_AboutDialog import AboutNUSGet
 from qt.py.ui_MainMenu import Ui_MainWindow
 
 from modules.core import *
@@ -35,7 +36,7 @@ from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.3.2"
+nusget_version = "1.4.0"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -80,6 +81,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.custom_out_dir_btn.clicked.connect(self.choose_output_dir)
+        # About and About Qt Buttons
+        self.ui.actionAbout.triggered.connect(self.about_nusget)
+        self.ui.actionAbout_Qt.triggered.connect(lambda: QMessageBox.aboutQt(self))
         self.ui.pack_archive_chkbox.toggled.connect(
             lambda: connect_is_enabled_to_checkbox([self.ui.archive_file_entry], self.ui.pack_archive_chkbox))
         self.ui.custom_out_dir_chkbox.toggled.connect(
@@ -563,6 +567,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if out_path.exists() and out_path.is_dir():
             config_data["out_path"] = str(out_path.absolute())
             save_config(config_data)
+
+    def about_nusget(self):
+        version_str = app.translate("MainWindow", "Version {nusget_version}".format(nusget_version=nusget_version))
+        about_box = AboutNUSGet(version_str)
+        about_box.exec()
 
 
 if __name__ == "__main__":
