@@ -96,7 +96,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.auto_update_checkbox.toggled.connect(
             lambda: update_setting(config_data, "auto_update", self.ui.auto_update_checkbox.isChecked()))
         # Load custom output directory if one is saved and it is valid. Only enable the checkbox to actually use the
-        # custom dir if use_out_path is set to true.
+        # custom dir if "use_out_path" is set to true.
         try:
             out_dir = pathlib.Path(config_data["out_path"])
             if out_dir.exists() and out_dir.is_dir():
@@ -111,17 +111,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
         self.ui.custom_out_dir_entry.textChanged.connect(self.custom_output_dir_changed)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
-        libwiipy_version = "v" + version("libWiiPy")
-        libtwlpy_version = "v" + version("libTWLPy")
-        self.log_text = (app.translate("MainWindow", "NUSGet v{nusget_version}\nDeveloped by NinjaCheetah\nPowered by libWiiPy "
-                              "{libwiipy_version}\nDSi support provided by libTWLPy {libtwlpy_version}\n\n"
-                              "Select a title from the list on the left, or enter a Title ID to begin.\n\n"
-                              "Titles marked with a checkmark are free and have a ticket available, and can"
-                              " be decrypted and/or packed into a WAD or TAD. Titles with an X do not have "
-                              "a ticket, and only their encrypted contents can be saved.\n\nBy default, titles will be "
-                              "downloaded to a folder named \"NUSGet Downloads\" inside your downloads folder.")
-                       .format(nusget_version=nusget_version, libwiipy_version=libwiipy_version,
-                               libtwlpy_version=libtwlpy_version))
+        self.log_text = app.translate("MainWindow", "Select a title from the list on the left, or enter a "
+                              "Title ID to begin.\n\nTitles marked with a checkmark are free and have a ticket "
+                              "available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not"
+                              " have a ticket, and only their encrypted contents can be saved.\n\nBy default, titles "
+                              "will be downloaded to a folder named \"NUSGet Downloads\" inside your downloads folder.")
         self.ui.log_text_browser.setText(self.log_text)
         # Add console entries to dropdown and attach on change signal.
         self.ui.console_select_dropdown.addItem("Wii")
@@ -570,8 +564,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             save_config(config_data)
 
     def about_nusget(self):
-        version_str = app.translate("MainWindow", "Version {nusget_version}".format(nusget_version=nusget_version))
-        about_box = AboutNUSGet(version_str)
+        about_box = AboutNUSGet([nusget_version, version("libWiiPy"), version("libTWLPy")])
         about_box.exec()
 
 

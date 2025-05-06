@@ -11,7 +11,7 @@ from PySide6.QtWidgets import QDialog, QLabel, QVBoxLayout, QPushButton
 from PySide6.QtGui import QIcon
 
 class AboutNUSGet(QDialog):
-    def __init__(self, version_str):
+    def __init__(self, versions):
         super().__init__()
         self.setWindowTitle(self.tr("About NUSGet"))
         self.setFixedWidth(450)
@@ -83,10 +83,16 @@ class AboutNUSGet(QDialog):
         title_label.setProperty("class", "title")
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        # Version
-        version_label = QLabel(self.tr("{version_str}".format(version_str=version_str)))
+        # NUSGet Version
+        version_label = QLabel(self.tr("Version {nusget_version}".format(nusget_version=versions[0])))
         version_label.setProperty("class", "version")
         version_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        # Library Versions
+        libraries_label = QLabel(self.tr("Using libWiiPy {libwiipy_version} & libTWLPy {libtwlpy_version}"
+                                         .format(libwiipy_version=versions[1], libtwlpy_version=versions[2])))
+        libraries_label.setProperty("class", "version")
+        libraries_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Copyright
         copyright_label = QLabel(self.tr("© 2024-2025 NinjaCheetah & Contributors"))
@@ -97,6 +103,7 @@ class AboutNUSGet(QDialog):
         self.layout.addWidget(logo_label)
         self.layout.addWidget(title_label)
         self.layout.addWidget(version_label)
+        self.layout.addWidget(libraries_label)
         self.layout.addWidget(copyright_label)
         self.layout.addSpacing(15)
 

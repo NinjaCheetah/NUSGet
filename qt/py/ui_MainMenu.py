@@ -28,9 +28,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1010, 625)
-        MainWindow.setMinimumSize(QSize(1010, 625))
-        MainWindow.setMaximumSize(QSize(1010, 625))
+        MainWindow.resize(1010, 675)
+        MainWindow.setMinimumSize(QSize(1010, 675))
+        MainWindow.setMaximumSize(QSize(1010, 675))
         self.actionAbout = QAction(MainWindow)
         self.actionAbout.setObjectName(u"actionAbout")
         icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.HelpAbout))
@@ -310,7 +310,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1010, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1010, 30))
         self.menuHelp = QMenu(self.menubar)
         self.menuHelp.setObjectName(u"menuHelp")
         MainWindow.setMenuBar(self.menubar)
@@ -359,7 +359,7 @@ class Ui_MainWindow(object):
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
         self.menuHelp.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
     # retranslateUi
