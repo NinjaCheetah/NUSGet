@@ -64,7 +64,9 @@ def check_nusget_updates(app, current_version: str, progress_callback=None) -> s
         new_version_split = new_version.split('.')
         current_version_split = current_version.split('.')
         for place in range(len(new_version_split)):
-            if new_version_split[place] > current_version_split[place]:
+            if new_version_split[place] < current_version_split[place]:
+                return None
+            elif new_version_split[place] > current_version_split[place]:
                 progress_callback.emit(app.translate("MainWindow", "\n\nThere's a newer version of NUSGet available!"))
                 return new_version
         progress_callback.emit(app.translate("MainWindow", "\n\nYou're running the latest release of NUSGet."))

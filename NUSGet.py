@@ -19,12 +19,11 @@
 # nuitka-project: --include-data-dir={MAIN_DIRECTORY}/resources=resources
 
 import sys
-import platform
 import webbrowser
 from importlib.metadata import version
 
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QStyleFactory, QFileDialog
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
 from qt.py.ui_AboutDialog import AboutNUSGet
@@ -84,18 +83,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # About and About Qt Buttons
         self.ui.actionAbout.triggered.connect(self.about_nusget)
         self.ui.actionAbout_Qt.triggered.connect(lambda: QMessageBox.aboutQt(self))
-        self.ui.pack_archive_chkbox.toggled.connect(
-            lambda: connect_is_enabled_to_checkbox([self.ui.archive_file_entry], self.ui.pack_archive_chkbox))
-        self.ui.custom_out_dir_chkbox.toggled.connect(
+        self.ui.pack_archive_checkbox.toggled.connect(
+            lambda: connect_is_enabled_to_checkbox([self.ui.archive_file_entry], self.ui.pack_archive_checkbox))
+        self.ui.custom_out_dir_checkbox.toggled.connect(
             lambda: connect_is_enabled_to_checkbox([self.ui.custom_out_dir_entry, self.ui.custom_out_dir_btn],
-                                                   self.ui.custom_out_dir_chkbox))
+                                                   self.ui.custom_out_dir_checkbox))
         # Load auto-update settings, and initialize them if they don't exist.
         try:
-            self.ui.auto_update_chkbox.setChecked(config_data["auto_update"])
+            self.ui.auto_update_checkbox.setChecked(config_data["auto_update"])
         except KeyError:
-            update_setting(config_data, "auto_update", self.ui.auto_update_chkbox.isChecked())
-        self.ui.auto_update_chkbox.toggled.connect(
-            lambda: update_setting(config_data, "auto_update", self.ui.auto_update_chkbox.isChecked()))
+            update_setting(config_data, "auto_update", self.ui.auto_update_checkbox.isChecked())
+        self.ui.auto_update_checkbox.toggled.connect(
+            lambda: update_setting(config_data, "auto_update", self.ui.auto_update_checkbox.isChecked()))
         # Load custom output directory if one is saved and it is valid. Only enable the checkbox to actually use the
         # custom dir if use_out_path is set to true.
         try:
@@ -103,12 +102,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if out_dir.exists() and out_dir.is_dir():
                 self.ui.custom_out_dir_entry.setText(str(out_dir))
                 if config_data["use_out_path"]:
-                    self.ui.custom_out_dir_chkbox.setChecked(True)
+                    self.ui.custom_out_dir_checkbox.setChecked(True)
         except KeyError:
             pass
         # Register this callback after the previous check to avoid an extra config write.
-        self.ui.custom_out_dir_chkbox.toggled.connect(
-            lambda: update_setting(config_data, "use_out_path", self.ui.custom_out_dir_chkbox.isChecked()))
+        self.ui.custom_out_dir_checkbox.toggled.connect(
+            lambda: update_setting(config_data, "use_out_path", self.ui.custom_out_dir_checkbox.isChecked()))
         self.ui.tid_entry.textChanged.connect(self.tid_updated)
         self.ui.custom_out_dir_entry.textChanged.connect(self.custom_output_dir_changed)
         # Basic intro text set to automatically show when the app loads. This may be changed in the future.
@@ -152,15 +151,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setFixedSize(self.size())
         # These connections allow for clicking the checkbox labels to toggle the checkboxes, if they're enabled. This is
         # required because checkboxes can't word wrap, so regular labels must be used in their place.
-        connect_label_to_checkbox(self.ui.pack_archive_chkbox_lbl, self.ui.pack_archive_chkbox)
-        connect_label_to_checkbox(self.ui.keep_enc_chkbox_lbl, self.ui.keep_enc_chkbox)
-        connect_label_to_checkbox(self.ui.create_dec_chkbox_lbl, self.ui.create_dec_chkbox)
-        connect_label_to_checkbox(self.ui.use_local_chkbox_lbl, self.ui.use_local_chkbox)
-        connect_label_to_checkbox(self.ui.use_wiiu_nus_chkbox_lbl, self.ui.use_wiiu_nus_chkbox)
-        connect_label_to_checkbox(self.ui.patch_ios_chkbox_lbl, self.ui.patch_ios_chkbox)
-        connect_label_to_checkbox(self.ui.pack_vwii_mode_chkbox_lbl, self.ui.pack_vwii_mode_chkbox)
-        connect_label_to_checkbox(self.ui.auto_update_chkbox_lbl, self.ui.auto_update_chkbox)
-        connect_label_to_checkbox(self.ui.custom_out_dir_chkbox_lbl, self.ui.custom_out_dir_chkbox)
+        self.ui.pack_archive_checkbox.label.setText(app.translate("MainWindow", "Pack installable archive (WAD/TAD)"))
+        self.ui.pack_archive_checkbox.setChecked(True)
+        self.ui.keep_enc_checkbox.label.setText(app.translate("MainWindow", "Keep encrypted contents"))
+        self.ui.keep_enc_checkbox.setChecked(True)
+        self.ui.create_dec_checkbox.label.setText(app.translate("MainWindow", "Create decrypted contents (*.app)"))
+        self.ui.use_local_checkbox.label.setText(app.translate("MainWindow", "Use local files, if they exist"))
+        self.ui.use_wiiu_nus_checkbox.label.setText(app.translate("MainWindow", "Use the Wii U NUS (faster, only effects Wii/vWii)"))
+        self.ui.patch_ios_checkbox.label.setText(app.translate("MainWindow", "Apply patches to IOS (Applies to WADs only)"))
+        self.ui.pack_vwii_mode_checkbox.label.setText(app.translate("MainWindow", "Re-encrypt title using the Wii Common Key"))
+        self.ui.auto_update_checkbox.label.setText(app.translate("MainWindow", "Check for updates on startup"))
+        self.ui.custom_out_dir_checkbox.label.setText(app.translate("MainWindow", "Use a custom download directory"))
         try:
             auto_update = config_data["auto_update"]
         except KeyError:
@@ -205,9 +206,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         tid = self.ui.tid_entry.text()
         if len(tid) == 16:
             if tid[:8] == "00000001" and int(tid[-2:], 16) > 2:
-                self.ui.patch_ios_chkbox.setEnabled(True)
+                self.ui.patch_ios_checkbox.setEnabled(True)
                 return
-        self.ui.patch_ios_chkbox.setEnabled(False)
+        self.ui.patch_ios_checkbox.setEnabled(False)
 
     def update_log_text(self, new_text):
         # This method primarily exists to be the handler for the progress signal emitted by the worker thread.
@@ -225,7 +226,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
             msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
             msg_box.setWindowTitle(app.translate("MainWindow", "NUSGet Update Available"))
-            msg_box.setText(app.translate("MainWindow", "There's a newer version of NUSGet available!"))
+            msg_box.setText(app.translate("MainWindow", "<b>There's a newer version of NUSGet available!</b>"))
             msg_box.setInformativeText(app.translate("MainWindow", "You're currently running v{nusget_version}, "
                                                    "but v{new_version} is available on GitHub. Would you like to view"
                                                    " the latest version?"
@@ -281,17 +282,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.version_entry.setEnabled(False)
         self.ui.download_btn.setEnabled(False)
         self.ui.script_btn.setEnabled(False)
-        self.ui.pack_archive_chkbox.setEnabled(False)
-        self.ui.keep_enc_chkbox.setEnabled(False)
-        self.ui.create_dec_chkbox.setEnabled(False)
-        self.ui.use_local_chkbox.setEnabled(False)
-        self.ui.patch_ios_chkbox.setEnabled(False)
-        self.ui.use_wiiu_nus_chkbox.setEnabled(False)
-        self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+        self.ui.pack_archive_checkbox.setEnabled(False)
+        self.ui.keep_enc_checkbox.setEnabled(False)
+        self.ui.create_dec_checkbox.setEnabled(False)
+        self.ui.use_local_checkbox.setEnabled(False)
+        self.ui.patch_ios_checkbox.setEnabled(False)
+        self.ui.use_wiiu_nus_checkbox.setEnabled(False)
+        self.ui.pack_vwii_mode_checkbox.setEnabled(False)
         self.ui.archive_file_entry.setEnabled(False)
         self.ui.console_select_dropdown.setEnabled(False)
-        self.ui.auto_update_chkbox.setEnabled(False)
-        self.ui.custom_out_dir_chkbox.setEnabled(False)
+        self.ui.auto_update_checkbox.setEnabled(False)
+        self.ui.custom_out_dir_checkbox.setEnabled(False)
         self.ui.custom_out_dir_entry.setEnabled(False)
         self.ui.custom_out_dir_btn.setEnabled(False)
         self.log_text = ""
@@ -303,25 +304,25 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.version_entry.setEnabled(True)
         self.ui.download_btn.setEnabled(True)
         self.ui.script_btn.setEnabled(True)
-        self.ui.pack_archive_chkbox.setEnabled(True)
-        self.ui.keep_enc_chkbox.setEnabled(True)
-        self.ui.create_dec_chkbox.setEnabled(True)
-        self.ui.use_local_chkbox.setEnabled(True)
-        self.ui.patch_ios_chkbox.setEnabled(True)
-        self.ui.use_wiiu_nus_chkbox.setEnabled(True)
+        self.ui.pack_archive_checkbox.setEnabled(True)
+        self.ui.keep_enc_checkbox.setEnabled(True)
+        self.ui.create_dec_checkbox.setEnabled(True)
+        self.ui.use_local_checkbox.setEnabled(True)
+        self.ui.patch_ios_checkbox.setEnabled(True)
+        self.ui.use_wiiu_nus_checkbox.setEnabled(True)
         self.ui.console_select_dropdown.setEnabled(True)
-        if self.ui.pack_archive_chkbox.isChecked() is True:
+        if self.ui.pack_archive_checkbox.isChecked() is True:
             self.ui.archive_file_entry.setEnabled(True)
-        self.ui.auto_update_chkbox.setEnabled(True)
-        self.ui.custom_out_dir_chkbox.setEnabled(True)
-        if self.ui.custom_out_dir_chkbox.isChecked() is True:
+        self.ui.auto_update_checkbox.setEnabled(True)
+        self.ui.custom_out_dir_checkbox.setEnabled(True)
+        if self.ui.custom_out_dir_checkbox.isChecked() is True:
             self.ui.custom_out_dir_entry.setEnabled(True)
             self.ui.custom_out_dir_btn.setEnabled(True)
 
     def download_btn_pressed(self):
         # Throw an error and make a message box appear if you haven't selected any options to output the title.
-        if (self.ui.pack_archive_chkbox.isChecked() is False and self.ui.keep_enc_chkbox.isChecked() is False and
-                self.ui.create_dec_chkbox.isChecked() is False):
+        if (self.ui.pack_archive_checkbox.isChecked() is False and self.ui.keep_enc_checkbox.isChecked() is False and
+                self.ui.create_dec_checkbox.isChecked() is False):
             msg_box = QMessageBox()
             msg_box.setIcon(QMessageBox.Icon.Critical)
             msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
@@ -334,7 +335,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return
         self.lock_ui()
         # Check for a custom output directory, and ensure that it's valid. If it is, then use that.
-        if self.ui.custom_out_dir_chkbox.isChecked() and self.ui.custom_out_dir_entry.text() != "":
+        if self.ui.custom_out_dir_checkbox.isChecked() and self.ui.custom_out_dir_entry.text() != "":
             out_path = pathlib.Path(self.ui.custom_out_dir_entry.text())
             if not out_path.exists() or not out_path.is_dir():
                 msg_box = QMessageBox()
@@ -353,15 +354,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
             worker = Worker(run_nus_download_dsi, out_path, self.ui.tid_entry.text(),
-                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
-                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
-                            self.ui.use_local_chkbox.isChecked(), self.ui.archive_file_entry.text())
+                            self.ui.version_entry.text(), self.ui.pack_archive_checkbox.isChecked(),
+                            self.ui.keep_enc_checkbox.isChecked(), self.ui.create_dec_checkbox.isChecked(),
+                            self.ui.use_local_checkbox.isChecked(), self.ui.archive_file_entry.text())
         else:
             worker = Worker(run_nus_download_wii, out_path, self.ui.tid_entry.text(),
-                            self.ui.version_entry.text(), self.ui.pack_archive_chkbox.isChecked(),
-                            self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
-                            self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
-                            self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked(),
+                            self.ui.version_entry.text(), self.ui.pack_archive_checkbox.isChecked(),
+                            self.ui.keep_enc_checkbox.isChecked(), self.ui.create_dec_checkbox.isChecked(),
+                            self.ui.use_wiiu_nus_checkbox.isChecked(), self.ui.use_local_checkbox.isChecked(),
+                            self.ui.pack_vwii_mode_checkbox.isChecked(), self.ui.patch_ios_checkbox.isChecked(),
                             self.ui.archive_file_entry.text())
         worker.signals.result.connect(self.check_download_result)
         worker.signals.progress.connect(self.update_log_text)
@@ -375,30 +376,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
         if result == -1:
             window_title = app.translate("MainWindow", "Invalid Title ID")
-            title_text = app.translate("MainWindow", "The Title ID you have entered is not in a valid format!")
+            title_text = app.translate("MainWindow", "<b>The Title ID you have entered is not in a valid format!</b>")
             body_text = app.translate("MainWindow", "Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly "
                                 "formatted Title ID, or select one from the menu on the left.")
         elif result == -2:
             window_title = app.translate("MainWindow", "Title ID/Version Not Found")
-            title_text = app.translate("MainWindow", "No title with the provided Title ID or version could be found!")
+            title_text = app.translate("MainWindow", "<b>No title with the provided Title ID or version could be found!</b>")
             body_text = app.translate("MainWindow", "Please make sure that you have entered a valid Title ID, or selected one from the "
                                 "title database, and that the provided version exists for the title you are attempting to download.")
         elif result == -3:
             window_title = app.translate("MainWindow", "Content Decryption Failed")
-            title_text = app.translate("MainWindow", "Content decryption was not successful! Decrypted contents could not be created.")
+            title_text = app.translate("MainWindow", "<b>Content decryption was not successful! Decrypted contents could not be created.</b>")
             body_text = app.translate("MainWindow", "Your TMD or Ticket may be damaged, or they may not correspond with the content being "
                                 "decrypted. If you have checked \"Use local files, if they exist\", try disabling that "
                                 "option before trying the download again to fix potential issues with local data.")
         elif result == 1:
             msg_box.setIcon(QMessageBox.Icon.Warning)
             window_title = app.translate("MainWindow", "Ticket Not Available")
-            title_text = app.translate("MainWindow", "No Ticket is Available for the Requested Title!")
+            title_text = app.translate("MainWindow", "<b>No Ticket is Available for the Requested Title!</b>")
             body_text = app.translate("MainWindow", "A ticket could not be downloaded for the requested title, but you have selected \"Pack"
                                 " installable archive\" or \"Create decrypted contents\". These options are not "
                                 "available for titles without a ticket. Only encrypted contents have been saved.")
         else:
             window_title = app.translate("MainWindow", "Unknown Error")
-            title_text = app.translate("MainWindow", "An Unknown Error has Occurred!")
+            title_text = app.translate("MainWindow", "<b>An Unknown Error has Occurred!</b>")
             body_text = app.translate("MainWindow", "Please try again. If this issue persists, please open a new issue on GitHub detailing"
                                 " what you were trying to do when this error occurred.")
         if result != 0:
@@ -421,7 +422,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
             msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
             msg_box.setWindowTitle(app.translate("MainWindow", "Script Issues Occurred"))
-            msg_box.setText(app.translate("MainWindow", "Some issues occurred while running the download script."))
+            msg_box.setText(app.translate("MainWindow", "<b>Some issues occurred while running the download script.</b>"))
             msg_box.setInformativeText(
                 app.translate("MainWindow", "Check the log for more details about what issues were encountered."))
             msg_box.exec()
@@ -448,11 +449,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def selected_console_changed(self):
         # Callback function to enable or disable console-specific settings based on the selected console.
         if self.ui.console_select_dropdown.currentText() == "vWii":
-            self.ui.pack_vwii_mode_chkbox.setEnabled(True)
+            self.ui.pack_vwii_mode_checkbox.setEnabled(True)
         elif self.ui.console_select_dropdown.currentText() == "Wii":
-            self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+            self.ui.pack_vwii_mode_checkbox.setEnabled(False)
         elif self.ui.console_select_dropdown.currentText() == "DSi":
-            self.ui.pack_vwii_mode_chkbox.setEnabled(False)
+            self.ui.pack_vwii_mode_checkbox.setEnabled(False)
 
     def script_btn_pressed(self):
         msg_box = QMessageBox()
@@ -471,7 +472,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             with open(file_name[0]) as script_file:
                 script_data = json.load(script_file)
         except json.JSONDecodeError as e:
-            msg_box.setText(app.translate("MainWindow", "An error occurred while parsing the script file!"))
+            msg_box.setText(app.translate("MainWindow", "<b>An error occurred while parsing the script file!</b>"))
             msg_box.setInformativeText(app.translate("MainWindow", f"Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again."))
             msg_box.exec()
             return
@@ -481,7 +482,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             try:
                 tid = title["Title ID"]
             except KeyError:
-                msg_box.setText(app.translate("MainWindow", "An error occurred while parsing Title IDs!"))
+                msg_box.setText(app.translate("MainWindow", "<b>An error occurred while parsing Title IDs!</b>"))
                 msg_box.setInformativeText(app.translate("MainWindow", f"The title at index {script_data.index(title)} does not have a Title ID!"))
                 msg_box.exec()
                 return
@@ -524,10 +525,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                 break
             titles.append(BatchTitleData(tid, title_version, console, archive_name))
         self.lock_ui()
-        worker = Worker(run_nus_download_batch, out_folder, titles, self.ui.pack_archive_chkbox.isChecked(),
-                        self.ui.keep_enc_chkbox.isChecked(), self.ui.create_dec_chkbox.isChecked(),
-                        self.ui.use_wiiu_nus_chkbox.isChecked(), self.ui.use_local_chkbox.isChecked(),
-                        self.ui.pack_vwii_mode_chkbox.isChecked(), self.ui.patch_ios_chkbox.isChecked())
+        worker = Worker(run_nus_download_batch, out_folder, titles, self.ui.pack_archive_checkbox.isChecked(),
+                        self.ui.keep_enc_checkbox.isChecked(), self.ui.create_dec_checkbox.isChecked(),
+                        self.ui.use_wiiu_nus_checkbox.isChecked(), self.ui.use_local_checkbox.isChecked(),
+                        self.ui.pack_vwii_mode_checkbox.isChecked(), self.ui.patch_ios_checkbox.isChecked())
         worker.signals.result.connect(self.check_batch_result)
         worker.signals.progress.connect(self.update_log_text)
         self.threadpool.start(worker)
@@ -546,7 +547,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
             msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
             msg_box.setWindowTitle(app.translate("MainWindow", "Invalid Download Directory"))
-            msg_box.setText(app.translate("MainWindow", "The specified download directory does not exist!"))
+            msg_box.setText(app.translate("MainWindow", "<b>The specified download directory does not exist!</b>"))
             msg_box.setInformativeText(app.translate("MainWindow",
                                                      "Please make sure the download directory you want to use exists, and "
                                                      "that you have permission to access it."))
@@ -577,11 +578,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     # Load the database files, this will work for both the raw Python file and compiled standalone/onefile binaries.
-    database_file = open(os.path.join(os.path.dirname(__file__), "data/wii-database.json"))
+    database_file = open(os.path.join(os.path.dirname(__file__), "data", "wii-database.json"))
     wii_database = json.load(database_file)
-    database_file = open(os.path.join(os.path.dirname(__file__), "data/vwii-database.json"))
+    database_file = open(os.path.join(os.path.dirname(__file__), "data", "vwii-database.json"))
     vwii_database = json.load(database_file)
-    database_file = open(os.path.join(os.path.dirname(__file__), "data/dsi-database.json"))
+    database_file = open(os.path.join(os.path.dirname(__file__), "data", "dsi-database.json"))
     dsi_database = json.load(database_file)
     # Load the user's Downloads directory, which of course requires different steps on Windows vs macOS/Linux.
     if os.name == 'nt':
@@ -610,28 +611,34 @@ if __name__ == "__main__":
         config_data: dict = {"auto_update": True}
         save_config(config_data)
 
-    # Load the system plugins directory on Linux for system styles, if it exists. Try using Breeze if available, because
-    # it looks nice, but fallback on kvantum if it isn't, since kvantum is likely to exist. If all else fails, fusion.
-    if platform.system() == "Linux":
-        if os.path.isdir("/usr/lib/qt6/plugins"):
-            import subprocess
-            try:
-                # This CANNOT be the best way to get the system Qt version, but it's what I came up with for now.
-                result = subprocess.run(['/usr/lib/qt6/bin/qtdiag'], stdout=subprocess.PIPE)
-                result_str = result.stdout.decode("utf-8").split("\n")[0]
-                sys_qt_ver = result_str.split(" ")[1].split(".")
-                pyside_qt_ver = version("PySide6").split(".")
-                if sys_qt_ver[0:2] == pyside_qt_ver[0:2]:
-                    app.addLibraryPath("/usr/lib/qt6/plugins")
-                if "Breeze" in QStyleFactory.keys():
-                    app.setStyle("Breeze")
-                elif "kvantum" in QStyleFactory.keys():
-                    app.setStyle("kvantum")
-            except Exception as e:
-                print(e)
-    # The macOS Qt theme sucks, so let's avoid using it.
-    elif platform.system() == "Darwin":
-        app.setStyle("fusion")
+    # This is essentially obsolete now with the addition of the custom stylesheet, but I'm keeping it just in case.
+    # # Load the system plugins directory on Linux for system styles, if it exists. Try using Breeze if available, because
+    # # it looks nice, but fallback on kvantum if it isn't, since kvantum is likely to exist. If all else fails, fusion.
+    # if platform.system() == "Linux":
+    #     if os.path.isdir("/usr/lib/qt6/plugins"):
+    #         import subprocess
+    #         try:
+    #             # This CANNOT be the best way to get the system Qt version, but it's what I came up with for now.
+    #             result = subprocess.run(['/usr/lib/qt6/bin/qtdiag'], stdout=subprocess.PIPE)
+    #             result_str = result.stdout.decode("utf-8").split("\n")[0]
+    #             sys_qt_ver = result_str.split(" ")[1].split(".")
+    #             pyside_qt_ver = version("PySide6").split(".")
+    #             if sys_qt_ver[0:2] == pyside_qt_ver[0:2]:
+    #                 app.addLibraryPath("/usr/lib/qt6/plugins")
+    #             if "Breeze" in QStyleFactory.keys():
+    #                 app.setStyle("Breeze")
+    #             elif "kvantum" in QStyleFactory.keys():
+    #                 app.setStyle("kvantum")
+    #         except Exception as e:
+    #             print(e)
+
+    # Load Fusion because that's objectively the best base theme, and then load the fancy stylesheet on top to make
+    # NUSGet look nice and pretty.
+    app.setStyle("fusion")
+    stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style.qss")).read()
+    image_path_prefix = pathlib.Path(os.path.join(os.path.dirname(__file__), "resources")).resolve().as_posix()
+    stylesheet = stylesheet.replace("{IMAGE_PREFIX}", image_path_prefix)
+    app.setStyleSheet(stylesheet)
 
     # Load base Qt translations, and then app-specific translations.
     path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
@@ -639,13 +646,13 @@ if __name__ == "__main__":
     if translator.load(QLocale.system(), 'qtbase', '_', path):
         app.installTranslator(translator)
     translator = QTranslator(app)
-    path = os.path.join(os.path.dirname(__file__), "resources/translations")
+    path = os.path.join(os.path.dirname(__file__), "resources", "translations")
     if translator.load(QLocale.system(), 'nusget', '_', path):
         app.installTranslator(translator)
 
     window = MainWindow()
     window.setWindowTitle("NUSGet")
-    window.setWindowIcon(QIcon(os.path.join(os.path.dirname(__file__), "resources/icon.png")))
+    app.setWindowIcon(QIcon(os.path.join(os.path.dirname(__file__), "resources", "icon.png")))
     window.show()
 
     sys.exit(app.exec())

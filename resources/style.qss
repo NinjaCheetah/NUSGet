@@ -1,0 +1,124 @@
+/* "resources/style.qss" from NUSGet by NinjaCheetah & Contributors           */
+/*  Much of this QSS was written by Alex (https://github.com/Humanoidear)     */
+/*  from WiiLink for the fancy new WiiLink Patcher GUI. Used with permission. */
+
+QMainWindow, QDialog {
+    background-color: #222222;
+}
+
+QMainWindow QLabel {
+    color: #ffffff;
+}
+
+QRadioButton {
+    background-color: transparent;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+QRadioButton:hover {
+    background-color: rgba(60, 60, 60, 1);
+    border-color: #4a86e8;
+}
+
+QRadioButton:checked {
+    background-color: rgba(26, 115, 232, 0.08);
+    border: 1px solid #1a73e8;
+    color: #1a73e8;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 1px solid #5f6368;
+    margin-right: 8px;
+    subcontrol-position: left center;
+}
+
+QRadioButton::indicator:checked {
+    background-color: #1a73e8;
+    border: 1px solid #1a73e8;
+    image: url("{IMAGE_PREFIX}/rounded_square.svg");
+}
+
+QRadioButton::indicator:hover {
+    border-color: #1a73e8;
+}
+
+QPushButton {
+    background-color: transparent;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+QPushButton:hover {
+    background-color: rgba(60, 60, 60, 1);
+    border-color: #4a86e8;
+}
+
+QPushButton:pressed {
+    background-color: rgba(26, 115, 232, 0.15);
+    border: 1px solid #1a73e8;
+}
+
+QPushButton:disabled {
+    background-color: rgba(70, 70, 70, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+WrapCheckboxWidget {
+    background-color: transparent;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 12px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+WrapCheckboxWidget:hover {
+    background-color: rgba(60, 60, 60, 1);
+    border-color: #4a86e8;
+}
+
+WrapCheckboxWidget:disabled {
+    background-color: rgba(70, 70, 70, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+WrapCheckboxWidget QLabel:disabled {
+    color: #919191;
+}
+
+WrapCheckboxWidget QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #5f6368;
+}
+
+WrapCheckboxWidget QCheckBox::indicator:checked {
+    background-color: #1a73e8;
+    border: 1px solid #1a73e8;
+    image: url("{IMAGE_PREFIX}/check.svg");
+}
+
+WrapCheckboxWidget QCheckBox::indicator:hover {
+    border-color: #1a73e8;
+}
+
+WrapCheckboxWidget QCheckBox:checked {
+    color: #1a73e8;
+}

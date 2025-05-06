@@ -16,11 +16,13 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QHBoxLayout,
-    QHeaderView, QLabel, QLayout, QLineEdit,
-    QMainWindow, QMenu, QMenuBar, QPushButton,
-    QSizePolicy, QSpacerItem, QTabWidget, QTextBrowser,
-    QTreeView, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QHeaderView,
+    QLabel, QLayout, QLineEdit, QMainWindow,
+    QMenu, QMenuBar, QPushButton, QSizePolicy,
+    QSpacerItem, QTabWidget, QTextBrowser, QTreeView,
+    QVBoxLayout, QWidget)
+
+from qt.py.ui_WrapCheckboxWidget import WrapCheckboxWidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -175,7 +177,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
         self.verticalLayout_7 = QVBoxLayout()
-        self.verticalLayout_7.setSpacing(5)
+        self.verticalLayout_7.setSpacing(4)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.verticalLayout_7.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
         self.label_3 = QLabel(self.centralwidget)
@@ -186,31 +188,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.label_3)
 
-        self.pack_archive_row = QHBoxLayout()
-        self.pack_archive_row.setSpacing(10)
-        self.pack_archive_row.setObjectName(u"pack_archive_row")
-        self.pack_archive_chkbox = QCheckBox(self.centralwidget)
-        self.pack_archive_chkbox.setObjectName(u"pack_archive_chkbox")
-        sizePolicy1.setHeightForWidth(self.pack_archive_chkbox.sizePolicy().hasHeightForWidth())
-        self.pack_archive_chkbox.setSizePolicy(sizePolicy1)
-        self.pack_archive_chkbox.setText(u"")
-        self.pack_archive_chkbox.setChecked(True)
+        self.pack_archive_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.pack_archive_checkbox.setObjectName(u"pack_archive_checkbox")
 
-        self.pack_archive_row.addWidget(self.pack_archive_chkbox)
-
-        self.pack_archive_chkbox_lbl = QLabel(self.centralwidget)
-        self.pack_archive_chkbox_lbl.setObjectName(u"pack_archive_chkbox_lbl")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.MinimumExpanding)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.pack_archive_chkbox_lbl.sizePolicy().hasHeightForWidth())
-        self.pack_archive_chkbox_lbl.setSizePolicy(sizePolicy4)
-        self.pack_archive_chkbox_lbl.setWordWrap(True)
-
-        self.pack_archive_row.addWidget(self.pack_archive_chkbox_lbl)
-
-
-        self.verticalLayout_7.addLayout(self.pack_archive_row)
+        self.verticalLayout_7.addWidget(self.pack_archive_checkbox)
 
         self.archive_file_entry = QLineEdit(self.centralwidget)
         self.archive_file_entry.setObjectName(u"archive_file_entry")
@@ -218,124 +199,33 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.archive_file_entry)
 
-        self.keep_enc_row = QHBoxLayout()
-        self.keep_enc_row.setSpacing(10)
-        self.keep_enc_row.setObjectName(u"keep_enc_row")
-        self.keep_enc_chkbox = QCheckBox(self.centralwidget)
-        self.keep_enc_chkbox.setObjectName(u"keep_enc_chkbox")
-        sizePolicy1.setHeightForWidth(self.keep_enc_chkbox.sizePolicy().hasHeightForWidth())
-        self.keep_enc_chkbox.setSizePolicy(sizePolicy1)
-        self.keep_enc_chkbox.setText(u"")
-        self.keep_enc_chkbox.setChecked(True)
+        self.keep_enc_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.keep_enc_checkbox.setObjectName(u"keep_enc_checkbox")
 
-        self.keep_enc_row.addWidget(self.keep_enc_chkbox)
+        self.verticalLayout_7.addWidget(self.keep_enc_checkbox)
 
-        self.keep_enc_chkbox_lbl = QLabel(self.centralwidget)
-        self.keep_enc_chkbox_lbl.setObjectName(u"keep_enc_chkbox_lbl")
-        sizePolicy4.setHeightForWidth(self.keep_enc_chkbox_lbl.sizePolicy().hasHeightForWidth())
-        self.keep_enc_chkbox_lbl.setSizePolicy(sizePolicy4)
-        self.keep_enc_chkbox_lbl.setWordWrap(True)
+        self.create_dec_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.create_dec_checkbox.setObjectName(u"create_dec_checkbox")
 
-        self.keep_enc_row.addWidget(self.keep_enc_chkbox_lbl)
+        self.verticalLayout_7.addWidget(self.create_dec_checkbox)
 
+        self.use_local_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.use_local_checkbox.setObjectName(u"use_local_checkbox")
 
-        self.verticalLayout_7.addLayout(self.keep_enc_row)
+        self.verticalLayout_7.addWidget(self.use_local_checkbox)
 
-        self.create_dec_row = QHBoxLayout()
-        self.create_dec_row.setSpacing(10)
-        self.create_dec_row.setObjectName(u"create_dec_row")
-        self.create_dec_chkbox = QCheckBox(self.centralwidget)
-        self.create_dec_chkbox.setObjectName(u"create_dec_chkbox")
-        sizePolicy1.setHeightForWidth(self.create_dec_chkbox.sizePolicy().hasHeightForWidth())
-        self.create_dec_chkbox.setSizePolicy(sizePolicy1)
-        self.create_dec_chkbox.setText(u"")
+        self.use_wiiu_nus_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.use_wiiu_nus_checkbox.setObjectName(u"use_wiiu_nus_checkbox")
 
-        self.create_dec_row.addWidget(self.create_dec_chkbox)
+        self.verticalLayout_7.addWidget(self.use_wiiu_nus_checkbox)
 
-        self.create_dec_chkbox_lbl = QLabel(self.centralwidget)
-        self.create_dec_chkbox_lbl.setObjectName(u"create_dec_chkbox_lbl")
-        sizePolicy4.setHeightForWidth(self.create_dec_chkbox_lbl.sizePolicy().hasHeightForWidth())
-        self.create_dec_chkbox_lbl.setSizePolicy(sizePolicy4)
-        self.create_dec_chkbox_lbl.setWordWrap(True)
+        self.patch_ios_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.patch_ios_checkbox.setObjectName(u"patch_ios_checkbox")
+        self.patch_ios_checkbox.setEnabled(False)
 
-        self.create_dec_row.addWidget(self.create_dec_chkbox_lbl)
+        self.verticalLayout_7.addWidget(self.patch_ios_checkbox)
 
-
-        self.verticalLayout_7.addLayout(self.create_dec_row)
-
-        self.use_local_row = QHBoxLayout()
-        self.use_local_row.setSpacing(10)
-        self.use_local_row.setObjectName(u"use_local_row")
-        self.use_local_chkbox = QCheckBox(self.centralwidget)
-        self.use_local_chkbox.setObjectName(u"use_local_chkbox")
-        self.use_local_chkbox.setEnabled(True)
-        sizePolicy1.setHeightForWidth(self.use_local_chkbox.sizePolicy().hasHeightForWidth())
-        self.use_local_chkbox.setSizePolicy(sizePolicy1)
-        self.use_local_chkbox.setText(u"")
-
-        self.use_local_row.addWidget(self.use_local_chkbox)
-
-        self.use_local_chkbox_lbl = QLabel(self.centralwidget)
-        self.use_local_chkbox_lbl.setObjectName(u"use_local_chkbox_lbl")
-        sizePolicy4.setHeightForWidth(self.use_local_chkbox_lbl.sizePolicy().hasHeightForWidth())
-        self.use_local_chkbox_lbl.setSizePolicy(sizePolicy4)
-        self.use_local_chkbox_lbl.setWordWrap(True)
-
-        self.use_local_row.addWidget(self.use_local_chkbox_lbl)
-
-
-        self.verticalLayout_7.addLayout(self.use_local_row)
-
-        self.use_wiiu_nus_row = QHBoxLayout()
-        self.use_wiiu_nus_row.setSpacing(10)
-        self.use_wiiu_nus_row.setObjectName(u"use_wiiu_nus_row")
-        self.use_wiiu_nus_row.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
-        self.use_wiiu_nus_chkbox = QCheckBox(self.centralwidget)
-        self.use_wiiu_nus_chkbox.setObjectName(u"use_wiiu_nus_chkbox")
-        sizePolicy2.setHeightForWidth(self.use_wiiu_nus_chkbox.sizePolicy().hasHeightForWidth())
-        self.use_wiiu_nus_chkbox.setSizePolicy(sizePolicy2)
-        self.use_wiiu_nus_chkbox.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.use_wiiu_nus_chkbox.setText(u"")
-        self.use_wiiu_nus_chkbox.setChecked(True)
-
-        self.use_wiiu_nus_row.addWidget(self.use_wiiu_nus_chkbox)
-
-        self.use_wiiu_nus_chkbox_lbl = QLabel(self.centralwidget)
-        self.use_wiiu_nus_chkbox_lbl.setObjectName(u"use_wiiu_nus_chkbox_lbl")
-        sizePolicy4.setHeightForWidth(self.use_wiiu_nus_chkbox_lbl.sizePolicy().hasHeightForWidth())
-        self.use_wiiu_nus_chkbox_lbl.setSizePolicy(sizePolicy4)
-        self.use_wiiu_nus_chkbox_lbl.setWordWrap(True)
-
-        self.use_wiiu_nus_row.addWidget(self.use_wiiu_nus_chkbox_lbl)
-
-
-        self.verticalLayout_7.addLayout(self.use_wiiu_nus_row)
-
-        self.patch_ios_row = QHBoxLayout()
-        self.patch_ios_row.setSpacing(10)
-        self.patch_ios_row.setObjectName(u"patch_ios_row")
-        self.patch_ios_chkbox = QCheckBox(self.centralwidget)
-        self.patch_ios_chkbox.setObjectName(u"patch_ios_chkbox")
-        self.patch_ios_chkbox.setEnabled(False)
-        sizePolicy1.setHeightForWidth(self.patch_ios_chkbox.sizePolicy().hasHeightForWidth())
-        self.patch_ios_chkbox.setSizePolicy(sizePolicy1)
-        self.patch_ios_chkbox.setText(u"")
-
-        self.patch_ios_row.addWidget(self.patch_ios_chkbox)
-
-        self.patch_ios_chkbox_lbl = QLabel(self.centralwidget)
-        self.patch_ios_chkbox_lbl.setObjectName(u"patch_ios_chkbox_lbl")
-        self.patch_ios_chkbox_lbl.setEnabled(True)
-        sizePolicy4.setHeightForWidth(self.patch_ios_chkbox_lbl.sizePolicy().hasHeightForWidth())
-        self.patch_ios_chkbox_lbl.setSizePolicy(sizePolicy4)
-        self.patch_ios_chkbox_lbl.setWordWrap(True)
-
-        self.patch_ios_row.addWidget(self.patch_ios_chkbox_lbl)
-
-
-        self.verticalLayout_7.addLayout(self.patch_ios_row)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Ignored)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_7.addItem(self.verticalSpacer_2)
 
@@ -355,31 +245,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.label_4)
 
-        self.pack_vwii_mode_row = QHBoxLayout()
-        self.pack_vwii_mode_row.setObjectName(u"pack_vwii_mode_row")
-        self.pack_vwii_mode_chkbox = QCheckBox(self.centralwidget)
-        self.pack_vwii_mode_chkbox.setObjectName(u"pack_vwii_mode_chkbox")
-        self.pack_vwii_mode_chkbox.setEnabled(False)
-        sizePolicy1.setHeightForWidth(self.pack_vwii_mode_chkbox.sizePolicy().hasHeightForWidth())
-        self.pack_vwii_mode_chkbox.setSizePolicy(sizePolicy1)
-        self.pack_vwii_mode_chkbox.setText(u"")
+        self.pack_vwii_mode_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.pack_vwii_mode_checkbox.setObjectName(u"pack_vwii_mode_checkbox")
+        self.pack_vwii_mode_checkbox.setEnabled(False)
 
-        self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_chkbox)
-
-        self.pack_vwii_mode_chkbox_lbl = QLabel(self.centralwidget)
-        self.pack_vwii_mode_chkbox_lbl.setObjectName(u"pack_vwii_mode_chkbox_lbl")
-        self.pack_vwii_mode_chkbox_lbl.setEnabled(True)
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.pack_vwii_mode_chkbox_lbl.sizePolicy().hasHeightForWidth())
-        self.pack_vwii_mode_chkbox_lbl.setSizePolicy(sizePolicy5)
-        self.pack_vwii_mode_chkbox_lbl.setWordWrap(True)
-
-        self.pack_vwii_mode_row.addWidget(self.pack_vwii_mode_chkbox_lbl)
-
-
-        self.verticalLayout_8.addLayout(self.pack_vwii_mode_row)
+        self.verticalLayout_8.addWidget(self.pack_vwii_mode_checkbox)
 
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
@@ -387,39 +257,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.label_2)
 
-        self.auto_update_row = QHBoxLayout()
-        self.auto_update_row.setObjectName(u"auto_update_row")
-        self.auto_update_chkbox = QCheckBox(self.centralwidget)
-        self.auto_update_chkbox.setObjectName(u"auto_update_chkbox")
-        sizePolicy1.setHeightForWidth(self.auto_update_chkbox.sizePolicy().hasHeightForWidth())
-        self.auto_update_chkbox.setSizePolicy(sizePolicy1)
+        self.auto_update_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.auto_update_checkbox.setObjectName(u"auto_update_checkbox")
 
-        self.auto_update_row.addWidget(self.auto_update_chkbox)
+        self.verticalLayout_8.addWidget(self.auto_update_checkbox)
 
-        self.auto_update_chkbox_lbl = QLabel(self.centralwidget)
-        self.auto_update_chkbox_lbl.setObjectName(u"auto_update_chkbox_lbl")
+        self.custom_out_dir_checkbox = WrapCheckboxWidget(self.centralwidget)
+        self.custom_out_dir_checkbox.setObjectName(u"custom_out_dir_checkbox")
 
-        self.auto_update_row.addWidget(self.auto_update_chkbox_lbl)
-
-
-        self.verticalLayout_8.addLayout(self.auto_update_row)
-
-        self.custom_out_dir_row = QHBoxLayout()
-        self.custom_out_dir_row.setObjectName(u"custom_out_dir_row")
-        self.custom_out_dir_chkbox = QCheckBox(self.centralwidget)
-        self.custom_out_dir_chkbox.setObjectName(u"custom_out_dir_chkbox")
-        sizePolicy1.setHeightForWidth(self.custom_out_dir_chkbox.sizePolicy().hasHeightForWidth())
-        self.custom_out_dir_chkbox.setSizePolicy(sizePolicy1)
-
-        self.custom_out_dir_row.addWidget(self.custom_out_dir_chkbox)
-
-        self.custom_out_dir_chkbox_lbl = QLabel(self.centralwidget)
-        self.custom_out_dir_chkbox_lbl.setObjectName(u"custom_out_dir_chkbox_lbl")
-
-        self.custom_out_dir_row.addWidget(self.custom_out_dir_chkbox_lbl)
-
-
-        self.verticalLayout_8.addLayout(self.custom_out_dir_row)
+        self.verticalLayout_8.addWidget(self.custom_out_dir_checkbox)
 
         self.custom_out_dir_entry_row = QHBoxLayout()
         self.custom_out_dir_entry_row.setObjectName(u"custom_out_dir_entry_row")
@@ -438,7 +284,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addLayout(self.custom_out_dir_entry_row)
 
-        self.verticalSpacer = QSpacerItem(20, 50, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.MinimumExpanding)
+        self.verticalSpacer = QSpacerItem(20, 50, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_8.addItem(self.verticalSpacer)
 
@@ -501,20 +347,9 @@ class Ui_MainWindow(object):
         self.download_btn.setText(QCoreApplication.translate("MainWindow", u"Start Download", None))
         self.script_btn.setText(QCoreApplication.translate("MainWindow", u"Run Script", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"General Settings", None))
-        self.pack_archive_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Pack installable archive (WAD/TAD)", None))
         self.archive_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
-        self.keep_enc_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Keep encrypted contents", None))
-        self.create_dec_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Create decrypted contents (*.app)", None))
-        self.use_local_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use local files, if they exist", None))
-        self.use_wiiu_nus_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use the Wii U NUS (faster, only effects Wii/vWii)", None))
-        self.patch_ios_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Apply patches to IOS (Applies to WADs only)", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"vWii Title Settings", None))
-        self.pack_vwii_mode_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Re-encrypt title using the Wii Common Key", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"App Settings", None))
-        self.auto_update_chkbox.setText("")
-        self.auto_update_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Check for updates on startup", None))
-        self.custom_out_dir_chkbox.setText("")
-        self.custom_out_dir_chkbox_lbl.setText(QCoreApplication.translate("MainWindow", u"Use a custom download directory", None))
         self.custom_out_dir_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Output Path", None))
         self.custom_out_dir_btn.setText(QCoreApplication.translate("MainWindow", u"Select...", None))
         self.log_text_browser.setMarkdown("")
