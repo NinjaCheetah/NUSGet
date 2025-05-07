@@ -259,6 +259,10 @@ QScrollBar::handle:vertical {
     border-radius: 4px;
 }
 
+QScrollBar::handle:vertical:hover {
+    background-color: rgba(26, 115, 232, 0.4);
+}
+
 QScrollBar::add-line:vertical {
     height: 0;
     subcontrol-position: bottom;
@@ -285,6 +289,10 @@ QScrollBar::handle:horizontal {
     margin: 0px 2px 0px 2px;
     border: 1px solid rgba(70, 70, 70, 1);
     border-radius: 4px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: rgba(26, 115, 232, 0.4);
 }
 
 QScrollBar::add-line:horizontal {
