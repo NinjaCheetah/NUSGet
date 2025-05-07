@@ -153,6 +153,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.create_dec_checkbox.label.setText(app.translate("MainWindow", "Create decrypted contents (*.app)"))
         self.ui.use_local_checkbox.label.setText(app.translate("MainWindow", "Use local files, if they exist"))
         self.ui.use_wiiu_nus_checkbox.label.setText(app.translate("MainWindow", "Use the Wii U NUS (faster, only effects Wii/vWii)"))
+        self.ui.use_wiiu_nus_checkbox.setChecked(True)
         self.ui.patch_ios_checkbox.label.setText(app.translate("MainWindow", "Apply patches to IOS (Applies to WADs only)"))
         self.ui.pack_vwii_mode_checkbox.label.setText(app.translate("MainWindow", "Re-encrypt title using the Wii Common Key"))
         self.ui.auto_update_checkbox.label.setText(app.translate("MainWindow", "Check for updates on startup"))

@@ -243,6 +243,62 @@ QComboBox QAbstractItemView::item:hover {
     background-color: #1a73e8;
 }
 
+QScrollBar:vertical {
+    border: 0;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 2px 0 2px 0;
+    background-color: #222222;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgba(60, 60, 60, 1);
+    margin: 0px 2px 0px 2px;
+    width: 10px;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    border: 0;
+    background: #2b2b2b;
+    height: 16px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar:horizontal {
+    border: 0;
+    border-radius: 8px;
+    padding: 2px 0 2px 0;
+    background-color: #222222;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: rgba(60, 60, 60, 1);
+    margin: 0px 2px 0px 2px;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:horizontal {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+    height: 0;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
 WrapCheckboxWidget {
     show-decoration-selected: 1;
     outline: 0;
