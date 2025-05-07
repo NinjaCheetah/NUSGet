@@ -23,7 +23,7 @@ import webbrowser
 from importlib.metadata import version
 
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QListView
 from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
 
 from qt.py.ui_AboutDialog import AboutNUSGet
@@ -118,9 +118,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                               "will be downloaded to a folder named \"NUSGet Downloads\" inside your downloads folder.")
         self.ui.log_text_browser.setText(self.log_text)
         # Add console entries to dropdown and attach on change signal.
-        self.ui.console_select_dropdown.addItem("Wii")
-        self.ui.console_select_dropdown.addItem("vWii")
-        self.ui.console_select_dropdown.addItem("DSi")
+        self.ui.console_select_dropdown.addItems(["Wii", "vWii", "DSi"])
+        list_view = QListView()
+        list_view.setMouseTracking(True)
+        self.ui.console_select_dropdown.setView(list_view)
         self.ui.console_select_dropdown.currentIndexChanged.connect(self.selected_console_changed)
         # Title tree loading code. Now powered by Models:tm:
         wii_model = NUSGetTreeModel(wii_database, root_name="Wii Titles")

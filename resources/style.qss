@@ -10,6 +10,34 @@ QMainWindow QLabel {
     color: #ffffff;
 }
 
+QMenuBar {
+    background-color: #2b2b2b;
+}
+
+QMenuBar::item:selected {
+    background-color: #1a73e8;
+}
+
+QMenu {
+    background-color: #222222;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+}
+
+QMenu::item:selected {
+    background-color: #1a73e8;
+}
+
+QAction {
+    background-color: #222222;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+}
+
 QRadioButton {
     background-color: transparent;
     border: 1px solid rgba(70, 70, 70, 1);
@@ -50,7 +78,88 @@ QRadioButton::indicator:hover {
     border-color: #1a73e8;
 }
 
+QLineEdit {
+    background-color: transparent;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+    font-size: 13px;
+    color: #ffffff;
+    selection-background-color: #1a73e8;
+}
+
+QLineEdit:focus {
+    border-color: #1a73e8;
+}
+
+QLineEdit:disabled {
+    background-color: rgba(70, 70, 70, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+QTabWidget::pane {
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #2b2b2b;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background-color: transparent;
+    border-top: 1px solid rgba(70, 70, 70, 1);
+    border-left: 1px solid rgba(70, 70, 70, 1);
+    border-right: 1px solid rgba(70, 70, 70, 1);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background-color: #2b2b2b;
+}
+
+QTreeView {
+    show-decoration-selected: 1;
+    outline: 0;
+    background-color: #1a1a1a;
+    border: 0;
+    border-radius: 8px;
+}
+
+QTreeView QHeaderView::section {
+    background-color: #2b2b2b;
+    border: 0;
+    font-weight: 500;
+    margin-top: -5px;
+}
+
+QTreeView::item:hover {
+    background-color: rgba(60, 60, 60, 1);
+}
+
+QTreeView::item:focus {
+    background-color: rgba(26, 115, 232, 0.08);
+}
+
+QTreeView::item:selected {
+    background-color: #1a73e8;
+}
+
+QTextBrowser {
+    background-color: #1a1a1a;
+    selection-background-color: #1a73e8;
+}
+
 QPushButton {
+    outline: 0;
+    show-decoration-selected: 1;
     background-color: transparent;
     border: 1px solid rgba(70, 70, 70, 1);
     border-radius: 8px;
@@ -66,6 +175,11 @@ QPushButton:hover {
     border-color: #4a86e8;
 }
 
+QPushButton:focus {
+    background-color: rgba(60, 60, 60, 1);
+    border-color: #4a86e8;
+}
+
 QPushButton:pressed {
     background-color: rgba(26, 115, 232, 0.15);
     border: 1px solid #1a73e8;
@@ -77,7 +191,61 @@ QPushButton:disabled {
     color: rgba(255, 255, 255, 0.3);
 }
 
+QComboBox {
+    background-color: transparent;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+QComboBox:on {
+    background-color: rgba(26, 115, 232, 0.15);
+    border: 1px solid #1a73e8;
+}
+
+QComboBox:hover {
+    background-color: rgba(60, 60, 60, 1);
+    border-color: #4a86e8;
+}
+
+QComboBox:focus {
+    background-color: rgba(60, 60, 60, 1);
+    border-color: #4a86e8;
+}
+
+QComboBox::drop-down {
+    border: 0;
+    width: 24px;
+}
+
+QComboBox::down-arrow {
+    image: url("{IMAGE_PREFIX}/down_arrow.svg");
+}
+
+QComboBox QAbstractItemView {
+    background-color: #222222;
+    border: 1px solid rgba(70, 70, 70, 1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    outline: 0;
+    show-decoration-selected: 1;
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background-color: #1a73e8;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #1a73e8;
+}
+
 WrapCheckboxWidget {
+    show-decoration-selected: 1;
+    outline: 0;
     background-color: transparent;
     border: 1px solid rgba(70, 70, 70, 1);
     border-radius: 8px;
