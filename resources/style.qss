@@ -137,7 +137,6 @@ QTreeView QHeaderView::section {
     background-color: #2b2b2b;
     border: 0;
     font-weight: 500;
-    margin-top: -5px;
 }
 
 QTreeView::item:hover {
@@ -150,6 +149,16 @@ QTreeView::item:focus {
 
 QTreeView::item:selected {
     background-color: #1a73e8;
+}
+
+QTreeView QScrollBar:vertical {
+    margin-top: 16px;
+}
+
+QTreeView QScrollBar::sub-line:vertical {
+    border: 0;
+    background: #2b2b2b;
+    height: 16px;
 }
 
 QTextBrowser {
@@ -246,7 +255,6 @@ QComboBox QAbstractItemView::item:hover {
 QScrollBar:vertical {
     border: 0;
     border-radius: 8px;
-    margin-top: 16px;
     padding: 2px 0 2px 0;
     background-color: #222222;
 }
@@ -270,9 +278,7 @@ QScrollBar::add-line:vertical {
 }
 
 QScrollBar::sub-line:vertical {
-    border: 0;
-    background: #2b2b2b;
-    height: 16px;
+    height: 0;
     subcontrol-position: top;
     subcontrol-origin: margin;
 }
