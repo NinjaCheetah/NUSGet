@@ -1,5 +1,5 @@
 pyside6
-nuitka
+nuitka~=2.6.0
 libWiiPy
 libTWLPy
 zstandard
