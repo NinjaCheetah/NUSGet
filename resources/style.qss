@@ -155,12 +155,6 @@ QTreeView QScrollBar:vertical {
     margin-top: 16px;
 }
 
-QTreeView QScrollBar::sub-line:vertical {
-    border: 0;
-    background: #2b2b2b;
-    height: 16px;
-}
-
 QTextBrowser {
     background-color: #1a1a1a;
     selection-background-color: #1a73e8;

@@ -142,6 +142,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.trees[tree].doubleClicked.connect(self.title_double_clicked)
             self.trees[tree].expanded.connect(lambda: self.resize_tree(self.ui.platform_tabs.currentIndex()))
             self.trees[tree].collapsed.connect(lambda: self.resize_tree(self.ui.platform_tabs.currentIndex()))
+            # This stylesheet patch allows me to add the correct padding above the scrollbar so that it doesn't overlap
+            # the QTreeView's header.
+            self.trees[tree].setStyleSheet(self.trees[tree].styleSheet() + f"""
+                QTreeView QScrollBar::sub-line:vertical {{
+                    border: 0;
+                    background: #2b2b2b;
+                    height: {self.trees[tree].header().sizeHint().height()}px;
+                }}""")
         # Prevent resizing.
         self.setFixedSize(self.size())
         # These connections allow for clicking the checkbox labels to toggle the checkboxes, if they're enabled. This is
