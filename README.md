@@ -69,6 +69,7 @@ On Windows, you can use the PowerShell script `Build.ps1` in place of the Makefi
 
 ## Translations
 A huge thanks to all the wonderful translators who've helped make NUSGet available to more people!
+ - **French:** [@rougets](https://github.com/rougets)
  - **German:** [@yeah-its-gloria](https://github.com/yeah-its-gloria)
  - **Italian:** [@LNLenost](https://github.com/LNLenost)
  - **Korean:** [@DDinghoya](https://github.com/DDinghoya)

@@ -134,6 +134,8 @@ class AboutNUSGet(QDialog):
 
         # Team members with roles
         self.people = {
+            "rougets": QLabel(self.tr(
+                "French (Français): <a href=https://github.com/rougets style='color: #4a86e8; text-decoration: none;'><b>rougets</b></a>")),
             "yeah-its-gloria": QLabel(self.tr(
                 "German (Deutsch): <a href=https://github.com/yeah-its-gloria style='color: #4a86e8; text-decoration: none;'><b>yeah-its-gloria</b></a>")),
             "LNLenost": QLabel(self.tr(
