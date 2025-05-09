@@ -35,9 +35,11 @@ class Ui_MainWindow(object):
         self.actionAbout.setObjectName(u"actionAbout")
         icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.HelpAbout))
         self.actionAbout.setIcon(icon)
+        self.actionAbout.setMenuRole(QAction.MenuRole.ApplicationSpecificRole)
         self.actionAbout_Qt = QAction(MainWindow)
         self.actionAbout_Qt.setObjectName(u"actionAbout_Qt")
         self.actionAbout_Qt.setIcon(icon)
+        self.actionAbout_Qt.setMenuRole(QAction.MenuRole.ApplicationSpecificRole)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_3 = QHBoxLayout(self.centralwidget)
@@ -332,7 +334,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About NUSGet", None))
         self.actionAbout_Qt.setText(QCoreApplication.translate("MainWindow", u"About Qt", None))
         self.tree_filter_input.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.tree_filter_reset_btn.setText(QCoreApplication.translate("MainWindow", u"Clear", None))

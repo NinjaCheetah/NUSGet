@@ -461,7 +461,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <iconset theme="QIcon::ThemeIcon::HelpAbout"/>
    </property>
    <property name="text">
-    <string>About</string>
+    <string>About NUSGet</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::ApplicationSpecificRole</enum>
    </property>
   </action>
   <action name="actionAbout_Qt">
@@ -470,6 +473,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>About Qt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::ApplicationSpecificRole</enum>
    </property>
   </action>
  </widget>

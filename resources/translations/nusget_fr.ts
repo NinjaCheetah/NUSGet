@@ -412,6 +412,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="464"/>
+        <source>About NUSGet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../NUSGet.py" line="157"/>
         <source>Pack installable archive (WAD/TAD)</source>
         <translation>Empaqueter une archive d&apos;installation (WAD / TAD)</translation>
@@ -481,12 +486,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="464"/>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="472"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="475"/>
         <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>

@@ -469,11 +469,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="464"/>
-        <source>About</source>
-        <translation>Über</translation>
+        <source>About NUSGet</source>
+        <translation type="unfinished">Über NUSGet</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="472"/>
+        <source>About</source>
+        <translation type="vanished">Über</translation>
+    </message>
+    <message>
+        <location filename="../../qt/ui/MainMenu.ui" line="475"/>
         <source>About Qt</source>
         <translation>Über Qt</translation>
     </message>
