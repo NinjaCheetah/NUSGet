@@ -649,7 +649,7 @@ if __name__ == "__main__":
     # NUSGet look nice and pretty.
     app.setStyle("fusion")
     stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style.qss")).read()
-    image_path_prefix = os.path.join(os.path.dirname(__file__), "resources")
+    image_path_prefix = pathlib.Path(os.path.join(os.path.dirname(__file__), "resources")).resolve().as_posix()
     stylesheet = stylesheet.replace("{IMAGE_PREFIX}", image_path_prefix)
     app.setStyleSheet(stylesheet)
 
