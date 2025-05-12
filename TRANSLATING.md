@@ -57,5 +57,22 @@ Once you've launched Qt Linguist, you can open the `.ts` file for your language 
 
 ### Step 5: Translate!
 
-### Step 6: Push and Merge Your Translations
+### Step 6: Test Your Translations
+If your current system language is the one you're NUSGet translating into, then you can just run:
+```shell
+python NUSGet.py
+```
+and the app should open in your language.
+
+If your system language does not match the language you're translating to, you can specify a language override, like this:
+```shell
+LANG=xx_XX.UTF-8 python NUSGet.py
+```
+where `xx` is the two-letter language code, such as `ko` for Korean, and `XX` is the country code, such as `KR` for Korea. All together, that would give you:
+```shell
+LANG=ko_KR.UTF-8 python NUSGet.py
+```
+which would open NUSGet with the Korean translations loaded.
+
+### Step 7: Push and Merge Your Translations
 When you're done translating, commit your translations and push them to GitHub. Then, open a pull request on the original repository, and you're all done!
