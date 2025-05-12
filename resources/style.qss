@@ -24,6 +24,7 @@ QMenu {
     border-radius: 8px;
     padding: 6px 10px;
     margin: 4px 0px;
+    color: white;
 }
 
 QMenu::item:selected {
@@ -36,6 +37,7 @@ QAction {
     border-radius: 8px;
     padding: 6px 10px;
     margin: 4px 0px;
+    color: white;
 }
 
 QRadioButton {
@@ -137,6 +139,10 @@ QTreeView QHeaderView::section {
     background-color: #2b2b2b;
     border: 0;
     font-weight: 500;
+}
+
+QTreeView::item {
+    color: white;
 }
 
 QTreeView::item:hover {
@@ -243,6 +249,7 @@ QComboBox QAbstractItemView::item {
     border-radius: 4px;
     padding: 4px 8px;
     margin: 2px 0px;
+    color: white;
 }
 
 QComboBox QAbstractItemView::item:hover {
