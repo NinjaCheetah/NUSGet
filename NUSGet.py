@@ -122,6 +122,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         list_view = QListView()
         list_view.setMouseTracking(True)
         self.ui.console_select_dropdown.setView(list_view)
+        dropdown_delegate = ComboBoxItemDelegate()
+        self.ui.console_select_dropdown.setItemDelegate(dropdown_delegate)
         self.ui.console_select_dropdown.currentIndexChanged.connect(self.selected_console_changed)
         # Title tree loading code. Now powered by Models:tm:
         wii_model = NUSGetTreeModel(wii_database, root_name="Wii Titles")

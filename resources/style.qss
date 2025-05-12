@@ -196,6 +196,7 @@ QPushButton:disabled {
 
 QComboBox {
     background-color: transparent;
+    combobox-popup: 0;
     border: 1px solid rgba(70, 70, 70, 1);
     border-radius: 8px;
     padding: 6px 10px;
@@ -233,8 +234,6 @@ QComboBox QAbstractItemView {
     background-color: #2b2b2b;
     border: 1px solid #444444;
     border-radius: 8px;
-    selection-background-color: #1a73e8;
-    selection-color: white;
     padding: 4px;
     outline: none;
 }

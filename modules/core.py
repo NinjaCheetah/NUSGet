@@ -8,7 +8,15 @@ import requests
 from dataclasses import dataclass
 from typing import List
 
-from PySide6.QtCore import Qt as _Qt
+from PySide6.QtCore import Qt, QSize
+from PySide6.QtWidgets import QStyledItemDelegate, QSizePolicy
+
+
+# This is required to make the dropdown look correct with the custom styling. A little fuzzy on the why, but it has to
+# do with how Qt handles rendering the dropdown items. The sizing has to be overridden so that they don't overlap.
+class ComboBoxItemDelegate(QStyledItemDelegate):
+    def sizeHint(self, option, index):
+        return QSize(option.rect.width(), 33)
 
 
 @dataclass
@@ -42,7 +50,7 @@ class BatchResults:
 
 def connect_label_to_checkbox(label, checkbox):
     def toggle_checkbox(event):
-        if checkbox.isEnabled() and event.button() == _Qt.LeftButton:
+        if checkbox.isEnabled() and event.button() == Qt.LeftButton:
             checkbox.toggle()
     label.mousePressEvent = toggle_checkbox
 
