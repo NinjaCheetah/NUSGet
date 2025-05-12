@@ -15,29 +15,38 @@ QMenuBar {
 }
 
 QMenuBar::item:selected {
+    background-color: rgba(60, 60, 60, 1);
+    color: white;
+}
+
+QMenuBar::item:pressed {
     background-color: #1a73e8;
+    color: white;
 }
 
 QMenu {
-    background-color: #222222;
+    background-color: #2b2b2b;
     border: 1px solid rgba(70, 70, 70, 1);
     border-radius: 8px;
-    padding: 6px 10px;
-    margin: 4px 0px;
+    padding: 6px 2px;
+    margin: 4px 0;
     color: white;
+}
+
+QMenu::item {
+    padding: 6px 2px;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: transparent;
 }
 
 QMenu::item:selected {
     background-color: #1a73e8;
+    color: white;
 }
 
-QAction {
-    background-color: #222222;
-    border: 1px solid rgba(70, 70, 70, 1);
-    border-radius: 8px;
-    padding: 6px 10px;
-    margin: 4px 0px;
-    color: white;
+QMenu::icon {
+    padding: 4px;
 }
 
 QRadioButton {

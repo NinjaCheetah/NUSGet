@@ -125,6 +125,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dropdown_delegate = ComboBoxItemDelegate()
         self.ui.console_select_dropdown.setItemDelegate(dropdown_delegate)
         self.ui.console_select_dropdown.currentIndexChanged.connect(self.selected_console_changed)
+        # Fix the annoying background on the help menu items.
+        self.ui.menuHelp.setWindowFlags(self.ui.menuHelp.windowFlags() | Qt.FramelessWindowHint)
+        self.ui.menuHelp.setAttribute(Qt.WA_TranslucentBackground)
         # Title tree loading code. Now powered by Models:tm:
         wii_model = NUSGetTreeModel(wii_database, root_name="Wii Titles")
         vwii_model = NUSGetTreeModel(vwii_database, root_name="vWii Titles")
