@@ -6,67 +6,67 @@
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="16"/>
         <source>About NUSGet</source>
-        <translation type="unfinished"></translation>
+        <translation>Despre NUSGet</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="82"/>
         <source>NUSGet</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="87"/>
         <source>Version {nusget_version}</source>
-        <translation type="unfinished"></translation>
+        <translation>Versiunea {nusget_version}</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="93"/>
         <source>Using libWiiPy {libwiipy_version} &amp; libTWLPy {libtwlpy_version}</source>
-        <translation type="unfinished"></translation>
+        <translation>Folosește libWiiPy {libwiipy_version} &amp; libTWLPy {libtwlpy_version}</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="98"/>
         <source>© 2024-2025 NinjaCheetah &amp; Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>© 2024-2025 NinjaCheetah &amp; Contributors</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="114"/>
         <source>View Project on GitHub</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedeți proiectul pe GitHub</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="130"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Traduceri</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="138"/>
         <source>French (Français): &lt;a href=https://github.com/rougets style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rougets&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Franceză (Français): &lt;a href=https://github.com/rougets style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rougets&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="140"/>
         <source>German (Deutsch): &lt;a href=https://github.com/yeah-its-gloria style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;yeah-its-gloria&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Germană (Deutsch): &lt;a href=https://github.com/yeah-its-gloria style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;yeah-its-gloria&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="142"/>
         <source>Italian (Italiano): &lt;a href=https://github.com/LNLenost style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;LNLenost&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Italiană (Italiano): &lt;a href=https://github.com/LNLenost style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;LNLenost&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="144"/>
         <source>Korean (한국어): &lt;a href=https://github.com/DDinghoya style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DDinghoya&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Coreană (한국어): &lt;a href=https://github.com/DDinghoya style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DDinghoya&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="146"/>
         <source>Norwegian (Norsk): &lt;a href=https://github.com/rolfiee style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rolfiee&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Norvegiană (Norsk): &lt;a href=https://github.com/rolfiee style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rolfiee&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="148"/>
         <source>Romanian (Română): &lt;a href=https://github.com/NotImplementedLife style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;NotImplementedLife&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Română (Română): &lt;a href=https://github.com/NotImplementedLife style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;NotImplementedLife&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -131,17 +131,21 @@ Titlurile vor fi descărcate într-un folder numit „NUSGet Downloads” în fi
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectați un titlu din lista din stânga, sau introduceți un Title ID pentru a începe.
+
+Titlurile marcate cu bifă sunt libere și au un tichet valabil, ele pot fi decriptate și/sau împachetate într-un WAD sau TAD. Titlurile cu X nu au tichet, și doar conținutul lor criptat poate fi salvat.
+
+Implicit, titlurile vor fi descărcate într-un folder numit „NUSGet Downloads” în folderul dvs. de descărcări.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="163"/>
         <source>Use the Wii U NUS (faster, only affects Wii/vWii)</source>
-        <translation type="unfinished"></translation>
+        <translation>Folosiți Wii U NUS (mai rapid, afectează doar Wii/vWii)</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="233"/>
         <source>&lt;b&gt;There&apos;s a newer version of NUSGet available!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;O nouă versiune de NUSGet este valabilă!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="334"/>
@@ -162,17 +166,17 @@ By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&q
         <location filename="../../NUSGet.py" line="349"/>
         <location filename="../../NUSGet.py" line="553"/>
         <source>Invalid Download Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Director de descărcare invalid</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="350"/>
         <source>The specified download directory does not exist!</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorul de descărcare specificat nu există!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="353"/>
         <source>Please make sure the specified download directory exists, and that you have permission to access it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vă rugăm să vă asigurați că directorul de descărcare specificat există, și că aveți permisiuni pentru a-l accesa.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="383"/>
@@ -182,42 +186,42 @@ By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&q
     <message>
         <location filename="../../NUSGet.py" line="384"/>
         <source>&lt;b&gt;The Title ID you have entered is not in a valid format!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt; Title ID pe care l-ați introdus nu este într-un format valid!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="389"/>
         <source>&lt;b&gt;No title with the provided Title ID or version could be found!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Nu s-a găsit niciun titlu cu Title ID sau versiunea introdusă!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="394"/>
         <source>&lt;b&gt;Content decryption was not successful! Decrypted contents could not be created.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Decriptarea conținutului a eșuat! Nu s-a putut crea conținutul decriptat.&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="401"/>
         <source>&lt;b&gt;No Ticket is Available for the Requested Title!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Nu există tichet valabil pentru titlul cerut!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="407"/>
         <source>&lt;b&gt;An Unknown Error has Occurred!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;S-a produs o eroare necunoscută!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="429"/>
         <source>&lt;b&gt;Some issues occurred while running the download script.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Au apărut câteva probleme la rularea scriptului de descărcare.&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="479"/>
         <source>&lt;b&gt;An error occurred while parsing the script file!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;A apărut o eroare la procesarea fișierului script!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="489"/>
         <source>&lt;b&gt;An error occurred while parsing Title IDs!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;A apărut o eroare la procesarea Title ID-urilor!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>The Title ID you have entered is not in a valid format!</source>
@@ -344,17 +348,17 @@ By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&q
     <message>
         <location filename="../../NUSGet.py" line="543"/>
         <source>Open Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschideți folder</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="554"/>
         <source>&lt;b&gt;The specified download directory does not exist!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Directorul de descărcare specificat nu există!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="557"/>
         <source>Please make sure the download directory you want to use exists, and that you have permission to access it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vă rugăm să vă asigurați că directorul de descărcare pe care vreți să il folosiți există, și că aveți permisiunea de a-l accesa.</translation>
     </message>
     <message>
         <source>Open NUS script</source>
@@ -447,12 +451,12 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.AppleSystemUIFont&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="464"/>
         <source>About NUSGet</source>
-        <translation type="unfinished"></translation>
+        <translation>Despre NUSGet</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="157"/>
@@ -501,37 +505,37 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="343"/>
         <source>App Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Setări aplicație</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="167"/>
         <source>Check for updates on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificați dacă există actualizări la startup</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="168"/>
         <source>Use a custom download directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Folosiți un director de descărcare propriu</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="371"/>
         <source>Select...</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectează...</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="451"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajutor</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="475"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Despre Qt</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="361"/>
         <source>Output Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Cale de ieșire</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="60"/>
