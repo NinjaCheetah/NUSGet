@@ -73,7 +73,7 @@ class AboutNUSGet(QDialog):
 
         # Logo
         logo_label = QLabel()
-        icon = QIcon(os.path.join(pathlib.Path(os.path.dirname(__file__)).resolve().parent.parent, "resources", "icon.png"))
+        icon = QIcon(str(pathlib.Path(os.path.dirname(__file__)).parents[1].joinpath("resources", "icon.png")))
         logo_pixmap = icon.pixmap(96, 96)
         logo_label.setPixmap(logo_pixmap)
         logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)

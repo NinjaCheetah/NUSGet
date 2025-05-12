@@ -129,6 +129,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.menuHelp.setWindowFlags(self.ui.menuHelp.windowFlags() | Qt.FramelessWindowHint)
         self.ui.menuHelp.setWindowFlags(self.ui.menuHelp.windowFlags() | Qt.NoDropShadowWindowHint)
         self.ui.menuHelp.setAttribute(Qt.WA_TranslucentBackground)
+        # Load the custom information icon.
+        icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "information.svg"))
+        self.ui.actionAbout.setIcon(icon)
+        self.ui.actionAbout_Qt.setIcon(icon)
         # Title tree loading code. Now powered by Models:tm:
         wii_model = NUSGetTreeModel(wii_database, root_name="Wii Titles")
         vwii_model = NUSGetTreeModel(vwii_database, root_name="vWii Titles")
@@ -645,7 +649,7 @@ if __name__ == "__main__":
     # NUSGet look nice and pretty.
     app.setStyle("fusion")
     stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style.qss")).read()
-    image_path_prefix = pathlib.Path(os.path.join(os.path.dirname(__file__), "resources")).resolve().as_posix()
+    image_path_prefix = os.path.join(os.path.dirname(__file__), "resources")
     stylesheet = stylesheet.replace("{IMAGE_PREFIX}", image_path_prefix)
     app.setStyleSheet(stylesheet)
 
