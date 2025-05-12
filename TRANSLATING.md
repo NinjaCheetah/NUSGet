@@ -1,35 +1,61 @@
 # Translating NUSGet
-Since v1.2.0, NUSGet has support for loading Qt translation files. If you'd like to translate NUSGet into your language, see the following directions.
+To translate NUSGet into your language, first make sure that you have NUSGet's dependencies installed:
+- [Git](https://git-scm.com/)
+- [Python](https://python.org) (make sure to install a version listed as compatible in the README)
 
-### 1. Get Qt Linguist
-The first thing you'll need to get is Qt Linguist. 
+### Step 1: Fork and Prepare the Repository
+To fork the repository, either click the "Fork" button on the repository's main page, or [click here](https://github.com/NinjaCheetah/NUSGet/fork).
 
-For Windows and macOS users, this comes included with a normal Qt install. You'll want to get the official online Qt installer for open-source development, which is free and can be obtained [here](https://www.qt.io/download-qt-installer-oss). You do **not** need the paid/commercial version of Qt, as NUSGet is free software and is developed with the OSS version of Qt.
-
-For Linux users, you'll likely be able to get Qt's development tools, including Qt Linguist, via your system package manager. You **must** get the Qt 6 version of the development tools, not the Qt 5 version. On Arch, for example, the package you'll need is `qt6-tools`. Depending on how the package is handled, Linguist may not appear in your application menu. If that's the case, you can start it by running `linguist6`.
-
-
-### 2. Load Your Translation
-NUSGet's raw translation files are stored in `resources/translations/`.
-
-If your language doesn't already exist, open up `NUSGet.pyproject` and add a new line for your language. These files must follow the standard two-letter language codes, and you must provide the full path to the file, like with the existing entries. An example entry for Spanish would look like this:
-```json
-"./resources/translations/nusget_es.ts"
+Then, you'll need to clone your new fork locally and enter it:
+```shell
+git clone https://github.com/<your-username>/NUSGet
+cd NUSGet/
 ```
 
-If your language already exists, or if you just added it, run `python update_translations.py` to generate any new translation files and update existing ones.
+Then, create and activate a venv (depending on your platform, you may need to specify `python3` rather than `python`):
+```shell
+python -m venv .venv
 
-Once your translation file is ready, open it up in Qt Linguist. You should see NUSGet's interface on the right, so you have the context of where these strings are being used.
+# Windows
+.venv\Scripts\activate
 
+# macOS, Linux, and other Unix-likes
+source .venv/bin/activate
+```
 
-### 3. Translate
-Qt Linguist will show you a list of all strings that need to be translated, along with their status. For strings that are part of the UI, the corresponding UI element will be shown so that you know what you're translating. For strings only present in the code, the code will be shown instead, which can generally be ignored.
+Finally, install NUSGet's dependencies:
+```shell
+pip install --upgrade -r requirements.txt
+```
 
-When you've finished with your translations (or if you just want to test them), head back to the project and run `python build_translations.py`, which will build the translations to QM files in the same directory as the original TS files. These files are packaged as part of the executable when you build NUSGet, and are the actual resources that Qt loads the translations from at runtime.
+### Step 2: Add Your Language
+Open `NUSGet.pyproject` in your editor of choice, and check for your language in it. If a line for your language doesn't exist, create a new entry following the format `"./resources/translations/nusget_XX.ts"`, where `XX` is the two-letter code that represents your language.
 
+### Step 3: Update Translation Files
+To update the `.ts` files that store the translations and to create them for any newly added languages, run:
+```shell
+python update_translations.py
+```
+This ensures that you're working on an up-to-date version of the strings in the app.
 
-### 4. Submit Your Changes
-Once you've finished with your translations, open a new pull request on NUSGet's repo with your changes, and make sure to use the `translations` label. Please **do not** submit any unrelated changes as part of a translation pull request. Other changes should be submitted separately.
+### Step 4: Launch Qt Linguist and Load the Translations
+Qt Linguist is included as part of the `PySide6` package you installed during Step 1. To launch Qt Linguist, use the appropriate command for your platform, replacing `<ver>` with the version of Python you installed (for example, `3.12`).
 
+```shell
+# Windows
+.venv\lib\python<ver>\site-packages\PySide6\linguist.exe
 
-If you have any questions about translations, feel free to reach out and ask for help.
+# macOS
+open .venv/lib/python<ver>/site-packages/PySide6/Linguist.app
+
+# Linux and other Unix-likes
+./.venv/lib/python<ver>/site-packages/PySide6/linguist
+```
+If you have Qt Linguist installed system-wide already, you can use that instead. These steps are included primarily for those who don't, since installing the Qt Platform Tools on Windows or macOS requires having a Qt account.
+
+Once you've launched Qt Linguist, you can open the `.ts` file for your language in it.
+
+### Step 5: Translate!
+
+### Step 6: Push and Merge Your Translations
+When you're done translating, commit your translations and push them to GitHub. Then, open a pull request on the original repository, and you're all done!
