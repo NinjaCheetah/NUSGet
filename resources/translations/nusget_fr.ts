@@ -109,17 +109,21 @@ Les titres seront téléchargés dans un dossier &quot;NUSGet Downloads&quot;, �
 Titles marked with a checkmark are free and have a ticket available, and can be decrypted and/or packed into a WAD or TAD. Titles with an X do not have a ticket, and only their encrypted contents can be saved.
 
 By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&quot; inside your downloads folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisissez un titre depuis la liste à gauche, ou saisissez un ID de titre pour commencer.
+
+Les titres marqués d&apos;une coche sont gratuits et ont un billet disponible, et peuvent être décryptés et/ou empaquetés dans un fichier WAD ou TAD. Les titres marqués d&apos;une croix n&apos;ont pas de billets, et seul leur contenu crypté peut être enregistré.
+
+Les titres seront téléchargés dans un dossier &quot;NUSGet Downloads&quot;, à l&apos;intérieur de votre dossier de téléchargements.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="169"/>
         <source>Use the Wii U NUS (faster, only affects Wii/vWii)</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser le NUS Wii U (plus rapide, n&apos;affecte que Wii / vWii)</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="239"/>
         <source>&lt;b&gt;There&apos;s a newer version of NUSGet available!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Une nouvelle version de NUSGet est disponible !&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="340"/>
@@ -140,17 +144,17 @@ By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&q
         <location filename="../../NUSGet.py" line="355"/>
         <location filename="../../NUSGet.py" line="559"/>
         <source>Invalid Download Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier de téléchargement invalide</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="356"/>
         <source>The specified download directory does not exist!</source>
-        <translation type="unfinished"></translation>
+        <translation>Le dossier de téléchargement choisi n&apos;existe pas !</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="359"/>
         <source>Please make sure the specified download directory exists, and that you have permission to access it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Assurez-vous que votre dossier de téléchargement existe, et que vous avez les droits suffisants pour y accéder.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="389"/>
@@ -160,42 +164,42 @@ By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&q
     <message>
         <location filename="../../NUSGet.py" line="390"/>
         <source>&lt;b&gt;The Title ID you have entered is not in a valid format!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;L&apos;ID de titre que vous avez saisi a un format invalide !&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="395"/>
         <source>&lt;b&gt;No title with the provided Title ID or version could be found!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Aucun titre trouvé pour l&apos;ID ou la version fourni !&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="400"/>
         <source>&lt;b&gt;Content decryption was not successful! Decrypted contents could not be created.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Le décryptage du contenu a échoué ! Le contenu décrypté ne peut être créé.&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="407"/>
         <source>&lt;b&gt;No Ticket is Available for the Requested Title!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Aucun billet disponible pour le titre demandé !&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="413"/>
         <source>&lt;b&gt;An Unknown Error has Occurred!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Une erreur inconnue est survenue !&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="435"/>
         <source>&lt;b&gt;Some issues occurred while running the download script.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Des erreurs sont survenues pendant l&apos;exécution du script de téléchargement.&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="485"/>
         <source>&lt;b&gt;An error occurred while parsing the script file!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Une erreur est survenue pendant la lecture du script !&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="495"/>
         <source>&lt;b&gt;An error occurred while parsing Title IDs!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Une erreur est survenue à la lecture d&apos;un ID de titre !&lt;/b&gt;</translation>
     </message>
     <message>
         <source>The Title ID you have entered is not in a valid format!</source>
@@ -322,17 +326,17 @@ By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&q
     <message>
         <location filename="../../NUSGet.py" line="549"/>
         <source>Open Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir un dossier</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="560"/>
         <source>&lt;b&gt;The specified download directory does not exist!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Le dossier de téléchargement choisi n&apos;existe pas !&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="563"/>
         <source>Please make sure the download directory you want to use exists, and that you have permission to access it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Assurez-vous que votre dossier de téléchargement existe, et que vous avez les droits suffisants pour y accéder.</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="26"/>
@@ -409,12 +413,12 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.AppleSystemUIFont&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="464"/>
         <source>About NUSGet</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos de NUSGet</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="163"/>
@@ -463,37 +467,37 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="343"/>
         <source>App Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="173"/>
         <source>Check for updates on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérifier les mises à jour au démarrage</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="174"/>
         <source>Use a custom download directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser un dossier de téléchargement différent</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="371"/>
         <source>Select...</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="451"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Aide</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="475"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos de Qt</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="361"/>
         <source>Output Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier de téléchargement</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="68"/>
