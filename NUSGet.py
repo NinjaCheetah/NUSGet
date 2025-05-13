@@ -667,7 +667,6 @@ if __name__ == "__main__":
     # such fallback exists, and so this code manually implements that fallback, since for languages like Spanish NUSGet
     # doesn't use region-specific translations.
     locale = QLocale.system()
-    lang = locale.name()
     if not translator.load(QLocale.system(), 'nusget', '_', path):
         base_locale = QLocale(locale.language())
         translator.load(base_locale, 'nusget', '_', path)

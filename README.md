@@ -75,6 +75,7 @@ A huge thanks to all the wonderful translators who've helped make NUSGet availab
  - **Korean:** [@DDinghoya](https://github.com/DDinghoya)
  - **Norwegian:** [@Rolfie](https://github.com/rolfiee)
  - **Romanian:** [@NotImplementedLife](https://github.com/NotImplementedLife)
+ - **Spanish:** [@DarkMatterCore](https://github.com/DarkMatterCore)
 
 If your language isn't present or is out of date, and you'd like to contribute, you can check out [TRANSLATING.md](https://github.com/NinjaCheetah/NUSGet/blob/main/TRANSLATING.md) for directions on how to translate NUSGet.
 
