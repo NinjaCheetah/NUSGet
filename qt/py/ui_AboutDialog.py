@@ -84,13 +84,13 @@ class AboutNUSGet(QDialog):
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # NUSGet Version
-        version_label = QLabel(self.tr("Version {nusget_version}".format(nusget_version=versions[0])))
+        version_label = QLabel(self.tr("Version {nusget_version}").format(nusget_version=versions[0]))
         version_label.setProperty("class", "version")
         version_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Library Versions
-        libraries_label = QLabel(self.tr("Using libWiiPy {libwiipy_version} & libTWLPy {libtwlpy_version}"
-                                         .format(libwiipy_version=versions[1], libtwlpy_version=versions[2])))
+        libraries_label = QLabel(self.tr("Using libWiiPy {libwiipy_version} & libTWLPy {libtwlpy_version}")
+                                         .format(libwiipy_version=versions[1], libtwlpy_version=versions[2]))
         libraries_label.setProperty("class", "version")
         libraries_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -145,7 +145,9 @@ class AboutNUSGet(QDialog):
             "rolfiee": QLabel(self.tr(
                 "Norwegian (Norsk): <a href=https://github.com/rolfiee style='color: #4a86e8; text-decoration: none;'><b>rolfiee</b></a>")),
             "NotImplementedLife": QLabel(self.tr(
-                "Romanian (Rom\u00e2n\u0103): <a href=https://github.com/NotImplementedLife style='color: #4a86e8; text-decoration: none;'><b>NotImplementedLife</b></a>"))
+                "Romanian (Rom\u00e2n\u0103): <a href=https://github.com/NotImplementedLife style='color: #4a86e8; text-decoration: none;'><b>NotImplementedLife</b></a>")),
+            "DarkMatterCore": QLabel(self.tr(
+                "Spanish (Español): <a href=https://github.com/DarkMatterCore style='color: #4a86e8; text-decoration: none;'><b>DarkMatterCore</b></a>"))
         }
 
         # Add team members to layout

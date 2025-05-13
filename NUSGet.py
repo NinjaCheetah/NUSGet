@@ -487,7 +487,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 script_data = json.load(script_file)
         except json.JSONDecodeError as e:
             msg_box.setText(app.translate("MainWindow", "<b>An error occurred while parsing the script file!</b>"))
-            msg_box.setInformativeText(app.translate("MainWindow", f"Error encountered at line {e.lineno}, column {e.colno}. Please double-check the script and try again."))
+            msg_box.setInformativeText(app.translate("MainWindow", "Error encountered at line {lineno}, column {colno}. Please double-check the script and try again.")
+                                                    .format(lineno=e.lineno, colno=e.colno))
             msg_box.exec()
             return
         # Build a list of the titles we need to download.
@@ -497,7 +498,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 tid = title["Title ID"]
             except KeyError:
                 msg_box.setText(app.translate("MainWindow", "<b>An error occurred while parsing Title IDs!</b>"))
-                msg_box.setInformativeText(app.translate("MainWindow", f"The title at index {script_data.index(title)} does not have a Title ID!"))
+                msg_box.setInformativeText(app.translate("MainWindow", "The title at index {index} does not have a Title ID!")
+                                                        .format(index=script_data.index(title)))
                 msg_box.exec()
                 return
             # No version key is acceptable, just treat it as latest.
@@ -660,8 +662,16 @@ if __name__ == "__main__":
         app.installTranslator(translator)
     translator = QTranslator(app)
     path = os.path.join(os.path.dirname(__file__), "resources", "translations")
-    if translator.load(QLocale.system(), 'nusget', '_', path):
-        app.installTranslator(translator)
+    # Unix-likes and Windows handle this differently, apparently. Unix-likes will try `nusget_xx_XX.qm` and then fall
+    # back on just `nusget_xx.qm` if the region-specific translation for the language can't be found. On Windows, no
+    # such fallback exists, and so this code manually implements that fallback, since for languages like Spanish NUSGet
+    # doesn't use region-specific translations.
+    locale = QLocale.system()
+    lang = locale.name()
+    if not translator.load(QLocale.system(), 'nusget', '_', path):
+        base_locale = QLocale(locale.language())
+        translator.load(base_locale, 'nusget', '_', path)
+    app.installTranslator(translator)
 
     window = MainWindow()
     window.setWindowTitle("NUSGet")
