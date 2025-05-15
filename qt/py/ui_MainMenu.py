@@ -227,11 +227,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.patch_ios_checkbox)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer_2 = QSpacerItem(20, 200, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
 
         self.verticalLayout_7.addItem(self.verticalSpacer_2)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer = QSpacerItem(300, 0, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_7.addItem(self.horizontalSpacer)
 
@@ -262,6 +262,11 @@ class Ui_MainWindow(object):
 
         self.auto_update_checkbox = WrapCheckboxWidget(self.centralwidget)
         self.auto_update_checkbox.setObjectName(u"auto_update_checkbox")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.auto_update_checkbox.sizePolicy().hasHeightForWidth())
+        self.auto_update_checkbox.setSizePolicy(sizePolicy4)
 
         self.verticalLayout_8.addWidget(self.auto_update_checkbox)
 
@@ -287,11 +292,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addLayout(self.custom_out_dir_entry_row)
 
-        self.verticalSpacer = QSpacerItem(20, 100, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 200, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Preferred)
 
         self.verticalLayout_8.addItem(self.verticalSpacer)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(300, 0, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.verticalLayout_8.addItem(self.horizontalSpacer_2)
 

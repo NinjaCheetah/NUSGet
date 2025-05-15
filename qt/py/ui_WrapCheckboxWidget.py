@@ -1,23 +1,24 @@
-from PySide6.QtCore import Qt, QSize
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QCheckBox, QHBoxLayout, QLabel, QWidget, QSizePolicy, QLayout
 
 class WrapCheckboxWidget(QWidget):
     def __init__(self, text, parent=None):
         super().__init__(parent)
         self.setAttribute(Qt.WA_StyledBackground, True)
-        self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.MinimumExpanding)
+        self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
 
         self.checkbox = QCheckBox("")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.checkbox.sizePolicy().hasHeightForWidth())
-        self.checkbox.setSizePolicy(sizePolicy1)
+        size_policy = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+        size_policy.setHorizontalStretch(0)
+        size_policy.setVerticalStretch(0)
+        size_policy.setHeightForWidth(self.checkbox.sizePolicy().hasHeightForWidth())
+        self.checkbox.setSizePolicy(size_policy)
 
         self.label = QLabel(text)
         self.label.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
         self.label.setWordWrap(True)
         self.label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        self.label.setContentsMargins(0, 0, 0, 0)
 
         layout = QHBoxLayout(self)
         layout.setContentsMargins(5, 5, 5, 5)
