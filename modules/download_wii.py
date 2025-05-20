@@ -134,6 +134,10 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
             title = ios_patcher.dump()
             # Append "-PATCHED" to the end of the WAD file name to make it clear that it was modified.
             wad_file_name = wad_file_name[:-4] + "-PATCHED" + wad_file_name[-4:]
+        # Certain special characters are prone to breaking things, so strip them from the file name before actually
+        # opening the file for writing. On some platforms (like macOS), invalid characters get replaced automatically,
+        # but on Windows the file will just fail to be written out at all.
+        wad_file_name = wad_file_name.translate({ord(c): None for c in '/\\:*"?<>|'})
         # Have libWiiPy dump the WAD, and write that data out.
         version_dir.joinpath(wad_file_name).write_bytes(title.dump_wad())
     progress_callback.emit("Download complete!")

@@ -104,6 +104,10 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
                 tad_file_name += ".tad"
         else:
             tad_file_name = f"{tid}-v{title_version}.tad"
+        # Certain special characters are prone to breaking things, so strip them from the file name before actually
+        # opening the file for writing. On some platforms (like macOS), invalid characters get replaced automatically,
+        # but on Windows the file will just fail to be written out at all.
+        tad_file_name = tad_file_name.translate({ord(c): None for c in '/\\:*"?<>|'})
         # Have libTWLPy dump the TAD, and write that data out.
         version_dir.joinpath(tad_file_name).write_bytes(title.dump_tad())
     progress_callback.emit("Download complete!")
