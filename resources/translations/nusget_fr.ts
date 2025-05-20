@@ -410,7 +410,7 @@ Les titres seront téléchargés dans un dossier &quot;NUSGet Downloads&quot;, �
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="425"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="432"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -422,7 +422,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="464"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="471"/>
         <source>About NUSGet</source>
         <translation>À propos de NUSGet</translation>
     </message>
@@ -486,22 +486,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>Utiliser un dossier de téléchargement différent</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="371"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="378"/>
         <source>Select...</source>
         <translation>Choisir</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="451"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="458"/>
         <source>Help</source>
         <translation>Aide</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="475"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="482"/>
         <source>About Qt</source>
         <translation>À propos de Qt</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="361"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="368"/>
         <source>Output Path</source>
         <translation>Dossier de téléchargement</translation>
     </message>

@@ -41,37 +41,37 @@
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="138"/>
         <source>French (Français): &lt;a href=https://github.com/rougets style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rougets&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>French (Français): &lt;a href=https://github.com/rougets style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rougets&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>Francese (Français): &lt;a href=https://github.com/rougets style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rougets&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="140"/>
         <source>German (Deutsch): &lt;a href=https://github.com/yeah-its-gloria style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;yeah-its-gloria&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>German (Deutsch): &lt;a href=https://github.com/yeah-its-gloria style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;yeah-its-gloria&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>Tedesco (Deutsch): &lt;a href=https://github.com/yeah-its-gloria style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;yeah-its-gloria&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="142"/>
         <source>Italian (Italiano): &lt;a href=https://github.com/LNLenost style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;LNLenost&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>Italian (Italiano): &lt;a href=https://github.com/LNLenost style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;LNLenost&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>Italiano: &lt;a href=https://github.com/LNLenost style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;LNLenost&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="144"/>
         <source>Korean (한국어): &lt;a href=https://github.com/DDinghoya style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DDinghoya&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>Korean (한국어): &lt;a href=https://github.com/DDinghoya style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DDinghoya&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>Coreano (한국어): &lt;a href=https://github.com/DDinghoya style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DDinghoya&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="146"/>
         <source>Norwegian (Norsk): &lt;a href=https://github.com/rolfiee style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rolfiee&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>Norwegian (Norsk): &lt;a href=https://github.com/rolfiee style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rolfiee&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>Norvegese (Norsk): &lt;a href=https://github.com/rolfiee style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;rolfiee&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="148"/>
         <source>Romanian (Română): &lt;a href=https://github.com/NotImplementedLife style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;NotImplementedLife&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>Romanian (Română): &lt;a href=https://github.com/NotImplementedLife style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;NotImplementedLife&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>Rumeno (Română): &lt;a href=https://github.com/NotImplementedLife style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;NotImplementedLife&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../qt/py/ui_AboutDialog.py" line="150"/>
         <source>Spanish (Español): &lt;a href=https://github.com/DarkMatterCore style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DarkMatterCore&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>Spanish (Español): &lt;a href=https://github.com/DarkMatterCore style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DarkMatterCore&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>Spagnolo (Español): &lt;a href=https://github.com/DarkMatterCore style=&apos;color: #4a86e8; text-decoration: none;&apos;&gt;&lt;b&gt;DarkMatterCore&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -146,7 +146,7 @@
         <translation>Impostazioni generali</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="464"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="471"/>
         <source>About NUSGet</source>
         <translation>Info su NUSGet</translation>
     </message>
@@ -205,12 +205,12 @@
         <translation>Usa una cartella di download personalizzata</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="371"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="378"/>
         <source>Select...</source>
         <translation>Seleziona...</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="425"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="432"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -229,17 +229,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="451"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="458"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="475"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="482"/>
         <source>About Qt</source>
         <translation>Info su Qt</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="361"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="368"/>
         <source>Output Path</source>
         <translation>Cartella output</translation>
     </message>
@@ -306,7 +306,7 @@ By default, titles will be downloaded to a folder named &quot;NUSGet Downloads&q
 
 I titoli marcati da una spunta sono disponibili e hanno un ticket libero, e possono essere decriptati e/o convertiti in WAD o TAD. I titoli con una X non hanno un ticket e solo il contenuto criptato può essere salvato.
 
-Per impostazione predefinita, i titoli verranno scaricati nella cartella "NUSGet Downloads" all'interno della cartella Download.</translation>
+Per impostazione predefinita, i titoli verranno scaricati nella cartella &quot;NUSGet Downloads&quot; all&apos;interno della cartella Download.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="173"/>
@@ -357,12 +357,17 @@ Per impostazione predefinita, i titoli verranno scaricati nella cartella "NUSGet
     <message>
         <location filename="../../NUSGet.py" line="394"/>
         <source>&lt;b&gt;The Title ID you have entered is not in a valid format!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;L'ID Titolo che hai inserito non è in un formato valido!&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;L&apos;ID Titolo che hai inserito non è in un formato valido!&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../NUSGet.py" line="396"/>
+        <source>Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly formatted Title ID, or select one from the menu on the left.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="399"/>
         <source>&lt;b&gt;No title with the provided Title ID or version could be found!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Non è stato trovato alcun titolo con l'ID Titolo o la versione forniti!&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Non è stato trovato alcun titolo con l&apos;ID Titolo o la versione forniti!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="404"/>
@@ -382,17 +387,17 @@ Per impostazione predefinita, i titoli verranno scaricati nella cartella "NUSGet
     <message>
         <location filename="../../NUSGet.py" line="439"/>
         <source>&lt;b&gt;Some issues occurred while running the download script.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Si sono verificati alcuni problemi durante l'esecuzione dello script di download.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Si sono verificati alcuni problemi durante l&apos;esecuzione dello script di download.&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="489"/>
         <source>&lt;b&gt;An error occurred while parsing the script file!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Si è verificato un errore durante l'analisi del file script!&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Si è verificato un errore durante l&apos;analisi del file script!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="500"/>
         <source>&lt;b&gt;An error occurred while parsing Title IDs!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Si è verificato un errore durante l'analisi degli ID Titolo!&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Si è verificato un errore durante l&apos;analisi degli ID Titolo!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>The Title ID you have entered is not in a valid format!</source>
@@ -476,7 +481,7 @@ Per impostazione predefinita, i titoli verranno scaricati nella cartella "NUSGet
     <message>
         <location filename="../../NUSGet.py" line="458"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
-        <translation>Hai abilitato "Crea contenuto decriptato" o "Archivio installabile", ma i seguenti titoli nello script non hanno ticket disponibili. Se abilitati, i contenuti criptati sono stati comunque scaricati.</translation>
+        <translation>Hai abilitato &quot;Crea contenuto decriptato&quot; o &quot;Archivio installabile&quot;, ma i seguenti titoli nello script non hanno ticket disponibili. Se abilitati, i contenuti criptati sono stati comunque scaricati.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="477"/>
@@ -509,7 +514,7 @@ Per impostazione predefinita, i titoli verranno scaricati nella cartella "NUSGet
     <message>
         <location filename="../../NUSGet.py" line="502"/>
         <source>The title at index {index} does not have a Title ID!</source>
-        <translation>Il titolo all'indice {index} non ha un ID Titolo!</translation>
+        <translation>Il titolo all&apos;indice {index} non ha un ID Titolo!</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="555"/>

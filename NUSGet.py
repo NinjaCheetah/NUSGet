@@ -279,6 +279,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if selected_title.category.find("System") != -1 or selected_title.category == "IOS":
                     archive_name += "-Wii"
             archive_name += ".wad"
+        # On Windows, we need to strip characters that aren't allowed on NTFS. APFS and Linux filesystems aren't nearly
+        # as picky, but some titles contain characters that NTFS dislikes which will break downloads.
+        if os.name == "nt":
+            archive_name = archive_name.translate({ord(c): None for c in '/\\:*"?<>|'})
         self.ui.archive_file_entry.setText(archive_name)
         danger_text = selected_title.danger
         # Add warning text to the log if the selected title has no ticket.

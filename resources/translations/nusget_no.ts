@@ -146,7 +146,7 @@
         <translation>Generelle Instillinger</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="464"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="471"/>
         <source>About NUSGet</source>
         <translation>Om NUSGet</translation>
     </message>
@@ -205,12 +205,12 @@
         <translation>Bruke en egendefinert nedlastingsmappe</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="371"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="378"/>
         <source>Select...</source>
         <translation>Velg...</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="425"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="432"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -229,17 +229,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="451"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="458"/>
         <source>Help</source>
         <translation>Hjelp</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="475"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="482"/>
         <source>About Qt</source>
         <translation>Om Qt</translation>
     </message>
     <message>
-        <location filename="../../qt/ui/MainMenu.ui" line="361"/>
+        <location filename="../../qt/ui/MainMenu.ui" line="368"/>
         <source>Output Path</source>
         <translatorcomment>Utgangsbane</translatorcomment>
         <translation></translation>
