@@ -145,6 +145,7 @@ QTreeView {
 }
 
 QTreeView QHeaderView::section {
+    color: white;
     background-color: #2b2b2b;
     border: 0;
     font-weight: 500;
@@ -170,7 +171,18 @@ QTreeView QScrollBar:vertical {
     margin-top: 16px;
 }
 
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+        image: url("{IMAGE_PREFIX}/right_arrow.svg");
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  {
+        image: url("{IMAGE_PREFIX}/down_arrow.svg");
+}
+
 QTextBrowser {
+    color: white;
     background-color: #1a1a1a;
     selection-background-color: #1a73e8;
 }
@@ -324,6 +336,10 @@ QScrollBar::sub-line:horizontal {
     height: 0;
     subcontrol-position: top;
     subcontrol-origin: margin;
+}
+
+QMessageBox QLabel {
+    color: white;
 }
 
 WrapCheckboxWidget {
