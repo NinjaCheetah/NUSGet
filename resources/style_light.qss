@@ -251,7 +251,7 @@ QPushButton:pressed {
 QPushButton:disabled {
     background-color: rgba(182, 182, 182, 0.5);
     border: 1px solid rgba(100, 100, 100, 0.3);
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(143, 143, 143, 0.3);
 }
 
 QComboBox {
@@ -401,7 +401,7 @@ WrapCheckboxWidget:disabled {
 }
 
 WrapCheckboxWidget QLabel:disabled {
-    color: #919191;
+    color: rgba(143, 143, 143, 0.3);
 }
 
 WrapCheckboxWidget QCheckBox::indicator {
