@@ -19,17 +19,9 @@ class AboutNUSGet(QDialog):
 
         # Set background color to match main app
         self.setStyleSheet("""
-        Credits {
-            background-color: #222222;
-            color: #ffffff;
-        }
-        QLabel {
-            color: #ffffff;
-        }
         QLabel[class="title"] {
             font-size: 20px;
             font-weight: bold;
-            color: #ffffff;
         }
         QLabel[class="version"] {
             font-size: 13px;
@@ -45,25 +37,6 @@ class AboutNUSGet(QDialog):
             border-bottom: 1px solid #444444;
             padding-bottom: 4px;
             margin-top: 8px;
-        }
-        QPushButton {
-            background-color: transparent;
-            border: 1px solid rgba(70, 70, 70, 1);
-            border-radius: 8px;
-            padding: 8px 12px;
-            margin: 4px 0px;
-            font-size: 13px;
-            font-weight: 500;
-            color: #ffffff;
-            text-align: center;
-        }
-        QPushButton:hover {
-            background-color: rgba(60, 60, 60, 1);
-            border-color: #4a86e8;
-        }
-        QPushButton:pressed {
-            background-color: rgba(26, 115, 232, 0.15);
-            border: 1px solid #1a73e8;
         }""")
 
         # Create main layout

@@ -1,0 +1,398 @@
+/* "resources/style.qss" from NUSGet by NinjaCheetah & Contributors           */
+/*  Much of this QSS was written by Alex (https://github.com/Humanoidear)     */
+/*  from WiiLink for the fancy new WiiLink Patcher GUI. Used with permission. */
+
+QMainWindow, QDialog {
+    background-color: #ffffff;
+}
+
+QMainWindow QLabel {
+    color: #000000;
+}
+
+QMenuBar {
+    background-color: #ffffff;
+}
+
+QMenuBar::item:selected {
+    background-color: rgba(60, 60, 60, 1);
+    color: white;
+}
+
+QMenuBar::item:pressed {
+    background-color: #1a73e8;
+    color: #000000;
+}
+
+QMenu {
+    background-color: #ffffff;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    padding: 6px 2px;
+    margin: 4px 0;
+    color: #000000;
+}
+
+QMenu::item {
+    padding: 6px 2px;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+QMenu::item:selected {
+    background-color: #1a73e8;
+    color: #000000;
+}
+
+QMenu::icon {
+    padding: 4px;
+}
+
+QRadioButton {
+    background-color: transparent;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+QRadioButton:hover {
+    background-color: rgba(60, 60, 60, 1);
+    border-color: #4a86e8;
+}
+
+QRadioButton:checked {
+    background-color: rgba(26, 115, 232, 0.08);
+    border: 1px solid #1a73e8;
+    color: #1a73e8;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 1px solid #5f6368;
+    margin-right: 8px;
+    subcontrol-position: left center;
+}
+
+QRadioButton::indicator:checked {
+    background-color: #1a73e8;
+    border: 1px solid #1a73e8;
+    image: url("{IMAGE_PREFIX}/rounded_square.svg");
+}
+
+QRadioButton::indicator:hover {
+    border-color: #1a73e8;
+}
+
+QLineEdit {
+    background-color: transparent;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+    font-size: 13px;
+    color: #000000;
+    selection-background-color: #1a73e8;
+}
+
+QLineEdit:focus {
+    border-color: #1a73e8;
+}
+
+QLineEdit:disabled {
+    background-color: rgba(182, 182, 182, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+QTabWidget::pane {
+    border: 1px solid rgb(163, 163, 163);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #e3e3e3;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background-color: transparent;
+    border-top: 1px solid rgb(163, 163, 163);
+    border-left: 1px solid rgb(163, 163, 163);
+    border-right: 1px solid rgb(163, 163, 163);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000000;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background-color: #e3e3e3;
+}
+
+QTreeView {
+    show-decoration-selected: 1;
+    outline: 0;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+}
+
+QTreeView QHeaderView::section {
+    color: #000000;
+    background-color: #e3e3e3;
+    border: 0;
+    font-weight: 500;
+}
+
+QTreeView::item {
+    color: #000000;
+}
+
+QTreeView::item:hover {
+    background-color: rgb(195, 195, 195);
+}
+
+QTreeView::item:focus {
+    background-color: rgba(26, 115, 232, 0.08);
+}
+
+QTreeView::item:selected {
+    background-color: rgb(127, 182, 255);
+}
+
+QTreeView::branch:selected {
+    background-color: rgb(127, 182, 255);
+}
+
+QTreeView QScrollBar:vertical {
+    margin-top: 16px;
+}
+
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+    image: url("{IMAGE_PREFIX}/right_arrow_black.svg");
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  {
+    image: url("{IMAGE_PREFIX}/down_arrow_black.svg");
+}
+
+QTextBrowser {
+    color: #000000;
+    background-color: #ececec;
+    selection-background-color: #1a73e8;
+    selection-color: #ffffff;
+}
+
+QPushButton {
+    outline: 0;
+    show-decoration-selected: 1;
+    background-color: transparent;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000000;
+}
+
+QPushButton:hover {
+    background-color: rgb(195, 195, 195);
+    border-color: #4a86e8;
+}
+
+QPushButton:focus {
+    background-color: rgb(195, 195, 195);
+    border-color: #4a86e8;
+}
+
+QPushButton:pressed {
+    background-color: rgba(26, 115, 232, 0.15);
+    border: 1px solid #1a73e8;
+}
+
+QPushButton:disabled {
+    background-color: rgba(182, 182, 182, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+QComboBox {
+    background-color: transparent;
+    combobox-popup: 0;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000000;
+}
+
+QComboBox:on {
+    background-color: rgba(26, 115, 232, 0.15);
+    border: 1px solid #1a73e8;
+}
+
+QComboBox:hover {
+    background-color: rgb(195, 195, 195);
+    border-color: #4a86e8;
+}
+
+QComboBox:focus {
+    background-color: rgb(195, 195, 195);
+    border-color: #4a86e8;
+}
+
+QComboBox::drop-down {
+    border: 0;
+    width: 24px;
+}
+
+QComboBox::down-arrow {
+    image: url("{IMAGE_PREFIX}/down_arrow_black.svg");
+}
+
+QComboBox QAbstractItemView {
+    background-color: #ffffff;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    padding: 4px;
+    outline: none;
+}
+
+QComboBox QAbstractItemView::item {
+    height: 25px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 2px 0px;
+    color: #000000;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #1a73e8;
+    color: #ffffff;
+}
+
+QScrollBar:vertical {
+    border: 0;
+    border-radius: 8px;
+    padding: 2px 0 2px 0;
+    background-color: #f1f1f1;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #e3e3e3;
+    margin: 0 2px 0 2px;
+    width: 10px;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: rgba(26, 115, 232, 0.4);
+}
+
+QScrollBar::add-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar:horizontal {
+    border: 0;
+    border-radius: 8px;
+    padding: 2px 0 2px 0;
+    background-color: #f1f1f1;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #e3e3e3;
+    border: 1px solid rgb(163, 163, 163);
+    margin: 0px 2px 0px 2px;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 4px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: rgba(26, 115, 232, 0.4);
+}
+
+QScrollBar::add-line:horizontal {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+    height: 0;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QMessageBox QLabel {
+    color: #000000;
+}
+
+WrapCheckboxWidget {
+    show-decoration-selected: 1;
+    outline: 0;
+    background-color: transparent;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    padding: 12px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000000;
+}
+
+WrapCheckboxWidget:hover {
+    background-color: rgb(195, 195, 195);
+    border-color: #4a86e8;
+}
+
+WrapCheckboxWidget:disabled {
+    background-color: rgba(182, 182, 182, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+WrapCheckboxWidget QLabel:disabled {
+    color: #919191;
+}
+
+WrapCheckboxWidget QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #5f6368;
+}
+
+WrapCheckboxWidget QCheckBox::indicator:checked {
+    background-color: #1a73e8;
+    border: 1px solid #1a73e8;
+    image: url("{IMAGE_PREFIX}/check.svg");
+}
+
+WrapCheckboxWidget QCheckBox::indicator:hover {
+    border-color: #1a73e8;
+}
+
+WrapCheckboxWidget QCheckBox:checked {
+    color: #1a73e8;
+}

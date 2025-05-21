@@ -173,12 +173,12 @@ QTreeView QScrollBar:vertical {
 
 QTreeView::branch:has-children:!has-siblings:closed,
 QTreeView::branch:closed:has-children:has-siblings {
-        image: url("{IMAGE_PREFIX}/right_arrow.svg");
+    image: url("{IMAGE_PREFIX}/right_arrow_white.svg");
 }
 
 QTreeView::branch:open:has-children:!has-siblings,
 QTreeView::branch:open:has-children:has-siblings  {
-        image: url("{IMAGE_PREFIX}/down_arrow.svg");
+    image: url("{IMAGE_PREFIX}/down_arrow_white.svg");
 }
 
 QTextBrowser {
@@ -254,7 +254,7 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-    image: url("{IMAGE_PREFIX}/down_arrow.svg");
+    image: url("{IMAGE_PREFIX}/down_arrow_white.svg");
 }
 
 QComboBox QAbstractItemView {

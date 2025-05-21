@@ -30,6 +30,7 @@ from qt.py.ui_AboutDialog import AboutNUSGet
 from qt.py.ui_MainMenu import Ui_MainWindow
 
 from modules.core import *
+from modules.theme import is_dark_theme
 from modules.tree import NUSGetTreeModel, TIDFilterProxyModel
 from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
@@ -154,10 +155,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.trees[tree].collapsed.connect(lambda: self.resize_tree(self.ui.platform_tabs.currentIndex()))
             # This stylesheet patch allows me to add the correct padding above the scrollbar so that it doesn't overlap
             # the QTreeView's header.
+            if is_dark_theme():
+                bg_color = "#2b2b2b"
+            else:
+                bg_color = "#e3e3e3"
             self.trees[tree].setStyleSheet(self.trees[tree].styleSheet() + f"""
                 QTreeView QScrollBar::sub-line:vertical {{
                     border: 0;
-                    background: #2b2b2b;
+                    background: {bg_color};
                     height: {self.trees[tree].header().sizeHint().height()}px;
                 }}""")
         # Prevent resizing.
@@ -650,7 +655,10 @@ if __name__ == "__main__":
     # Load Fusion because that's objectively the best base theme, and then load the fancy stylesheet on top to make
     # NUSGet look nice and pretty.
     app.setStyle("fusion")
-    stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style.qss")).read()
+    if is_dark_theme():
+        stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style_dark.qss")).read()
+    else:
+        stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style_light.qss")).read()
     image_path_prefix = pathlib.Path(os.path.join(os.path.dirname(__file__), "resources")).resolve().as_posix()
     stylesheet = stylesheet.replace("{IMAGE_PREFIX}", image_path_prefix)
     app.setStyleSheet(stylesheet)
