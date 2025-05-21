@@ -10,18 +10,46 @@ QMainWindow QLabel {
     color: #000000;
 }
 
+QDialog QLabel {
+    color: #000000;
+}
+
+QDialog QLabel[class="title"] {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+QDialog QLabel[class="version"] {
+    font-size: 13px;
+    color: #777777;
+}
+
+QDialog QLabel[class="copyright"] {
+    font-size: 12px;
+    color: #444444;
+}
+
+QDialog QLabel[class="header"] {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #111111;
+    padding-bottom: 4px;
+    margin-top: 8px;
+}
+
 QMenuBar {
-    background-color: #ffffff;
+    background-color: #e3e3e3;
+    color: #000000;
 }
 
 QMenuBar::item:selected {
-    background-color: rgba(60, 60, 60, 1);
-    color: white;
+    background-color: rgb(195, 195, 195);
+    color: #000000;
 }
 
 QMenuBar::item:pressed {
     background-color: #1a73e8;
-    color: #000000;
+    color: #ffffff;
 }
 
 QMenu {
@@ -42,7 +70,7 @@ QMenu::item {
 
 QMenu::item:selected {
     background-color: #1a73e8;
-    color: #000000;
+    color: #ffffff;
 }
 
 QMenu::icon {
@@ -107,7 +135,7 @@ QLineEdit:focus {
 QLineEdit:disabled {
     background-color: rgba(182, 182, 182, 0.5);
     border: 1px solid rgba(100, 100, 100, 0.3);
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(143, 143, 143, 0.3);
 }
 
 QTabWidget::pane {

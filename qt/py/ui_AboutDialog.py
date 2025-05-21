@@ -17,28 +17,6 @@ class AboutNUSGet(QDialog):
         self.setFixedWidth(450)
         self.setFixedHeight(500)
 
-        # Set background color to match main app
-        self.setStyleSheet("""
-        QLabel[class="title"] {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        QLabel[class="version"] {
-            font-size: 13px;
-            color: #aaaaaa;
-        }
-        QLabel[class="copyright"] {
-            font-size: 12px;
-            color: #888888;
-        }
-        QLabel[class="header"] {
-            font-size: 14px;
-            font-weight: bold;
-            border-bottom: 1px solid #444444;
-            padding-bottom: 4px;
-            margin-top: 8px;
-        }""")
-
         # Create main layout
         self.layout = QVBoxLayout()
         self.layout.setSpacing(4)

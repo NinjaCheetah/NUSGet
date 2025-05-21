@@ -10,6 +10,33 @@ QMainWindow QLabel {
     color: #ffffff;
 }
 
+QDialog QLabel {
+    color: #ffffff;
+}
+
+QDialog QLabel[class="title"] {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+QDialog QLabel[class="version"] {
+    font-size: 13px;
+    color: #aaaaaa;
+}
+
+QDialog QLabel[class="copyright"] {
+    font-size: 12px;
+    color: #888888;
+}
+
+QDialog QLabel[class="header"] {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 4px;
+    margin-top: 8px;
+}
+
 QMenuBar {
     background-color: #2b2b2b;
 }

@@ -130,8 +130,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.menuHelp.setWindowFlags(self.ui.menuHelp.windowFlags() | Qt.FramelessWindowHint)
         self.ui.menuHelp.setWindowFlags(self.ui.menuHelp.windowFlags() | Qt.NoDropShadowWindowHint)
         self.ui.menuHelp.setAttribute(Qt.WA_TranslucentBackground)
-        # Load the custom information icon.
-        icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "information.svg"))
+        # Save some light/dark theme values for later, including the appropriately colored info icon.
+        if is_dark_theme():
+            bg_color = "#2b2b2b"
+            icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "information_white.svg"))
+        else:
+            bg_color = "#e3e3e3"
+            icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "information_black.svg"))
         self.ui.actionAbout.setIcon(icon)
         self.ui.actionAbout_Qt.setIcon(icon)
         # Title tree loading code. Now powered by Models:tm:
@@ -155,10 +160,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.trees[tree].collapsed.connect(lambda: self.resize_tree(self.ui.platform_tabs.currentIndex()))
             # This stylesheet patch allows me to add the correct padding above the scrollbar so that it doesn't overlap
             # the QTreeView's header.
-            if is_dark_theme():
-                bg_color = "#2b2b2b"
-            else:
-                bg_color = "#e3e3e3"
             self.trees[tree].setStyleSheet(self.trees[tree].styleSheet() + f"""
                 QTreeView QScrollBar::sub-line:vertical {{
                     border: 0;
