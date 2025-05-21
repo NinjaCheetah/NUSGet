@@ -656,10 +656,18 @@ if __name__ == "__main__":
     # Load Fusion because that's objectively the best base theme, and then load the fancy stylesheet on top to make
     # NUSGet look nice and pretty.
     app.setStyle("fusion")
-    if is_dark_theme():
-        stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style_dark.qss")).read()
-    else:
-        stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", "style_light.qss")).read()
+    theme_sheet = "style_dark.qss"
+    try:
+        # Check for an environment variable overriding the theme. This is mostly for theme testing but would also allow
+        # you to force a theme.
+        if os.environ["THEME"].lower() == "light":
+            theme_sheet = "style_light.qss"
+    except KeyError:
+        if is_dark_theme():
+            theme_sheet = "style_dark.qss"
+        else:
+            theme_sheet = "style_light.qss"
+    stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", theme_sheet)).read()
     image_path_prefix = pathlib.Path(os.path.join(os.path.dirname(__file__), "resources")).resolve().as_posix()
     stylesheet = stylesheet.replace("{IMAGE_PREFIX}", image_path_prefix)
     app.setStyleSheet(stylesheet)

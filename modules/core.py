@@ -54,12 +54,14 @@ def connect_label_to_checkbox(label, checkbox):
             checkbox.toggle()
     label.mousePressEvent = toggle_checkbox
 
+
 def connect_is_enabled_to_checkbox(items, chkbox):
     for item in items:
         if chkbox.isChecked():
             item.setEnabled(True)
         else:
             item.setEnabled(False)
+
 
 def check_nusget_updates(app, current_version: str, progress_callback=None) -> str | None:
     # Simple function to make a request to the GitHub API and then check if the latest available version is newer.
@@ -80,6 +82,7 @@ def check_nusget_updates(app, current_version: str, progress_callback=None) -> s
         progress_callback.emit(app.translate("MainWindow", "\n\nYou're running the latest release of NUSGet."))
     return None
 
+
 def get_config_file() -> pathlib.Path:
     config_dir = pathlib.Path(os.path.join(
         os.environ.get('APPDATA') or
@@ -90,10 +93,12 @@ def get_config_file() -> pathlib.Path:
     config_dir.mkdir(exist_ok=True)
     return config_dir.joinpath("config.json")
 
+
 def save_config(config_data: dict) -> None:
     config_file = get_config_file()
     print(f"writing data: {config_data}")
     open(config_file, "w").write(json.dumps(config_data))
+
 
 def update_setting(config_data: dict, setting: str, value: any) -> None:
     config_data[setting] = value
