@@ -81,7 +81,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.custom_out_dir_btn.clicked.connect(self.choose_output_dir)
-        self.ui.progress_bar.setRange(0, 0)
         # About and About Qt Buttons
         self.ui.actionAbout.triggered.connect(self.about_nusget)
         self.ui.actionAbout_Qt.triggered.connect(lambda: QMessageBox.aboutQt(self))
