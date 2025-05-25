@@ -29,10 +29,10 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
     title_dir.mkdir(exist_ok=True)
     # Announce the title being downloaded, and the version if applicable.
     if title_version is not None:
-        progress_callback.emit(f"Downloading title {tid} v{title_version}, please wait...")
+        progress_callback.emit(0, 0, f"Downloading title {tid} v{title_version}, please wait...")
     else:
-        progress_callback.emit(f"Downloading title {tid} vLatest, please wait...")
-    progress_callback.emit(" - Downloading and parsing TMD...")
+        progress_callback.emit(0, 0, f"Downloading title {tid} vLatest, please wait...")
+    progress_callback.emit(-1, -1, " - Downloading and parsing TMD...")
     # Download a specific TMD version if a version was specified, otherwise just download the latest TMD.
     try:
         if title_version is not None:
@@ -50,17 +50,17 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
     version_dir.joinpath(f"tmd.{title_version}").write_bytes(title.tmd.dump())
     # Use a local ticket, if one exists and "use local files" is enabled.
     if use_local_chkbox and version_dir.joinpath("tik").exists():
-        progress_callback.emit(" - Parsing local copy of Ticket...")
+        progress_callback.emit(-1, -1, " - Parsing local copy of Ticket...")
         title.load_ticket(version_dir.joinpath("tik").read_bytes())
     else:
-        progress_callback.emit(" - Downloading and parsing Ticket...")
+        progress_callback.emit(-1, -1, " - Downloading and parsing Ticket...")
         try:
             title.load_ticket(libTWLPy.download_ticket(tid))
             version_dir.joinpath("tik").write_bytes(title.ticket.dump())
         except ValueError:
             # If libTWLPy returns an error, then no ticket is available. Log this, and disable options requiring a
             # ticket so that they aren't attempted later.
-            progress_callback.emit("  - No Ticket is available!")
+            progress_callback.emit(-1, -1, "  - No Ticket is available!")
             pack_tad_enabled = False
             decrypt_contents_enabled = False
     # Load the content record from the TMD, and download the content it lists. DSi titles only have one content.
@@ -68,13 +68,13 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
     content_file_name = f"{title.tmd.content_record.content_id:08X}"
     # Check for a local copy of the current content if "use local files" is enabled, and use it.
     if use_local_chkbox and version_dir.joinpath(content_file_name).exists():
-        progress_callback.emit(" - Using local copy of content")
+        progress_callback.emit(-1, -1, " - Using local copy of content")
         content = version_dir.joinpath(content_file_name).read_bytes()
     else:
-        progress_callback.emit(f" - Downloading content (Content ID: {title.tmd.content_record.content_id}, Size: "
+        progress_callback.emit(-1, -1, f" - Downloading content (Content ID: {title.tmd.content_record.content_id}, Size: "
                                f"{title.tmd.content_record.content_size} bytes)...")
         content = libTWLPy.download_content(tid, title.tmd.content_record.content_id)
-        progress_callback.emit("   - Done!")
+        progress_callback.emit(-1, -1, "   - Done!")
         # If keep encrypted contents is on, write out the content after its downloaded.
         if keep_enc_chkbox is True:
             version_dir.joinpath(content_file_name).write_bytes(content)
@@ -82,7 +82,7 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
     # If decrypt local contents is still true, decrypt the content and write out the decrypted file.
     if decrypt_contents_enabled is True:
         try:
-            progress_callback.emit(f" - Decrypting content (Content ID: {title.tmd.content_record.content_id})...")
+            progress_callback.emit(-1, -1, f" - Decrypting content (Content ID: {title.tmd.content_record.content_id})...")
             dec_content = title.get_content()
             content_file_name = f"{title.tmd.content_record.content_id:08X}.app"
             version_dir.joinpath(content_file_name).write_bytes(dec_content)
@@ -93,10 +93,10 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
     # If pack TAD is still true, pack the TMD, ticket, and content into a TAD.
     if pack_tad_enabled is True:
         # Get the TAD certificate chain, courtesy of libTWLPy.
-        progress_callback.emit(" - Building certificate...")
+        progress_callback.emit(-1, -1, " - Building certificate...")
         title.tad.set_cert_data(libTWLPy.download_cert())
         # Use a typed TAD name if there is one, and auto generate one based on the TID and version if there isn't.
-        progress_callback.emit("Packing TAD...")
+        progress_callback.emit(-1, -1, "Packing TAD...")
         if tad_file_name != "" and tad_file_name is not None:
             # Batch downloads may insert -vLatest, so if it did we can fill in the real number now.
             tad_file_name = tad_file_name.replace("-vLatest", f"-v{title_version}")
@@ -110,7 +110,7 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
         tad_file_name = tad_file_name.translate({ord(c): None for c in '/\\:*"?<>|'})
         # Have libTWLPy dump the TAD, and write that data out.
         version_dir.joinpath(tad_file_name).write_bytes(title.dump_tad())
-    progress_callback.emit("Download complete!")
+    progress_callback.emit(0, 1, "Download complete!")
     # This is where the variables come in. If the state of these variables doesn't match the user's choice by this
     # point, it means that they enabled decryption or TAD packing for a title that doesn't have a ticket. Return
     # code 1 so that a warning popup is shown informing them of this.

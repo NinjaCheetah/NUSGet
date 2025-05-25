@@ -377,6 +377,24 @@ QMessageBox QLabel {
     color: #000000;
 }
 
+QProgressBar {
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    background-color: #ececec;
+    text-align: center;
+    padding: 1px;
+    color: black;
+}
+
+QProgressBar::chunk {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #1a73e8, stop: 1 #5596f4
+    );
+    border-radius: 5px;
+    margin: 0.5px;
+}
+
 WrapCheckboxWidget {
     show-decoration-selected: 1;
     outline: 0;

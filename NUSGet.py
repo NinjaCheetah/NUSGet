@@ -36,7 +36,7 @@ from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.4.0"
+nusget_version = "1.4.1"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -45,7 +45,7 @@ regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": [
 # Signals needed for the worker used for threading the downloads.
 class WorkerSignals(QObject):
     result = Signal(object)
-    progress = Signal(str)
+    progress = Signal(int, int, str)
 
 
 # Worker class used to thread the downloads.
@@ -81,6 +81,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.custom_out_dir_btn.clicked.connect(self.choose_output_dir)
+        self.ui.progress_bar.setRange(0, 0)
         # About and About Qt Buttons
         self.ui.actionAbout.triggered.connect(self.about_nusget)
         self.ui.actionAbout_Qt.triggered.connect(lambda: QMessageBox.aboutQt(self))
@@ -229,6 +230,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.ui.patch_ios_checkbox.setEnabled(True)
                 return
         self.ui.patch_ios_checkbox.setEnabled(False)
+
+    def download_progress_update(self, done, total, log_text):
+        if done == 0 and total == 0:
+            self.ui.progress_bar.setRange(0, 0)
+        elif done == -1 and total == -1:
+            pass
+        else:
+            self.ui.progress_bar.setRange(0, total)
+            self.ui.progress_bar.setValue(done)
+        # Pass the text on to the log text updater, if it was provided.
+        if log_text:
+            self.update_log_text(log_text)
 
     def update_log_text(self, new_text):
         # This method primarily exists to be the handler for the progress signal emitted by the worker thread.
@@ -385,7 +398,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             self.ui.pack_vwii_mode_checkbox.isChecked(), self.ui.patch_ios_checkbox.isChecked(),
                             self.ui.archive_file_entry.text())
         worker.signals.result.connect(self.check_download_result)
-        worker.signals.progress.connect(self.update_log_text)
+        worker.signals.progress.connect(self.download_progress_update)
         self.threadpool.start(worker)
 
     def check_download_result(self, result):
@@ -552,7 +565,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.ui.use_wiiu_nus_checkbox.isChecked(), self.ui.use_local_checkbox.isChecked(),
                         self.ui.pack_vwii_mode_checkbox.isChecked(), self.ui.patch_ios_checkbox.isChecked())
         worker.signals.result.connect(self.check_batch_result)
-        worker.signals.progress.connect(self.update_log_text)
+        worker.signals.progress.connect(self.download_progress_update)
         self.threadpool.start(worker)
 
     def choose_output_dir(self):
@@ -657,16 +670,10 @@ if __name__ == "__main__":
     # NUSGet look nice and pretty.
     app.setStyle("fusion")
     theme_sheet = "style_dark.qss"
-    try:
-        # Check for an environment variable overriding the theme. This is mostly for theme testing but would also allow
-        # you to force a theme.
-        if os.environ["THEME"].lower() == "light":
-            theme_sheet = "style_light.qss"
-    except KeyError:
-        if is_dark_theme():
-            theme_sheet = "style_dark.qss"
-        else:
-            theme_sheet = "style_light.qss"
+    if is_dark_theme():
+        theme_sheet = "style_dark.qss"
+    else:
+        theme_sheet = "style_light.qss"
     stylesheet = open(os.path.join(os.path.dirname(__file__), "resources", theme_sheet)).read()
     image_path_prefix = pathlib.Path(os.path.join(os.path.dirname(__file__), "resources")).resolve().as_posix()
     stylesheet = stylesheet.replace("{IMAGE_PREFIX}", image_path_prefix)

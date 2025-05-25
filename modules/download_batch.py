@@ -53,5 +53,5 @@ def run_nus_download_batch(out_folder: pathlib.Path, titles: List[BatchTitleData
                 # failed title.
                 result = 1
                 failed_titles.append(title.tid)
-    progress_callback.emit(f"Batch download finished.")
+    progress_callback.emit(0, 1, f"Batch download finished.")
     return BatchResults(result, warning_titles, failed_titles)

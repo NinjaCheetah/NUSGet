@@ -18,9 +18,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QHeaderView,
     QLabel, QLayout, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QSpacerItem, QTabWidget, QTextBrowser, QTreeView,
-    QVBoxLayout, QWidget)
+    QMenu, QMenuBar, QProgressBar, QPushButton,
+    QSizePolicy, QSpacerItem, QTabWidget, QTextBrowser,
+    QTreeView, QVBoxLayout, QWidget)
 
 from qt.py.ui_WrapCheckboxWidget import WrapCheckboxWidget
 
@@ -308,9 +308,17 @@ class Ui_MainWindow(object):
 
         self.log_text_browser = QTextBrowser(self.centralwidget)
         self.log_text_browser.setObjectName(u"log_text_browser")
-        self.log_text_browser.setMinimumSize(QSize(0, 247))
+        self.log_text_browser.setMinimumSize(QSize(0, 222))
 
         self.vertical_layout_controls.addWidget(self.log_text_browser)
+
+        self.progress_bar = QProgressBar(self.centralwidget)
+        self.progress_bar.setObjectName(u"progress_bar")
+        self.progress_bar.setMinimumSize(QSize(0, 25))
+        self.progress_bar.setMaximumSize(QSize(16777215, 30))
+        self.progress_bar.setValue(0)
+
+        self.vertical_layout_controls.addWidget(self.progress_bar)
 
 
         self.horizontalLayout_3.addLayout(self.vertical_layout_controls)
@@ -318,7 +326,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1010, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1010, 30))
         self.menuHelp = QMenu(self.menubar)
         self.menuHelp.setObjectName(u"menuHelp")
         MainWindow.setMenuBar(self.menubar)
@@ -367,7 +375,7 @@ class Ui_MainWindow(object):
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
         self.menuHelp.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
     # retranslateUi

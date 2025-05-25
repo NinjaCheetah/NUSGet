@@ -1,6 +1,6 @@
 pyside6
 nuitka~=2.6.0
-libWiiPy
+git+https://github.com/NinjaCheetah/libWiiPy
 libTWLPy
 zstandard
 requests

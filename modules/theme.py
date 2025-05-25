@@ -1,6 +1,7 @@
 # "modules/theme.py", licensed under the MIT license
 # Copyright 2024-2025 NinjaCheetah & Contributors
 
+import os
 import platform
 import subprocess
 
@@ -43,6 +44,17 @@ def is_dark_theme_linux():
         return False
 
 def is_dark_theme():
+    # First, check for an environment variable overriding the theme, and use that if it exists.
+    try:
+        if os.environ["THEME"].lower() == "light":
+            return False
+        elif os.environ["THEME"].lower() == "dark":
+            return True
+        else:
+            print(f"Unknown theme specified: \"{os.environ['THEME']}\"")
+    except KeyError:
+        pass
+    # If the theme wasn't overridden, then check the current system theme.
     system = platform.system()
     if system == "Windows":
         return is_dark_theme_windows()
