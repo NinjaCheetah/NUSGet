@@ -6,6 +6,18 @@ from modules.config import update_setting
 from PySide6.QtCore import QLocale, QTranslator
 
 
+LANGS = {
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français",
+    "it": "Italiano",
+    "no": "Norsk",
+    "ro": "Românǎ",
+    "ko": "한국어",
+}
+
+
 def set_language(config_data: dict, lang: str) -> None:
     # Match the selected language. These names will NOT be translated since they represent each language in that
     # language, but the "System (Default)" option will, so that will match the default case.
@@ -46,6 +58,9 @@ def get_language(translator: QTranslator, config_data: dict, path: str) -> QTran
         lang = ""
     # A specific language was set in the app's settings.
     if lang != "":
+        # If the target language is English, then return an empty translator because that's the default.
+        if lang == "en":
+            return translator
         if translator.load(QLocale(lang), 'nusget', '_', path):
             return translator
         else:

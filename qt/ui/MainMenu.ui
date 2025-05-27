@@ -435,7 +435,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -469,7 +469,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1010</width>
-     <height>30</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_help">
@@ -498,7 +498,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <addaction name="action_language_romanian"/>
      <addaction name="action_language_korean"/>
     </widget>
+    <widget class="QMenu" name="menu_options_theme">
+     <property name="title">
+      <string>Theme</string>
+     </property>
+     <addaction name="action_theme_system"/>
+     <addaction name="action_theme_light"/>
+     <addaction name="action_theme_dark"/>
+    </widget>
     <addaction name="menu_options_language"/>
+    <addaction name="menu_options_theme"/>
    </widget>
    <addaction name="menu_options"/>
    <addaction name="menu_help"/>
@@ -598,6 +607,30 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>한국어</string>
+   </property>
+  </action>
+  <action name="action_theme_system">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>System (Default)</string>
+   </property>
+  </action>
+  <action name="action_theme_light">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Light</string>
+   </property>
+  </action>
+  <action name="action_theme_dark">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dark</string>
    </property>
   </action>
  </widget>

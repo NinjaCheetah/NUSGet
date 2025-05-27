@@ -5,6 +5,9 @@ import os
 import platform
 import subprocess
 
+from modules.config import update_setting
+
+
 def is_dark_theme_windows():
     # This has to be here so that Python doesn't try to import it on non-Windows.
     import winreg
@@ -17,6 +20,7 @@ def is_dark_theme_windows():
     except Exception:
         return False
 
+
 def is_dark_theme_macos():
     # macOS is weird. If the dark theme is on, then `defaults read -g AppleInterfaceStyle` returns "Dark". If the light
     # theme is on, then trying to read this key fails and returns an error instead.
@@ -28,6 +32,7 @@ def is_dark_theme_macos():
         return "Dark" in result.stdout
     except Exception:
         return False
+
 
 def is_dark_theme_linux():
     try:
@@ -43,7 +48,14 @@ def is_dark_theme_linux():
     except Exception:
         return False
 
-def is_dark_theme():
+
+def is_dark_theme(config_data: dict):
+    # Theming priority order:
+    #   1. `THEME` environment variable
+    #   2. Theme saved in config.json
+    #   3. The system theme
+    #   4. Light, if all else fails (though personally I'd prefer dark)
+    #
     # First, check for an environment variable overriding the theme, and use that if it exists.
     try:
         if os.environ["THEME"].lower() == "light":
@@ -54,7 +66,18 @@ def is_dark_theme():
             print(f"Unknown theme specified: \"{os.environ['THEME']}\"")
     except KeyError:
         pass
-    # If the theme wasn't overridden, then check the current system theme.
+    # If the theme wasn't overridden, read the user's preference in config.json.
+    try:
+        match config_data["theme"]:
+            case "light":
+                return False
+            case "dark":
+                return True
+            case _:
+                pass
+    except KeyError:
+        pass
+    # If a theme wasn't set (or the theme is "system"), then check for the system theme.
     system = platform.system()
     if system == "Windows":
         return is_dark_theme_windows()
@@ -62,3 +85,16 @@ def is_dark_theme():
         return is_dark_theme_macos()
     else:
         return is_dark_theme_linux()
+
+
+def set_theme(config_data: dict, theme: str) -> None:
+    match theme:
+        case "light":
+            print("setting theme to light")
+            update_setting(config_data, "theme", "light")
+        case "dark":
+            print("setting theme to dark")
+            update_setting(config_data, "theme", "dark")
+        case _:
+            print("setting theme to system (default)")
+            update_setting(config_data, "theme", "")

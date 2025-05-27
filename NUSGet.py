@@ -32,7 +32,7 @@ from qt.py.ui_MainMenu import Ui_MainWindow
 from modules.config import *
 from modules.core import *
 from modules.language import *
-from modules.theme import is_dark_theme
+from modules.theme import *
 from modules.tree import NUSGetTreeModel, TIDFilterProxyModel
 from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
@@ -135,9 +135,38 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # languages at once makes no sense.
         language_group = QActionGroup(self)
         language_group.setExclusive(True)
+        current_language = ""
+        try:
+            current_language = config_data["language"]
+        except KeyError:
+            pass
         for action in self.ui.menu_options_language.actions():
             language_group.addAction(action)
-        language_group.triggered.connect(lambda lang=action: set_language(config_data, lang.text()))
+            if current_language != "":
+                if LANGS[current_language] == action.text():
+                    action.setChecked(True)
+        # There is no language set, so check the system language option.
+        if current_language == "":
+            self.ui.action_language_system.setChecked(True)
+        language_group.triggered.connect(lambda lang=action: self.change_language(lang.text()))
+        # Another QActionGroup used for the theme selector.
+        theme_group = QActionGroup(self)
+        theme_group.setExclusive(True)
+        for action in self.ui.menu_options_theme.actions():
+            theme_group.addAction(action)
+        self.ui.action_theme_system.triggered.connect(lambda: self.change_theme("system"))
+        self.ui.action_theme_light.triggered.connect(lambda: self.change_theme("light"))
+        self.ui.action_theme_dark.triggered.connect(lambda: self.change_theme("dark"))
+        try:
+            match config_data["theme"]:
+                case "light":
+                    self.ui.action_theme_light.setChecked(True)
+                case "dark":
+                    self.ui.action_theme_dark.setChecked(True)
+                case _:
+                    self.ui.action_theme_system.setChecked(True)
+        except KeyError:
+            pass
         # ---------
         # Help Menu
         # ---------
@@ -146,7 +175,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.action_about.triggered.connect(self.about_nusget)
         self.ui.action_about_qt.triggered.connect(lambda: QMessageBox.aboutQt(self))
         # Save some light/dark theme values for later, including the appropriately colored info icon.
-        if is_dark_theme():
+        if is_dark_theme(config_data):
             bg_color = "#2b2b2b"
             icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "information_white.svg"))
         else:
@@ -622,6 +651,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         about_box = AboutNUSGet([nusget_version, version("libWiiPy"), version("libTWLPy")])
         about_box.exec()
 
+    def change_language(self, new_lang):
+        set_language(config_data, new_lang)
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Icon.Warning)
+        msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+        msg_box.setWindowTitle(app.translate("MainWindow", "Restart Required"))
+        msg_box.setText(app.translate("MainWindow", "NUSGet must be restarted for the new language to take effect."))
+        msg_box.exec()
+
+    def change_theme(self, new_theme):
+        set_theme(config_data, new_theme)
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Icon.Warning)
+        msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+        msg_box.setWindowTitle(app.translate("MainWindow", "Restart Required"))
+        msg_box.setText(app.translate("MainWindow", "NUSGet must be restarted for the new theme to take effect."))
+        msg_box.exec()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -684,7 +733,7 @@ if __name__ == "__main__":
     # NUSGet look nice and pretty.
     app.setStyle("fusion")
     theme_sheet = "style_dark.qss"
-    if is_dark_theme():
+    if is_dark_theme(config_data):
         theme_sheet = "style_dark.qss"
     else:
         theme_sheet = "style_light.qss"

@@ -68,6 +68,15 @@ class Ui_MainWindow(object):
         self.action_language_korean = QAction(MainWindow)
         self.action_language_korean.setObjectName(u"action_language_korean")
         self.action_language_korean.setCheckable(True)
+        self.action_theme_system = QAction(MainWindow)
+        self.action_theme_system.setObjectName(u"action_theme_system")
+        self.action_theme_system.setCheckable(True)
+        self.action_theme_light = QAction(MainWindow)
+        self.action_theme_light.setObjectName(u"action_theme_light")
+        self.action_theme_light.setCheckable(True)
+        self.action_theme_dark = QAction(MainWindow)
+        self.action_theme_dark.setObjectName(u"action_theme_dark")
+        self.action_theme_dark.setCheckable(True)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_3 = QHBoxLayout(self.centralwidget)
@@ -354,13 +363,15 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1010, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1010, 21))
         self.menu_help = QMenu(self.menubar)
         self.menu_help.setObjectName(u"menu_help")
         self.menu_options = QMenu(self.menubar)
         self.menu_options.setObjectName(u"menu_options")
         self.menu_options_language = QMenu(self.menu_options)
         self.menu_options_language.setObjectName(u"menu_options_language")
+        self.menu_options_theme = QMenu(self.menu_options)
+        self.menu_options_theme.setObjectName(u"menu_options_theme")
         MainWindow.setMenuBar(self.menubar)
 
         self.menubar.addAction(self.menu_options.menuAction())
@@ -369,6 +380,7 @@ class Ui_MainWindow(object):
         self.menu_help.addAction(self.action_about_qt)
         self.menu_help.addSeparator()
         self.menu_options.addAction(self.menu_options_language.menuAction())
+        self.menu_options.addAction(self.menu_options_theme.menuAction())
         self.menu_options_language.addAction(self.action_language_system)
         self.menu_options_language.addAction(self.action_language_english)
         self.menu_options_language.addAction(self.action_language_spanish)
@@ -378,6 +390,9 @@ class Ui_MainWindow(object):
         self.menu_options_language.addAction(self.action_language_norwegian)
         self.menu_options_language.addAction(self.action_language_romanian)
         self.menu_options_language.addAction(self.action_language_korean)
+        self.menu_options_theme.addAction(self.action_theme_system)
+        self.menu_options_theme.addAction(self.action_theme_light)
+        self.menu_options_theme.addAction(self.action_theme_dark)
 
         self.retranslateUi(MainWindow)
 
@@ -401,6 +416,9 @@ class Ui_MainWindow(object):
         self.action_language_norwegian.setText(QCoreApplication.translate("MainWindow", u"Norsk", None))
         self.action_language_romanian.setText(QCoreApplication.translate("MainWindow", u"Rom\u00e2n\u0103", None))
         self.action_language_korean.setText(QCoreApplication.translate("MainWindow", u"\ud55c\uad6d\uc5b4", None))
+        self.action_theme_system.setText(QCoreApplication.translate("MainWindow", u"System (Default)", None))
+        self.action_theme_light.setText(QCoreApplication.translate("MainWindow", u"Light", None))
+        self.action_theme_dark.setText(QCoreApplication.translate("MainWindow", u"Dark", None))
         self.tree_filter_input.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.tree_filter_reset_btn.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.platform_tabs.setTabText(self.platform_tabs.indexOf(self.wii_tab), QCoreApplication.translate("MainWindow", u"Wii", None))
@@ -427,10 +445,11 @@ class Ui_MainWindow(object):
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
         self.menu_help.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
         self.menu_options.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
         self.menu_options_language.setTitle(QCoreApplication.translate("MainWindow", u"Language", None))
+        self.menu_options_theme.setTitle(QCoreApplication.translate("MainWindow", u"Theme", None))
     # retranslateUi
 
