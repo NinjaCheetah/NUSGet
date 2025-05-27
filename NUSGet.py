@@ -22,14 +22,16 @@ import sys
 import webbrowser
 from importlib.metadata import version
 
-from PySide6.QtGui import QIcon
+from PySide6.QtGui import QActionGroup, QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QListView
-from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo, QTranslator, QLocale
+from PySide6.QtCore import QRunnable, Slot, QThreadPool, Signal, QObject, QLibraryInfo
 
 from qt.py.ui_AboutDialog import AboutNUSGet
 from qt.py.ui_MainMenu import Ui_MainWindow
 
+from modules.config import *
 from modules.core import *
+from modules.language import *
 from modules.theme import is_dark_theme
 from modules.tree import NUSGetTreeModel, TIDFilterProxyModel
 from modules.download_batch import run_nus_download_batch
@@ -81,9 +83,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.custom_out_dir_btn.clicked.connect(self.choose_output_dir)
-        # About and About Qt Buttons
-        self.ui.actionAbout.triggered.connect(self.about_nusget)
-        self.ui.actionAbout_Qt.triggered.connect(lambda: QMessageBox.aboutQt(self))
         self.ui.pack_archive_checkbox.toggled.connect(
             lambda: connect_is_enabled_to_checkbox([self.ui.archive_file_entry], self.ui.pack_archive_checkbox))
         self.ui.custom_out_dir_checkbox.toggled.connect(
@@ -126,10 +125,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dropdown_delegate = ComboBoxItemDelegate()
         self.ui.console_select_dropdown.setItemDelegate(dropdown_delegate)
         self.ui.console_select_dropdown.currentIndexChanged.connect(self.selected_console_changed)
-        # Fix the annoying background on the help menu items.
-        self.ui.menuHelp.setWindowFlags(self.ui.menuHelp.windowFlags() | Qt.FramelessWindowHint)
-        self.ui.menuHelp.setWindowFlags(self.ui.menuHelp.windowFlags() | Qt.NoDropShadowWindowHint)
-        self.ui.menuHelp.setAttribute(Qt.WA_TranslucentBackground)
+        # ------------
+        # Options Menu
+        # ------------
+        # Fix the annoying background on the option menu items and submenus.
+        fixup_qmenu_background(self.ui.menu_options)
+        fixup_qmenu_background(self.ui.menu_options_language)
+        # Build a QActionGroup so that the language options function like radio buttons, because selecting multiple
+        # languages at once makes no sense.
+        language_group = QActionGroup(self)
+        language_group.setExclusive(True)
+        for action in self.ui.menu_options_language.actions():
+            language_group.addAction(action)
+        language_group.triggered.connect(lambda lang=action: set_language(config_data, lang.text()))
+        # ---------
+        # Help Menu
+        # ---------
+        # Same fix for help menu items.
+        fixup_qmenu_background(self.ui.menu_help)
+        self.ui.action_about.triggered.connect(self.about_nusget)
+        self.ui.action_about_qt.triggered.connect(lambda: QMessageBox.aboutQt(self))
         # Save some light/dark theme values for later, including the appropriately colored info icon.
         if is_dark_theme():
             bg_color = "#2b2b2b"
@@ -137,8 +152,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             bg_color = "#e3e3e3"
             icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "information_black.svg"))
-        self.ui.actionAbout.setIcon(icon)
-        self.ui.actionAbout_Qt.setIcon(icon)
+        self.ui.action_about.setIcon(icon)
+        self.ui.action_about_qt.setIcon(icon)
         # Title tree loading code. Now powered by Models:tm:
         wii_model = NUSGetTreeModel(wii_database, root_name="Wii Titles")
         vwii_model = NUSGetTreeModel(vwii_database, root_name="vWii Titles")
@@ -683,16 +698,10 @@ if __name__ == "__main__":
     translator = QTranslator(app)
     if translator.load(QLocale.system(), 'qtbase', '_', path):
         app.installTranslator(translator)
-    translator = QTranslator(app)
+    # Get the translation path, and call get_language() to find the appropriate translations to load based on the
+    # settings and system language.
     path = os.path.join(os.path.dirname(__file__), "resources", "translations")
-    # Unix-likes and Windows handle this differently, apparently. Unix-likes will try `nusget_xx_XX.qm` and then fall
-    # back on just `nusget_xx.qm` if the region-specific translation for the language can't be found. On Windows, no
-    # such fallback exists, and so this code manually implements that fallback, since for languages like Spanish NUSGet
-    # doesn't use region-specific translations.
-    locale = QLocale.system()
-    if not translator.load(QLocale.system(), 'nusget', '_', path):
-        base_locale = QLocale(locale.language())
-        translator.load(base_locale, 'nusget', '_', path)
+    translator = get_language(QTranslator(app), config_data, path)
     app.installTranslator(translator)
 
     window = MainWindow()

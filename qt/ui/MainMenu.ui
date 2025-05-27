@@ -472,17 +472,38 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <height>30</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuHelp">
+   <widget class="QMenu" name="menu_help">
     <property name="title">
      <string>Help</string>
     </property>
-    <addaction name="actionAbout"/>
-    <addaction name="actionAbout_Qt"/>
+    <addaction name="action_about"/>
+    <addaction name="action_about_qt"/>
     <addaction name="separator"/>
    </widget>
-   <addaction name="menuHelp"/>
+   <widget class="QMenu" name="menu_options">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <widget class="QMenu" name="menu_options_language">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="action_language_system"/>
+     <addaction name="action_language_english"/>
+     <addaction name="action_language_spanish"/>
+     <addaction name="action_language_german"/>
+     <addaction name="action_language_french"/>
+     <addaction name="action_language_italian"/>
+     <addaction name="action_language_norwegian"/>
+     <addaction name="action_language_romanian"/>
+     <addaction name="action_language_korean"/>
+    </widget>
+    <addaction name="menu_options_language"/>
+   </widget>
+   <addaction name="menu_options"/>
+   <addaction name="menu_help"/>
   </widget>
-  <action name="actionAbout">
+  <action name="action_about">
    <property name="icon">
     <iconset theme="QIcon::ThemeIcon::HelpAbout"/>
    </property>
@@ -493,7 +514,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <enum>QAction::MenuRole::ApplicationSpecificRole</enum>
    </property>
   </action>
-  <action name="actionAbout_Qt">
+  <action name="action_about_qt">
    <property name="icon">
     <iconset theme="QIcon::ThemeIcon::HelpAbout"/>
    </property>
@@ -502,6 +523,81 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::ApplicationSpecificRole</enum>
+   </property>
+  </action>
+  <action name="action_language_system">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>System (Default)</string>
+   </property>
+  </action>
+  <action name="action_language_english">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="action_language_spanish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Español</string>
+   </property>
+  </action>
+  <action name="action_language_german">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Deutsch</string>
+   </property>
+  </action>
+  <action name="action_language_french">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Français</string>
+   </property>
+  </action>
+  <action name="action_language_italian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Italiano</string>
+   </property>
+  </action>
+  <action name="action_language_norwegian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Norsk</string>
+   </property>
+  </action>
+  <action name="action_language_romanian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Română</string>
+   </property>
+  </action>
+  <action name="action_language_korean">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>한국어</string>
    </property>
   </action>
  </widget>

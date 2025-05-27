@@ -1,15 +1,12 @@
 # "modules/core.py", licensed under the MIT license
 # Copyright 2024-2025 NinjaCheetah & Contributors
 
-import os
-import json
-import pathlib
 import requests
 from dataclasses import dataclass
 from typing import List
 
 from PySide6.QtCore import Qt, QSize
-from PySide6.QtWidgets import QStyledItemDelegate, QSizePolicy
+from PySide6.QtWidgets import QStyledItemDelegate
 
 
 # This is required to make the dropdown look correct with the custom styling. A little fuzzy on the why, but it has to
@@ -63,6 +60,13 @@ def connect_is_enabled_to_checkbox(items, chkbox):
             item.setEnabled(False)
 
 
+def fixup_qmenu_background(menu):
+    # These fixes are required to not have a square background poking out from behind the rounded corners of a QMenu.
+    menu.setWindowFlags(menu.windowFlags() | Qt.FramelessWindowHint)
+    menu.setWindowFlags(menu.windowFlags() | Qt.NoDropShadowWindowHint)
+    menu.setAttribute(Qt.WA_TranslucentBackground)
+
+
 def check_nusget_updates(app, current_version: str, progress_callback=None) -> str | None:
     # Simple function to make a request to the GitHub API and then check if the latest available version is newer.
     gh_api_request = requests.get(url="https://api.github.com/repos/NinjaCheetah/NUSGet/releases/latest", stream=True)
@@ -81,25 +85,3 @@ def check_nusget_updates(app, current_version: str, progress_callback=None) -> s
                 return new_version
         progress_callback.emit(app.translate("MainWindow", "\n\nYou're running the latest release of NUSGet."))
     return None
-
-
-def get_config_file() -> pathlib.Path:
-    config_dir = pathlib.Path(os.path.join(
-        os.environ.get('APPDATA') or
-        os.environ.get('XDG_CONFIG_HOME') or
-        os.path.join(os.environ['HOME'], '.config'),
-        "NUSGet"
-    ))
-    config_dir.mkdir(exist_ok=True)
-    return config_dir.joinpath("config.json")
-
-
-def save_config(config_data: dict) -> None:
-    config_file = get_config_file()
-    print(f"writing data: {config_data}")
-    open(config_file, "w").write(json.dumps(config_data))
-
-
-def update_setting(config_data: dict, setting: str, value: any) -> None:
-    config_data[setting] = value
-    save_config(config_data)
