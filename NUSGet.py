@@ -131,6 +131,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Fix the annoying background on the option menu items and submenus.
         fixup_qmenu_background(self.ui.menu_options)
         fixup_qmenu_background(self.ui.menu_options_language)
+        fixup_qmenu_background(self.ui.menu_options_theme)
         # Build a QActionGroup so that the language options function like radio buttons, because selecting multiple
         # languages at once makes no sense.
         language_group = QActionGroup(self)
@@ -166,7 +167,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 case _:
                     self.ui.action_theme_system.setChecked(True)
         except KeyError:
-            pass
+            self.ui.action_theme_system.setChecked(True)
         # ---------
         # Help Menu
         # ---------
@@ -658,7 +659,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
         msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
         msg_box.setWindowTitle(app.translate("MainWindow", "Restart Required"))
-        msg_box.setText(app.translate("MainWindow", "NUSGet must be restarted for the new language to take effect."))
+        msg_box.setText(app.translate("MainWindow", "NUSGet must be restarted for the selected language to take effect."))
         msg_box.exec()
 
     def change_theme(self, new_theme):
@@ -668,7 +669,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
         msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
         msg_box.setWindowTitle(app.translate("MainWindow", "Restart Required"))
-        msg_box.setText(app.translate("MainWindow", "NUSGet must be restarted for the new theme to take effect."))
+        msg_box.setText(app.translate("MainWindow", "NUSGet must be restarted for the selected theme to take effect."))
         msg_box.exec()
 
 
