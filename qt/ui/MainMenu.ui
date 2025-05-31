@@ -550,7 +550,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>English</string>
+    <string notr="true">English</string>
    </property>
   </action>
   <action name="action_language_spanish">
@@ -558,7 +558,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Español</string>
+    <string notr="true">Español</string>
    </property>
   </action>
   <action name="action_language_german">
@@ -566,7 +566,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Deutsch</string>
+    <string notr="true">Deutsch</string>
    </property>
   </action>
   <action name="action_language_french">
@@ -574,7 +574,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Français</string>
+    <string notr="true">Français</string>
    </property>
   </action>
   <action name="action_language_italian">
@@ -582,7 +582,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Italiano</string>
+    <string notr="true">Italiano</string>
    </property>
   </action>
   <action name="action_language_norwegian">
@@ -590,7 +590,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Norsk</string>
+    <string notr="true">Norsk</string>
    </property>
   </action>
   <action name="action_language_romanian">
@@ -598,7 +598,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Română</string>
+    <string notr="true">Română</string>
    </property>
   </action>
   <action name="action_language_korean">
@@ -606,7 +606,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>한국어</string>
+    <string notr="true">한국어</string>
    </property>
   </action>
   <action name="action_theme_system">
