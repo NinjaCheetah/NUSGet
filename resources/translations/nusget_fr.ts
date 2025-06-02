@@ -211,17 +211,17 @@ Les titres seront téléchargés dans un dossier &quot;NUSGet Downloads&quot;, �
         <location filename="../../NUSGet.py" line="660"/>
         <location filename="../../NUSGet.py" line="670"/>
         <source>Restart Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Redémarrage requis</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="661"/>
         <source>NUSGet must be restarted for the new language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet doit redémarrer pour appliquer la langue choisie.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="671"/>
         <source>NUSGet must be restarted for the new theme to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet doit redémarrer pour appliquer le thème choisi.</translation>
     </message>
     <message>
         <source>The Title ID you have entered is not in a valid format!</source>
@@ -440,17 +440,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="485"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="489"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Langue</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="503"/>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Thème</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="520"/>
@@ -461,17 +461,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <location filename="../../qt/ui/MainMenu.ui" line="545"/>
         <location filename="../../qt/ui/MainMenu.ui" line="617"/>
         <source>System (Default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Système (par défaut)</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="625"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Clair</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="633"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Sombre</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="217"/>
