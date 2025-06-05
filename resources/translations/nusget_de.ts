@@ -334,17 +334,17 @@ Standartmäßig werden alle Inhalte und Archive in einen &quot;NUSGet Downloads&
         <location filename="../../NUSGet.py" line="660"/>
         <location filename="../../NUSGet.py" line="670"/>
         <source>Restart Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Neustart erforderlich</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="661"/>
         <source>NUSGet must be restarted for the new language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet muss erneut gestartet werden, um die ausgewählte Sprache zu nutzen.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="671"/>
         <source>NUSGet must be restarted for the new theme to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet muss erneut gestartet werden, um die ausgewählte Darstellung zu nutzen.</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="74"/>
@@ -491,17 +491,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="485"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Optionen</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="489"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="503"/>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Darstellung</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="520"/>
@@ -517,17 +517,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <location filename="../../qt/ui/MainMenu.ui" line="545"/>
         <location filename="../../qt/ui/MainMenu.ui" line="617"/>
         <source>System (Default)</source>
-        <translation type="unfinished"></translation>
+        <translation>System (Standart)</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="625"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Hell</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="633"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Dunkel</translation>
     </message>
 </context>
 </TS>
