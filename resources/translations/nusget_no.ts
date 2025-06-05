@@ -182,7 +182,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="217"/>
+        <location filename="../../NUSGet.py" line="218"/>
         <source>Pack installable archive (WAD/TAD)</source>
         <translation>Pakke installerbart arkiv (WAD/TAD)</translation>
     </message>
@@ -192,17 +192,17 @@
         <translation>Filnavn</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="219"/>
+        <location filename="../../NUSGet.py" line="220"/>
         <source>Keep encrypted contents</source>
         <translation>Oppbevar kryptert innhold</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="221"/>
+        <location filename="../../NUSGet.py" line="222"/>
         <source>Create decrypted contents (*.app)</source>
         <translation>Opprette dekryptert innold (*.app)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="222"/>
+        <location filename="../../NUSGet.py" line="223"/>
         <source>Use local files, if they exist</source>
         <translation>Bruk lokale filer, hvis de finnes</translation>
     </message>
@@ -216,7 +216,7 @@
         <translation>vWii Tittelinstillinger</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="226"/>
+        <location filename="../../NUSGet.py" line="227"/>
         <source>Re-encrypt title using the Wii Common Key</source>
         <translation>Krypter tittelen på nytt ved hjelp av Wii Common Key</translation>
     </message>
@@ -226,12 +226,12 @@
         <translation>Appinstillinger</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="227"/>
+        <location filename="../../NUSGet.py" line="228"/>
         <source>Check for updates on startup</source>
         <translation>Sjekk for oppdateringer ved oppstart</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="228"/>
+        <location filename="../../NUSGet.py" line="229"/>
         <source>Use a custom download directory</source>
         <translation>Bruke en egendefinert nedlastingsmappe</translation>
     </message>
@@ -350,100 +350,100 @@ Titler merket med en hake er fri og har en billett tilgjengelig, og kan dekrypte
 Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedlastingsmappen din.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="305"/>
+        <location filename="../../NUSGet.py" line="306"/>
         <source>&lt;b&gt;There&apos;s a newer version of NUSGet available!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Det finnes en nyere versjon av NUSGet tilgjengelig!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="406"/>
+        <location filename="../../NUSGet.py" line="407"/>
         <source>No Output Selected</source>
         <translation>Ingen Utgang Valgt</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="407"/>
+        <location filename="../../NUSGet.py" line="408"/>
         <source>You have not selected any format to output the data in!</source>
         <translation>Du ikke har valgt noe format å lagre dataene i!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="409"/>
+        <location filename="../../NUSGet.py" line="410"/>
         <source>Please select at least one option for how you would like the download to be saved.</source>
         <translation>Velg minst ett valg for hvordan du vil at nedlastingen skal lagres.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="421"/>
-        <location filename="../../NUSGet.py" line="627"/>
+        <location filename="../../NUSGet.py" line="422"/>
+        <location filename="../../NUSGet.py" line="628"/>
         <source>Invalid Download Directory</source>
         <translation>Ugyldig Nedlastingsmappe</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="422"/>
+        <location filename="../../NUSGet.py" line="423"/>
         <source>The specified download directory does not exist!</source>
         <translation>Den angitte nedlastingsmappen finnes ikke!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="425"/>
+        <location filename="../../NUSGet.py" line="426"/>
         <source>Please make sure the specified download directory exists, and that you have permission to access it.</source>
         <translation>Kontroller at den angitte nedlastingsmappen finnes, og at du har tillatelse fil å få tilgang til den.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="455"/>
+        <location filename="../../NUSGet.py" line="456"/>
         <source>Invalid Title ID</source>
         <translation>Ugyldig Tittel ID</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="456"/>
+        <location filename="../../NUSGet.py" line="457"/>
         <source>&lt;b&gt;The Title ID you have entered is not in a valid format!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Tittel IDen du har angitt er ikke i et gyldig format!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="461"/>
+        <location filename="../../NUSGet.py" line="462"/>
         <source>&lt;b&gt;No title with the provided Title ID or version could be found!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Ingen tittel med oppgitt Tittel ID eller versjon ble funnet!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="466"/>
+        <location filename="../../NUSGet.py" line="467"/>
         <source>&lt;b&gt;Content decryption was not successful! Decrypted contents could not be created.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Dekryptering av innhold var ikke vellykket! Dekryptert innhold kunne ikke opprettes.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="473"/>
+        <location filename="../../NUSGet.py" line="474"/>
         <source>&lt;b&gt;No Ticket is Available for the Requested Title!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Ingen billett er tilgjengelig for den forespurte tittelen!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="479"/>
+        <location filename="../../NUSGet.py" line="480"/>
         <source>&lt;b&gt;An Unknown Error has Occurred!&lt;/b&gt;</source>
         <translation>&lt;b&gt;En ukjent feil har oppstått!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="501"/>
+        <location filename="../../NUSGet.py" line="502"/>
         <source>&lt;b&gt;Some issues occurred while running the download script.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Noen feil oppstod under kjøring av nedlastingsskriptet.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="551"/>
+        <location filename="../../NUSGet.py" line="552"/>
         <source>&lt;b&gt;An error occurred while parsing the script file!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Det oppstod en feil under parsing av skriptfilen!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="562"/>
+        <location filename="../../NUSGet.py" line="563"/>
         <source>&lt;b&gt;An error occurred while parsing Title IDs!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Det oppstod en feil under parsing av Tittel IDer!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="660"/>
-        <location filename="../../NUSGet.py" line="670"/>
+        <location filename="../../NUSGet.py" line="661"/>
+        <location filename="../../NUSGet.py" line="671"/>
         <source>Restart Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="661"/>
-        <source>NUSGet must be restarted for the new language to take effect.</source>
+        <location filename="../../NUSGet.py" line="662"/>
+        <source>NUSGet must be restarted for the selected language to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="671"/>
-        <source>NUSGet must be restarted for the new theme to take effect.</source>
+        <location filename="../../NUSGet.py" line="672"/>
+        <source>NUSGet must be restarted for the selected theme to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -451,12 +451,12 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">Tittel IDen du har angitt er ikke i et gyldig format!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="458"/>
+        <location filename="../../NUSGet.py" line="459"/>
         <source>Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly formatted Title ID, or select one from the menu on the left.</source>
         <translation>Tittel IDer må være 16-sifrede tall og bokstav strenger. Vennligst skriv inn en korrekt formatert Tittel ID, eller velg en fra menyen til venstre.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="460"/>
+        <location filename="../../NUSGet.py" line="461"/>
         <source>Title ID/Version Not Found</source>
         <translation>Tittel ID/Versjon Ikke Funnet</translation>
     </message>
@@ -465,12 +465,12 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">Ingen tittel med oppgitt Tittel ID eller versjon ble funnet!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="463"/>
+        <location filename="../../NUSGet.py" line="464"/>
         <source>Please make sure that you have entered a valid Title ID, or selected one from the title database, and that the provided version exists for the title you are attempting to download.</source>
         <translation>Sjekk at du har oppgitt en gyldig Tittel ID, eller valgt en fra titteldatabasen, og at den angitte versjonen finnes for tittelen du forsøker å laste ned.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="465"/>
+        <location filename="../../NUSGet.py" line="466"/>
         <source>Content Decryption Failed</source>
         <translation>Dekryptering av Innhold Mislyktes</translation>
     </message>
@@ -479,12 +479,12 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">Dekryptering av innhold var ikke vellykket! Dekryptert innhold kunne ikke opprettes.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="469"/>
+        <location filename="../../NUSGet.py" line="470"/>
         <source>Your TMD or Ticket may be damaged, or they may not correspond with the content being decrypted. If you have checked &quot;Use local files, if they exist&quot;, try disabling that option before trying the download again to fix potential issues with local data.</source>
         <translation>TMDen eller Billetten kan være skadet, eller det kan hende at de ikke samsvarer med innholdet some dekrypteres. Hvis du har krysset av for &quot;Bruk lokale filer, hvis de finnes&quot;, kan du prøve å deaktivere dette alternativet før du prøver nedlastingen på nytt for å løse eventuelle problemer med lokale data.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="472"/>
+        <location filename="../../NUSGet.py" line="473"/>
         <source>Ticket Not Available</source>
         <translation>Billett Ikke Tilgjengelig</translation>
     </message>
@@ -493,12 +493,12 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">Ingen billett er tilgjengelig for den forespurte tittelen!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="476"/>
+        <location filename="../../NUSGet.py" line="477"/>
         <source>A ticket could not be downloaded for the requested title, but you have selected &quot;Pack installable archive&quot; or &quot;Create decrypted contents&quot;. These options are not available for titles without a ticket. Only encrypted contents have been saved.</source>
         <translation>En billett kunne ikke lastes ned for den forespurte tittelen, men du har valgt &quot;Pakk installerbart arkiv&quot; eller &quot;Opprett dekryptert innhold&quot;. Disse alternativene er ikke tilgjenelige for titler uten billett. Bare kryptert innhold har blitt lagret.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="478"/>
+        <location filename="../../NUSGet.py" line="479"/>
         <source>Unknown Error</source>
         <translation>Ukjent Feil</translation>
     </message>
@@ -507,12 +507,12 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">En ukjent feil har oppstått!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="481"/>
+        <location filename="../../NUSGet.py" line="482"/>
         <source>Please try again. If this issue persists, please open a new issue on GitHub detailing what you were trying to do when this error occurred.</source>
         <translation>Prøv igjen. Hvis dette problemet vedvarer, åpne et nytt issue på GitHub med detaljer om hva du prøvde å gjøre da denne feilen oppstod.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="500"/>
+        <location filename="../../NUSGet.py" line="501"/>
         <source>Script Issues Occurred</source>
         <translation>Skriptfeil Oppstod</translation>
     </message>
@@ -521,32 +521,32 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">Noen feil oppstod under kjøring av nedlastingsskriptet.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="503"/>
+        <location filename="../../NUSGet.py" line="504"/>
         <source>Check the log for more details about what issues were encountered.</source>
         <translation>Sjekk loggen for mer informasjon om feilene som har oppstått.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="510"/>
+        <location filename="../../NUSGet.py" line="511"/>
         <source>The following titles could not be downloaded due to an error. Please ensure that the Title ID and version listed in the script are valid.</source>
         <translation>Følgende titler kunne ikke lastes ned på grunn av en feil. Sjekk at Tittel IDen og versjon som er oppført i skriptet er gyldige.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="520"/>
+        <location filename="../../NUSGet.py" line="521"/>
         <source>You enabled &quot;Create decrypted contents&quot; or &quot;Pack installable archive&quot;, but the following titles in the script do not have tickets available. If enabled, encrypted contents were still downloaded.</source>
         <translation>Du aktiverte &quot;Opprett dekryptert innhold&quot; eller &quot;Pakk installerbart archive&quot;, men følgende titler i skriptet har ikke tilgjengelige billetter. Hvis aktivert, ble kryptert innhold fortsatt lastet ned.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="539"/>
+        <location filename="../../NUSGet.py" line="540"/>
         <source>Script Download Failed</source>
         <translation>Skriptnedlasting Mislyktes</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="540"/>
+        <location filename="../../NUSGet.py" line="541"/>
         <source>Open NUS Script</source>
         <translation>Åpne NUS Skript</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="541"/>
+        <location filename="../../NUSGet.py" line="542"/>
         <source>NUS Scripts (*.nus *.json)</source>
         <translation>NUS Skript (*.nus *.json)</translation>
     </message>
@@ -555,7 +555,7 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">Det oppstod en feil under parsing av skriptfilen!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="553"/>
+        <location filename="../../NUSGet.py" line="554"/>
         <source>Error encountered at line {lineno}, column {colno}. Please double-check the script and try again.</source>
         <translation></translation>
     </message>
@@ -564,27 +564,27 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <translation type="vanished">Det oppstod en feil under parsing av Tittel IDer!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="564"/>
+        <location filename="../../NUSGet.py" line="565"/>
         <source>The title at index {index} does not have a Title ID!</source>
         <translation>Tittelen ved indeks {index} har ikke en Tittel ID!</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="617"/>
+        <location filename="../../NUSGet.py" line="618"/>
         <source>Open Directory</source>
         <translation>Åpen Mappe</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="628"/>
+        <location filename="../../NUSGet.py" line="629"/>
         <source>&lt;b&gt;The specified download directory does not exist!&lt;/b&gt;</source>
         <translation>&lt;b&gt;Den angitte nedlastingsmappen finnes ikke!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="631"/>
+        <location filename="../../NUSGet.py" line="632"/>
         <source>Please make sure the download directory you want to use exists, and that you have permission to access it.</source>
         <translation>Kontroller at den angitte nedlastingsmappen finnes, og at du har tillatelse fil å få tilgang til den.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="225"/>
+        <location filename="../../NUSGet.py" line="226"/>
         <source>Apply patches to IOS (Applies to WADs only)</source>
         <translation>Påfør patcher på IOS (gjelder kun WADer)</translation>
     </message>
@@ -602,12 +602,12 @@ Titler merket med en hake er fri og har en billett tilgjengelig, og kan dekrypte
 Som standard, lastes titler ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedlastingsmappen din.</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="223"/>
+        <location filename="../../NUSGet.py" line="224"/>
         <source>Use the Wii U NUS (faster, only affects Wii/vWii)</source>
         <translation>Bruk Wii U NUS (raskere, påvirker bare Wii/vWii)</translation>
     </message>
     <message>
-        <location filename="../../NUSGet.py" line="304"/>
+        <location filename="../../NUSGet.py" line="305"/>
         <source>NUSGet Update Available</source>
         <translation>NUSGet Oppdatering Tilgjengelig</translation>
     </message>
