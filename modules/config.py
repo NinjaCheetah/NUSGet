@@ -4,15 +4,20 @@
 import os
 import json
 import pathlib
+import platform
+
 
 def get_config_file() -> pathlib.Path:
-    config_dir = pathlib.Path(os.path.join(
-        os.environ.get('APPDATA') or
-        os.environ.get('XDG_CONFIG_HOME') or
-        os.path.join(os.environ['HOME'], '.config'),
-        "NUSGet"
-    ))
-    config_dir.mkdir(exist_ok=True)
+    if platform.system() == "Windows":
+        config_dir = pathlib.Path(os.environ.get('APPDATA'), "NUSGet")
+    elif platform.system() == "Darwin":
+        config_dir = pathlib.Path(os.environ['HOME'], "Library", "Application Support", "NUSGet")
+    else:
+        if os.environ.get('XDG_CONFIG_HOME'):
+            config_dir = pathlib.Path(os.environ.get('XDG_CONFIG_HOME'), "NUSGet")
+        else:
+            config_dir = pathlib.Path(os.environ['HOME'], ".config", "NUSGet")
+    config_dir.mkdir(exist_ok=True, parents=True)
     return config_dir.joinpath("config.json")
 
 
