@@ -148,17 +148,17 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="485"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Instillinger</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="489"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Språk</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="503"/>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="520"/>
@@ -169,17 +169,17 @@
         <location filename="../../qt/ui/MainMenu.ui" line="545"/>
         <location filename="../../qt/ui/MainMenu.ui" line="617"/>
         <source>System (Default)</source>
-        <translation type="unfinished"></translation>
+        <translation>System (Standard)</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="625"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Lys</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="633"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Mørk</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="218"/>
@@ -434,17 +434,17 @@ Titler er lastes ned til en mappe med navnet &quot;NUSGet Downloads&quot; i nedl
         <location filename="../../NUSGet.py" line="661"/>
         <location filename="../../NUSGet.py" line="671"/>
         <source>Restart Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Omstart Nødvendig</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="662"/>
         <source>NUSGet must be restarted for the selected language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet må startes på nytt for at det valgte språket skal tre i kraft.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="672"/>
         <source>NUSGet must be restarted for the selected theme to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet må startes på nytt for at det valgte temaet skal tre i kraft.</translation>
     </message>
     <message>
         <source>The Title ID you have entered is not in a valid format!</source>
