@@ -148,17 +148,17 @@
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="485"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opzioni</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="489"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Lingua</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="503"/>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="520"/>
@@ -169,17 +169,17 @@
         <location filename="../../qt/ui/MainMenu.ui" line="545"/>
         <location filename="../../qt/ui/MainMenu.ui" line="617"/>
         <source>System (Default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema (Default)</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="625"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiaro</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="633"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Scuro</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="218"/>
@@ -393,7 +393,7 @@ Per impostazione predefinita, i titoli verranno scaricati nella cartella &quot;N
     <message>
         <location filename="../../NUSGet.py" line="459"/>
         <source>Title IDs must be 16 digit strings of numbers and letters. Please enter a correctly formatted Title ID, or select one from the menu on the left.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gli ID del titolo devono essere costituiti da stringhe di 16 cifre di numeri e lettere. Inserire un ID titolo formattato correttamente o selezionarne uno dal menu a sinistra.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="462"/>
@@ -434,17 +434,17 @@ Per impostazione predefinita, i titoli verranno scaricati nella cartella &quot;N
         <location filename="../../NUSGet.py" line="661"/>
         <location filename="../../NUSGet.py" line="671"/>
         <source>Restart Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Riavvio necessario</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="662"/>
         <source>NUSGet must be restarted for the selected language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet ha bisogno di essere riavviato per poter cambiare la lingua.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="672"/>
         <source>NUSGet must be restarted for the selected theme to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet ha bisogno di essere riavviato per poter cambiare il tema.</translation>
     </message>
     <message>
         <source>The Title ID you have entered is not in a valid format!</source>

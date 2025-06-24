@@ -161,17 +161,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="485"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opciones</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="489"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="503"/>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="520"/>
@@ -182,17 +182,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <location filename="../../qt/ui/MainMenu.ui" line="545"/>
         <location filename="../../qt/ui/MainMenu.ui" line="617"/>
         <source>System (Default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema (por defecto)</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="625"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Claro</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="633"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Oscuro</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="218"/>
@@ -487,17 +487,17 @@ Por defecto, los títulos serán descargados a una carpeta llamada &quot;NUSGet 
         <location filename="../../NUSGet.py" line="661"/>
         <location filename="../../NUSGet.py" line="671"/>
         <source>Restart Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Reinicio requerido</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="662"/>
         <source>NUSGet must be restarted for the selected language to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet tiene que reiniciarse para aplicar el idioma seleccionado.</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="672"/>
         <source>NUSGet must be restarted for the selected theme to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>NUSGet tiene que reiniciarse para aplicar el tema seleccionado.</translation>
     </message>
     <message>
         <location filename="../../modules/core.py" line="74"/>
