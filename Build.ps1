@@ -11,6 +11,12 @@ $buildNUSGet = {
     python -m nuitka --show-progress --assume-yes-for-downloads NUSGet.py
 }
 
+$buildNUSGetOnefile = {
+    Write-Host "Building NUSGet in onefile mode..."
+    python build_translations.py
+    python -m nuitka --show-progress --assume-yes-for-downloads --onefile NUSGet.py
+}
+
 $cleanNUSGet = {
     Write-Host "Cleaning..."
     Remove-Item -Recurse -Force NUSGet.exe, ./NUSGet.build/, ./NUSGet.dist/, ./NUSGet.onefile-build/
@@ -19,6 +25,10 @@ $cleanNUSGet = {
 switch ($Task.ToLower()) {
     "build" {
         & $buildNUSGet
+        break
+    }
+    "build-onefile" {
+        & $buildNUSGetOnefile
         break
     }
     "clean" {

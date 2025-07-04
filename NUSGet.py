@@ -7,7 +7,7 @@
 #    nuitka-project: --macos-create-app-bundle
 #    nuitka-project: --macos-app-icon={MAIN_DIRECTORY}/resources/icon.png
 # nuitka-project-if: {OS} == "Windows":
-#    nuitka-project: --onefile
+#    nuitka-project: --standalone
 #    nuitka-project: --windows-icon-from-ico={MAIN_DIRECTORY}/resources/icon.png
 #    nuitka-project: --windows-console-mode=disable
 # nuitka-project-if: {OS} in ("Linux", "FreeBSD", "OpenBSD"):
@@ -38,7 +38,7 @@ from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.4.1"
+nusget_version = "1.4.2"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
