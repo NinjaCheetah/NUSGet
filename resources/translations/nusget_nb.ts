@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Available Titles</source>
-        <translation type="vanished">Tilgjengelige Titler</translation>
+        <translation type="vanished">Tilgjengelige titler</translation>
     </message>
     <message>
         <location filename="../../qt/ui/MainMenu.ui" line="46"></location>
@@ -352,7 +352,7 @@ Titler er lastes ned til en mappe med navnet "NUSGet Downloads" i nedlastingsmap
     <message>
         <location filename="../../NUSGet.py" line="306"></location>
         <source>&lt;b&gt;There's a newer version of NUSGet available!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;En nyere versjon av NUSGet tilgjengelig!&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;En nyere versjon av NUSGet er tilgjengelig!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../NUSGet.py" line="407"></location>
