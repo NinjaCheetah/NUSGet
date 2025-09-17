@@ -38,7 +38,7 @@ from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.4.2"
+nusget_version = "1.4.3"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -676,11 +676,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     # Load the database files, this will work for both the raw Python file and compiled standalone/onefile binaries.
-    database_file = open(os.path.join(os.path.dirname(__file__), "data", "wii-database.json"))
+    database_file = open(os.path.join(os.path.dirname(__file__), "data", "wii-database.json"), encoding="utf-8")
     wii_database = json.load(database_file)
-    database_file = open(os.path.join(os.path.dirname(__file__), "data", "vwii-database.json"))
+    database_file = open(os.path.join(os.path.dirname(__file__), "data", "vwii-database.json"), encoding="utf-8")
     vwii_database = json.load(database_file)
-    database_file = open(os.path.join(os.path.dirname(__file__), "data", "dsi-database.json"))
+    database_file = open(os.path.join(os.path.dirname(__file__), "data", "dsi-database.json"), encoding="utf-8")
     dsi_database = json.load(database_file)
     # Load the user's Downloads directory, which of course requires different steps on Windows vs macOS/Linux.
     if os.name == 'nt':
