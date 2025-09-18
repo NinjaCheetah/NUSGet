@@ -33,7 +33,7 @@ The following features are available for all supported consoles:
 For basic usage on all platforms, you can download the latest release for your operating system from [here](https://github.com/NinjaCheetah/NUSGet/releases/latest), and then run the executable.
 
 **Platform-Specific Notes:**
-- **macOS:** To use NUSGet on macOS, you'll need to either open NUSGet.app using right-click -> Open, or by using the terminal command `xattr -d com.apple.quarantine NUSGet.app`. After doing either of those things once, you'll be able to double-click NUSGet to open it like you normally would for an app. Note that changes in macOS Sequoia require using the latter method.
+- **macOS:** As of v1.4.3, NUSGet on macOS is signed with my Developer ID and can be run like any other Mac app.
 - **Windows:** On Windows, you'll likely need to allow NUSGet.exe in your antivirus program. This includes Windows Defender, which is almost guaranteed to prevent the app from being run. This is not because NUSGet is malicious in any way, it's just that NUSGet isn't popular enough to be "known" to Windows, and I don't have the expensive signing certificate necessary to work around this. If you're in doubt, you can look at all of NUSGet's code in this repository.
 - **Linux:** No special information applies on Linux, however you can build NUSGet yourself if you'd like to have it as an installed application with an icon that will appear in your favorite application launcher. See [here](https://github.com/NinjaCheetah/NUSGet?tab=readme-ov-file#for-linux-users) for more information.
 

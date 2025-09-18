@@ -6,6 +6,7 @@
 #    nuitka-project: --standalone
 #    nuitka-project: --macos-create-app-bundle
 #    nuitka-project: --macos-app-icon={MAIN_DIRECTORY}/resources/icon.png
+#    nuitka-project: --macos-signed-app-name=dev.ninjacheetah.NUSGet
 # nuitka-project-if: {OS} == "Windows":
 #    nuitka-project: --standalone
 #    nuitka-project: --windows-icon-from-ico={MAIN_DIRECTORY}/resources/icon.png
