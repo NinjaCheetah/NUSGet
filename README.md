@@ -73,7 +73,7 @@ A huge thanks to all the wonderful translators who've helped make NUSGet availab
  - **German:** [@yeah-its-gloria](https://github.com/yeah-its-gloria)
  - **Italian:** [@LNLenost](https://github.com/LNLenost)
  - **Korean:** [@DDinghoya](https://github.com/DDinghoya)
- - **Norwegian:** [@Rolfie](https://github.com/rolfiee)
+ - **Norwegian:** [@DandelionSprout](https://github.com/DandelionSprout), [@Rolfie](https://github.com/rolfiee)
  - **Romanian:** [@NotImplementedLife](https://github.com/NotImplementedLife)
  - **Spanish:** [@DarkMatterCore](https://github.com/DarkMatterCore)
 
