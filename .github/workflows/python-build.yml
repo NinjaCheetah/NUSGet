@@ -22,10 +22,10 @@ jobs:
       run: |
         sudo apt update && \
         sudo apt install -y ccache patchelf
-    - name: Set up Python 3.12
+    - name: Set up Python 3.13
       uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version: "3.13"
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
@@ -49,10 +49,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.12
+      - name: Set up Python 3.13
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.13"
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -79,7 +79,7 @@ jobs:
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.13"
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -105,10 +105,10 @@ jobs:
     - uses: actions/checkout@v4
     - name: Enable Developer Command Prompt
       uses: ilammy/msvc-dev-cmd@v1.13.0
-    - name: Set up Python 3.12
+    - name: Set up Python 3.13
       uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version: "3.13"
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
@@ -129,10 +129,10 @@ jobs:
     - uses: actions/checkout@v4
     - name: Enable Developer Command Prompt
       uses: ilammy/msvc-dev-cmd@v1.13.0
-    - name: Set up Python 3.12
+    - name: Set up Python 3.13
       uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version: "3.13"
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
