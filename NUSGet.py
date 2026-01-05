@@ -39,7 +39,7 @@ from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.4.3"
+nusget_version = "1.5.0"
 
 regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -82,6 +82,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.setupUi(self)
         self.threadpool = QThreadPool()
         self.ui.download_btn.clicked.connect(self.download_btn_pressed)
+        self.ui.open_output_btn.clicked.connect(self.open_output_dir)
         self.ui.script_btn.clicked.connect(self.script_btn_pressed)
         self.ui.custom_out_dir_btn.clicked.connect(self.choose_output_dir)
         self.ui.pack_archive_checkbox.toggled.connect(
@@ -191,6 +192,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dsi_model = NUSGetTreeModel(dsi_database, root_name="DSi Titles")
         self.tree_models = [wii_model, vwii_model, dsi_model]
         self.trees = [self.ui.wii_title_tree, self.ui.vwii_title_tree, self.ui.dsi_title_tree]
+        # ---------
+        # UI Tweaks
+        # ---------
+        # Any misc UI tweaks that need to be done when the UI loads.
+        # Set the appropriate folder icon for the open output folder button depending on the theme.
+        if is_dark_theme(config_data):
+            icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "folder_white.svg"))
+        else:
+            icon = QIcon(os.path.join(os.path.dirname(__file__), "resources", "folder_black.svg"))
+        self.ui.open_output_btn.setIcon(icon)
         # Build proxy models required for searching
         self.proxy_models = [TIDFilterProxyModel(self.ui.wii_title_tree), TIDFilterProxyModel(self.ui.vwii_title_tree),
                              TIDFilterProxyModel(self.ui.dsi_title_tree)]
@@ -612,6 +623,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         worker.signals.result.connect(self.check_batch_result)
         worker.signals.progress.connect(self.download_progress_update)
         self.threadpool.start(worker)
+
+    def open_output_dir(self):
+        # Like all good things in life, this is a platform-dependent procedure. Did I say good? I meant annoying.
+        system = platform.system()
+        if system == "Windows":
+            subprocess.run(["explorer.exe", out_folder])
+        elif system == "Darwin":
+            subprocess.run(["open", out_folder])
+        else:
+            subprocess.run(["xdg-open", out_folder])
 
     def choose_output_dir(self):
         # Use this handy convenience method to prompt the user to select a directory. Then we just need to validate

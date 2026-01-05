@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainMenu.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.0
+## Created by: Qt User Interface Compiler version 6.10.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -210,6 +210,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.download_btn)
 
+        self.open_output_btn = QPushButton(self.centralwidget)
+        self.open_output_btn.setObjectName(u"open_output_btn")
+        icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.FolderOpen))
+        self.open_output_btn.setIcon(icon1)
+
+        self.horizontalLayout.addWidget(self.open_output_btn)
+
         self.script_btn = QPushButton(self.centralwidget)
         self.script_btn.setObjectName(u"script_btn")
         sizePolicy.setHeightForWidth(self.script_btn.sizePolicy().hasHeightForWidth())
@@ -371,7 +378,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1010, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1010, 30))
         self.menu_help = QMenu(self.menubar)
         self.menu_help.setObjectName(u"menu_help")
         self.menu_options = QMenu(self.menubar)
@@ -431,6 +438,7 @@ class Ui_MainWindow(object):
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Console:", None))
         self.console_select_dropdown.setCurrentText("")
         self.download_btn.setText(QCoreApplication.translate("MainWindow", u"Start Download", None))
+        self.open_output_btn.setText("")
         self.script_btn.setText(QCoreApplication.translate("MainWindow", u"Run Script", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"General Settings", None))
         self.archive_file_entry.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Name", None))
@@ -445,7 +453,7 @@ class Ui_MainWindow(object):
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;\"><br /></p></body></html>", None))
         self.menu_help.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
         self.menu_options.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
