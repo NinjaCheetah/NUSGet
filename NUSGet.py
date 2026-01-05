@@ -357,7 +357,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.archive_file_entry.setText(archive_name)
         danger_text = selected_title.danger
         # Add warning text to the log if the selected title has no ticket.
-        if selected_title.ticket is False:
+        if not selected_title.ticket:
             danger_text = danger_text + ("Note: This Title does not have a Ticket available, so it cannot be decrypted"
                                          " or packed into a WAD/TAD.")
         # Print log info about the selected title and version.
@@ -422,24 +422,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                                        "like the download to be saved."))
             msg_box.exec()
             return
+        out_path = self.get_output_dir()
+        if out_path is None:
+            return
         self.lock_ui()
-        # Check for a custom output directory, and ensure that it's valid. If it is, then use that.
-        if self.ui.custom_out_dir_checkbox.isChecked() and self.ui.custom_out_dir_entry.text() != "":
-            out_path = pathlib.Path(self.ui.custom_out_dir_entry.text())
-            if not out_path.exists() or not out_path.is_dir():
-                msg_box = QMessageBox()
-                msg_box.setIcon(QMessageBox.Icon.Critical)
-                msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
-                msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
-                msg_box.setWindowTitle(app.translate("MainWindow", "Invalid Download Directory"))
-                msg_box.setText(app.translate("MainWindow", "The specified download directory does not exist!"))
-                msg_box.setInformativeText(app.translate("MainWindow",
-                                                         "Please make sure the specified download directory exists,"
-                                                         " and that you have permission to access it."))
-                msg_box.exec()
-                return
-        else:
-            out_path = out_folder
         # Create a new worker object to handle the download in a new thread.
         if self.ui.console_select_dropdown.currentText() == "DSi":
             worker = Worker(run_nus_download_dsi, out_path, self.ui.tid_entry.text(),
@@ -615,8 +601,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                 archive_name = ""
                                 break
             titles.append(BatchTitleData(tid, title_version, console, archive_name))
+        out_path = self.get_output_dir()
+        if out_path is None:
+            return
         self.lock_ui()
-        worker = Worker(run_nus_download_batch, out_folder, titles, self.ui.pack_archive_checkbox.isChecked(),
+        worker = Worker(run_nus_download_batch, out_path, titles, self.ui.pack_archive_checkbox.isChecked(),
                         self.ui.keep_enc_checkbox.isChecked(), self.ui.create_dec_checkbox.isChecked(),
                         self.ui.use_wiiu_nus_checkbox.isChecked(), self.ui.use_local_checkbox.isChecked(),
                         self.ui.pack_vwii_mode_checkbox.isChecked(), self.ui.patch_ios_checkbox.isChecked())
@@ -626,13 +615,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def open_output_dir(self):
         # Like all good things in life, this is a platform-dependent procedure. Did I say good? I meant annoying.
+        out_path = self.get_output_dir()
+        if out_path is None:
+            return
         system = platform.system()
         if system == "Windows":
-            subprocess.run(["explorer.exe", out_folder])
+            subprocess.run(["explorer.exe", out_path])
         elif system == "Darwin":
-            subprocess.run(["open", out_folder])
+            subprocess.run(["open", out_path])
         else:
-            subprocess.run(["xdg-open", out_folder])
+            subprocess.run(["xdg-open", out_path])
 
     def choose_output_dir(self):
         # Use this handy convenience method to prompt the user to select a directory. Then we just need to validate
@@ -641,20 +633,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     "", QFileDialog.ShowDirsOnly | QFileDialog.DontResolveSymlinks)
         if selected_dir == "":
             return
-        out_path = pathlib.Path(selected_dir)
-        if not out_path.exists() or not out_path.is_dir():
-            msg_box = QMessageBox()
-            msg_box.setIcon(QMessageBox.Icon.Critical)
-            msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
-            msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
-            msg_box.setWindowTitle(app.translate("MainWindow", "Invalid Download Directory"))
-            msg_box.setText(app.translate("MainWindow", "<b>The specified download directory does not exist!</b>"))
-            msg_box.setInformativeText(app.translate("MainWindow",
-                                                     "Please make sure the download directory you want to use exists, and "
-                                                     "that you have permission to access it."))
-            msg_box.exec()
+        # Write it to the box and use existing validation code. Efficiency!
+        self.ui.custom_out_dir_entry.setText(selected_dir)
+        out_path = self.get_output_dir()
+        if out_path is None:
             return
-        self.ui.custom_out_dir_entry.setText(str(out_path))
         config_data["out_path"] = str(out_path.absolute())
         save_config(config_data)
 
@@ -669,6 +652,44 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if out_path.exists() and out_path.is_dir():
             config_data["out_path"] = str(out_path.absolute())
             save_config(config_data)
+
+    def get_output_dir(self) -> pathlib.Path | None:
+        # Whether a custom download directory is set.
+        if self.ui.custom_out_dir_checkbox.isChecked() and self.ui.custom_out_dir_entry.text() != "":
+            # Check for a custom output directory, and ensure that it's valid. If it is, then use that. Otherwise,
+            # return None and let the calling code determine how to continue.
+            out_path = pathlib.Path(self.ui.custom_out_dir_entry.text())
+            if not out_path.exists() or not out_path.is_dir():
+                msg_box = QMessageBox()
+                msg_box.setIcon(QMessageBox.Icon.Critical)
+                msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+                msg_box.setDefaultButton(QMessageBox.StandardButton.Ok)
+                msg_box.setWindowTitle(app.translate("MainWindow", "Invalid Download Directory"))
+                msg_box.setText(app.translate("MainWindow", "<b>The specified download directory does not exist!</b>"))
+                msg_box.setInformativeText(app.translate("MainWindow",
+                                                         "Please make sure the specified download directory exists,"
+                                                         " and that you have permission to access it."))
+                msg_box.exec()
+                return None
+            return out_path
+        else:
+            # Default path if there's no custom download directory configured. Yay for platform differences!
+            if os.name == 'nt':
+                # This code is required because on Windows, the name of the downloads directory is localized based on your
+                # system's language. This means that literally "Downloads" isn't always going to exist, so we want to ask
+                # the registry what it's named on this particular machine.
+                import winreg
+                sub_key = r'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
+                downloads_guid = '{374DE290-123F-4565-9164-39C4925E467B}'
+                with winreg.OpenKey(winreg.HKEY_CURRENT_USER, sub_key) as key:
+                    location = pathlib.Path(winreg.QueryValueEx(key, downloads_guid)[0])
+            else:
+                location = pathlib.Path(os.path.expanduser('~')).joinpath('Downloads')
+            # Build the path by combining the path to the Downloads photo with "NUSGet".
+            out_folder = location.joinpath("NUSGet Downloads")
+            # Create the "NUSGet Downloads" directory if it doesn't exist.
+            out_folder.mkdir(exist_ok=True, parents=True)
+            return out_folder
 
     def about_nusget(self):
         about_box = AboutNUSGet([nusget_version, version("libWiiPy"), version("libTWLPy")])
@@ -704,23 +725,6 @@ if __name__ == "__main__":
     vwii_database = json.load(database_file)
     database_file = open(os.path.join(os.path.dirname(__file__), "data", "dsi-database.json"), encoding="utf-8")
     dsi_database = json.load(database_file)
-    # Load the user's Downloads directory, which of course requires different steps on Windows vs macOS/Linux.
-    if os.name == 'nt':
-        import winreg
-        sub_key = r'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
-        downloads_guid = '{374DE290-123F-4565-9164-39C4925E467B}'
-        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, sub_key) as key:
-            location = pathlib.Path(winreg.QueryValueEx(key, downloads_guid)[0])
-    else:
-        # Silence a false linter warning about redeclaration, since this is actually only ever assigned once.
-        # noinspection PyRedeclaration
-        location = pathlib.Path(os.path.expanduser('~')).joinpath('Downloads')
-    # Build the path by combining the path to the Downloads photo with "NUSGet".
-    out_folder = location.joinpath("NUSGet Downloads")
-    # Create the "NUSGet Downloads" directory if it doesn't exist. In the future, this will be user-customizable, but
-    # this works for now, and avoids using a directory next to the binary (mostly an issue on macOS/Linux).
-    if not out_folder.is_dir():
-        out_folder.mkdir()
 
     # Load the config path and then the configuration data, if it exists. If not, then we should initialize it and write
     # it out.
