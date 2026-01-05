@@ -8,8 +8,8 @@
  </a>
 </div>
 
-![Linux Screenshot](https://github.com/user-attachments/assets/f9e0e6c4-6a04-4c2b-bffd-7a1dc58671ff)
- 
+![Linux Screenshot](https://github.com/user-attachments/assets/220240bb-8119-4995-a5ce-00fac11d7d39)
+
 ## Features
 NUSGet allows you to download any content from the Nintendo Update Servers. Free content (content with a Ticket freely available on the servers) can be decrypted or packed directly into an installable archive (WAD/TAD).
 
