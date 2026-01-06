@@ -1,5 +1,5 @@
 # "NUSGet.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah and Contributors
+# Copyright 2024-2026 NinjaCheetah and Contributors
 
 # Nuitka options. These determine compilation settings based on the current OS.
 # nuitka-project-if: {OS} == "Darwin":
@@ -39,9 +39,9 @@ from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-nusget_version = "1.5.0"
+NUSGET_VERSION = "1.5.1"
 
-regions = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
+REGIONS = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
 
 
@@ -247,9 +247,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             save_config(config_data)
         if auto_update:
             # Do a quick check to see if there's a newer release available if auto-updates are enabled.
-            worker = Worker(check_nusget_updates, app, nusget_version)
+            worker = Worker(check_nusget_updates, app, NUSGET_VERSION)
             worker.signals.result.connect(self.prompt_for_update)
-            worker.signals.progress.connect(self.update_log_text)
+            worker.signals.progress.connect(self.progress_update)
             self.threadpool.start(worker)
 
     def title_double_clicked(self, index):
@@ -287,7 +287,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 return
         self.ui.patch_ios_checkbox.setEnabled(False)
 
-    def download_progress_update(self, done, total, log_text):
+    def progress_update(self, done, total, log_text):
         if done == 0 and total == 0:
             self.ui.progress_bar.setRange(0, 0)
         elif done == -1 and total == -1:
@@ -316,10 +316,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
             msg_box.setWindowTitle(app.translate("MainWindow", "NUSGet Update Available"))
             msg_box.setText(app.translate("MainWindow", "<b>There's a newer version of NUSGet available!</b>"))
-            msg_box.setInformativeText(app.translate("MainWindow", "You're currently running v{nusget_version}, "
+            msg_box.setInformativeText(app.translate("MainWindow", "You're currently running v{NUSGET_VERSION}, "
                                                    "but v{new_version} is available on GitHub. Would you like to view"
                                                    " the latest version?"
-                                                    .format(nusget_version=nusget_version, new_version=new_version)))
+                                                    .format(NUSGET_VERSION=NUSGET_VERSION, new_version=new_version)))
             ret = msg_box.exec()
             if ret == QMessageBox.StandardButton.Yes:
                 webbrowser.open("https://github.com/NinjaCheetah/NUSGet/releases/latest")
@@ -329,8 +329,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # If the last two characters are "XX", then this title has multiple regions, and each region uses its own
         # two-digit code. Use the region info passed to load the correct code.
         if selected_title.tid[-2:] == "XX":
-            global regions
-            region_code = regions[selected_title.region][0]
+            global REGIONS
+            region_code = REGIONS[selected_title.region][0]
             tid = selected_title.tid[:-2] + region_code
         else:
             tid = selected_title.tid
@@ -440,7 +440,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                             self.ui.pack_vwii_mode_checkbox.isChecked(), self.ui.patch_ios_checkbox.isChecked(),
                             self.ui.archive_file_entry.text())
         worker.signals.result.connect(self.check_download_result)
-        worker.signals.progress.connect(self.download_progress_update)
+        worker.signals.progress.connect(self.progress_update)
         self.threadpool.start(worker)
 
     def check_download_result(self, result):
@@ -584,8 +584,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             for category in target_database:
                 for t in target_database[category]:
                     if t["TID"][-2:] == "XX":
-                        for r in regions:
-                            if f"{t['TID'][:-2]}{regions[r][0]}" == tid:
+                        for r in REGIONS:
+                            if f"{t['TID'][:-2]}{REGIONS[r][0]}" == tid:
                                 try:
                                     archive_name = t["Name"].replace(" ", "-")
                                     break
@@ -610,7 +610,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.ui.use_wiiu_nus_checkbox.isChecked(), self.ui.use_local_checkbox.isChecked(),
                         self.ui.pack_vwii_mode_checkbox.isChecked(), self.ui.patch_ios_checkbox.isChecked())
         worker.signals.result.connect(self.check_batch_result)
-        worker.signals.progress.connect(self.download_progress_update)
+        worker.signals.progress.connect(self.progress_update)
         self.threadpool.start(worker)
 
     def open_output_dir(self):
@@ -692,7 +692,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return out_folder
 
     def about_nusget(self):
-        about_box = AboutNUSGet([nusget_version, version("libWiiPy"), version("libTWLPy")])
+        about_box = AboutNUSGet([NUSGET_VERSION, version("libWiiPy"), version("libTWLPy")])
         about_box.exec()
 
     def change_language(self, new_lang):

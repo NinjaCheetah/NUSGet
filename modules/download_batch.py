@@ -1,5 +1,5 @@
 # "modules/download_batch.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah
+# Copyright 2024-2026 NinjaCheetah & Contributors
 
 import pathlib
 from typing import List

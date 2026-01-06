@@ -1,5 +1,5 @@
 # "modules/download_dsi.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah
+# Copyright 2024-2026 NinjaCheetah & Contributors
 
 import pathlib
 
@@ -76,11 +76,11 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
         content = libTWLPy.download_content(tid, title.tmd.content_record.content_id)
         progress_callback.emit(-1, -1, "   - Done!")
         # If keep encrypted contents is on, write out the content after its downloaded.
-        if keep_enc_chkbox is True:
+        if keep_enc_chkbox:
             version_dir.joinpath(content_file_name).write_bytes(content)
     title.content.content = content
     # If decrypt local contents is still true, decrypt the content and write out the decrypted file.
-    if decrypt_contents_enabled is True:
+    if decrypt_contents_enabled:
         try:
             progress_callback.emit(-1, -1, f" - Decrypting content (Content ID: {title.tmd.content_record.content_id})...")
             dec_content = title.get_content()
@@ -91,7 +91,7 @@ def run_nus_download_dsi(out_folder: pathlib.Path, tid: str, version: str, pack_
             # local encrypted contents that have been altered at present.
             return -3
     # If pack TAD is still true, pack the TMD, ticket, and content into a TAD.
-    if pack_tad_enabled is True:
+    if pack_tad_enabled:
         # Get the TAD certificate chain, courtesy of libTWLPy.
         progress_callback.emit(-1, -1, " - Building certificate...")
         title.tad.set_cert_data(libTWLPy.download_cert())

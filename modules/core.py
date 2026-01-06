@@ -1,5 +1,5 @@
 # "modules/core.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah & Contributors
+# Copyright 2024-2026 NinjaCheetah & Contributors
 
 import requests
 from dataclasses import dataclass
@@ -69,9 +69,11 @@ def fixup_qmenu_background(menu):
 
 def check_nusget_updates(app, current_version: str, progress_callback=None) -> str | None:
     # Simple function to make a request to the GitHub API and then check if the latest available version is newer.
+    print("checking for updates...")
     gh_api_request = requests.get(url="https://api.github.com/repos/NinjaCheetah/NUSGet/releases/latest", stream=True)
     if gh_api_request.status_code != 200:
-        progress_callback.emit(app.translate("MainWindow", "\n\nCould not check for updates."))
+        progress_callback.emit(-1, -1, app.translate("MainWindow", "\n\nCould not check for updates."))
+        print(f"update check failed, status code: {gh_api_request.status_code}")
     else:
         api_response = gh_api_request.json()
         new_version: str = api_response["tag_name"].replace('v', '')
@@ -79,9 +81,13 @@ def check_nusget_updates(app, current_version: str, progress_callback=None) -> s
         current_version_split = current_version.split('.')
         for place in range(len(new_version_split)):
             if new_version_split[place] < current_version_split[place]:
+                progress_callback.emit(-1, -1, "\n\nYou're running a development version of NUSGet.")
+                print("no update available, this is a development version")
                 return None
             elif new_version_split[place] > current_version_split[place]:
-                progress_callback.emit(app.translate("MainWindow", "\n\nThere's a newer version of NUSGet available!"))
+                progress_callback.emit(-1, -1, app.translate("MainWindow", "\n\nThere's a newer version of NUSGet available!"))
+                print("update available")
                 return new_version
-        progress_callback.emit(app.translate("MainWindow", "\n\nYou're running the latest release of NUSGet."))
+        progress_callback.emit(-1, -1, app.translate("MainWindow", "\n\nYou're running the latest release of NUSGet."))
+        print("no update available")
     return None

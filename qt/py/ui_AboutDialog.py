@@ -1,5 +1,5 @@
 # "qt/py/ui_AboutDialog.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah and Contributors
+# Copyright 2024-2026 NinjaCheetah and Contributors
 # Thanks Isla and Alex for making such a nice about dialog that I could then "borrow" :p
 
 import os
@@ -46,7 +46,7 @@ class AboutNUSGet(QDialog):
         libraries_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Copyright
-        copyright_label = QLabel(self.tr("© 2024-2025 NinjaCheetah & Contributors"))
+        copyright_label = QLabel(self.tr("© 2024-2026 NinjaCheetah & Contributors"))
         copyright_label.setProperty("class", "copyright")
         copyright_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 

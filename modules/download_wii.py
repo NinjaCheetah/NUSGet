@@ -1,5 +1,5 @@
 # "modules/download_wii.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah & Contributors
+# Copyright 2024-2026 NinjaCheetah & Contributors
 
 import pathlib
 
@@ -85,11 +85,11 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
                                                                 wiiu_endpoint=wiiu_nus_enabled, progress=progress_update))
             progress_callback.emit(-1, -1, "   - Done!")
             # If keep encrypted contents is on, write out each content after its downloaded.
-            if keep_enc_chkbox is True:
+            if keep_enc_chkbox:
                 version_dir.joinpath(content_file_name).write_bytes(content_list[content])
     title.content.content_list = content_list
     # If decrypt local contents is still true, decrypt each content and write out the decrypted file.
-    if decrypt_contents_enabled is True:
+    if decrypt_contents_enabled:
         try:
             for content in range(len(title.tmd.content_records)):
                 progress_callback.emit(-1, -1, f" - Decrypting content {content + 1} of {len(title.tmd.content_records)} "
@@ -102,7 +102,7 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
             # local encrypted contents that have been altered at present.
             return -3
     # If pack WAD is still true, pack the TMD, ticket, and contents all into a WAD.
-    if pack_wad_enabled is True:
+    if pack_wad_enabled:
         # If the option to pack for vWii mode instead of Wii U mode is enabled, then the Title Key needs to be
         # re-encrypted with the common key instead of the vWii key, so that the title can be installed from within
         # vWii mode. (vWii mode does not have access to the vWii key, only Wii U mode has that.)

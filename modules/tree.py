@@ -1,5 +1,5 @@
 # "modules/tree.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah
+# Copyright 2024-2026 NinjaCheetah & Contributors
 
 from modules.core import TitleData
 from PySide6.QtCore import QAbstractItemModel, QModelIndex, Qt, QSortFilterProxyModel
