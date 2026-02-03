@@ -1,5 +1,5 @@
 # "modules/language.py", licensed under the MIT license
-# Copyright 2024-2025 NinjaCheetah & Contributors
+# Copyright 2024-2026 NinjaCheetah & Contributors
 
 from modules.config import update_setting
 
