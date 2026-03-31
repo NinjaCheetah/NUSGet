@@ -4,6 +4,7 @@
 import pathlib
 
 import libWiiPy
+from libWiiPy.title import NUSConnectionError
 
 
 def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_wad_chkbox: bool, keep_enc_chkbox: bool,
@@ -44,9 +45,12 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
         else:
             title.load_tmd(libWiiPy.title.download_tmd(tid, wiiu_endpoint=wiiu_nus_enabled, progress=progress_update))
             title_version = title.tmd.title_version
-    # If libWiiPy returns an error, that means that either the TID or version doesn't exist, so return code -2.
+    # If libWiiPy returns a ValueError, that means that either the TID or version doesn't exist, so return code -2.
     except ValueError:
         return -2
+    except NUSConnectionError:
+        progress_callback.emit(0, 1, "Download failed!")
+        return -100
     # Make a directory for this version if it doesn't exist.
     version_dir = title_dir.joinpath(str(title_version))
     version_dir.mkdir(exist_ok=True)
@@ -62,11 +66,14 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
             title.load_ticket(libWiiPy.title.download_ticket(tid, wiiu_endpoint=wiiu_nus_enabled, progress=progress_update))
             version_dir.joinpath("tik").write_bytes(title.ticket.dump())
         except ValueError:
-            # If libWiiPy returns an error, then no ticket is available. Log this, and disable options requiring a
+            # If libWiiPy returns a ValueError, then no ticket is available. Log this, and disable options requiring a
             # ticket so that they aren't attempted later.
             progress_callback.emit(0, 0, "  - No Ticket is available!")
             pack_wad_enabled = False
             decrypt_contents_enabled = False
+        except NUSConnectionError:
+            progress_callback.emit(0, 1, "Download failed!")
+            return -100
     # Load the content records from the TMD, and begin iterating over the records.
     title.load_content_records()
     content_list = []
@@ -81,8 +88,16 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
             progress_callback.emit(0, 0, f" - Downloading content {content + 1} of {len(title.tmd.content_records)} "
                                    f"(Content ID: {title.tmd.content_records[content].content_id}, Size: "
                                    f"{title.tmd.content_records[content].content_size} bytes)...")
-            content_list.append(libWiiPy.title.download_content(tid, title.tmd.content_records[content].content_id,
-                                                                wiiu_endpoint=wiiu_nus_enabled, progress=progress_update))
+            try:
+                content_list.append(libWiiPy.title.download_content(
+                    tid,
+                    title.tmd.content_records[content].content_id,
+                    wiiu_endpoint=wiiu_nus_enabled,
+                    progress=progress_update)
+                )
+            except NUSConnectionError:
+                progress_callback.emit(0, 1, "Download failed!")
+                return -100
             progress_callback.emit(-1, -1, "   - Done!")
             # If keep encrypted contents is on, write out each content after its downloaded.
             if keep_enc_chkbox:
@@ -113,7 +128,11 @@ def run_nus_download_wii(out_folder: pathlib.Path, tid: str, version: str, pack_
             title.ticket.title_key_enc = title_key_common
         # Get the WAD certificate chain, courtesy of libWiiPy.
         progress_callback.emit(-1, -1, " - Building certificate...")
-        title.load_cert_chain(libWiiPy.title.download_cert_chain(wiiu_endpoint=wiiu_nus_enabled))
+        try:
+            title.load_cert_chain(libWiiPy.title.download_cert_chain(wiiu_endpoint=wiiu_nus_enabled))
+        except NUSConnectionError:
+            progress_callback.emit(0, 1, "Download failed!")
+            return -100
         # Use a typed WAD name if there is one, and auto generate one based on the TID and version if there isn't.
         progress_callback.emit(-1, -1, " - Packing WAD...")
         if wad_file_name != "" and wad_file_name is not None:
