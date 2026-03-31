@@ -64,13 +64,13 @@ class Worker(QRunnable):
 
     @Slot()
     def run(self):
-        # All possible errors *should* be caught by the code and will safely return specific error codes. In the
-        # unlikely event that an unexpected error happens, it can only possibly be a ValueError, so handle that and
-        # return code 1.
+        # All errors with explicit handling should be caught in the download thread, so if a misc error occurs then
+        # throw a generic code to trigger the "An Unknown Error Has Occurred" popup. This will hopefully get the
+        # person seeing it to come provide me with more information to handle it properly.
         try:
             result = self.fn(*self.args, **self.kwargs)
         except ValueError:
-            self.signals.result.emit(1)
+            self.signals.result.emit(-100)
         else:
             self.signals.result.emit(result)
 
