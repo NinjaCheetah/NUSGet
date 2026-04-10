@@ -7,6 +7,7 @@
 #    nuitka-project: --macos-create-app-bundle
 #    nuitka-project: --macos-app-icon={MAIN_DIRECTORY}/resources/icon.png
 #    nuitka-project: --macos-signed-app-name=dev.ninjacheetah.NUSGet
+#    nuitka-project: --macos-app-version=1.5.2
 # nuitka-project-if: {OS} == "Windows":
 #    nuitka-project: --standalone
 #    nuitka-project: --windows-icon-from-ico={MAIN_DIRECTORY}/resources/icon.png
@@ -15,7 +16,9 @@
 #    nuitka-project: --onefile
 
 # These are standard options that are needed on all platforms.
+# nuitka-project: --product-version=1.5.2
 # nuitka-project: --plugin-enable=pyside6
+# nuitka-project: --copyright="© 2024-2026 NinjaCheetah & Contributors"
 # nuitka-project: --include-data-dir={MAIN_DIRECTORY}/data=data
 # nuitka-project: --include-data-dir={MAIN_DIRECTORY}/resources=resources
 
@@ -39,7 +42,7 @@ from modules.download_batch import run_nus_download_batch
 from modules.download_wii import run_nus_download_wii
 from modules.download_dsi import run_nus_download_dsi
 
-NUSGET_VERSION = "1.5.1"
+NUSGET_VERSION = "1.5.2"
 
 REGIONS = {"World": ["41"], "USA/NTSC": ["45"], "Europe/PAL": ["50"], "Japan": ["4A"], "Korea": ["4B"], "China": ["43"],
            "Australia/NZ": ["55"]}
@@ -210,6 +213,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.proxy_models[model].setFilterKeyColumn(0)
         self.ui.tree_filter_input.textChanged.connect(lambda: self.filter_text_updated(self.ui.platform_tabs.currentIndex()))
         self.ui.tree_filter_reset_btn.clicked.connect(lambda: self.ui.tree_filter_input.setText(""))
+        self.ui.platform_tabs.currentChanged.connect(lambda: self.filter_text_updated(self.ui.platform_tabs.currentIndex()))
         for tree in range(len(self.trees)):
             self.trees[tree].setModel(self.proxy_models[tree])
             self.trees[tree].doubleClicked.connect(self.title_double_clicked)
