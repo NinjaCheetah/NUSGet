@@ -58,15 +58,33 @@ jobs:
           pip install -r requirements.txt
       - name: Build Package
         run: ARCH_FLAGS=--macos-target-arch=x86_64 make all
-      - name: Prepare Package for Upload
+      - name: Import Signing Certificate
         run: |
-          mv NUSGet.app ~/NUSGet.app
-          cd ~
-          tar cvf NUSGet.tar NUSGet.app
+          echo -n $APPLE_DEVELOPERID_CERT_BASE64 | base64 -d -o ./developerid-cert.p12
+          security create-keychain -p "" codesign.keychain
+          security unlock-keychain -p "" codesign.keychain
+          security default-keychain -s codesign.keychain
+          security import ./developerid-cert.p12 -k codesign.keychain -P $APPLE_DEVELOPERID_PASSWORD -T /usr/bin/codesign
+        env:
+          APPLE_DEVELOPERID_CERT_BASE64: ${{ secrets.APPLE_DEVELOPERID_CERT_BASE64 }}
+          APPLE_DEVELOPERID_PASSWORD: ${{ secrets.APPLE_DEVELOPERID_PASSWORD }}
+      - name: Sign and Notarize Bundle
+        run: |
+          codesign --force --deep --timestamp --options runtime -s "Developer ID Application: Campbell Bagley (5GF7GKNTK4)" NUSGet.app
+          ditto -c -k --keepParent NUSGet.app NUSGet_notarize.zip
+          xcrun notarytool submit NUSGet_notarize.zip --apple-id $APPLE_NOTARYTOOL_APPLEID --team-id "5GF7GKNTK4" --password $APPLE_NOTARYTOOL_PASSWORD --wait
+          xcrun stapler staple NUSGet.app
+          rm NUSGet_notarize.zip
+          mkdir NUSGet-signed
+          mv NUSGet.app NUSGet-signed/
+          ditto -c -k --keepParent NUSGet-signed NUSGet.zip
+        env:
+          APPLE_NOTARYTOOL_APPLEID: ${{ secrets.APPLE_NOTARYTOOL_APPLEID }}
+          APPLE_NOTARYTOOL_PASSWORD: ${{ secrets.APPLE_NOTARYTOOL_PASSWORD }}
       - name: Upload Package
         uses: actions/upload-artifact@v7
         with:
-          path: ~/NUSGet.tar
+          path: ~/NUSGet.zip
           name: NUSGet-macOS-x86_64-bin
 
   build-macos-arm64:
