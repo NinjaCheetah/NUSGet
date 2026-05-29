@@ -70,9 +70,22 @@ jobs:
           APPLE_DEVELOPERID_PASSWORD: ${{ secrets.APPLE_DEVELOPERID_PASSWORD }}
       - name: Sign and Notarize Bundle
         run: |
-          codesign --force --deep --timestamp --options runtime -s "Developer ID Application: Campbell Bagley (5GF7GKNTK4)" NUSGet.app
+          set -euxo pipefail
+          
+          codesign --force --deep --timestamp --options runtime \
+            -s "Developer ID Application: Campbell Bagley (5GF7GKNTK4)" \
+            NUSGet.app
+
+          codesign --verify --deep --strict --verbose=2 NUSGet.app
+          
           ditto -c -k --keepParent NUSGet.app NUSGet_notarize.zip
-          xcrun notarytool submit NUSGet_notarize.zip --apple-id $APPLE_NOTARYTOOL_APPLEID --team-id "5GF7GKNTK4" --password $APPLE_NOTARYTOOL_PASSWORD --wait
+          
+          xcrun notarytool submit NUSGet_notarize.zip \
+            --apple-id $APPLE_NOTARYTOOL_APPLEID \
+            --team-id "5GF7GKNTK4" \
+            --password $APPLE_NOTARYTOOL_PASSWORD \
+            --wait --progress
+            
           xcrun stapler staple NUSGet.app
           rm NUSGet_notarize.zip
           mkdir NUSGet-signed
