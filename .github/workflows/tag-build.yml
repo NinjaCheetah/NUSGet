@@ -124,7 +124,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      - name: Set up Python 3.12
+      - name: Set up Python 3.13
         uses: actions/setup-python@v6
         with:
           python-version: "3.13"
@@ -134,11 +134,60 @@ jobs:
           pip install -r requirements.txt
       - name: Build Package
         run: ARCH_FLAGS=--macos-target-arch=arm64 make all
-      - name: Prepare Package for Upload
+      - name: Import Signing Certificate
+        env:
+          APPLE_DEVELOPERID_CERT_BASE64: ${{ secrets.APPLE_DEVELOPERID_CERT_BASE64 }}
+          APPLE_DEVELOPERID_PASSWORD: ${{ secrets.APPLE_DEVELOPERID_PASSWORD }}
         run: |
-          mv NUSGet.app ~/NUSGet.app
-          cd ~
-          tar cvf NUSGet.tar NUSGet.app
+          set -euxo pipefail
+          
+          KEYCHAIN_PATH="$RUNNER_TEMP/codesign.keychain-db"
+
+          echo -n "$APPLE_DEVELOPERID_CERT_BASE64" | base64 -d -o ./developerid-cert.p12
+      
+          security create-keychain -p "" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "" "$KEYCHAIN_PATH"
+          security list-keychains -d user -s "$KEYCHAIN_PATH"
+          security default-keychain -d user -s "$KEYCHAIN_PATH"
+      
+          security import ./developerid-cert.p12 \
+            -k "$KEYCHAIN_PATH" \
+            -P "$APPLE_DEVELOPERID_PASSWORD" \
+            -A -t cert -f pkcs12
+      
+          security set-key-partition-list \
+            -S apple-tool:,apple: \
+            -s -k "" "$KEYCHAIN_PATH"
+      
+          security find-identity -v -p codesigning "$KEYCHAIN_PATH"
+      - name: Sign and Notarize Bundle
+        env:
+          APPLE_NOTARYTOOL_APPLEID: ${{ secrets.APPLE_NOTARYTOOL_APPLEID }}
+          APPLE_NOTARYTOOL_PASSWORD: ${{ secrets.APPLE_NOTARYTOOL_PASSWORD }}
+        run: |
+          set -euxo pipefail
+          
+          codesign --force --deep --timestamp --options runtime \
+            -s "Developer ID Application: Campbell Bagley (5GF7GKNTK4)" \
+            NUSGet.app
+
+          codesign --verify --deep --strict --verbose=2 NUSGet.app
+          
+          ditto -c -k --keepParent NUSGet.app NUSGet_notarize.zip
+          
+          xcrun notarytool submit NUSGet_notarize.zip \
+            --apple-id $APPLE_NOTARYTOOL_APPLEID \
+            --team-id "5GF7GKNTK4" \
+            --password $APPLE_NOTARYTOOL_PASSWORD \
+            --wait --progress
+            
+          xcrun stapler staple NUSGet.app
+          rm NUSGet_notarize.zip
+          mkdir NUSGet-signed
+          mv NUSGet.app NUSGet-signed/
+          ditto -c -k --keepParent NUSGet-signed NUSGet.zip
+          mv NUSGet.zip ~/
       - name: Upload Package
         uses: actions/upload-artifact@v7
         with:
