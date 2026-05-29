@@ -191,7 +191,7 @@ jobs:
       - name: Upload Package
         uses: actions/upload-artifact@v7
         with:
-          path: ~/NUSGet.tar
+          path: ~/NUSGet.zip
           name: NUSGet-macOS-arm64-bin
 
   build-windows-x86_64:
