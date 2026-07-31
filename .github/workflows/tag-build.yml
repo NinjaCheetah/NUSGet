@@ -116,7 +116,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           path: ~/NUSGet.zip
-          name: NUSGet-macOS-x86_64-bin
+          name: NUSGet-macOS-x86_64-signed-bin
 
   build-macos-arm64:
 
@@ -192,7 +192,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           path: ~/NUSGet.zip
-          name: NUSGet-macOS-arm64-bin
+          name: NUSGet-macOS-arm64-signed-bin
 
   build-windows-x86_64:
 
