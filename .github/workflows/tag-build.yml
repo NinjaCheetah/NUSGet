@@ -216,13 +216,13 @@ jobs:
       with:
         path: D:\a\NUSGet\NUSGet\NUSGet.dist
         name: NUSGet-Windows-x86_64-bin
-    - name: Sign Standalone Package (TESTING)
+    - name: Sign Standalone Package
       uses: signpath/github-action-submit-signing-request@v2
       with:
         api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
         organization-id: 'c162cb9c-9ce8-4539-a7ed-08527a44249f'
         project-slug: 'NUSGet'
-        signing-policy-slug: 'test-signing'
+        signing-policy-slug: 'release-signing'
         github-artifact-id: '${{ steps.upload-unsigned-standalone.outputs.artifact-id }}'
         wait-for-completion: true
         output-artifact-directory: '.\signed-package'
@@ -254,13 +254,13 @@ jobs:
       with:
         path: D:\a\NUSGet\NUSGet\NUSGet.exe
         name: NUSGet-Windows-onefile-x86_64-bin
-    - name: Sign Onefile Package (TESTING)
+    - name: Sign Onefile Package
       uses: signpath/github-action-submit-signing-request@v2
       with:
         api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
         organization-id: 'c162cb9c-9ce8-4539-a7ed-08527a44249f'
         project-slug: 'NUSGet'
-        signing-policy-slug: 'test-signing'
+        signing-policy-slug: 'release-signing'
         github-artifact-id: '${{ steps.upload-unsigned-onefile.outputs.artifact-id }}'
         wait-for-completion: true
         output-artifact-directory: '.\signed-package'
