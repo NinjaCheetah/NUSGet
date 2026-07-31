@@ -79,6 +79,13 @@ A huge thanks to all the wonderful translators who've helped make NUSGet availab
 
 If your language isn't present or is out of date, and you'd like to contribute, you can check out [TRANSLATING.md](https://github.com/NinjaCheetah/NUSGet/blob/main/TRANSLATING.md) for directions on how to translate NUSGet.
 
+## Sponsors
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/bd599cbc-d860-41da-91a8-c1e70a57605d" alt="SignPath Logo"></img></td>
+    <td>Free code signing on Windows provided by <a href="https://about.signpath.io">SignPath.io</a>, certificate by <a href="https://signpath.org">SignPath Foundation</a></td>
+  </tr>
+</table>
 
 ## Additional Thanks
 The name is a play on NuGet, the .NET package manager. Thank you [@Janni9009](https://github.com/Janni9009) for the name idea!
